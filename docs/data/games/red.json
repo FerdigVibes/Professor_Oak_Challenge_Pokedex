@@ -1,1 +1,153 @@
+{
+  "id": "red",
+  "displayName": "Pokémon Red",
+  "generation": 1,
+  "totalPokemon": 124,
 
+  "sections": [
+    {
+      "id": "BEFORE_PEWTER",
+      "title": "Before Pewter Gym",
+      "order": 1,
+      "children": ["STARTER", "PEWTER_POKEMON"]
+    },
+    {
+      "id": "STARTER",
+      "title": "Choose Your Starter!",
+      "order": 1.1,
+      "parent": "BEFORE_PEWTER",
+      "requiredCount": 3
+    },
+    {
+      "id": "PEWTER_POKEMON",
+      "title": "Pewter Pokémon",
+      "order": 1.2,
+      "parent": "BEFORE_PEWTER",
+      "requiredCount": 18
+    },
+
+    {
+      "id": "BEFORE_CERULEAN",
+      "title": "Before Cerulean Gym",
+      "order": 2,
+      "children": ["CERULEAN_POKEMON", "MOON_STONE_1"]
+    },
+    {
+      "id": "CERULEAN_POKEMON",
+      "title": "Cerulean Pokémon",
+      "order": 2.1,
+      "parent": "BEFORE_CERULEAN",
+      "requiredCount": 24
+    },
+    {
+      "id": "MOON_STONE_1",
+      "title": "Moon Stone (First)",
+      "order": 2.2,
+      "parent": "BEFORE_CERULEAN",
+      "requiredCount": 2
+    },
+
+    {
+      "id": "BEFORE_FUCHSIA",
+      "title": "Before Fuchsia Gym",
+      "order": 3,
+      "children": [
+        "FUCHSIA_POKEMON",
+        "MOON_STONE_2",
+        "EEVEE_EVOLUTIONS",
+        "HITMON_PRIZE"
+      ]
+    },
+    {
+      "id": "FUCHSIA_POKEMON",
+      "title": "Fuchsia Pokémon",
+      "order": 3.1,
+      "parent": "BEFORE_FUCHSIA",
+      "requiredCount": 54
+    },
+    {
+      "id": "MOON_STONE_2",
+      "title": "Moon Stone (Second)",
+      "order": 3.2,
+      "parent": "BEFORE_FUCHSIA",
+      "requiredCount": 2
+    },
+    {
+      "id": "EEVEE_EVOLUTIONS",
+      "title": "Eevee Evolutions",
+      "order": 3.3,
+      "parent": "BEFORE_FUCHSIA",
+      "requiredCount": 1
+    },
+    {
+      "id": "HITMON_PRIZE",
+      "title": "Hitmon Prize",
+      "order": 3.4,
+      "parent": "BEFORE_FUCHSIA",
+      "requiredCount": 1
+    },
+
+    {
+      "id": "BEFORE_CELADON",
+      "title": "Before Celadon Gym",
+      "order": 4,
+      "children": ["CELADON_POKEMON", "REVIVE_FOSSIL"]
+    },
+    {
+      "id": "CELADON_POKEMON",
+      "title": "Celadon Pokémon",
+      "order": 4.1,
+      "parent": "BEFORE_CELADON",
+      "requiredCount": 14
+    },
+    {
+      "id": "REVIVE_FOSSIL",
+      "title": "Revive Fossil",
+      "order": 4.2,
+      "parent": "BEFORE_CELADON",
+      "requiredCount": 2
+    },
+
+    {
+      "id": "BEFORE_5TH_BADGE",
+      "title": "Before 5th Badge",
+      "order": 5,
+      "children": ["ARTICUNO"]
+    },
+    {
+      "id": "ARTICUNO",
+      "title": "Articuno",
+      "order": 5.1,
+      "parent": "BEFORE_5TH_BADGE",
+      "requiredCount": 1
+    },
+
+    {
+      "id": "BEFORE_ELITE_FOUR",
+      "title": "Before the Elite Four",
+      "order": 6,
+      "children": ["MOLTRES"]
+    },
+    {
+      "id": "MOLTRES",
+      "title": "Moltres",
+      "order": 6.1,
+      "parent": "BEFORE_ELITE_FOUR",
+      "requiredCount": 1
+    },
+
+    {
+      "id": "CERULEAN_CAVE",
+      "title": "Cerulean Cave",
+      "order": 7,
+      "children": ["MEWTWO"]
+    },
+    {
+      "id": "MEWTWO",
+      "title": "Mewtwo",
+      "order": 7.1,
+      "parent": "CERULEAN_CAVE",
+      "requiredCount": 1
+    }
+  ]
+}
