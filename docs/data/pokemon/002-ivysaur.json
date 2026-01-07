@@ -1,0 +1,53 @@
+{
+  "dex": 2,
+  "slug": "ivysaur",
+
+  "names": {
+    "en": "Ivysaur",
+    "ja": "フシギソウ",
+    "fr": "Herbizarre",
+    "de": "Bisaknosp",
+    "es": "Ivysaur"
+  },
+
+  "types": ["grass", "poison"],
+
+  "evolution": {
+    "family": ["bulbasaur", "ivysaur", "venusaur"],
+    "stage": 2,
+    "evolvesFrom": "bulbasaur",
+    "evolvesTo": "venusaur"
+  },
+
+  "games": {
+    "red": {
+      "sections": ["STARTER"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Bulbasaur at level 16."
+        }
+      ]
+    },
+
+    "blue": {
+      "sections": ["STARTER"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Bulbasaur at level 16."
+        }
+      ]
+    },
+
+    "yellow": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Bulbasaur at level 16."
+        }
+      ]
+    }
+  }
+}
