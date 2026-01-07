@@ -1,0 +1,52 @@
+{
+  "dex": 1,
+  "slug": "bulbasaur",
+
+  "names": {
+    "en": "Bulbasaur",
+    "ja": "フシギダネ",
+    "fr": "Bulbizarre",
+    "de": "Bisasam",
+    "es": "Bulbasaur"
+  },
+
+  "types": ["grass", "poison"],
+
+  "evolution": {
+    "family": ["bulbasaur", "ivysaur", "venusaur"],
+    "stage": 1
+  },
+
+  "games": {
+    "red": {
+      "sections": ["STARTER"],
+      "obtain": [
+        {
+          "method": "starter",
+          "notes": "Pick me to begin your journey!."
+        }
+      ]
+    },
+
+    "blue": {
+      "sections": ["STARTER"],
+      "obtain": [
+        {
+          "method": "starter",
+          "notes": "Pick me to begin your journey!."
+        }
+      ]
+    },
+
+    "yellow": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "gift",
+          "location": "Cerulean City",
+          "notes": "Given by an NPC in the house next to the Pokémon Center after Pikachu's happiness is high."
+        }
+      ]
+    }
+  }
+}
