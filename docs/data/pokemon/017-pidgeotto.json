@@ -1,0 +1,88 @@
+{
+  "dex": 17,
+  "slug": "pidgeotto",
+
+  "names": {
+    "en": "Pidgeotto",
+    "ja": "ピジョン",
+    "fr": "Roucoups",
+    "de": "Tauboga",
+    "es": "Pidgeotto"
+  },
+
+  "types": ["normal", "flying"],
+
+  "evolution": {
+    "family": ["pidgey", "pidgeotto", "pidgeot"],
+    "stage": 2,
+    "evolvesFrom": "pidgey",
+    "evolvesTo": "pidgeot"
+  },
+
+  "games": {
+    "red": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgey at level 18."
+        }
+      ]
+    },
+
+    "blue": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgey at level 18."
+        }
+      ]
+    },
+
+    "yellow": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Viridian Forest"],
+          "notes": "Rare 1% encounter rate."
+        },
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgey at level 18."
+        }
+      ]
+    },
+
+    "gold": {
+      "sections": ["VIOLET_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgey at level 18."
+        }
+      ]
+    },
+
+    "silver": {
+      "sections": ["VIOLET_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgey at level 18."
+        }
+      ]
+    },
+
+    "crystal": {
+      "sections": ["VIOLET_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgey at level 18."
+        }
+      ]
+    }
+  }
+}
