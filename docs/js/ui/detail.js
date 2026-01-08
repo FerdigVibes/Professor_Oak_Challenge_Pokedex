@@ -1,4 +1,5 @@
 // docs/js/ui/detail.js
+// Renders Section 3 Pokémon detail (game-aware)
 
 export function renderPokemonDetail(pokemon, game) {
   const panel = document.getElementById('detail-panel');
@@ -10,9 +11,15 @@ export function renderPokemonDetail(pokemon, game) {
   panel.innerHTML = `
     <h2>${pokemon.names.en}</h2>
 
-    <p><strong>National Dex:</strong> #${String(pokemon.dex).padStart(3, '0')}</p>
+    <p>
+      <strong>National Dex:</strong>
+      #${String(pokemon.dex).padStart(3, '0')}
+    </p>
 
-    <p><strong>Types:</strong> ${pokemon.types.join(', ')}</p>
+    <p>
+      <strong>Types:</strong>
+      ${pokemon.types.join(', ')}
+    </p>
 
     <hr />
 
@@ -24,19 +31,15 @@ export function renderPokemonDetail(pokemon, game) {
   `;
 }
 
+/* =========================
+   Game-specific rendering
+   ========================= */
+
 function renderGameInfo(gameData) {
   const sections = gameData.sections?.join(', ') ?? '—';
 
   const obtainHtml = (gameData.obtain || [])
-    .map(o => {
-      return `
-        <li>
-          <strong>${o.method}</strong>
-          ${o.location ? `— ${o.location}` : ''}
-          ${o.notes ? `<br/><em>${o.notes}</em>` : ''}
-        </li>
-      `;
-    })
+    .map(o => renderObtainEntry(o))
     .join('');
 
   return `
@@ -48,4 +51,27 @@ function renderGameInfo(gameData) {
     </ul>
   `;
 }
+
+function renderObtainEntry(o) {
+  const locations = Array.isArray(o.locations)
+    ? o.locations.join(', ')
+    : o.location ?? null;
+
+  const time = Array.isArray(o.time)
+    ? o.time.join(', ')
+    : o.time ?? null;
+
+  return `
+    <li style="margin-bottom: 8px;">
+      <strong>${o.method}</strong>
+
+      ${locations ? `<br/><strong>Locations:</strong> ${locations}` : ''}
+
+      ${time ? `<br/><strong>Time:</strong> ${time}` : ''}
+
+      ${o.notes ? `<br/><em>${o.notes}</em>` : ''}
+    </li>
+  `;
+}
+
 
