@@ -41,7 +41,7 @@ export function renderSections({ game, pokemon }) {
       row.textContent = `${p.dex} – ${p.names.en}`;
       
       row.addEventListener('click', () => {
-        renderPokemonDetail(p);
+        renderPokemonDetail(p, game);
       });
       
       container.appendChild(row);
