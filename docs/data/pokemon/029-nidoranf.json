@@ -1,0 +1,95 @@
+{
+  "dex": 29,
+  "slug": "nidoranf",
+
+  "names": {
+    "en": "Nidoran♀",
+    "ja": "ニドラン♀",
+    "fr": "Nidoran♀",
+    "de": "Nidoran♀",
+    "es": "Nidoran♀"
+  },
+
+  "types": ["poison"],
+
+  "evolution": {
+    "family": ["nidoranf", "nidorina", "nidoqueen"],
+    "stage": 1
+  },
+
+  "games": {
+    "red": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 22"],
+          "notes": "Common early-route Pokémon."
+        }
+      ]
+    },
+
+    "blue": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 22"],
+          "notes": "Common early-route Pokémon."
+        }
+      ]
+    },
+
+    "yellow": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 22"],
+          "notes": "Common early-route Pokémon."
+        }
+      ]
+    },
+
+    "gold": {
+      "sections": ["GOLDENROD_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 35", "Route 36"],
+          "notes": "Appears on routes near Goldenrod City."
+        }
+      ]
+    },
+
+    "silver": {
+      "sections": ["GOLDENROD_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 35", "Route 36"],
+          "notes": "Appears on routes near Goldenrod City."
+        }
+      ]
+    },
+
+    "crystal": {
+      "sections": ["GOLDENROD_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 35"],
+          "conditions": ["swarm"],
+          "notes": "You need Fisherman Ralph (Route 32) to call you about a swarm."
+        },
+        {
+          "method": "wild",
+          "locations": ["National Park"],
+          "time": ["morning", "day"],
+          "notes": "Appears during morning and daytime."
+        }
+      ]
+    }
+  }
+}
+
