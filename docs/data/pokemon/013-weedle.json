@@ -1,0 +1,80 @@
+{
+  "dex": 13,
+  "slug": "weedle",
+
+  "names": {
+    "en": "Weedle",
+    "ja": "ビードル",
+    "fr": "Aspicot",
+    "de": "Hornliu",
+    "es": "Weedle"
+  },
+
+  "types": ["bug", "poison"],
+
+  "evolution": {
+    "family": ["weedle", "kakuna", "beedrill"],
+    "stage": 1
+  },
+
+  "games": {
+    "red": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 2", "Viridian Forest"],
+          "notes": "Common early-route Pokémon."
+        }
+      ]
+    },
+
+    "blue": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 2", "Viridian Forest"],
+          "notes": "Common early-route Pokémon."
+        }
+      ]
+    },
+
+    "gold": {
+      "sections": ["GOLDENROD_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["National Park"],
+          "conditions": ["bug-catching-contest"],
+          "notes": "Only obtainable during the Bug-Catching Contest on Tuesday, Thursday and Saturday."
+        }
+      ]
+    },
+
+    "silver": {
+      "sections": ["VIOLET_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 30", "Route 31"],
+          "time": ["morning", "day"],
+          "notes": "Appears during the morning and daytime."
+        }
+      ]
+    },
+
+    "crystal": {
+      "sections": ["VIOLET_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 30", "Route 31"],
+          "time": ["morning", "day"],
+          "notes": "Appears during the morning and daytime."
+        }
+      ]
+    }
+  }
+}
+
