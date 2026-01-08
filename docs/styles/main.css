@@ -24,3 +24,17 @@ body {
 .pokemon-row:hover {
   background: #eee;
 }
+
+.pokemon-icon {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  margin-right: 8px;
+}
+
+.detail-sprite img {
+  width: 128px;
+  height: 128px;
+  image-rendering: pixelated;
+}
+
