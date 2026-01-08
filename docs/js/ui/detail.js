@@ -5,15 +5,22 @@ export function renderPokemonDetail(pokemon, game) {
   const panel = document.getElementById('detail-panel');
   if (!panel) return;
 
+  const dex = String(pokemon.dex).padStart(3, '0');
+  const spritePath = `./assets/sprites/normal/${dex}-${pokemon.slug}.gif`;
+
   const gameId = game.id;
   const gameData = pokemon.games?.[gameId];
 
   panel.innerHTML = `
+    <div class="detail-sprite">
+      <img src="${spritePath}" alt="${pokemon.names.en}" />
+    </div>
+
     <h2>${pokemon.names.en}</h2>
 
     <p>
       <strong>National Dex:</strong>
-      #${String(pokemon.dex).padStart(3, '0')}
+      #${dex}
     </p>
 
     <p>
