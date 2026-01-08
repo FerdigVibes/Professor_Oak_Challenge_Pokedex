@@ -60,7 +60,7 @@
     },
 
     "silver": {
-      "sections": ["VIOLET_POKEMON"],
+      "sections": ["GOLDENROD_POKEMON"],
       "obtain": [
         {
           "method": "wild",
