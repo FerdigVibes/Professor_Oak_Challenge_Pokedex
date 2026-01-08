@@ -1,0 +1,82 @@
+{
+  "dex": 20,
+  "slug": "raticate",
+
+  "names": {
+    "en": "Raticate",
+    "ja": "ラッタ",
+    "fr": "Rattatac",
+    "de": "Rattikarl",
+    "es": "Raticate"
+  },
+
+  "types": ["normal"],
+
+  "evolution": {
+    "family": ["rattata", "raticate"],
+    "stage": 2,
+    "evolvesFrom": "rattata"
+  },
+
+  "games": {
+    "red": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Rattata at level 20."
+        }
+      ]
+    },
+
+    "blue": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Rattata at level 20."
+        }
+      ]
+    },
+
+    "yellow": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Rattata at level 20."
+        }
+      ]
+    },
+
+    "gold": {
+      "sections": ["VIOLET_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Rattata at level 20."
+        }
+      ]
+    },
+
+    "silver": {
+      "sections": ["VIOLET_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Rattata at level 20."
+        }
+      ]
+    },
+
+    "crystal": {
+      "sections": ["VIOLET_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Rattata at level 20."
+        }
+      ]
+    }
+  }
+}
