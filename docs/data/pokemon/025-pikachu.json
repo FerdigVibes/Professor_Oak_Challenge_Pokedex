@@ -1,0 +1,87 @@
+{
+  "dex": 25,
+  "slug": "pikachu",
+
+  "names": {
+    "en": "Pikachu",
+    "ja": "ピカチュウ",
+    "fr": "Pikachu",
+    "de": "Pikachu",
+    "es": "Pikachu"
+  },
+
+  "types": ["electric"],
+
+  "evolution": {
+    "family": ["pichu", "pikachu", "raichu"],
+    "stage": 2,
+    "evolvesTo": "raichu"
+  },
+
+  "games": {
+    "red": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Viridian Forest"],
+          "notes": "Uncommon wild encounter."
+        }
+      ]
+    },
+
+    "blue": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Viridian Forest"],
+          "notes": "Uncommon wild encounter."
+        }
+      ]
+    },
+
+    "yellow": {
+      "sections": ["STARTER"],
+      "obtain": [
+        {
+          "method": "starter",
+          "notes": "Received from Professor Oak at the start of the game."
+        }
+      ]
+    },
+
+    "gold": {
+      "sections": ["KANTO_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 2"],
+          "notes": "Rare wild encounter."
+        }
+      ]
+    },
+
+    "silver": {
+      "sections": ["KANTO_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 2"],
+          "notes": "Rare wild encounter."
+        }
+      ]
+    },
+
+    "crystal": {
+      "sections": ["KANTO_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 2"],
+          "notes": "Rare wild encounter."
+        }
+      ]
+    }
+  }
+}
