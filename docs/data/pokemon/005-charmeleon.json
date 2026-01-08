@@ -1,0 +1,53 @@
+{
+  "dex": 5,
+  "slug": "charmeleon",
+
+  "names": {
+    "en": "Charmeleon",
+    "ja": "リザード",
+    "fr": "Reptincel",
+    "de": "Glutexo",
+    "es": "Charmeleon"
+  },
+
+  "types": ["fire"],
+
+  "evolution": {
+    "family": ["charmander", "charmeleon", "charizard"],
+    "stage": 2,
+    "evolvesFrom": "charmander",
+    "evolvesTo": "charizard"
+  },
+
+  "games": {
+    "red": {
+      "sections": ["STARTER"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Charmander at level 16."
+        }
+      ]
+    },
+
+    "blue": {
+      "sections": ["STARTER"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Charmander at level 16."
+        }
+      ]
+    },
+
+    "yellow": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Charmander at level 16."
+        }
+      ]
+    }
+  }
+}
