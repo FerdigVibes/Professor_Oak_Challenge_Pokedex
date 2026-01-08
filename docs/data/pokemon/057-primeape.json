@@ -1,0 +1,52 @@
+{
+  "dex": 57,
+  "slug": "primeape",
+
+  "names": {
+    "en": "Primeape",
+    "ja": "オコリザル",
+    "fr": "Colossinge",
+    "de": "Rasaff",
+    "es": "Primeape"
+  },
+
+  "types": ["fighting"],
+
+  "evolution": {
+    "family": ["mankey", "primeape"],
+    "stage": 2,
+    "evolvesFrom": "mankey"
+  },
+
+  "games": {
+    "red": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Mankey at level 28."
+        }
+      ]
+    },
+
+    "yellow": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Mankey at level 28."
+        }
+      ]
+    },
+
+    "gold": {
+      "sections": ["ECRUTEAK_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Mankey at level 28."
+        }
+      ]
+    }
+  }
+}
