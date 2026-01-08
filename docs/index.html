@@ -2,42 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pokédex Challenge</title>
-
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/desktop.css" media="(min-width: 900px)" />
-  <link rel="stylesheet" href="assets/css/mobile.css" media="(max-width: 899px)" />
+  <title>Pokédex Oak Challenge</title>
+  <link rel="stylesheet" href="./styles/main.css" />
 </head>
 <body>
 
-  <!-- SECTION 1: TOP BAR -->
   <header id="top-bar">
-    <div id="title">Pokédex</div>
-    <div id="progress"></div>
-
-    <div id="legend">
-      <span data-time="morning">🌅</span>
-      <span data-time="day">☀️</span>
-      <span data-time="night">🌙</span>
-    </div>
-
-    <button id="menu-button">☰</button>
+    <!-- Section 1 -->
+    <div id="progress">Loading…</div>
   </header>
 
-  <!-- MOBILE MENU -->
-  <nav id="menu" hidden>
-    <select id="reset-select"></select>
-    <select id="language-select"></select>
-    <input type="number" id="time-input" min="0" max="23" />
-  </nav>
+  <main id="app">
+    <!-- Section 2 -->
+    <section id="section-list"></section>
 
-  <!-- MAIN CONTENT -->
-  <main id="content">
-    <!-- SECTION 2 + 3 live here -->
-    <div id="pokedex-list"></div>
+    <!-- Section 3 -->
+    <section id="detail-panel">
+      <p>Select a Pokémon</p>
+    </section>
   </main>
 
-  <script src="assets/js/app.js"></script>
+  <script type="module" src="./js/app.js"></script>
 </body>
 </html>
