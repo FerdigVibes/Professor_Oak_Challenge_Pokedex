@@ -2,6 +2,8 @@
 // Sole renderer for Section 2 (Pokédex list)
 
 import { renderPokemonDetail } from './detail.js';
+import { playPokemonCry } from './cry.js';
+
 
 export function renderSections({ game, pokemon }) {
   const container = document.getElementById('section-list');
@@ -54,6 +56,7 @@ export function renderSections({ game, pokemon }) {
       
       row.addEventListener('click', () => {
         renderPokemonDetail(p, game);
+        playPokemonCry(p);
       });
       
       container.appendChild(row);
