@@ -5,6 +5,7 @@ const GAME_ID = 'red'; // hardcoded for now
 
 async function init() {
   const gameData = await loadGameData(GAME_ID);
+  document.getElementById('progress').textContent = 'Pokémon Red';
   renderSections(gameData);
 }
 
