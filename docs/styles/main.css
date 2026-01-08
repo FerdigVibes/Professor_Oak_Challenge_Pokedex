@@ -1,0 +1,26 @@
+body {
+  font-family: sans-serif;
+}
+
+#app {
+  display: flex;
+}
+
+#section-list {
+  width: 50%;
+  border-right: 1px solid #ccc;
+}
+
+#detail-panel {
+  width: 50%;
+  padding: 1rem;
+}
+
+.pokemon-row {
+  cursor: pointer;
+  padding: 4px;
+}
+
+.pokemon-row:hover {
+  background: #eee;
+}
