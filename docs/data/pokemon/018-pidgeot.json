@@ -1,0 +1,82 @@
+{
+  "dex": 18,
+  "slug": "pidgeot",
+
+  "names": {
+    "en": "Pidgeot",
+    "ja": "ピジョット",
+    "fr": "Roucarnage",
+    "de": "Tauboss",
+    "es": "Pidgeot"
+  },
+
+  "types": ["normal", "flying"],
+
+  "evolution": {
+    "family": ["pidgey", "pidgeotto", "pidgeot"],
+    "stage": 3,
+    "evolvesFrom": "pidgeotto"
+  },
+
+  "games": {
+    "red": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgeotto at level 36."
+        }
+      ]
+    },
+
+    "blue": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgeotto at level 36."
+        }
+      ]
+    },
+
+    "yellow": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgeotto at level 36."
+        }
+      ]
+    },
+
+    "gold": {
+      "sections": ["VIOLET_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgeotto at level 36."
+        }
+      ]
+    },
+
+    "silver": {
+      "sections": ["VIOLET_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgeotto at level 36."
+        }
+      ]
+    },
+
+    "crystal": {
+      "sections": ["VIOLET_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": "Evolves from Pidgeotto at level 36."
+        }
+      ]
+    }
+  }
+}
