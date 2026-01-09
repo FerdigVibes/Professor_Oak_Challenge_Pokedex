@@ -5,28 +5,33 @@ import { renderPokemonDetail } from './detail.js';
 import { playPokemonCry } from './cry.js';
 import { isCaught, toggleCaught } from '../state/caught.js';
 
-// 🔄 Sync Section 2 UI when caught state changes elsewhere
-window.addEventListener('caught-changed', (e) => {
-  const { dex, caught } = e.detail;
+// Tracks sections the user manually expanded
+const userExpandedSections = new Set();
 
-  const dexStr = String(dex).padStart(3, '0');
+// 🔄 Re-evaluate sections when caught state changes
+window.addEventListener('caught-changed', () => {
+  document.querySelectorAll('.section-block').forEach(block => {
+    const sectionId = block.dataset.sectionId;
+    const rows = block.querySelectorAll('.pokemon-row');
 
-  const row = document.querySelector(
-    `.pokemon-row[data-dex="${dexStr}"]`
-  );
+    const caughtCount = Array.from(rows).filter(row => {
+      const dex = Number(row.dataset.dex);
+      return isCaught(currentGameId, dex);
+    }).length;
 
-  if (!row) return;
+    const required = currentGameSections
+      .find(s => s.id === sectionId)?.requiredCount;
 
-  // Update row caught state
-  row.classList.toggle('is-caught', caught);
+    if (!required) return;
 
-  // Update Pokéball icon
-  const ball = row.querySelector('.caught-toggle');
-  if (ball) {
-    ball.style.backgroundImage = `url(./assets/icons/${
-      caught ? 'pokeball-full.png' : 'pokeball-empty.png'
-    })`;
-  }
+    const rowsContainer = block.querySelector('.section-rows');
+    const header = block.querySelector('h2');
+
+    if (caughtCount >= required && !userExpandedSections.has(sectionId)) {
+      rowsContainer.style.display = 'none';
+      header.classList.add('collapsed');
+    }
+  });
 });
 
 export function renderSections({ game, pokemon }) {
