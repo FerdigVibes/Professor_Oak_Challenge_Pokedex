@@ -13,6 +13,9 @@ export function renderPokemonDetail(pokemon, game) {
   const panel = document.getElementById('detail-panel');
   if (!panel) return;
 
+  const lang = getLanguage();
+  const displayName = pokemon.names[lang] || pokemon.names.en;
+
   const dex = String(pokemon.dex).padStart(3, '0');
   const spritePath = `./assets/sprites/normal/${dex}-${pokemon.slug}.gif`;
 
