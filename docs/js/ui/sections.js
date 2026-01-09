@@ -220,11 +220,15 @@ export function renderSections({ game, pokemon }) {
         document.createTextNode(p.names.en)
       );
 
-      row.addEventListener('click', () => renderPokemonDetail(p, game));
-      if (caught) row.classList.add('is-caught');
+      row.addEventListener('click', () => {
+        document
+          .querySelectorAll('.pokemon-row.is-active')
+          .forEach(r => r.classList.remove('is-active'));
+  
+        row.classList.add('is-active');
 
-      sectionRows.appendChild(row);
-    });
+        renderPokemonDetail(p, game);
+      });
 
     sectionBlock.append(header, sectionRows);
     container.appendChild(sectionBlock);
