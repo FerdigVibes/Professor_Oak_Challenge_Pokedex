@@ -30,8 +30,8 @@ window.addEventListener('caught-changed', () => {
 
 async function init() {
   buildGameSelector();
+  wireSearch();
 
-  // Default to Red for now
   await selectGame({
     id: 'red',
     label: 'Red',
@@ -163,6 +163,42 @@ function updateCurrentObjective(game, pokemon) {
   if (!label) return;
 
   label.textContent = getCurrentObjective(game, pokemon);
+}
+
+function applySearchFilter(query) {
+  const q = query.trim().toLowerCase();
+
+  document.querySelectorAll('.section-block').forEach(section => {
+    let anyVisible = false;
+
+    section.querySelectorAll('.pokemon-row').forEach(row => {
+      const name = row.dataset.name;
+      const dex = row.dataset.dex;
+
+      const match =
+        !q ||
+        name.includes(q) ||
+        dex.startsWith(q.replace('#', ''));
+
+      row.style.display = match ? '' : 'none';
+      if (match) anyVisible = true;
+    });
+
+    // Hide entire section if nothing matches
+    const rowsContainer = section.querySelector('.section-rows');
+    if (rowsContainer) {
+      rowsContainer.style.display = anyVisible ? '' : 'none';
+    }
+  });
+}
+
+function wireSearch() {
+  const input = document.getElementById('search-input');
+  if (!input) return;
+
+  input.addEventListener('input', () => {
+    applySearchFilter(input.value);
+  });
 }
 
 init();
