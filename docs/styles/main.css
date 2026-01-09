@@ -108,3 +108,69 @@ body {
 .pokemon-row:hover .pokemon-icon {
   animation-duration: 1.2s;
 }
+
+#top-bar {
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px;
+}
+
+/* Shared row styling */
+.topbar-row {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  gap: 10px;
+}
+
+/* Row 1: Title */
+.topbar-title {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Row 2: Controls */
+.topbar-controls {
+  gap: 8px;
+}
+
+.topbar-controls .control {
+  background: #222;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.search {
+  flex: 1;
+}
+
+/* Row 3: Progress */
+.topbar-progress {
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-bar {
+  width: 120px;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #4caf50;
+  width: 0%;
+}
