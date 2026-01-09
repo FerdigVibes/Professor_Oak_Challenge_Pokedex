@@ -174,3 +174,52 @@ body {
   background: #4caf50;
   width: 0%;
 }
+
+.game-selector {
+  position: relative;
+}
+
+.game-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #222;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: none;
+  z-index: 10;
+}
+
+.game-menu.open {
+  display: block;
+}
+
+.game-menu-gen {
+  position: relative;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+
+.game-menu-gen:hover {
+  background: #333;
+}
+
+.game-menu-sub {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #222;
+  display: none;
+}
+
+.game-menu-gen:hover .game-menu-sub {
+  display: block;
+}
+
+.game-menu-item {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.game-menu-item:hover {
+  background: #444;
+}
