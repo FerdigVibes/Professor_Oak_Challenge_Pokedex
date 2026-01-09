@@ -2,8 +2,18 @@ import { loadGameData } from './data/loader.js';
 import { renderSections } from './ui/sections.js';
 import { GAME_REGISTRY } from './data/registry.js';
 import { loadGame } from './data/loader.js';
+import { getGlobalProgress } from './state/progress.js';
 
 const GAME_ID = 'red'; // hardcoded for now
+
+window.addEventListener('caught-changed', () => {
+  if (window.__CURRENT_GAME__ && window.__POKEMON_CACHE__) {
+    updateGlobalProgress(
+      window.__CURRENT_GAME__,
+      window.__POKEMON_CACHE__
+    );
+  }
+});
 
 async function init() {
   const gameData = await loadGameData(GAME_ID);
@@ -55,6 +65,8 @@ function buildGameSelector() {
 async function selectGame(game) {
   // 1️⃣ Load game data
   const gameData = await loadGame(game.id);
+  window.__CURRENT_GAME__ = gameData;
+  window.__POKEMON_CACHE__ = gameData.pokemon;
 
   // 2️⃣ Update title row
   document.getElementById('app-title').textContent =
@@ -79,6 +91,37 @@ async function selectGame(game) {
 
   // 7️⃣ Update current objective
   updateCurrentObjective(gameData);
+}
+
+export function getCurrentObjective(game, pokemon) {
+  for (const section of game.sections) {
+    if (!section.requiredCount) continue;
+
+    const matches = pokemon.filter(p =>
+      p.games?.[game.id]?.sections?.includes(section.id)
+    );
+
+    const caughtCount = matches.filter(p =>
+      isCaught(game.id, p.dex)
+    ).length;
+
+    if (caughtCount < section.requiredCount) {
+      return section.title;
+    }
+  }
+
+  return 'Challenge Complete';
+}
+
+export function updateGlobalProgress(game, pokemon) {
+  const { caught, total, percent } =
+    getGlobalProgress(game, pokemon);
+
+  const text = document.getElementById('progress-text');
+  const fill = document.querySelector('.progress-fill');
+
+  if (text) text.textContent = `${caught} / ${total} Caught`;
+  if (fill) fill.style.width = `${percent}%`;
 }
 
 
