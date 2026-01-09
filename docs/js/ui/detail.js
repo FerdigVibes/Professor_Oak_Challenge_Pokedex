@@ -1,5 +1,9 @@
 import { playPokemonCry } from './cry.js';
 import { isCaught, toggleCaught } from '../state/caught.js';
+import { getLanguage } from '../state/language.js';
+
+const lang = getLanguage();
+const displayName = pokemon.names[lang] || pokemon.names.en;
 
 /* =========================================================
    SECTION 3 — POKÉMON DETAIL PANEL
@@ -27,7 +31,7 @@ export function renderPokemonDetail(pokemon, game) {
     <div class="detail-sprite">
       <img
         src="${spritePath}"
-        alt="${pokemon.names.en}"
+        alt="${displayName}"
         data-cry
         style="cursor: pointer;"
       />
@@ -40,7 +44,7 @@ export function renderPokemonDetail(pokemon, game) {
       aria-label="Toggle caught"
     ></button>
 
-    <h2>${pokemon.names.en}</h2>
+    <h2>${displayName}</h2>
 
     <p>
       <strong>National Dex:</strong> #${dex}
