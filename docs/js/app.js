@@ -5,6 +5,7 @@ import { GAME_REGISTRY } from './data/registry.js';
 import { renderSections } from './ui/sections.js';
 import { getGlobalProgress } from './state/progress.js';
 import { isCaught } from './state/caught.js';
+import { isMuted, toggleMute } from './state/audio.js';
 
 /* =========================================================
    GLOBAL CAUGHT REACTIVITY
@@ -31,6 +32,7 @@ window.addEventListener('caught-changed', () => {
 async function init() {
   buildGameSelector();
   wireSearch();
+  wireMuteToggle();
 
   await selectGame({
     id: 'red',
@@ -81,6 +83,22 @@ function buildGameSelector() {
 
   btn.parentElement.addEventListener('mouseleave', () => {
     container.classList.remove('open');
+  });
+}
+
+function wireMuteToggle() {
+  const btn = document.getElementById('mute-toggle');
+  if (!btn) return;
+
+  const updateIcon = () => {
+    btn.textContent = isMuted() ? '🔇' : '🔊';
+  };
+
+  updateIcon();
+
+  btn.addEventListener('click', () => {
+    toggleMute();
+    updateIcon();
   });
 }
 
