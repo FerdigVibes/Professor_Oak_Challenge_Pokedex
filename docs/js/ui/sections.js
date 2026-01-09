@@ -7,23 +7,67 @@ import { isCaught, toggleCaught } from '../state/caught.js';
 // Tracks sections the user manually expanded
 const userExpandedSections = new Set();
 
-/* =========================================================
-   STEP 2 — React to caught changes (section collapse)
-   ========================================================= */
+/* =========================
+   STARTER HELPERS
+   ========================= */
+
+function getStarterFamilies(pokemon, gameId, sectionId) {
+  const families = new Map();
+
+  pokemon.forEach(p => {
+    const gameData = p.games?.[gameId];
+    if (!gameData) return;
+
+    if (!gameData.sections?.includes(sectionId)) return;
+
+    const family = p.evolution?.family;
+    if (!Array.isArray(family)) return;
+
+    const key = family.join('|');
+    if (!families.has(key)) families.set(key, []);
+    families.get(key).push(p);
+  });
+
+  return Array.from(families.values());
+}
+
+function isFamilyCaught(gameId, family) {
+  return family.some(p => isCaught(gameId, p.dex));
+}
+
+/* =========================
+   STEP 2 — SECTION COLLAPSE
+   ========================= */
 
 window.addEventListener('caught-changed', () => {
   document.querySelectorAll('.section-block').forEach(block => {
     const sectionId = block.dataset.sectionId;
+    const gameId = block.dataset.gameId;
+    const required = Number(block.dataset.requiredCount);
+    if (!required) return;
+
     const rows = block.querySelectorAll('.pokemon-row');
     const header = block.querySelector('h2');
     const rowsContainer = block.querySelector('.section-rows');
 
-    const required = Number(block.dataset.requiredCount);
-    if (!required) return;
+    let caughtCount;
 
-    const caughtCount = Array.from(rows).filter(row => {
-      return isCaught(block.dataset.gameId, Number(row.dataset.dex));
-    }).length;
+    if (sectionId === 'STARTER') {
+      const families = [...new Set(
+        Array.from(rows).map(r => r.dataset.family)
+      )];
+
+      caughtCount = families.filter(familyKey => {
+        return Array.from(rows).some(r =>
+          r.dataset.family === familyKey &&
+          isCaught(gameId, Number(r.dataset.dex))
+        );
+      }).length;
+    } else {
+      caughtCount = Array.from(rows).filter(r =>
+        isCaught(gameId, Number(r.dataset.dex))
+      ).length;
+    }
 
     if (caughtCount >= required && !userExpandedSections.has(sectionId)) {
       rowsContainer.style.display = 'none';
@@ -32,9 +76,9 @@ window.addEventListener('caught-changed', () => {
   });
 });
 
-/* =========================================================
+/* =========================
    SECTION 2 RENDERER
-   ========================================================= */
+   ========================= */
 
 export function renderSections({ game, pokemon }) {
   const container = document.getElementById('section-list');
@@ -43,46 +87,42 @@ export function renderSections({ game, pokemon }) {
   game.sections.forEach(section => {
     if (!section.requiredCount) return;
 
-    // Section wrapper
+    const isStarterSection = section.id === 'STARTER';
+
     const sectionBlock = document.createElement('div');
     sectionBlock.className = 'section-block';
     sectionBlock.dataset.sectionId = section.id;
     sectionBlock.dataset.requiredCount = section.requiredCount;
     sectionBlock.dataset.gameId = game.id;
 
-    // Header
     const header = document.createElement('h2');
     header.textContent = section.title;
 
-    // Rows container
     const sectionRows = document.createElement('div');
     sectionRows.className = 'section-rows';
 
-    // Header toggle
     header.addEventListener('click', () => {
       const collapsed = sectionRows.style.display === 'none';
+      sectionRows.style.display = collapsed ? '' : 'none';
+      header.classList.toggle('collapsed', !collapsed);
 
-      if (collapsed) {
-        sectionRows.style.display = '';
-        header.classList.remove('collapsed');
-        userExpandedSections.add(section.id);
-      } else {
-        sectionRows.style.display = 'none';
-        header.classList.add('collapsed');
-        userExpandedSections.delete(section.id);
-      }
+      collapsed
+        ? userExpandedSections.add(section.id)
+        : userExpandedSections.delete(section.id);
     });
 
-    // Find Pokémon in this section
-    const matches = pokemon.filter(p => {
-      const gameData = p.games?.[game.id];
-      if (!gameData) return false;
+    let matches = pokemon.filter(p =>
+      p.games?.[game.id]?.sections?.includes(section.id)
+    );
 
-      const sections = gameData.sections ?? [];
-      return Array.isArray(sections)
-        ? sections.includes(section.id)
-        : sections === section.id;
-    });
+    // ⭐ STARTER EXCLUSIVITY
+    if (isStarterSection) {
+      const families = getStarterFamilies(pokemon, game.id, section.id);
+      const chosenFamily = families.find(f =>
+        isFamilyCaught(game.id, f)
+      );
+      if (chosenFamily) matches = chosenFamily;
+    }
 
     matches.forEach(p => {
       const dex = String(p.dex).padStart(3, '0');
@@ -91,6 +131,7 @@ export function renderSections({ game, pokemon }) {
       const row = document.createElement('div');
       row.className = 'pokemon-row';
       row.dataset.dex = dex;
+      row.dataset.family = p.evolution?.family?.join('|') ?? '';
 
       const ball = document.createElement('button');
       ball.className = 'caught-toggle';
@@ -100,40 +141,20 @@ export function renderSections({ game, pokemon }) {
 
       ball.addEventListener('click', e => {
         e.stopPropagation();
-
         const newState = toggleCaught(game.id, p.dex);
         ball.style.backgroundImage = `url(./assets/icons/${
           newState ? 'pokeball-full.png' : 'pokeball-empty.png'
         })`;
-
         row.classList.toggle('is-caught', newState);
         if (newState) playPokemonCry(p);
 
         window.dispatchEvent(new CustomEvent('caught-changed', {
-          detail: {
-            gameId: game.id,
-            dex: p.dex,
-            caught: newState
-          }
+          detail: { gameId: game.id, dex: p.dex, caught: newState }
         }));
       });
 
-      const dexSpan = document.createElement('span');
-      dexSpan.textContent = `#${dex}`;
-
-      const icon = document.createElement('img');
-      icon.src = `./assets/icons/pokemon/${dex}-${p.slug}-icon.png`;
-
-      const name = document.createElement('span');
-      name.textContent = p.names.en;
-
-      row.append(ball, dexSpan, icon, name);
-
-      row.addEventListener('click', () => {
-        renderPokemonDetail(p, game);
-        playPokemonCry(p);
-      });
-
+      row.append(ball, document.createTextNode(` #${dex} `), document.createTextNode(p.names.en));
+      row.addEventListener('click', () => renderPokemonDetail(p, game));
       if (caught) row.classList.add('is-caught');
 
       sectionRows.appendChild(row);
@@ -143,4 +164,5 @@ export function renderSections({ game, pokemon }) {
     container.appendChild(sectionBlock);
   });
 }
+
 
