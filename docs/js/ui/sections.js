@@ -5,6 +5,29 @@ import { renderPokemonDetail } from './detail.js';
 import { playPokemonCry } from './cry.js';
 import { isCaught, toggleCaught } from '../state/caught.js';
 
+// 🔄 Sync Section 2 UI when caught state changes elsewhere
+window.addEventListener('caught-changed', (e) => {
+  const { dex, caught } = e.detail;
+
+  const dexStr = String(dex).padStart(3, '0');
+
+  const row = document.querySelector(
+    `.pokemon-row[data-dex="${dexStr}"]`
+  );
+
+  if (!row) return;
+
+  // Update row caught state
+  row.classList.toggle('is-caught', caught);
+
+  // Update Pokéball icon
+  const ball = row.querySelector('.caught-toggle');
+  if (ball) {
+    ball.style.backgroundImage = `url(./assets/icons/${
+      caught ? 'pokeball-full.png' : 'pokeball-empty.png'
+    })`;
+  }
+});
 
 export function renderSections({ game, pokemon }) {
   const container = document.getElementById('section-list');
