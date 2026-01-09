@@ -4,51 +4,12 @@ import { renderPokemonDetail } from './detail.js';
 import { playPokemonCry } from './cry.js';
 import { isCaught, toggleCaught } from '../state/caught.js';
 
-// Tracks sections the user manually expanded
+// Tracks sections manually expanded by the user
 const userExpandedSections = new Set();
 
 /* =========================================================
-   SECTION COLLAPSE EVALUATION
+   SECTION COUNTER + COLLAPSE
    ========================================================= */
-
-function evaluateSectionCollapse(sectionBlock) {
-  const sectionId = sectionBlock.dataset.sectionId;
-  const gameId = sectionBlock.dataset.gameId;
-  const required = Number(sectionBlock.dataset.requiredCount);
-  if (!required) return;
-
-  const rows = sectionBlock.querySelectorAll('.pokemon-row');
-  const header = sectionBlock.querySelector('h2');
-  const rowsContainer = sectionBlock.querySelector('.section-rows');
-
-  let caughtCount;
-
-  if (sectionId === 'STARTER') {
-    const families = getStarterFamilies(
-      window.__POKEMON_CACHE__,
-      gameId,
-      sectionId
-    );
-
-    caughtCount = families.filter(f =>
-      isFamilyCaught(gameId, f)
-    ).length;
-  } else {
-    caughtCount = Array.from(rows).filter(r =>
-      isCaught(gameId, Number(r.dataset.dex))
-    ).length;
-  }
-
-  // If section is no longer complete, remove manual override
-  if (caughtCount < required) {
-     userExpandedSections.delete(sectionId);
-  }
-
-  if (caughtCount >= required && !userExpandedSections.has(sectionId)) {
-    rowsContainer.style.display = 'none';
-    header.classList.add('collapsed');
-  }
-}
 
 function updateSectionCounter(sectionBlock) {
   const sectionId = sectionBlock.dataset.sectionId;
@@ -60,7 +21,7 @@ function updateSectionCounter(sectionBlock) {
   let caughtCount = 0;
 
   if (sectionId === 'STARTER') {
-    // Count families caught
+    // Count families caught (Oak rules)
     const families = {};
 
     rows.forEach(row => {
@@ -80,89 +41,33 @@ function updateSectionCounter(sectionBlock) {
     ).length;
   }
 
-  if (sectionBlock._counterEl) {
-    sectionBlock._counterEl.textContent =
-      `${caughtCount} / ${required} Caught`;
+  sectionBlock._counterEl.textContent =
+    `${caughtCount} / ${required} Caught`;
+
+  // Collapse if complete (unless user forced open)
+  const header = sectionBlock.querySelector('h2');
+  const rowsContainer = sectionBlock.querySelector('.section-rows');
+
+  if (caughtCount >= required && !userExpandedSections.has(sectionId)) {
+    rowsContainer.style.display = 'none';
+    header.classList.add('collapsed');
+  }
+
+  if (caughtCount < required) {
+    userExpandedSections.delete(sectionId);
+    header.classList.remove('collapsed');
+    rowsContainer.style.display = '';
   }
 }
 
 /* =========================================================
-   STARTER HELPERS
-   ========================================================= */
-
-function getStarterFamilies(pokemon, gameId, sectionId) {
-  const families = new Map();
-
-  pokemon.forEach(p => {
-    const gameData = p.games?.[gameId];
-    if (!gameData) return;
-
-    const sections = gameData.sections ?? [];
-    if (!sections.includes(sectionId)) return;
-
-    const family = p.evolution?.family;
-    if (!Array.isArray(family) || family.length === 0) return;
-
-    const key = [...family].sort().join('|');
-
-    if (!families.has(key)) {
-      families.set(key, { key, members: [] });
-    }
-
-    families.get(key).members.push(p);
-  });
-
-  return Array.from(families.values());
-}
-
-function isFamilyCaught(gameId, family) {
-  return family.members.some(p => isCaught(gameId, p.dex));
-}
-
-/* =========================================================
-   STEP 2 — SECTION COLLAPSE LISTENER
+   REACT TO CAUGHT CHANGES
    ========================================================= */
 
 window.addEventListener('caught-changed', () => {
-  document.querySelectorAll('.section-block').forEach(block => {
-    if (block.dataset.sectionId !== 'STARTER') return;
-     updateSectionCounter(block);
-     evaluateSectionCollapse(block);
-    });
-
-    const gameId = block.dataset.gameId;
-    const rows = block.querySelectorAll('.pokemon-row');
-
-    // Group rows by family
-    const families = {};
-    rows.forEach(row => {
-      const family = row.dataset.family;
-      if (!families[family]) families[family] = [];
-      families[family].push(row);
-    });
-
-    // Determine which family (if any) is chosen
-    let chosenFamilyKey = null;
-
-    for (const [familyKey, familyRows] of Object.entries(families)) {
-      const familyCaught = familyRows.some(row =>
-        isCaught(gameId, Number(row.dataset.dex))
-      );
-      if (familyCaught) {
-        chosenFamilyKey = familyKey;
-        break;
-      }
-    }
-
-    // Apply visibility rules
-    Object.entries(families).forEach(([familyKey, familyRows]) => {
-      const hide = chosenFamilyKey && familyKey !== chosenFamilyKey;
-
-      familyRows.forEach(row => {
-        row.style.display = hide ? 'none' : '';
-      });
-    });
-  });
+  document
+    .querySelectorAll('.section-block')
+    .forEach(updateSectionCounter);
 });
 
 /* =========================================================
@@ -170,9 +75,8 @@ window.addEventListener('caught-changed', () => {
    ========================================================= */
 
 export function renderSections({ game, pokemon }) {
-  // 🔒 Make Pokémon globally available for collapse logic
+  // Make Pokémon list globally readable (derived-only)
   window.__POKEMON_CACHE__ = pokemon;
-  sectionBlock._counterEl = counter;
 
   const container = document.getElementById('section-list');
   container.innerHTML = '';
@@ -180,7 +84,7 @@ export function renderSections({ game, pokemon }) {
   game.sections.forEach(section => {
     if (!section.requiredCount) return;
 
-    const isStarterSection = section.id === 'STARTER';
+    /* ---------- Section wrapper ---------- */
 
     const sectionBlock = document.createElement('div');
     sectionBlock.className = 'section-block';
@@ -188,18 +92,23 @@ export function renderSections({ game, pokemon }) {
     sectionBlock.dataset.requiredCount = section.requiredCount;
     sectionBlock.dataset.gameId = game.id;
 
+    /* ---------- Header ---------- */
+
     const header = document.createElement('h2');
     header.className = 'section-header';
-   
+
     const counter = document.createElement('span');
     counter.className = 'section-counter';
     counter.textContent = `0 / ${section.requiredCount} Caught`;
-   
+
     const title = document.createElement('span');
     title.className = 'section-title';
     title.textContent = section.title;
-   
+
     header.append(counter, title);
+    sectionBlock._counterEl = counter;
+
+    /* ---------- Rows container ---------- */
 
     const sectionRows = document.createElement('div');
     sectionRows.className = 'section-rows';
@@ -214,97 +123,92 @@ export function renderSections({ game, pokemon }) {
         : userExpandedSections.delete(section.id);
     });
 
-    let matches = pokemon.filter(p =>
+    /* ---------- Pokémon rows ---------- */
+
+    const matches = pokemon.filter(p =>
       p.games?.[game.id]?.sections?.includes(section.id)
     );
 
-    // ⭐ STARTER EXCLUSIVITY
-    if (isStarterSection) {
-      const families = getStarterFamilies(pokemon, game.id, section.id);
-      const chosenFamily = families.find(f =>
-        isFamilyCaught(game.id, f)
-      );
-      if (chosenFamily) matches = chosenFamily.members;
-    }
-
     matches.forEach(p => {
-     const dex = String(p.dex).padStart(3, '0');
-     const caught = isCaught(game.id, p.dex);
-   
-     const row = document.createElement('div');
-     row.className = 'pokemon-row';
-     row.dataset.dex = dex;
-     row.dataset.name = p.names.en.toLowerCase();
-     row.dataset.family = p.evolution?.family?.join('|') ?? '';
-   
-     const ball = document.createElement('button');
-     ball.className = 'caught-toggle';
-     ball.style.backgroundImage = `url(./assets/icons/${
-       caught ? 'pokeball-full.png' : 'pokeball-empty.png'
-     })`;
-   
-     ball.addEventListener('click', e => {
-       e.stopPropagation();
-   
-       const newState = toggleCaught(game.id, p.dex);
-       ball.style.backgroundImage = `url(./assets/icons/${
-         newState ? 'pokeball-full.png' : 'pokeball-empty.png'
-       })`;
-   
-       row.classList.toggle('is-caught', newState);
-       if (newState) playPokemonCry(p);
-   
-       window.dispatchEvent(new CustomEvent('caught-changed', {
-         detail: { gameId: game.id, dex: p.dex, caught: newState }
-       }));
-     });
-   
-     const icon = document.createElement('img');
-     icon.className = 'pokemon-icon';
-     icon.src = `./assets/icons/pokemon/${dex}-${p.slug}-icon.png`;
-     icon.alt = p.names.en;
-   
-     row.append(
-       ball,
-       icon,
-       document.createTextNode(` #${dex} `),
-       document.createTextNode(p.names.en)
-     );
-   
-     row.addEventListener('click', () => {
+      const dex = String(p.dex).padStart(3, '0');
+      const caught = isCaught(game.id, p.dex);
+
+      const row = document.createElement('div');
+      row.className = 'pokemon-row';
+      row.dataset.dex = dex;
+      row.dataset.name = p.names.en.toLowerCase();
+      row.dataset.family = p.evolution?.family?.join('|') ?? '';
+
+      /* Pokéball toggle */
+
+      const ball = document.createElement('button');
+      ball.className = 'caught-toggle';
+      ball.style.backgroundImage = `url(./assets/icons/${
+        caught ? 'pokeball-full.png' : 'pokeball-empty.png'
+      })`;
+
+      ball.addEventListener('click', e => {
+        e.stopPropagation();
+
+        const newState = toggleCaught(game.id, p.dex);
+        ball.style.backgroundImage = `url(./assets/icons/${
+          newState ? 'pokeball-full.png' : 'pokeball-empty.png'
+        })`;
+
+        row.classList.toggle('is-caught', newState);
+        if (newState) playPokemonCry(p);
+
+        window.dispatchEvent(new CustomEvent('caught-changed', {
+          detail: { gameId: game.id, dex: p.dex, caught: newState }
+        }));
+      });
+
+      /* Icon */
+
+      const icon = document.createElement('img');
+      icon.className = 'pokemon-icon';
+      icon.src = `./assets/icons/pokemon/${dex}-${p.slug}-icon.png`;
+      icon.alt = p.names.en;
+
+      row.append(
+        ball,
+        icon,
+        document.createTextNode(` #${dex} `),
+        document.createTextNode(p.names.en)
+      );
+
+      /* Row click → Section 3 */
+
+      row.addEventListener('click', () => {
         const app = document.getElementById('app');
-        const isAlreadyActive = row.classList.contains('is-active');
-      
-        // Clear previous active row
+        const isActive = row.classList.contains('is-active');
+
         document
           .querySelectorAll('.pokemon-row.is-active')
           .forEach(r => r.classList.remove('is-active'));
-      
-        if (isAlreadyActive) {
-          // 🔽 Re-clicking the same Pokémon → close detail panel
+
+        if (isActive) {
           app?.classList.remove('has-detail');
           return;
         }
-      
-        // 🔼 New selection → activate + open detail
+
         row.classList.add('is-active');
         renderPokemonDetail(p, game);
         playPokemonCry(p);
-      
         app?.classList.add('has-detail');
       });
-   
-     if (caught) row.classList.add('is-caught');
-   
-     // ✅ THIS WAS MISSING
-     sectionRows.appendChild(row);
-   }); // ✅ CLOSE matches.forEach
-   
-   // ✅ THESE MUST BE OUTSIDE THE LOOP
-   sectionBlock.append(header, sectionRows);
-   container.appendChild(sectionBlock);
-   evaluateSectionCollapse(sectionBlock);
+
+      if (caught) row.classList.add('is-caught');
+
+      sectionRows.appendChild(row);
+    });
+
+    /* ---------- Final assembly ---------- */
+
+    sectionBlock.append(header, sectionRows);
+    container.appendChild(sectionBlock);
+
+    updateSectionCounter(sectionBlock);
   });
 }
-
 
