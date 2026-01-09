@@ -83,9 +83,42 @@ function isFamilyCaught(gameId, family) {
    ========================================================= */
 
 window.addEventListener('caught-changed', () => {
-  document
-    .querySelectorAll('.section-block')
-    .forEach(evaluateSectionCollapse);
+  document.querySelectorAll('.section-block').forEach(block => {
+    if (block.dataset.sectionId !== 'STARTER') return;
+
+    const gameId = block.dataset.gameId;
+    const rows = block.querySelectorAll('.pokemon-row');
+
+    // Group rows by family
+    const families = {};
+    rows.forEach(row => {
+      const family = row.dataset.family;
+      if (!families[family]) families[family] = [];
+      families[family].push(row);
+    });
+
+    // Determine which family (if any) is chosen
+    let chosenFamilyKey = null;
+
+    for (const [familyKey, familyRows] of Object.entries(families)) {
+      const familyCaught = familyRows.some(row =>
+        isCaught(gameId, Number(row.dataset.dex))
+      );
+      if (familyCaught) {
+        chosenFamilyKey = familyKey;
+        break;
+      }
+    }
+
+    // Apply visibility rules
+    Object.entries(families).forEach(([familyKey, familyRows]) => {
+      const hide = chosenFamilyKey && familyKey !== chosenFamilyKey;
+
+      familyRows.forEach(row => {
+        row.style.display = hide ? 'none' : '';
+      });
+    });
+  });
 });
 
 /* =========================================================
