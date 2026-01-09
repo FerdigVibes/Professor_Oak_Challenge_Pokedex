@@ -38,6 +38,18 @@ body {
   image-rendering: pixelated;
 }
 
+.detail-caught {
+  width: 48px;
+  height: 48px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 /* Subtle idle bounce for selected Pokémon icon */
 @keyframes icon-bob {
   0%   { transform: translateY(0); }
