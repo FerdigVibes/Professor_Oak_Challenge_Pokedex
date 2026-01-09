@@ -184,6 +184,7 @@ export function renderSections({ game, pokemon }) {
      const row = document.createElement('div');
      row.className = 'pokemon-row';
      row.dataset.dex = dex;
+     row.dataset.name = p.names.en.toLowerCase();
      row.dataset.family = p.evolution?.family?.join('|') ?? '';
    
      const ball = document.createElement('button');
