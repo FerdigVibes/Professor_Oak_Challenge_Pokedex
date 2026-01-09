@@ -1,5 +1,5 @@
 // docs/js/ui/detail.js
-// Renders Section 3 Pokémon detail (game-aware)
+// Renders Section 3 Pokémon detail (game-aware, minimal display)
 
 import { playPokemonCry } from './cry.js';
 
@@ -26,16 +26,8 @@ export function renderPokemonDetail(pokemon, game) {
     <h2>${pokemon.names.en}</h2>
 
     <p>
-      <strong>National Dex:</strong>
-      #${dex}
+      <strong>National Dex:</strong> #${dex}
     </p>
-
-    <p>
-      <strong>Types:</strong>
-      ${pokemon.types.join(', ')}
-    </p>
-
-    <hr />
 
     ${
       gameData
@@ -44,7 +36,7 @@ export function renderPokemonDetail(pokemon, game) {
     }
   `;
 
-  // ✅ Bind cry playback AFTER HTML exists
+  // Play cry on sprite click
   const sprite = panel.querySelector('[data-cry]');
   if (sprite) {
     sprite.addEventListener('click', () => {
@@ -58,19 +50,16 @@ export function renderPokemonDetail(pokemon, game) {
    ========================= */
 
 function renderGameInfo(gameData) {
-  const sections = gameData.sections?.join(', ') ?? '—';
+  const obtain = gameData.obtain || [];
 
-  const obtainHtml = (gameData.obtain || [])
-    .map(o => renderObtainEntry(o))
-    .join('');
+  if (!obtain.length) {
+    return `<p style="opacity:0.6">No obtain data.</p>`;
+  }
 
   return `
-    <p><strong>Sections:</strong> ${sections}</p>
-
-    <h3>Obtain Methods</h3>
-    <ul>
-      ${obtainHtml || '<li>—</li>'}
-    </ul>
+    <div class="obtain-info">
+      ${obtain.map(renderObtainEntry).join('')}
+    </div>
   `;
 }
 
@@ -84,16 +73,15 @@ function renderObtainEntry(o) {
     : o.time ?? null;
 
   return `
-    <li style="margin-bottom: 8px;">
-      <strong>${o.method}</strong>
+    <div style="margin-top: 10px;">
+      ${locations ? `<p><strong>Location:</strong> ${locations}</p>` : ''}
 
-      ${locations ? `<br/><strong>Locations:</strong> ${locations}` : ''}
+      ${time ? `<p><strong>Time:</strong> ${time}</p>` : ''}
 
-      ${time ? `<br/><strong>Time:</strong> ${time}` : ''}
-
-      ${o.notes ? `<br/><em>${o.notes}</em>` : ''}
-    </li>
+      ${o.notes ? `<p style="opacity:0.7;"><em>${o.notes}</em></p>` : ''}
+    </div>
   `;
 }
+
 
 
