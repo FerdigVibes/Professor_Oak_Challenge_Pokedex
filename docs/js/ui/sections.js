@@ -58,9 +58,18 @@ export function renderSections({ game, pokemon }) {
         })`;
       
         row.classList.toggle('is-caught', newState);
-      
         playPokemonCry(p);
+      
+        // 🔔 STEP 1 (event dispatch)
+        window.dispatchEvent(new CustomEvent('caught-changed', {
+          detail: {
+            gameId: game.id,
+            dex: p.dex,
+            caught: newState
+          }
+        }));
       });
+
     
       const dexSpan = document.createElement('span');
       dexSpan.className = 'dex';
