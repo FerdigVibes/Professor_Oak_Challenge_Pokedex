@@ -41,14 +41,13 @@ export function renderSections({ game, pokemon }) {
     
       const dex = String(p.dex).padStart(3, '0');
       const caught = isCaught(game.id, p.dex);
-    
-      // Pokéball toggle (Section 2 - pixel)
+
       const ball = document.createElement('button');
       ball.className = 'caught-toggle';
       ball.style.backgroundImage = `url(./assets/icons/${
         caught ? 'pokeball-full.png' : 'pokeball-empty.png'
       })`;
-    
+      
       ball.addEventListener('click', (e) => {
         e.stopPropagation();
       
@@ -60,7 +59,6 @@ export function renderSections({ game, pokemon }) {
       
         row.classList.toggle('is-caught', newState);
       
-        // 🔊 Play Pokémon cry on caught toggle
         playPokemonCry(p);
       });
     
