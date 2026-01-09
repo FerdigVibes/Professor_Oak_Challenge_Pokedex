@@ -55,6 +55,13 @@ export function renderSections({ game, pokemon }) {
       row.appendChild(label);
       
       row.addEventListener('click', () => {
+        // Clear previous active row
+        const prev = document.querySelector('.pokemon-row.is-active');
+        if (prev) prev.classList.remove('is-active');
+      
+        // Mark this row as active
+        row.classList.add('is-active');
+      
         renderPokemonDetail(p, game);
         playPokemonCry(p);
       });
