@@ -1,25 +1,47 @@
-import { loadGameData } from './data/loader.js';
-import { renderSections } from './ui/sections.js';
-import { GAME_REGISTRY } from './data/registry.js';
-import { loadGame } from './data/loader.js';
-import { getGlobalProgress } from './state/progress.js';
+// docs/js/app.js
 
-const GAME_ID = 'red'; // hardcoded for now
+import { loadGame } from './data/loader.js';
+import { GAME_REGISTRY } from './data/registry.js';
+import { renderSections } from './ui/sections.js';
+import { getGlobalProgress } from './state/progress.js';
+import { isCaught } from './state/caught.js';
+
+/* =========================================================
+   GLOBAL CAUGHT REACTIVITY
+   ========================================================= */
 
 window.addEventListener('caught-changed', () => {
-  if (window.__CURRENT_GAME__ && window.__POKEMON_CACHE__) {
-    updateGlobalProgress(
-      window.__CURRENT_GAME__,
-      window.__POKEMON_CACHE__
-    );
-  }
+  if (!window.__CURRENT_GAME__ || !window.__POKEMON_CACHE__) return;
+
+  updateGlobalProgress(
+    window.__CURRENT_GAME__,
+    window.__POKEMON_CACHE__
+  );
+
+  updateCurrentObjective(
+    window.__CURRENT_GAME__,
+    window.__POKEMON_CACHE__
+  );
 });
 
+/* =========================================================
+   INIT
+   ========================================================= */
+
 async function init() {
-  const gameData = await loadGameData(GAME_ID);
-  document.getElementById('progress').textContent = 'Pokémon Red';
-  renderSections(gameData);
+  buildGameSelector();
+
+  // Default to Red for now
+  await selectGame({
+    id: 'red',
+    label: 'Red',
+    total: 124
+  });
 }
+
+/* =========================================================
+   GAME SELECTOR
+   ========================================================= */
 
 function buildGameSelector() {
   const btn = document.getElementById('game-selector-btn');
@@ -39,9 +61,9 @@ function buildGameSelector() {
       item.className = 'game-menu-item';
       item.textContent = game.label;
 
-      item.addEventListener('click', () => {
-        selectGame(game);
-        container.remove();
+      item.addEventListener('click', async () => {
+        await selectGame(game);
+        container.classList.remove('open');
       });
 
       submenu.appendChild(item);
@@ -62,22 +84,28 @@ function buildGameSelector() {
   });
 }
 
+/* =========================================================
+   GAME SWITCH CORE
+   ========================================================= */
+
 async function selectGame(game) {
-  // 1️⃣ Load game data
+  // 1️⃣ Load data
   const gameData = await loadGame(game.id);
+
+  // 2️⃣ Expose derived state
   window.__CURRENT_GAME__ = gameData;
   window.__POKEMON_CACHE__ = gameData.pokemon;
 
-  // 2️⃣ Update title row
+  // 3️⃣ Update title
   document.getElementById('app-title').textContent =
     `Professor Oak Challenge – ${game.label} Version`;
 
-  // 3️⃣ Reset UI state
+  // 4️⃣ Reset UI
   document.getElementById('app')?.classList.remove('has-detail');
-  document.querySelectorAll('.pokemon-row.is-active')
+  document
+    .querySelectorAll('.pokemon-row.is-active')
     .forEach(r => r.classList.remove('is-active'));
 
-  // 4️⃣ Scroll Section 2 to top
   document.getElementById('section-list').scrollTop = 0;
 
   // 5️⃣ Render sections
@@ -86,14 +114,31 @@ async function selectGame(game) {
     pokemon: gameData.pokemon
   });
 
-  // 6️⃣ Update progress bar + text
-  updateGlobalProgress(game.id, game.total);
-
-  // 7️⃣ Update current objective
-  updateCurrentObjective(gameData);
+  // 6️⃣ Update derived UI
+  updateGlobalProgress(gameData, gameData.pokemon);
+  updateCurrentObjective(gameData, gameData.pokemon);
 }
 
-export function getCurrentObjective(game, pokemon) {
+/* =========================================================
+   GLOBAL PROGRESS
+   ========================================================= */
+
+function updateGlobalProgress(game, pokemon) {
+  const { caught, total, percent } =
+    getGlobalProgress(game, pokemon);
+
+  const text = document.getElementById('progress-text');
+  const fill = document.querySelector('.progress-fill');
+
+  if (text) text.textContent = `${caught} / ${total} Caught`;
+  if (fill) fill.style.width = `${percent}%`;
+}
+
+/* =========================================================
+   CURRENT OBJECTIVE
+   ========================================================= */
+
+function getCurrentObjective(game, pokemon) {
   for (const section of game.sections) {
     if (!section.requiredCount) continue;
 
@@ -113,16 +158,12 @@ export function getCurrentObjective(game, pokemon) {
   return 'Challenge Complete';
 }
 
-export function updateGlobalProgress(game, pokemon) {
-  const { caught, total, percent } =
-    getGlobalProgress(game, pokemon);
+function updateCurrentObjective(game, pokemon) {
+  const label = document.getElementById('current-objective');
+  if (!label) return;
 
-  const text = document.getElementById('progress-text');
-  const fill = document.querySelector('.progress-fill');
-
-  if (text) text.textContent = `${caught} / ${total} Caught`;
-  if (fill) fill.style.width = `${percent}%`;
+  label.textContent = getCurrentObjective(game, pokemon);
 }
 
-
 init();
+
