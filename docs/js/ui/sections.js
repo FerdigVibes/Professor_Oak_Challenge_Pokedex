@@ -178,61 +178,67 @@ export function renderSections({ game, pokemon }) {
     }
 
     matches.forEach(p => {
-      const dex = String(p.dex).padStart(3, '0');
-      const caught = isCaught(game.id, p.dex);
-
-      const row = document.createElement('div');
-      row.className = 'pokemon-row';
-      row.dataset.dex = dex;
-      row.dataset.family = p.evolution?.family?.join('|') ?? '';
-
-      const ball = document.createElement('button');
-      ball.className = 'caught-toggle';
-      ball.style.backgroundImage = `url(./assets/icons/${
-        caught ? 'pokeball-full.png' : 'pokeball-empty.png'
-      })`;
-
-      ball.addEventListener('click', e => {
-        e.stopPropagation();
-
-        const newState = toggleCaught(game.id, p.dex);
-        ball.style.backgroundImage = `url(./assets/icons/${
-          newState ? 'pokeball-full.png' : 'pokeball-empty.png'
-        })`;
-
-        row.classList.toggle('is-caught', newState);
-        if (newState) playPokemonCry(p);
-
-        window.dispatchEvent(new CustomEvent('caught-changed', {
-          detail: { gameId: game.id, dex: p.dex, caught: newState }
-        }));
-      });
-
-      const icon = document.createElement('img');
-      icon.className = 'pokemon-icon';
-      icon.src = `./assets/icons/pokemon/${dex}-${p.slug}-icon.png`;
-      icon.alt = p.names.en;
-
-      row.append(
-        ball,
-        icon,
-        document.createTextNode(` #${dex} `),
-        document.createTextNode(p.names.en)
-      );
-
-      row.addEventListener('click', () => {
-        document
-          .querySelectorAll('.pokemon-row.is-active')
-          .forEach(r => r.classList.remove('is-active'));
-  
-        row.classList.add('is-active');
-
-        renderPokemonDetail(p, game);
-      });
-
-    sectionBlock.append(header, sectionRows);
-    container.appendChild(sectionBlock);
-    evaluateSectionCollapse(sectionBlock);
+     const dex = String(p.dex).padStart(3, '0');
+     const caught = isCaught(game.id, p.dex);
+   
+     const row = document.createElement('div');
+     row.className = 'pokemon-row';
+     row.dataset.dex = dex;
+     row.dataset.family = p.evolution?.family?.join('|') ?? '';
+   
+     const ball = document.createElement('button');
+     ball.className = 'caught-toggle';
+     ball.style.backgroundImage = `url(./assets/icons/${
+       caught ? 'pokeball-full.png' : 'pokeball-empty.png'
+     })`;
+   
+     ball.addEventListener('click', e => {
+       e.stopPropagation();
+   
+       const newState = toggleCaught(game.id, p.dex);
+       ball.style.backgroundImage = `url(./assets/icons/${
+         newState ? 'pokeball-full.png' : 'pokeball-empty.png'
+       })`;
+   
+       row.classList.toggle('is-caught', newState);
+       if (newState) playPokemonCry(p);
+   
+       window.dispatchEvent(new CustomEvent('caught-changed', {
+         detail: { gameId: game.id, dex: p.dex, caught: newState }
+       }));
+     });
+   
+     const icon = document.createElement('img');
+     icon.className = 'pokemon-icon';
+     icon.src = `./assets/icons/pokemon/${dex}-${p.slug}-icon.png`;
+     icon.alt = p.names.en;
+   
+     row.append(
+       ball,
+       icon,
+       document.createTextNode(` #${dex} `),
+       document.createTextNode(p.names.en)
+     );
+   
+     row.addEventListener('click', () => {
+       document
+         .querySelectorAll('.pokemon-row.is-active')
+         .forEach(r => r.classList.remove('is-active'));
+   
+       row.classList.add('is-active');
+       renderPokemonDetail(p, game);
+     });
+   
+     if (caught) row.classList.add('is-caught');
+   
+     // ✅ THIS WAS MISSING
+     sectionRows.appendChild(row);
+   }); // ✅ CLOSE matches.forEach
+   
+   // ✅ THESE MUST BE OUTSIDE THE LOOP
+   sectionBlock.append(header, sectionRows);
+   container.appendChild(sectionBlock);
+   evaluateSectionCollapse(sectionBlock);
   });
 }
 
