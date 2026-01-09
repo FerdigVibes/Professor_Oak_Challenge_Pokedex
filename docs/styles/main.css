@@ -19,6 +19,22 @@ body {
   width: 320px;
 }
 
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-counter {
+  font-size: 12px;
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+.section-title {
+  font-weight: bold;
+}
+
 /* Section 2 expands/contracts automatically */
 #section-list {
   flex: 1;
