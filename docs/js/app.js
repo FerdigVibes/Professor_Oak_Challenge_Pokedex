@@ -109,6 +109,8 @@ function wireMuteToggle() {
 async function selectGame(game) {
   // 1️⃣ Load data
   const gameData = await loadGame(game.id);
+  document.getElementById('game-selector-btn').textContent =
+  `${game.label} ▾`;
 
   // 2️⃣ Expose derived state
   window.__CURRENT_GAME__ = gameData;
