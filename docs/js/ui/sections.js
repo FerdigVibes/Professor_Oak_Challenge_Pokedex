@@ -39,6 +39,11 @@ function evaluateSectionCollapse(sectionBlock) {
     ).length;
   }
 
+  // If section is no longer complete, remove manual override
+  if (caughtCount < required) {
+     userExpandedSections.delete(sectionId);
+  }
+
   if (caughtCount >= required && !userExpandedSections.has(sectionId)) {
     rowsContainer.style.display = 'none';
     header.classList.add('collapsed');
