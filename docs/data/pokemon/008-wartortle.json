@@ -41,7 +41,7 @@
     },
 
     "yellow": {
-      "sections": ["CERULEAN_POKEMON"],
+      "sections": ["ONLY_AFTER_VERMILION"],
       "obtain": [
         {
           "method": "evolution",
