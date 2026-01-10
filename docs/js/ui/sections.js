@@ -4,6 +4,9 @@ import { renderPokemonDetail } from './detail.js';
 import { playPokemonCry } from './cry.js';
 import { isCaught, toggleCaught } from '../state/caught.js';
 import { getLanguage } from '../state/language.js';
+import { t } from '../data/i18n.js';
+
+title.textContent = t(section.titleKey);
       
 // Tracks sections manually expanded by the user
 const userExpandedSections = new Set();
