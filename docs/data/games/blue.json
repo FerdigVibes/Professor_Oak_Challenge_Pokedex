@@ -41,7 +41,7 @@
     },
     {
       "id": "MOON_STONE_1",
-      "titleKey": "moonstoneOne",
+      "titleKey": "moonStoneOne",
       "order": 2.2,
       "parent": "BEFORE_CERULEAN",
       "requiredCount": 2
@@ -49,7 +49,7 @@
 
     {
       "id": "BEFORE_FUCHSIA",
-      "titleKey": "beforefuchsia",
+      "titleKey": "beforeFuchsia",
       "order": 3,
       "children": [
         "FUCHSIA_POKEMON",
