@@ -3,7 +3,8 @@
 import { renderPokemonDetail } from './detail.js';
 import { playPokemonCry } from './cry.js';
 import { isCaught, toggleCaught } from '../state/caught.js';
-
+import { getLanguage } from '../state/language.js';
+      
 // Tracks sections manually expanded by the user
 const userExpandedSections = new Set();
 
@@ -136,7 +137,6 @@ export function renderSections({ game, pokemon }) {
       const row = document.createElement('div');
       row.className = 'pokemon-row';
       row.dataset.dex = dex;
-      import { getLanguage } from '../state/language.js';
 
       const lang = getLanguage();
       const displayName = p.names[lang] || p.names.en;
