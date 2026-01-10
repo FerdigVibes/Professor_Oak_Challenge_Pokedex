@@ -2,9 +2,6 @@ import { playPokemonCry } from './cry.js';
 import { isCaught, toggleCaught } from '../state/caught.js';
 import { getLanguage } from '../state/language.js';
 
-const lang = getLanguage();
-const displayName = pokemon.names[lang] || pokemon.names.en;
-
 /* =========================================================
    SECTION 3 — POKÉMON DETAIL PANEL
    ========================================================= */
