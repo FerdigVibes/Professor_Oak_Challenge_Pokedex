@@ -35,7 +35,11 @@ async function init() {
   buildGameSelector();
   wireSearch();
   wireMuteToggle();
-   wirelanguageSelector();
+  wireLanguageSelector();
+
+  // ✅ Load initial language
+  await loadLanguage(getLanguage());
+  applyTranslations();
 
   await selectGame({
     id: 'red',
@@ -60,8 +64,10 @@ function wireLanguageSelector() {
 
 function applyTranslations() {
   // Top bar
-  document.getElementById('game-selector-btn').textContent =
-    t('pickVersion') + ' ▾';
+  if (!window.__CURRENT_GAME__) {
+    document.getElementById('game-selector-btn').textContent =
+      t('pickVersion') + ' ▾';
+  }
 
   document.querySelector('#search-input').placeholder =
     t('searchPlaceholder');
@@ -124,12 +130,14 @@ function buildGameSelector() {
 
   btn.parentElement.appendChild(container);
 
-  btn.addEventListener('mouseenter', () => {
-    container.classList.add('open');
-  });
+  const wrapper = btn.parentElement;
 
-  btn.parentElement.addEventListener('mouseleave', () => {
-    container.classList.remove('open');
+  wrapper.addEventListener('mouseenter', () => {
+   container.classList.add('open');
+  });
+   
+  wrapper.addEventListener('mouseleave', () => {
+   container.classList.remove('open');
   });
 }
 
@@ -222,7 +230,7 @@ function getCurrentObjective(game, pokemon) {
     }
   }
 
-  return 'Challenge Complete';
+  return t('challengeComplete');
 }
 
 function updateCurrentObjective(game, pokemon) {
