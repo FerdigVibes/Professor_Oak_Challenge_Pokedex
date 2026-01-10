@@ -1,7 +1,80 @@
 {
   "pickVersion": "バージョンを選択",
-  "caught": "捕まえた数",
+  "caught": "捕獲",
   "currentObjective": "現在の目標",
   "challengeComplete": "チャレンジ完了",
-  "searchPlaceholder": "ポケモンを検索…"
+  "searchPlaceholder": "ポケモンを検索…",
+
+  "chooseYourStarter": "最初のポケモンを選ぼう",
+
+  "beforePewter": "ニビジム前",
+  "pewterPokemon": "ニビシティ周辺のポケモン",
+
+  "beforeCerulean": "ハナダジム前",
+  "ceruleanPokemon": "ハナダシティ周辺のポケモン",
+
+  "beforeVermilion": "クチバジム前",
+  "afterVermilion": "クチバジム後",
+
+  "beforeCeladon": "タマムシジム前",
+  "celadonPokemon": "タマムシシティ周辺のポケモン",
+
+  "beforeFuchsia": "セキチクジム前",
+  "fuchsiaPokemon": "セキチクシティ周辺のポケモン",
+
+  "beforeFifth": "5番目のジム前",
+
+  "beforeEliteFour": "四天王前",
+  "eliteFourPokemon": "四天王関連ポケモン",
+
+  "ceruleanCave": "ハナダのどうくつ",
+  "ceruleanCavePokemon": "ハナダのどうくつのポケモン",
+
+  "mtSilver": "シロガネやま",
+  "mtSilverPokemon": "シロガネやまのポケモン",
+
+  "beforeKanto": "カントー地方制覇前",
+  "kantoPokemon": "カントー地方のポケモン",
+
+  "beforViolet": "キキョウジム前",
+  "violetPokemon": "キキョウシティ周辺のポケモン",
+
+  "beforeAzalea": "ヒワダジム前",
+  "azaleaPokemon": "ヒワダタウン周辺のポケモン",
+
+  "beforeGoldenrod": "コガネジム前",
+  "goldenrodPokemon": "コガネシティ周辺のポケモン",
+
+  "beforeEcruteak": "エンジュジム前",
+  "ecruteakPokemon": "エンジュシティ周辺のポケモン",
+
+  "beforeMahogany": "チョウジジム前",
+  "mahoganyPokemon": "チョウジタウン周辺のポケモン",
+
+  "beforeCianwoodOlivine": "タンバ・アサギジム前",
+  "cianwoodOlivinePokemon": "タンバ・アサギ周辺のポケモン",
+
+  "beforeBlackthorn": "フスベジム前",
+  "blackthornPokemon": "フスベシティ周辺のポケモン",
+
+  "moonStoneOne": "つきのいし進化",
+  "moonStoneTwo": "つきのいし進化（2回目）",
+
+  "leafStone": "リーフのいし進化を選択",
+  "fireStone": "ほのおのいし進化を選択",
+  "waterStone": "みずのいし進化を選択",
+  "thunderStone": "かみなりのいし進化を選択",
+
+  "eeveeEvolutions": "イーブイの進化を選択",
+  "hitmonPrize": "サワムラー／エビワラー報酬",
+
+  "reviveFossil": "化石から復元したポケモン",
+
+  "articuno": "フリーザー",
+  "moltres": "ファイヤー",
+  "mewtwo": "ミュウツー",
+
+  "pikachu": "いけ！ピカチュウ！",
+  "squirtlesquad": "ゼニガメだん"
 }
+
