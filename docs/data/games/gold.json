@@ -261,20 +261,20 @@
   "sections": [
     {
       "id": "BEFORE_VIOLET",
-      "title": "Before Violet Gym",
+      "titleKey": "Before Violet Gym",
       "order": 1,
       "children": ["STARTER", "VIOLET_POKEMON"]
     },
     {
       "id": "STARTER",
-      "title": "Choose Your Starter!",
+      "titleKey": "Choose Your Starter!",
       "order": 1.1,
       "parent": "BEFORE_VIOLET",
       "requiredCount": 3
     },
     {
       "id": "VIOLET_POKEMON",
-      "title": "Violet Pokémon",
+      "titleKey": "Violet Pokémon",
       "order": 1.2,
       "parent": "BEFORE_VIOLET",
       "requiredCount": 29
@@ -282,13 +282,13 @@
 
     {
       "id": "BEFORE_AZALEA",
-      "title": "Before Azalea Gym",
+      "titleKey": "Before Azalea Gym",
       "order": 2,
       "children": ["AZALEA_POKEMON"]
     },
     {
       "id": "AZALEA_POKEMON",
-      "title": "Azalea Pokémon",
+      "titleKey": "Azalea Pokémon",
       "order": 2.1,
       "parent": "BEFORE_AZALEA",
       "requiredCount": 35
@@ -296,13 +296,13 @@
 
     {
       "id": "BEFORE_GOLDENROD",
-      "title": "Before Goldenrod Gym",
+      "titleKey": "Before Goldenrod Gym",
       "order": 3,
       "children": ["GOLDENROD_POKEMON"]
     },
     {
       "id": "GOLDENROD_POKEMON",
-      "title": "Goldenrod Pokémon",
+      "titleKey": "Goldenrod Pokémon",
       "order": 3.1,
       "parent": "BEFORE_GOLDENROD",
       "requiredCount": 30
@@ -310,13 +310,13 @@
 
     {
       "id": "BEFORE_ECRUTEAK",
-      "title": "Before Ecruteak Gym",
+      "titleKey": "Before Ecruteak Gym",
       "order": 4,
       "children": ["ECRUTEAK_POKEMON"]
     },
     {
       "id": "ECRUTEAK_POKEMON",
-      "title": "Ecruteak Pokémon",
+      "titleKey": "Ecruteak Pokémon",
       "order": 4.1,
       "parent": "BEFORE_ECRUTEAK",
       "requiredCount": 31
@@ -324,20 +324,20 @@
 
     {
       "id": "BEFORE_MAHOGANY",
-      "title": "Before Mahogany Gym",
+      "titleKey": "Before Mahogany Gym",
       "order": 5,
       "children": ["MAHOGANY_POKEMON", "MOON_STONE_1"]
     },
     {
       "id": "MAHOGANY_POKEMON",
-      "title": "Mahogany Pokémon",
+      "titleKey": "Mahogany Pokémon",
       "order": 5.1,
       "parent": "BEFORE_MAHOGANY",
       "requiredCount": 8
     },
     {
       "id": "MOON_STONE_1",
-      "title": "Moon Stone (First)",
+      "titleKey": "Moon Stone (First)",
       "order": 5.2,
       "parent": "BEFORE_MAHOGANY",
       "requiredCount": 1
@@ -345,13 +345,13 @@
 
     {
       "id": "BEFORE_CIANWOOD_OLIVINE",
-      "title": "Before Cianwood / Olivine Gym",
+      "titleKey": "Before Cianwood / Olivine Gym",
       "order": 6,
       "children": ["CIANWOOD_OLIVINE_POKEMON"]
     },
     {
       "id": "CIANWOOD_OLIVINE_POKEMON",
-      "title": "Cianwood / Olivine Pokémon",
+      "titleKey": "Cianwood / Olivine Pokémon",
       "order": 6.1,
       "parent": "BEFORE_CIANWOOD_OLIVINE",
       "requiredCount": 4
@@ -359,13 +359,13 @@
 
     {
       "id": "BEFORE_BLACKTHORN",
-      "title": "Before Blackthorn Gym",
+      "titleKey": "Before Blackthorn Gym",
       "order": 7,
       "children": ["BLACKTHORN_POKEMON"]
     },
     {
       "id": "BLACKTHORN_POKEMON",
-      "title": "Blackthorn Pokémon",
+      "titleKey": "Blackthorn Pokémon",
       "order": 7.1,
       "parent": "BEFORE_BLACKTHORN",
       "requiredCount": 14
@@ -373,13 +373,13 @@
 
     {
       "id": "BEFORE_ELITE_FOUR",
-      "title": "Before the Elite Four",
+      "titleKey": "Before the Elite Four",
       "order": 8,
       "children": ["ELITE_FOUR_POKEMON"]
     },
     {
       "id": "ELITE_FOUR_POKEMON",
-      "title": "Elite Four Pokémon",
+      "titleKey": "Elite Four Pokémon",
       "order": 8.1,
       "parent": "BEFORE_ELITE_FOUR",
       "requiredCount": 8
@@ -387,7 +387,7 @@
 
     {
       "id": "BEFORE_KANTO_BADGES",
-      "title": "Before Kanto Badges",
+      "titleKey": "Before Kanto Badges",
       "order": 9,
       "children": [
         "KANTO_POKEMON",
@@ -400,42 +400,42 @@
     },
     {
       "id": "KANTO_POKEMON",
-      "title": "Kanto Pokémon",
+      "titleKey": "Kanto Pokémon",
       "order": 9.1,
       "parent": "BEFORE_KANTO_BADGES",
       "requiredCount": 26
     },
     {
       "id": "MOON_STONE_2",
-      "title": "Moon Stone (Second)",
+      "titleKey": "Moon Stone (Second)",
       "order": 9.2,
       "parent": "BEFORE_KANTO_BADGES",
       "requiredCount": 1
     },
     {
       "id": "LEAF_STONE_EVOLUTION",
-      "title": "Leaf Stone Evolution",
+      "titleKey": "Leaf Stone Evolution",
       "order": 9.3,
       "parent": "BEFORE_KANTO_BADGES",
       "requiredCount": 1
     },
     {
       "id": "FIRE_STONE_EVOLUTION",
-      "title": "Fire Stone Evolution",
+      "titleKey": "Fire Stone Evolution",
       "order": 9.4,
       "parent": "BEFORE_KANTO_BADGES",
       "requiredCount": 1
     },
     {
       "id": "WATER_STONE_EVOLUTION",
-      "title": "Water Stone Evolution",
+      "titleKey": "Water Stone Evolution",
       "order": 9.5,
       "parent": "BEFORE_KANTO_BADGES",
       "requiredCount": 1
     },
     {
       "id": "THUNDER_STONE_EVOLUTION",
-      "title": "Thunder Stone Evolution",
+      "titleKey": "Thunder Stone Evolution",
       "order": 9.6,
       "parent": "BEFORE_KANTO_BADGES",
       "requiredCount": 1
@@ -443,13 +443,13 @@
 
     {
       "id": "MT_SILVER",
-      "title": "Mt. Silver",
+      "titleKey": "Mt. Silver",
       "order": 10,
       "children": ["MT_SILVER_POKEMON"]
     },
     {
       "id": "MT_SILVER_POKEMON",
-      "title": "Mt. Silver Pokémon",
+      "titleKey": "Mt. Silver Pokémon",
       "order": 10.1,
       "parent": "MT_SILVER",
       "requiredCount": 5
