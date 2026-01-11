@@ -42,12 +42,8 @@ async function init() {
     await loadLanguage(getLanguage());
 
     applyTranslations();
+    resetAppToBlankState();
 
-    await selectGame({
-      id: 'red',
-      label: 'Red',
-      total: 124
-    });
   } catch (err) {
     console.error('Init failed:', err);
   }
@@ -71,7 +67,38 @@ function wireLanguageSelector() {
      detail: { lang }
     }));
   });
+}]
+
+function resetAppToBlankState() {
+  window.__CURRENT_GAME__ = null;
+  window.__POKEMON_CACHE__ = null;
+
+  // Title
+  document.getElementById('app-title').textContent =
+    t('appTitleNoVersion'); // we'll add this key
+
+  // Selector button
+  document.getElementById('game-selector-btn').textContent =
+    t('pickVersion') + ' ▾';
+
+  // Clear sections
+  const sectionList = document.getElementById('section-list');
+  if (sectionList) sectionList.innerHTML = '';
+
+  // Clear detail panel
+  document.getElementById('app')?.classList.remove('has-detail');
+
+  // Progress
+  const progressText = document.getElementById('progress-text');
+  const progressFill = document.querySelector('.progress-fill');
+  if (progressText) progressText.textContent = `0 / 0 ${t('caught')}`;
+  if (progressFill) progressFill.style.width = '0%';
+
+  // Objective
+  const obj = document.getElementById('current-objective');
+  if (obj) obj.textContent = t('pickVersionPrompt');
 }
+
 
 function applyTranslations() {
   // ----- Top bar -----
