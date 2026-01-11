@@ -14,6 +14,8 @@
   "gen2": "Generación II",
   "appTitleNoVersion": "Desafío del Profesor Oak",
   "pickVersionPrompt": "Elige una versión para comenzar",
+  "globalCaughtCount": "{{caught}} / {{total}} Capturados",
+  "sectionCaughtCount": "{{caught}} / {{total}}",
 
   "red": "Rojo",
   "blue": "Azul",
