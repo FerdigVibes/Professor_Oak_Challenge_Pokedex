@@ -1,17 +1,16 @@
+// docs/js/ui/detail.js
+
 import { playPokemonCry } from './cry.js';
 import { isCaught, toggleCaught } from '../state/caught.js';
 import { getLanguage } from '../state/language.js';
-
-/* =========================================================
-   SECTION 3 — POKÉMON DETAIL PANEL
-   ========================================================= */
+import { resolveLangField } from '../data/i18n.js';
 
 export function renderPokemonDetail(pokemon, game) {
   const panel = document.getElementById('detail-panel');
   if (!panel) return;
 
   const lang = getLanguage();
-  const displayName = pokemon.names[lang] || pokemon.names.en;
+  const displayName = pokemon.names?.[lang] || pokemon.names?.en || pokemon.slug;
 
   const dex = String(pokemon.dex).padStart(3, '0');
   const spritePath = `./assets/sprites/normal/${dex}-${pokemon.slug}.gif`;
@@ -23,55 +22,39 @@ export function renderPokemonDetail(pokemon, game) {
     caught ? 'pokeball-full.png' : 'pokeball-empty.png'
   }`;
 
-  /* ---------------------------------------------------------
-     Render HTML
-     --------------------------------------------------------- */
-
   panel.innerHTML = `
     <div class="detail-sprite">
       <img
         src="${spritePath}"
         alt="${displayName}"
         data-cry
-        style="cursor: pointer;"
+        style="cursor:pointer"
       />
     </div>
 
     <button
       id="detail-caught"
       class="caught-toggle"
-      style="background-image: url(${pokeballPath});"
+      style="background-image:url(${pokeballPath})"
       aria-label="Toggle caught"
     ></button>
 
     <h2>${displayName}</h2>
 
-    <p>
-      <strong>National Dex:</strong> #${dex}
-    </p>
+    <p><strong>National Dex:</strong> #${dex}</p>
 
     ${
       gameData
-        ? renderGameInfo(gameData)
-        : `<p style="opacity:0.6">Not obtainable in this game.</p>`
+        ? renderGameInfo(gameData, lang)
+        : `<p style="opacity:.6">Not obtainable in this game.</p>`
     }
   `;
 
-  /* ---------------------------------------------------------
-     Sprite → play cry
-     --------------------------------------------------------- */
-
+  // Sprite → cry
   const sprite = panel.querySelector('[data-cry]');
-  if (sprite) {
-    sprite.addEventListener('click', () => {
-      playPokemonCry(pokemon);
-    });
-  }
+  if (sprite) sprite.addEventListener('click', () => playPokemonCry(pokemon));
 
-  /* ---------------------------------------------------------
-     Pokéball toggle (Section 3)
-     --------------------------------------------------------- */
-
+  // Pokéball toggle (only cry when marking caught)
   const ball = panel.querySelector('#detail-caught');
   if (ball) {
     ball.addEventListener('click', () => {
@@ -81,70 +64,25 @@ export function renderPokemonDetail(pokemon, game) {
         newState ? 'pokeball-full.png' : 'pokeball-empty.png'
       })`;
 
-      // 🔊 Only play cry when marking as caught
-      if (newState) {
-        playPokemonCry(pokemon);
-      }
+      if (newState) playPokemonCry(pokemon);
 
-      // 🔔 Notify rest of app
-      window.dispatchEvent(new CustomEvent('caught-changed', {
-        detail: {
-          gameId: game.id,
-          dex: pokemon.dex,
-          caught: newState
-        }
-      }));
+      window.dispatchEvent(
+        new CustomEvent('caught-changed', {
+          detail: { gameId: game.id, dex: pokemon.dex, caught: newState }
+        })
+      );
     });
   }
-
-  /* ---------------------------------------------------------
-     Sync with external caught changes (Step 3)
-     --------------------------------------------------------- */
-
-  // Remove previous listener (if any)
-  if (panel._onCaughtChanged) {
-    window.removeEventListener('caught-changed', panel._onCaughtChanged);
-  }
-
-  panel._onCaughtChanged = (e) => {
-    const { dex: changedDex, caught: newCaught } = e.detail;
-
-    if (changedDex !== pokemon.dex) return;
-
-    const ball = panel.querySelector('#detail-caught');
-    if (!ball) return;
-
-    ball.style.backgroundImage = `url(./assets/icons/${
-      newCaught ? 'pokeball-full.png' : 'pokeball-empty.png'
-    })`;
-  };
-
-  window.addEventListener('caught-changed', panel._onCaughtChanged);
 }
 
 /* =========================================================
-   GAME-SPECIFIC INFO RENDERING
+   Game-specific info (translated fields)
    ========================================================= */
 
-function renderGameInfo(gameData) {
-  import { getLanguage } from '../state/language.js';
-  import { resolveLangField } from '../data/i18n.js';
-   
-  const lang = getLanguage();
-   
-  function renderObtainEntry(o) {
-    const locations = resolveLangField(o.locations, lang);
-    const time = resolveLangField(o.time, lang);
-    const notes = resolveLangField(o.notes, lang);
-   
-    return `
-     <li style="margin-bottom: 8px;">
-      ${locations ? `<strong>${t('locations')}:</strong> ${locations.join(', ')}<br/>` : ''}
-      ${time ? `<strong>${t('time')}:</strong> ${time.join(', ')}<br/>` : ''}
-      ${notes ? `<em>${notes}</em>` : ''}
-     </li>
-    `;
-  }
+function renderGameInfo(gameData, lang) {
+  const obtain = Array.isArray(gameData.obtain) ? gameData.obtain : [];
+
+  const obtainHtml = obtain.map(o => renderObtainEntry(o, lang)).join('');
 
   return `
     <h3>How to Obtain</h3>
@@ -154,23 +92,28 @@ function renderGameInfo(gameData) {
   `;
 }
 
-function renderObtainEntry(o) {
-  const locations = Array.isArray(o.locations)
-    ? o.locations.join(', ')
-    : o.location ?? null;
+function renderObtainEntry(o, lang) {
+  // locations can be array of strings or array of lang-objects (future-safe)
+  const locs = Array.isArray(o.locations)
+    ? o.locations
+        .map(x => resolveLangField(x, lang))
+        .filter(Boolean)
+        .join(', ')
+    : resolveLangField(o.location, lang);
 
-  const time = Array.isArray(o.time)
-    ? o.time.join(', ')
-    : null;
+  const time = Array.isArray(o.time) ? o.time.join(', ') : null;
+
+  const notes = resolveLangField(o.notes, lang);
 
   return `
-    <li style="margin-bottom: 8px;">
-      ${locations ? `<strong>Locations:</strong> ${locations}<br/>` : ''}
+    <li style="margin-bottom:8px;">
+      ${locs ? `<strong>Locations:</strong> ${locs}<br/>` : ''}
       ${time ? `<strong>Time:</strong> ${time}<br/>` : ''}
-      ${o.notes ? `<em>${o.notes}</em>` : ''}
+      ${notes ? `<em>${notes}</em>` : ''}
     </li>
   `;
 }
+
 
 
 
