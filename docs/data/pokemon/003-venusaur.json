@@ -24,7 +24,13 @@
       "obtain": [
         {
           "method": "evolution",
-          "notes": "Evolves from Ivysaur at level 32."
+          "notes": {
+            "en": "Evolves from Ivysaur at level 32.",
+            "ja": "フシギソウがレベル32で進化。",
+            "fr": "Évolue de Herbizarre au niveau 32.",
+            "de": "Entwickelt sich aus Bisaknosp auf Level 32.",
+            "es": "Evoluciona de Ivysaur al nivel 32."
+          }
         }
       ]
     },
@@ -34,7 +40,13 @@
       "obtain": [
         {
           "method": "evolution",
-          "notes": "Evolves from Ivysaur at level 32."
+          "notes": {
+            "en": "Evolves from Ivysaur at level 32.",
+            "ja": "フシギソウがレベル32で進化。",
+            "fr": "Évolue de Herbizarre au niveau 32.",
+            "de": "Entwickelt sich aus Bisaknosp auf Level 32.",
+            "es": "Evoluciona de Ivysaur al nivel 32."
+          }
         }
       ]
     },
@@ -44,10 +56,17 @@
       "obtain": [
         {
           "method": "evolution",
-          "notes": "Evolves from Ivysaur at level 32."
+          "notes": {
+            "en": "Evolves from Ivysaur at level 32.",
+            "ja": "フシギソウがレベル32で進化。",
+            "fr": "Évolue de Herbizarre au niveau 32.",
+            "de": "Entwickelt sich aus Bisaknosp auf Level 32.",
+            "es": "Evoluciona de Ivysaur al nivel 32."
+          }
         }
       ]
     }
   }
 }
+
 
