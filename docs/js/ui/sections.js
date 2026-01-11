@@ -49,14 +49,59 @@ function updateSectionCounter(sectionBlock) {
   });
 }
 
+function applyStarterExclusivity(sectionBlock, gameId) {
+  const rows = sectionBlock.querySelectorAll('.pokemon-row');
+
+  // Group rows by family
+  const families = {};
+  rows.forEach(row => {
+    const family = row.dataset.family;
+    if (!family) return;
+    if (!families[family]) families[family] = [];
+    families[family].push(row);
+  });
+
+  // Find the chosen family (any caught Pokémon)
+  let chosenFamily = null;
+
+  Object.entries(families).forEach(([family, familyRows]) => {
+    if (
+      familyRows.some(row =>
+        isCaught(gameId, Number(row.dataset.dex))
+      )
+    ) {
+      chosenFamily = family;
+    }
+  });
+
+  // Hide all other families
+  if (chosenFamily) {
+    Object.entries(families).forEach(([family, familyRows]) => {
+      if (family !== chosenFamily) {
+        familyRows.forEach(row => {
+          row.style.display = 'none';
+        });
+      }
+    });
+  }
+}
+
+
 /* =========================================================
    REACT TO CAUGHT CHANGES
    ========================================================= */
 
 window.addEventListener('caught-changed', () => {
-  document
-    .querySelectorAll('.section-block')
-    .forEach(updateSectionCounter);
+  document.querySelectorAll('.section-block').forEach(section => {
+    updateSectionCounter(section);
+
+    if (section.dataset.sectionId === 'STARTER') {
+      applyStarterExclusivity(
+        section,
+        section.dataset.gameId
+      );
+    }
+  });
 });
 
 /* =========================================================
@@ -134,6 +179,10 @@ export function renderSections({ game, pokemon }) {
 
       row.dataset.name = displayName.toLowerCase();
       row.dataset.family = p.evolution?.family?.join('|') ?? '';
+
+   if (section.id === 'STARTER') {
+     applyStarterExclusivity(sectionBlock, game.id);
+   }
 
       /* Pokéball toggle */
 
