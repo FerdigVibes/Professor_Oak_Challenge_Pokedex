@@ -66,7 +66,7 @@ export function renderPokemonDetail(pokemon, game) {
     ${
       gameData
         ? renderGameInfo(gameData, lang)
-        : `<p style="opacity:.6">${t('notObtainable') ?? '—'}</p>`
+        : `<p style="opacity:.6">${t('notObtainable')}</p>`
     }
   `;
 
@@ -115,30 +115,33 @@ function renderGameInfo(gameData, lang) {
   return `
     <h3>${t('howToObtain')}</h3>
     <ul>
-      ${obtainHtml || '<li>—</li>'}
+      ${obtainHtml || `<li>${t('notObtainable')}</li>`}
     </ul>
   `;
 }
 
 function renderObtainEntry(o, lang) {
+  const method = o.methodKey ? t(o.methodKey) : '';
+
   const locations = Array.isArray(o.locations)
     ? o.locations.map(l => resolveLangField(l, lang)).join(', ')
     : resolveLangField(o.location, lang);
 
-  const time = Array.isArray(o.time)
-    ? o.time.join(', ')
-    : resolveLangField(o.time, lang);
+  const timeRaw = resolveLangField(o.time, lang);
+  const time = Array.isArray(timeRaw) ? timeRaw.join(', ') : timeRaw;
 
   const notes = resolveLangField(o.notes, lang);
 
   return `
     <li style="margin-bottom:8px;">
+      ${method ? `<strong>${method}</strong><br/>` : ''}
       ${locations ? `<strong>${t('locations')}:</strong> ${locations}<br/>` : ''}
       ${time ? `<strong>${t('time')}:</strong> ${time}<br/>` : ''}
       ${notes ? `<em>${notes}</em>` : ''}
     </li>
   `;
 }
+
 
 
 
