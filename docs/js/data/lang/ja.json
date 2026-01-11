@@ -10,6 +10,16 @@
   "howToObtain": "入手方法",
   "locations": "出現場所",
   "appTitle": "オーキド博士チャレンジ（{{version}}版）",
+  "gen1": "第1世代",
+  "gen2": "第2世代",
+
+  "red": "赤",
+  "blue": "青",
+  "yellow": "ピカチュウ",
+
+  "gold": "金",
+  "silver": "銀",
+  "crystal": "クリスタル",
 
   "chooseYourStarter": "最初のポケモンを選ぼう",
 
