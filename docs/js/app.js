@@ -87,6 +87,10 @@ function applyTranslations() {
       pokemon: window.__POKEMON_CACHE__
     });
 
+    document.getElementById('app-title').textContent = t('appTitle', {
+     version: window.__CURRENT_GAME__.label
+    });
+
     updateGlobalProgress(
       window.__CURRENT_GAME__,
       window.__POKEMON_CACHE__
@@ -188,8 +192,11 @@ async function selectGame(game) {
   window.__POKEMON_CACHE__ = gameData.pokemon;
 
   // 3️⃣ Update title
-  document.getElementById('app-title').textContent =
-    `Professor Oak Challenge – ${game.label} Version`;
+  import { t } from './data/i18n.js';
+
+  document.getElementById('app-title').textContent = t('appTitle', {
+   version: game.label
+  });
 
   // 4️⃣ Reset UI
   document.getElementById('app')?.classList.remove('has-detail');
