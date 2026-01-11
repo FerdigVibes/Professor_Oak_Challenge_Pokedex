@@ -78,64 +78,42 @@ function resetAppToBlankState() {
   window.__CURRENT_GAME__ = null;
   window.__POKEMON_CACHE__ = null;
 
-  // Title
   document.getElementById('app-title').textContent =
-    t('appTitleNoVersion'); // we'll add this key
+    t('appTitleNoVersion');
 
-  // Selector button
-  const selectorBtn = document.getElementById('game-selector-btn');
-
-  if (window.__CURRENT_GAME__) {
-   selectorBtn.textContent =
-    const { meta } = window.__CURRENT_GAME__;
-
-    document.getElementById('game-selector-btn').textContent =
-     `${t(meta.labelKey)} ▾`;
-   
-    document.getElementById('app-title').textContent = t('appTitle', {
-     version: t(meta.labelKey)
-    });
-  } else {
-   selectorBtn.textContent =
+  document.getElementById('game-selector-btn').textContent =
     `${t('pickVersion')} ▾`;
-  }
 
-  // Clear sections
   const sectionList = document.getElementById('section-list');
   if (sectionList) sectionList.innerHTML = '';
 
-  // Clear detail panel
   document.getElementById('app')?.classList.remove('has-detail');
 
-  // Progress
   const progressText = document.getElementById('progress-text');
   const progressFill = document.querySelector('.progress-fill');
   if (progressText) progressText.textContent = `0 / 0 ${t('caught')}`;
   if (progressFill) progressFill.style.width = '0%';
 
-  // Objective
   const obj = document.getElementById('current-objective');
   if (obj) obj.textContent = t('pickVersionPrompt');
 }
 
 
 function applyTranslations() {
-  // ----- Top bar -----
   const selectorBtn = document.getElementById('game-selector-btn');
 
   if (window.__CURRENT_GAME__) {
-   selectorBtn.textContent =
     const { meta } = window.__CURRENT_GAME__;
 
-    document.getElementById('game-selector-btn').textContent =
-     `${t(meta.labelKey)} ▾`;
-   
+    selectorBtn.textContent = `${t(meta.labelKey)} ▾`;
+
     document.getElementById('app-title').textContent = t('appTitle', {
-     version: t(meta.labelKey)
+      version: t(meta.labelKey)
     });
   } else {
-   selectorBtn.textContent =
-    `${t('pickVersion')} ▾`;
+    selectorBtn.textContent = `${t('pickVersion')} ▾`;
+    document.getElementById('app-title').textContent =
+      t('appTitleNoVersion');
   }
 
   const search = document.getElementById('search-input');
@@ -144,44 +122,24 @@ function applyTranslations() {
   const objLabel = document.querySelector('.objective strong');
   if (objLabel) objLabel.textContent = t('currentObjective') + ':';
 
-  // ----- Re-render sections (Section 2) -----
-  if (window.__CURRENT_GAME__ && window.__POKEMON_CACHE__) {
+  if (window.__CURRENT_GAME__) {
     renderSections({
-      game: window.__CURRENT_GAME__,
-      pokemon: window.__POKEMON_CACHE__
-    });
-
-    document.getElementById('app-title').textContent = t('appTitle', {
-     version: const { meta } = window.__CURRENT_GAME__;
-
-    document.getElementById('game-selector-btn').textContent =
-    `${t(meta.labelKey)} ▾`;
-
-    document.getElementById('app-title').textContent = t('appTitle', {
-     version: t(meta.labelKey)
+      game: window.__CURRENT_GAME__.data,
+      pokemon: window.__CURRENT_GAME__.data.pokemon
     });
 
     updateGlobalProgress(
-      window.__CURRENT_GAME__,
-      window.__POKEMON_CACHE__
+      window.__CURRENT_GAME__.data,
+      window.__CURRENT_GAME__.data.pokemon
     );
 
     updateCurrentObjective(
-      window.__CURRENT_GAME__,
-      window.__POKEMON_CACHE__
+      window.__CURRENT_GAME__.data,
+      window.__CURRENT_GAME__.data.pokemon
     );
   }
-
-  // ----- Re-render Section 3 if open -----
-  const activeRow = document.querySelector('.pokemon-row.is-active');
-  if (activeRow && window.__CURRENT_GAME__) {
-    const dex = Number(activeRow.dataset.dex);
-    const pokemon = window.__POKEMON_CACHE__.find(p => p.dex === dex);
-    if (pokemon) {
-      renderPokemonDetail(pokemon, window.__CURRENT_GAME__);
-    }
-  }
 }
+
 
 
 /* =========================================================
