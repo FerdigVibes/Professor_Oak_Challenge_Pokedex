@@ -120,6 +120,20 @@ function renderGameInfo(gameData, lang) {
   `;
 }
 
+export function closePokemonDetail() {
+  const panel = document.getElementById('detail-panel');
+  if (!panel) return;
+
+  panel.innerHTML = '';
+  currentSelection = null;
+
+  document.getElementById('app')?.classList.remove('has-detail');
+
+  document
+    .querySelectorAll('.pokemon-row.is-active')
+    .forEach(r => r.classList.remove('is-active'));
+}
+
 function renderObtainEntry(o, lang) {
   const method = o.methodKey ? t(o.methodKey) : '';
 
