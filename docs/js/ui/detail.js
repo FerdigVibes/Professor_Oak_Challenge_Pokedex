@@ -3,14 +3,32 @@
 import { playPokemonCry } from './cry.js';
 import { isCaught, toggleCaught } from '../state/caught.js';
 import { getLanguage } from '../state/language.js';
-import { resolveLangField } from '../data/i18n.js';
+import { resolveLangField, t } from '../data/i18n.js';
+
+let currentSelection = null; // { pokemon, game }
+
+/* =========================================================
+   React to language changes
+   ========================================================= */
+
+window.addEventListener('language-changed', () => {
+  if (!currentSelection) return;
+  renderPokemonDetail(currentSelection.pokemon, currentSelection.game);
+});
+
+/* =========================================================
+   SECTION 3 — Pokémon Detail Panel
+   ========================================================= */
 
 export function renderPokemonDetail(pokemon, game) {
   const panel = document.getElementById('detail-panel');
   if (!panel) return;
 
+  currentSelection = { pokemon, game };
+
   const lang = getLanguage();
-  const displayName = pokemon.names?.[lang] || pokemon.names?.en || pokemon.slug;
+  const displayName =
+    pokemon.names?.[lang] || pokemon.names?.en || pokemon.slug;
 
   const dex = String(pokemon.dex).padStart(3, '0');
   const spritePath = `./assets/sprites/normal/${dex}-${pokemon.slug}.gif`;
@@ -36,25 +54,31 @@ export function renderPokemonDetail(pokemon, game) {
       id="detail-caught"
       class="caught-toggle"
       style="background-image:url(${pokeballPath})"
-      aria-label="Toggle caught"
+      aria-label="${t('caught')}"
     ></button>
 
     <h2>${displayName}</h2>
 
-    <p><strong>National Dex:</strong> #${dex}</p>
+    <p>
+      <strong>${t('nationalDex')}:</strong> #${dex}
+    </p>
 
     ${
       gameData
         ? renderGameInfo(gameData, lang)
-        : `<p style="opacity:.6">Not obtainable in this game.</p>`
+        : `<p style="opacity:.6">${t('notObtainable') ?? '—'}</p>`
     }
   `;
 
-  // Sprite → cry
-  const sprite = panel.querySelector('[data-cry]');
-  if (sprite) sprite.addEventListener('click', () => playPokemonCry(pokemon));
+  /* ---------- Sprite → Cry ---------- */
 
-  // Pokéball toggle (only cry when marking caught)
+  const sprite = panel.querySelector('[data-cry]');
+  if (sprite) {
+    sprite.addEventListener('click', () => playPokemonCry(pokemon));
+  }
+
+  /* ---------- Pokéball toggle ---------- */
+
   const ball = panel.querySelector('#detail-caught');
   if (ball) {
     ball.addEventListener('click', () => {
@@ -68,7 +92,11 @@ export function renderPokemonDetail(pokemon, game) {
 
       window.dispatchEvent(
         new CustomEvent('caught-changed', {
-          detail: { gameId: game.id, dex: pokemon.dex, caught: newState }
+          detail: {
+            gameId: game.id,
+            dex: pokemon.dex,
+            caught: newState
+          }
         })
       );
     });
@@ -80,12 +108,12 @@ export function renderPokemonDetail(pokemon, game) {
    ========================================================= */
 
 function renderGameInfo(gameData, lang) {
-  const obtain = Array.isArray(gameData.obtain) ? gameData.obtain : [];
-
-  const obtainHtml = obtain.map(o => renderObtainEntry(o, lang)).join('');
+  const obtainHtml = (gameData.obtain || [])
+    .map(o => renderObtainEntry(o, lang))
+    .join('');
 
   return `
-    <h3>How to Obtain</h3>
+    <h3>${t('howToObtain')}</h3>
     <ul>
       ${obtainHtml || '<li>—</li>'}
     </ul>
@@ -93,26 +121,25 @@ function renderGameInfo(gameData, lang) {
 }
 
 function renderObtainEntry(o, lang) {
-  // locations can be array of strings or array of lang-objects (future-safe)
-  const locs = Array.isArray(o.locations)
-    ? o.locations
-        .map(x => resolveLangField(x, lang))
-        .filter(Boolean)
-        .join(', ')
+  const locations = Array.isArray(o.locations)
+    ? o.locations.map(l => resolveLangField(l, lang)).join(', ')
     : resolveLangField(o.location, lang);
 
-  const time = Array.isArray(o.time) ? o.time.join(', ') : null;
+  const time = Array.isArray(o.time)
+    ? o.time.join(', ')
+    : resolveLangField(o.time, lang);
 
   const notes = resolveLangField(o.notes, lang);
 
   return `
     <li style="margin-bottom:8px;">
-      ${locs ? `<strong>Locations:</strong> ${locs}<br/>` : ''}
-      ${time ? `<strong>Time:</strong> ${time}<br/>` : ''}
+      ${locations ? `<strong>${t('locations')}:</strong> ${locations}<br/>` : ''}
+      ${time ? `<strong>${t('time')}:</strong> ${time}<br/>` : ''}
       ${notes ? `<em>${notes}</em>` : ''}
     </li>
   `;
 }
+
 
 
 
