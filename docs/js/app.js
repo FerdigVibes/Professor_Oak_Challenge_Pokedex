@@ -9,6 +9,9 @@ import { isMuted, toggleMute } from './state/audio.js';
 import { setLanguage, getLanguage } from './state/language.js';
 import { loadLanguage, t } from './data/i18n.js';
 
+window.__CURRENT_GAME__ = null;
+window.__POKEMON_CACHE__ = null;
+
 /* =========================================================
    GLOBAL CAUGHT REACTIVITY
    ========================================================= */
@@ -75,7 +78,7 @@ function wireLanguageSelector() {
 
 
 function resetAppToBlankState() {
-  window.__CURRENT_GAME__.data = null;
+  window.__CURRENT_GAME__ = null;
   window.__POKEMON_CACHE__ = null;
 
   document.getElementById('app-title').textContent =
@@ -89,7 +92,6 @@ function resetAppToBlankState() {
 
   const progressText = document.getElementById('progress-text');
   const progressFill = document.querySelector('.progress-fill');
-
   if (progressText) progressText.textContent = `0 / 0 ${t('caught')}`;
   if (progressFill) progressFill.style.width = '0%';
 
@@ -99,11 +101,12 @@ function resetAppToBlankState() {
 
 
 
+
 function applyTranslations() {
   const selectorBtn = document.getElementById('game-selector-btn');
   const titleEl = document.getElementById('app-title');
 
-  if (window.__CURRENT_GAME__.data) {
+  if (window.__CURRENT_GAME__) {
     const { meta, data } = window.__CURRENT_GAME__;
 
     selectorBtn.textContent = `${t(meta.labelKey)} ▾`;
@@ -129,6 +132,7 @@ function applyTranslations() {
   const objLabel = document.querySelector('.objective strong');
   if (objLabel) objLabel.textContent = t('currentObjective') + ':';
 }
+
 
 
 
@@ -203,7 +207,7 @@ function wireMuteToggle() {
 async function selectGame(gameMeta) {
   const gameData = await loadGame(gameMeta.id);
 
-  window.__CURRENT_GAME__.data = {
+  window.__CURRENT_GAME__ = {
     meta: gameMeta,
     data: gameData
   };
@@ -223,6 +227,7 @@ async function selectGame(gameMeta) {
   updateGlobalProgress(gameData, gameData.pokemon);
   updateCurrentObjective(gameData, gameData.pokemon);
 }
+
 
 
 /* =========================================================
