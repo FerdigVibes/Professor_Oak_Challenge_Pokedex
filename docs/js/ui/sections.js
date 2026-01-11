@@ -6,14 +6,6 @@ import { isCaught, toggleCaught } from '../state/caught.js';
 import { getLanguage } from '../state/language.js';
 import { t } from '../data/i18n.js';
 
-window.addEventListener('language-changed', () => {
-  if (!window.__CURRENT_GAME__) return;
-  renderSections({
-    game: window.__CURRENT_GAME__.data,
-    pokemon: window.__POKEMON_CACHE__
-  });
-});
-      
 // Tracks sections manually expanded by the user
 const userExpandedSections = new Set();
 
@@ -47,12 +39,14 @@ function updateSectionCounter(sectionBlock) {
     ).length;
   } else {
     caughtCount = Array.from(rows).filter(row =>
-      document.createTextNode(` #${String(p.dex).padStart(3, '0')} `)
+      isCaught(gameId, Number(row.dataset.dex))
     ).length;
   }
 
-  sectionBlock._counterEl.textContent =
-    `${caughtCount} / ${required} ${t('caught')}`;
+  sectionBlock._counterEl.textContent = t('caughtCount', {
+    caught: caughtCount,
+    total: required
+  });
 
   // Collapse if complete (unless user forced open)
   const header = sectionBlock.querySelector('h2');
@@ -101,6 +95,7 @@ export function renderSections({ game, pokemon }) {
     sectionBlock.dataset.sectionId = section.id;
     sectionBlock.dataset.requiredCount = section.requiredCount;
     sectionBlock.dataset.gameId = game.id;
+    sectionBlock.dataset.titleKey = section.titleKey;
 
     /* ---------- Header ---------- */
 
@@ -110,8 +105,8 @@ export function renderSections({ game, pokemon }) {
     const counter = document.createElement('span');
     counter.className = 'section-counter';
     counter.textContent = t('caughtCount', {
-     caught: 0,
-     total: section.requiredCount
+      caught: 0,
+      total: section.requiredCount
     });
 
     const title = document.createElement('span');
@@ -143,16 +138,15 @@ export function renderSections({ game, pokemon }) {
     );
 
     matches.forEach(p => {
-      row.dataset.dex = String(p.dex);
       const caught = isCaught(game.id, p.dex);
 
       const row = document.createElement('div');
       row.className = 'pokemon-row';
-      row.dataset.dex = dex;
+      row.dataset.dex = String(p.dex);
 
       const lang = getLanguage();
       const displayName = p.names[lang] || p.names.en;
-      
+
       row.dataset.name = displayName.toLowerCase();
       row.dataset.family = p.evolution?.family?.join('|') ?? '';
 
@@ -175,22 +169,24 @@ export function renderSections({ game, pokemon }) {
         row.classList.toggle('is-caught', newState);
         if (newState) playPokemonCry(p);
 
-        window.dispatchEvent(new CustomEvent('caught-changed', {
-          detail: { gameId: game.id, dex: p.dex, caught: newState }
-        }));
+        window.dispatchEvent(
+          new CustomEvent('caught-changed', {
+            detail: { gameId: game.id, dex: p.dex, caught: newState }
+          })
+        );
       });
 
       /* Icon */
 
       const icon = document.createElement('img');
       icon.className = 'pokemon-icon';
-      icon.src = `./assets/icons/pokemon/${dex}-${p.slug}-icon.png`;
-      icon.alt = t('pokemonIconAlt', { name: displayName });
+      icon.src = `./assets/icons/pokemon/${String(p.dex).padStart(3, '0')}-${p.slug}-icon.png`;
+      icon.alt = displayName;
 
       row.append(
         ball,
         icon,
-        document.createTextNode(` #${dex} `),
+        document.createTextNode(` #${String(p.dex).padStart(3, '0')} `),
         document.createTextNode(displayName)
       );
 
@@ -228,4 +224,5 @@ export function renderSections({ game, pokemon }) {
     updateSectionCounter(sectionBlock);
   });
 }
+
 
