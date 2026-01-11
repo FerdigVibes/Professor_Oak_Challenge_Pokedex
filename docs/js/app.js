@@ -49,6 +49,7 @@ function wireLanguageSelector() {
     await loadLanguage(lang);
 
     applyTranslations();
+    rebuildGameSelector();
 
     // Notify UI modules (detail panel, etc.)
     window.dispatchEvent(
@@ -263,6 +264,14 @@ function getCurrentObjective(game, pokemon) {
   }
 
   return t('challengeComplete');
+}
+
+function rebuildGameSelector() {
+  const btn = document.getElementById('game-selector-btn');
+  const existing = btn.parentElement.querySelector('.game-menu');
+  if (existing) existing.remove();
+
+  buildGameSelector();
 }
 
 function updateCurrentObjective(game, pokemon) {
