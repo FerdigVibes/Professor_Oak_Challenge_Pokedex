@@ -43,7 +43,7 @@ function updateSectionCounter(sectionBlock) {
     ).length;
   }
 
-  sectionBlock._counterEl.textContent = t('caughtCount', {
+  sectionBlock._counterEl.textContent = t('sectionCaughtCount', {
     caught: caughtCount,
     total: required
   });
