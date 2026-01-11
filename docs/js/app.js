@@ -77,19 +77,16 @@ function resetAppToBlankState() {
   const progressText = document.getElementById('progress-text');
   const progressFill = document.querySelector('.progress-fill');
   if (progressText) {
-   progressText.textContent = t('caughtCount', {
-    caught = 0,
-    total = 0
-   });
+    progressText.textContent = t('globalCaughtCount', {
+      caught: 0,
+      total: 0
+    });
   }
   if (progressFill) progressFill.style.width = '0%';
 
   const obj = document.getElementById('current-objective');
   if (obj) obj.textContent = t('pickVersionPrompt');
 }
-
-
-
 
 function applyTranslations() {
   const selectorBtn = document.getElementById('game-selector-btn');
