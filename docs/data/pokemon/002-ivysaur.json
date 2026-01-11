@@ -25,7 +25,13 @@
       "obtain": [
         {
           "method": "evolution",
-          "notes": "Evolves from Bulbasaur at level 16."
+          "notes": {
+            "en": "Evolves from Bulbasaur at level 16.",
+            "ja": "フシギダネがレベル16で進化。",
+            "fr": "Évolue de Bulbizarre au niveau 16.",
+            "de": "Entwickelt sich aus Bisasam auf Level 16.",
+            "es": "Evoluciona de Bulbasaur al nivel 16."
+          }
         }
       ]
     },
@@ -35,7 +41,13 @@
       "obtain": [
         {
           "method": "evolution",
-          "notes": "Evolves from Bulbasaur at level 16."
+          "notes": {
+            "en": "Evolves from Bulbasaur at level 16.",
+            "ja": "フシギダネがレベル16で進化。",
+            "fr": "Évolue de Bulbizarre au niveau 16.",
+            "de": "Entwickelt sich aus Bisasam auf Level 16.",
+            "es": "Evoluciona de Bulbasaur al nivel 16."
+          }
         }
       ]
     },
@@ -45,7 +57,13 @@
       "obtain": [
         {
           "method": "evolution",
-          "notes": "Evolves from Bulbasaur at level 16."
+          "notes": {
+            "en": "Evolves from Bulbasaur at level 16.",
+            "ja": "フシギダネがレベル16で進化。",
+            "fr": "Évolue de Bulbizarre au niveau 16.",
+            "de": "Entwickelt sich aus Bisasam auf Level 16.",
+            "es": "Evoluciona de Bulbasaur al nivel 16."
+          }
         }
       ]
     }
