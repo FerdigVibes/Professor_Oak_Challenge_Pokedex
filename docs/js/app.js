@@ -244,44 +244,43 @@ function updateGlobalProgress(game, pokemon) {
    ========================================================= */
 
 function getCurrentObjective(game, pokemon) {
-  // 1. Get all major headers in order
-  const majorHeaders = game.sections.filter(
-    s => s.headerLevel === 'major'
-  );
+  // 1. Get parent sections (those with children), ordered
+  const parentSections = game.sections
+    .filter(s => Array.isArray(s.children))
+    .sort((a, b) => a.order - b.order);
 
-  // 2. Walk each major header
-  for (const header of majorHeaders) {
-    // Find child sections belonging to this header
-    const childSections = game.sections.filter(
-      s => s.parent === header.id && s.requiredCount
-    );
+  // 2. Walk each parent milestone
+  for (const parent of parentSections) {
+    let allChildrenComplete = true;
 
-    // Check if all child sections are complete
-    let allComplete = true;
+    for (const childId of parent.children) {
+      const child = game.sections.find(s => s.id === childId);
+      if (!child || !child.requiredCount) continue;
 
-    for (const section of childSections) {
       const matches = pokemon.filter(p =>
-        p.games?.[game.id]?.sections?.includes(section.id)
+        p.games?.[game.id]?.sections?.includes(child.id)
       );
 
       const caughtCount = matches.filter(p =>
         isCaught(game.id, p.dex)
       ).length;
 
-      if (caughtCount < section.requiredCount) {
-        allComplete = false;
+      if (caughtCount < child.requiredCount) {
+        allChildrenComplete = false;
         break;
       }
     }
 
-    // First incomplete milestone = current objective
-    if (!allComplete) {
-      return t(header.titleKey);
+    // 3. First incomplete milestone = current objective
+    if (!allChildrenComplete) {
+      return t(parent.titleKey);
     }
   }
 
+  // 4. Everything complete
   return t('challengeComplete');
 }
+
 
 
 function rebuildGameSelector() {
