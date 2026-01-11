@@ -104,7 +104,7 @@ export function renderSections({ game, pokemon }) {
 
     const counter = document.createElement('span');
     counter.className = 'section-counter';
-    counter.textContent = t('caughtCount', {
+    counter.textContent = t('sectionCaughtCount', {
       caught: 0,
       total: section.requiredCount
     });
