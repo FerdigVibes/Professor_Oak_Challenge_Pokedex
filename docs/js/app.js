@@ -264,6 +264,13 @@ function getCurrentObjective(game, pokemon) {
   return t('challengeComplete');
 }
 
+function updateCurrentObjective(game, pokemon) {
+  const label = document.getElementById('current-objective');
+  if (!label) return;
+
+  label.textContent = getCurrentObjective(game, pokemon);
+}
+
 function applySearchFilter(query) {
   const q = query.trim().toLowerCase();
 
