@@ -61,6 +61,11 @@ function applyStarterExclusivity(sectionBlock, gameId) {
     families[family].push(row);
   });
 
+  // Reset all rows to visible first
+  rows.forEach(row => {
+    row.style.display = '';
+  });
+
   // Find the chosen family (any caught Pokémon)
   let chosenFamily = null;
 
@@ -180,10 +185,6 @@ export function renderSections({ game, pokemon }) {
       row.dataset.name = displayName.toLowerCase();
       row.dataset.family = p.evolution?.family?.join('|') ?? '';
 
-   if (section.id === 'STARTER') {
-     applyStarterExclusivity(sectionBlock, game.id);
-   }
-
       /* Pokéball toggle */
 
       const ball = document.createElement('button');
@@ -249,6 +250,11 @@ export function renderSections({ game, pokemon }) {
 
       sectionRows.appendChild(row);
     });
+
+    // Apply starter exclusivity AFTER all rows exist
+    if (section.id === 'STARTER') {
+     applyStarterExclusivity(sectionBlock, game.id);
+    }
 
     /* ---------- Final assembly ---------- */
 
