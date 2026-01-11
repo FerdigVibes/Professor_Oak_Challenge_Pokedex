@@ -12,7 +12,8 @@
   "appTitle": "Professor Oak Challenge – {{version}} Version",
   "gen1": "Generation I",
   "gen2": "Generation II",
-
+  "appTitleNoVersion": "Professor Oak Challenge",
+  "pickVersionPrompt": "Pick a version to begin",
   "red": "Red",
   "blue": "Blue",
   "yellow": "Yellow",
