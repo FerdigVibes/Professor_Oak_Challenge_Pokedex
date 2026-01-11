@@ -87,7 +87,14 @@ function resetAppToBlankState() {
 
   if (window.__CURRENT_GAME__) {
    selectorBtn.textContent =
-    `${t(window.__CURRENT_GAME__.labelKey)} ▾`;
+    const { meta } = window.__CURRENT_GAME__;
+
+    document.getElementById('game-selector-btn').textContent =
+     `${t(meta.labelKey)} ▾`;
+   
+    document.getElementById('app-title').textContent = t('appTitle', {
+     version: t(meta.labelKey)
+    });
   } else {
    selectorBtn.textContent =
     `${t('pickVersion')} ▾`;
@@ -118,7 +125,14 @@ function applyTranslations() {
 
   if (window.__CURRENT_GAME__) {
    selectorBtn.textContent =
-    `${t(window.__CURRENT_GAME__.labelKey)} ▾`;
+    const { meta } = window.__CURRENT_GAME__;
+
+    document.getElementById('game-selector-btn').textContent =
+     `${t(meta.labelKey)} ▾`;
+   
+    document.getElementById('app-title').textContent = t('appTitle', {
+     version: t(meta.labelKey)
+    });
   } else {
    selectorBtn.textContent =
     `${t('pickVersion')} ▾`;
@@ -138,7 +152,13 @@ function applyTranslations() {
     });
 
     document.getElementById('app-title').textContent = t('appTitle', {
-     version: t(window.__CURRENT_GAME__.labelKey)
+     version: const { meta } = window.__CURRENT_GAME__;
+
+    document.getElementById('game-selector-btn').textContent =
+    `${t(meta.labelKey)} ▾`;
+
+    document.getElementById('app-title').textContent = t('appTitle', {
+     version: t(meta.labelKey)
     });
 
     updateGlobalProgress(
