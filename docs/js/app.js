@@ -106,8 +106,10 @@ function applyTranslations() {
     );
   }
 
+  // Rebuild game selector to update translated labels
   const oldMenu = document.querySelector('.game-menu');
   if (oldMenu) oldMenu.remove();
+  buildGameSelector();
 
   // ----- Re-render Section 3 if open -----
   const activeRow = document.querySelector('.pokemon-row.is-active');
