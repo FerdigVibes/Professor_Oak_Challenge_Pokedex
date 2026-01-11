@@ -78,8 +78,8 @@ function resetAppToBlankState() {
   const progressFill = document.querySelector('.progress-fill');
   if (progressText) {
    progressText.textContent = t('caughtCount', {
-    caught: 0,
-    total: 0
+    caught = 0,
+    total = 0
    });
   }
   if (progressFill) progressFill.style.width = '0%';
@@ -231,7 +231,7 @@ function updateGlobalProgress(game, pokemon) {
   const fill = document.querySelector('.progress-fill');
 
   if (text) {
-    text.textContent = t('caughtCount', {
+    text.textContent = t('globalCaughtCount', {
       caught,
       total
     });
