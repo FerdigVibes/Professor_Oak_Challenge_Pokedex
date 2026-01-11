@@ -244,24 +244,45 @@ function updateGlobalProgress(game, pokemon) {
    ========================================================= */
 
 function getCurrentObjective(game, pokemon) {
-  for (const section of game.sections) {
-    if (!section.requiredCount) continue;
+  // 1. Get all major headers in order
+  const majorHeaders = game.sections.filter(
+    s => s.headerLevel === 'major'
+  );
 
-    const matches = pokemon.filter(p =>
-      p.games?.[game.id]?.sections?.includes(section.id)
+  // 2. Walk each major header
+  for (const header of majorHeaders) {
+    // Find child sections belonging to this header
+    const childSections = game.sections.filter(
+      s => s.parent === header.id && s.requiredCount
     );
 
-    const caughtCount = matches.filter(p =>
-      isCaught(game.id, p.dex)
-    ).length;
+    // Check if all child sections are complete
+    let allComplete = true;
 
-    if (caughtCount < section.requiredCount) {
-      return t(section.titleKey);
+    for (const section of childSections) {
+      const matches = pokemon.filter(p =>
+        p.games?.[game.id]?.sections?.includes(section.id)
+      );
+
+      const caughtCount = matches.filter(p =>
+        isCaught(game.id, p.dex)
+      ).length;
+
+      if (caughtCount < section.requiredCount) {
+        allComplete = false;
+        break;
+      }
+    }
+
+    // First incomplete milestone = current objective
+    if (!allComplete) {
+      return t(header.titleKey);
     }
   }
 
   return t('challengeComplete');
 }
+
 
 function rebuildGameSelector() {
   const btn = document.getElementById('game-selector-btn');
