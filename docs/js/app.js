@@ -102,6 +102,9 @@ function applyTranslations() {
     );
   }
 
+  const oldMenu = document.querySelector('.game-menu');
+  if (oldMenu) oldMenu.remove();
+
   // ----- Re-render Section 3 if open -----
   const activeRow = document.querySelector('.pokemon-row.is-active');
   if (activeRow && window.__CURRENT_GAME__) {
@@ -126,7 +129,7 @@ function buildGameSelector() {
   GAME_REGISTRY.forEach(gen => {
     const genItem = document.createElement('div');
     genItem.className = 'game-menu-gen';
-    genItem.textContent = gen.label;
+    genItem.textContent = t(gen.genKey);
 
     const submenu = document.createElement('div');
     submenu.className = 'game-menu-sub';
@@ -134,10 +137,13 @@ function buildGameSelector() {
     gen.games.forEach(game => {
       const item = document.createElement('div');
       item.className = 'game-menu-item';
-      item.textContent = game.label;
+      item.textContent = t(game.labelKey);
 
       item.addEventListener('click', async () => {
-        await selectGame(game);
+        await selectGame({
+          ...game,
+          label: t(game.labelKey)
+        });
         container.classList.remove('open');
       });
 
@@ -150,14 +156,12 @@ function buildGameSelector() {
 
   btn.parentElement.appendChild(container);
 
-  const wrapper = btn.parentElement;
-
-  wrapper.addEventListener('mouseenter', () => {
-   container.classList.add('open');
+  btn.addEventListener('mouseenter', () => {
+    container.classList.add('open');
   });
-   
-  wrapper.addEventListener('mouseleave', () => {
-   container.classList.remove('open');
+
+  btn.parentElement.addEventListener('mouseleave', () => {
+    container.classList.remove('open');
   });
 }
 
