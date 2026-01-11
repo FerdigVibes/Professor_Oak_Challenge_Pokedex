@@ -12,6 +12,8 @@
   "appTitle": "Desafío del Profesor Oak – Versión {{version}}",
   "gen1": "Generación I",
   "gen2": "Generación II",
+  "appTitleNoVersion": "Desafío del Profesor Oak",
+  "pickVersionPrompt": "Elige una versión para comenzar",
 
   "red": "Rojo",
   "blue": "Azul",
