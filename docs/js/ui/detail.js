@@ -156,6 +156,10 @@ function renderObtainEntry(o, lang) {
   `;
 }
 
+export function getCurrentDetailSelection() {
+  return currentSelection;
+}
+
 
 
 
