@@ -12,6 +12,8 @@
   "appTitle": "Professor-Eich-Challenge – {{version}}-Edition",
   "gen1": "Generation I",
   "gen2": "Generation II",
+  "appTitleNoVersion": "Professor Eich Herausforderung",
+  "pickVersionPrompt": "Wähle eine Version, um zu beginnen",
 
   "red": "Rot",
   "blue": "Blau",
