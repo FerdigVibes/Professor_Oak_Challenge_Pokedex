@@ -12,7 +12,8 @@
   "appTitle": "Défi du Professeur Chen – Version {{version}}",
   "gen1": "Génération I",
   "gen2": "Génération II",
-
+  "appTitleNoVersion": "Défi du Professeur Chen",
+  "pickVersionPrompt": "Choisissez une version pour commencer",
   "red": "Rouge",
   "blue": "Bleu",
   "yellow": "Jaune",
