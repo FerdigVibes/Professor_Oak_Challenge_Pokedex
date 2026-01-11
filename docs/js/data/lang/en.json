@@ -17,6 +17,8 @@
   "red": "Red",
   "blue": "Blue",
   "yellow": "Yellow",
+  "globalCaughtCount": "{{caught}} / {{total}} Caught",
+  "sectionCaughtCount": "{{caught}} / {{total}}",
 
   "gold": "Gold",
   "silver": "Silver",
