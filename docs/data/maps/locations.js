@@ -383,6 +383,18 @@ export const LOCATION_REGISTRY = {
     map:"johto", x:48.45, y:37.06,
     names:{ en:"Mt. Silver", ja:"シロガネやま", fr:"Mont Argenté", de:"Silberberg", es:"Monte Plateado" }
   },
+  "johto:Dark Cave": {
+    map: "johto",
+    x: 30.91,
+    y: 41.63,
+    names: {
+      en: "Dark Cave",
+      ja: "くらやみのほらあな",
+      fr: "Antre Noir",
+      de: "Dunkelhöhle",
+      es: "Cueva Oscura"
+    }
+  },
 
   /* =========================================================
    JOHTO MAP — ROUTES (Translated)
