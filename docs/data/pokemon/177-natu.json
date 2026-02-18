@@ -23,7 +23,7 @@
       "obtain": [
         {
           "method": "wild",
-          "locations": ["Ruins of Alph (Exterior)"],
+          "locations": ["Ruins of Alph"],
           "notes": {
             "en": "Found outside the Ruins of Alph. Reach the area by traveling through Union Cave.",
             "ja": "つながりのどうくつを とおって アルフのいせきの そとで しゅつげん。",
@@ -40,7 +40,7 @@
       "obtain": [
         {
           "method": "wild",
-          "locations": ["Ruins of Alph (Exterior)"],
+          "locations": ["Ruins of Alph"],
           "notes": {
             "en": "Found outside the Ruins of Alph. Reach the area by traveling through Union Cave.",
             "ja": "つながりのどうくつを とおって アルフのいせきの そとで しゅつげん。",
@@ -57,7 +57,7 @@
       "obtain": [
         {
           "method": "wild",
-          "locations": ["Ruins of Alph (Exterior)"],
+          "locations": ["Ruins of Alph"],
           "notes": {
             "en": "Found outside the Ruins of Alph. Reach the area by traveling through Union Cave.",
             "ja": "つながりのどうくつを とおって アルフのいせきの そとで しゅつげん。",
