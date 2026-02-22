@@ -69,6 +69,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CELADON_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Kindle Road"],
+          "notes": {
+            "en": "Found on Kindle Road.",
+            "ja": "ほてりのみちで出現。",
+            "fr": "Trouvable sur la Route Ardent.", 
+            "de": "Auf der Glutstraße fangbar.",
+            "es": "Se encuentra en Ruta Ardiente."
+          }
+        }
+      ]
+    },
+
+    "leafgreen": {
+      "sections": ["CELADON_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Kindle Road"],
+          "notes": {
+            "en": "Found on Kindle Road.",
+            "ja": "ほてりのみちで出現。",
+            "fr": "Trouvable sur la Route Ardent.", 
+            "de": "Auf der Glutstraße fangbar.",
+            "es": "Se encuentra en Ruta Ardiente."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["ELITE_FOUR_POKEMON"],
       "obtain": [
