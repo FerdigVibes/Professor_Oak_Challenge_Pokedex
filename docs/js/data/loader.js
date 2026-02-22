@@ -1,5 +1,28 @@
 // docs/js/data/loader.js
 
+// ========================================================
+// GAME INHERITANCE (FRLG → RBY)
+// ========================================================
+
+export const GAME_ALIASES = {
+  firered: "red",
+  leafgreen: "blue"
+};
+
+export function getGameData(pokemon, gameId) {
+  const baseId = GAME_ALIASES[gameId];
+
+  const baseData = pokemon.games?.[baseId] || {};
+  const override = pokemon.games?.[gameId] || {};
+
+  return {
+    ...baseData,
+    ...override,
+    obtain: override.obtain ?? baseData.obtain,
+    sections: override.sections ?? baseData.sections
+  };
+}
+
 export async function loadGame(gameId) {
   // ❗ DO NOT normalize here
   const gameUrl = `./data/games/${gameId}.json`;
