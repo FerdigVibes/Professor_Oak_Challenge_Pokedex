@@ -25,5 +25,12 @@ export const GAME_REGISTRY = [
       { id: "crystal_gbc", labelKey: "crystal_gbc" },
       { id: "crystal_vc", labelKey: "crystal_vc" }
     ]
+  },
+  {
+    genKey: 'gen3',
+    games: [
+      { id: 'firered', labelKey: 'firered' },
+      { id: 'leafgreen', labelKey: 'leafgreen' }
+    ]
   }
 ];
