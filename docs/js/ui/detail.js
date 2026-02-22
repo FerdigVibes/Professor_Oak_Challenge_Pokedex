@@ -7,6 +7,7 @@ import { normalizeGameId } from '../utils/normalizeGameId.js';
 import { openMap } from './mapModal.js';
 import { resolveLocationName } from '../../data/maps/locations.js';
 import { isShinyEnabled, toggleShiny } from '../state/shiny.js';
+import { getGameData } from '../data/loader.js';
 
 let currentSelection = null; // { pokemon, game }
 
@@ -107,10 +108,11 @@ export function renderPokemonDetail(pokemon, gameData, sectionId) {
        ? 'johto'
        : 'kanto';
    
-  const gameEntry = pokemon.games?.[gameKey];
-  if (!gameEntry) {
-    panel.innerHTML = `<p>${pokemon.slug} is not available in this version.</p>`;
-    return;
+  const gameEntry = getGameData(pokemon, gameKey);
+
+  if (!gameEntry || !Object.keys(gameEntry).length) {
+   panel.innerHTML = `<p>${pokemon.slug} is not available in this version.</p>`;
+   return;
   }
 
   const lang = getLanguage();
