@@ -1,1 +1,154 @@
+{
+  "id": "firered",
+  "displayName": "Pokémon Firered",
+  "generation": 1,
+  "totalPokemon": 124,
+  },
 
+  "sections": [
+    {
+      "id": "BEFORE_PEWTER",
+      "titleKey": "beforePewter",
+      "order": 1,
+      "children": ["STARTER", "PEWTER_POKEMON"]
+    },
+    {
+      "id": "STARTER",
+      "titleKey": "chooseYourStarter",
+      "order": 1.1,
+      "parent": "BEFORE_PEWTER",
+      "requiredCount": 3
+    },
+    {
+      "id": "PEWTER_POKEMON",
+      "titleKey": "pewterPokemon",
+      "order": 1.2,
+      "parent": "BEFORE_PEWTER",
+      "requiredCount": 18
+    },
+
+    {
+      "id": "BEFORE_CERULEAN",
+      "titleKey": "beforeCerulean",
+      "order": 2,
+      "children": ["CERULEAN_POKEMON", "MOON_STONE_1"]
+    },
+    {
+      "id": "CERULEAN_POKEMON",
+      "titleKey": "ceruleanPokemon",
+      "order": 2.1,
+      "parent": "BEFORE_CERULEAN",
+      "requiredCount": 24
+    },
+    {
+      "id": "MOON_STONE_1",
+      "titleKey": "moonStoneOne",
+      "order": 2.2,
+      "parent": "BEFORE_CERULEAN",
+      "requiredCount": 2
+    },
+
+    {
+      "id": "BEFORE_FUCHSIA",
+      "titleKey": "beforeFuchsia",
+      "order": 3,
+      "children": [
+        "FUCHSIA_POKEMON",
+        "MOON_STONE_2",
+        "EEVEE_EVOLUTIONS",
+        "HITMON_PRIZE"
+      ]
+    },
+    {
+      "id": "FUCHSIA_POKEMON",
+      "titleKey": "fuchsiaPokemon",
+      "order": 3.1,
+      "parent": "BEFORE_FUCHSIA",
+      "requiredCount": 54
+    },
+    {
+      "id": "MOON_STONE_2",
+      "titleKey": "moonStoneTwo",
+      "order": 3.2,
+      "parent": "BEFORE_FUCHSIA",
+      "requiredCount": 2
+    },
+    {
+      "id": "EEVEE_EVOLUTIONS",
+      "titleKey": "eeveeEvolutions",
+      "order": 3.3,
+      "parent": "BEFORE_FUCHSIA",
+      "requiredCount": 1
+    },
+    {
+      "id": "HITMON_PRIZE",
+      "titleKey": "hitmonPrize",
+      "order": 3.4,
+      "parent": "BEFORE_FUCHSIA",
+      "requiredCount": 1
+    },
+
+    {
+      "id": "BEFORE_CELADON",
+      "titleKey": "beforeCeladon",
+      "order": 4,
+      "children": ["CELADON_POKEMON", "REVIVE_FOSSIL"]
+    },
+    {
+      "id": "CELADON_POKEMON",
+      "titleKey": "celadonPokemon",
+      "order": 4.1,
+      "parent": "BEFORE_CELADON",
+      "requiredCount": 14
+    },
+    {
+      "id": "REVIVE_FOSSIL",
+      "titleKey": "reviveFossil",
+      "order": 4.2,
+      "parent": "BEFORE_CELADON",
+      "requiredCount": 2
+    },
+
+    {
+      "id": "BEFORE_5TH_BADGE",
+      "titleKey": "beforeFifth",
+      "order": 5,
+      "children": ["ARTICUNO"]
+    },
+    {
+      "id": "ARTICUNO",
+      "titleKey": "articuno",
+      "order": 5.1,
+      "parent": "BEFORE_5TH_BADGE",
+      "requiredCount": 1
+    },
+
+    {
+      "id": "BEFORE_ELITE_FOUR",
+      "titleKey": "beforeEliteFour",
+      "order": 6,
+      "children": ["MOLTRES"]
+    },
+    {
+      "id": "MOLTRES",
+      "titleKey": "moltres",
+      "order": 6.1,
+      "parent": "BEFORE_ELITE_FOUR",
+      "requiredCount": 1
+    },
+
+    {
+      "id": "CERULEAN_CAVE",
+      "titleKey": "ceruleanCave",
+      "order": 7,
+      "children": ["MEWTWO"]
+    },
+    {
+      "id": "MEWTWO",
+      "titleKey": "mewtwo",
+      "order": 7.1,
+      "parent": "CERULEAN_CAVE",
+      "requiredCount": 1
+    }
+  ]
+}
