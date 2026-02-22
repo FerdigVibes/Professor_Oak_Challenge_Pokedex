@@ -1,1 +1,143 @@
+{
+  "id": "leafgreen",
+  "displayName": "Pokémon Leafgreen",
+  "generation": 3,
+  "totalPokemon": 171,
 
+  "sections": [
+    {
+      "id": "BEFORE_PEWTER",
+      "titleKey": "beforePewter",
+      "order": 1,
+      "children": ["STARTER", "PEWTER_POKEMON"]
+    },
+    {
+      "id": "STARTER",
+      "titleKey": "chooseYourStarter",
+      "order": 1.1,
+      "parent": "BEFORE_PEWTER",
+      "requiredCount": 3
+    },
+    {
+      "id": "PEWTER_POKEMON",
+      "titleKey": "pewterPokemon",
+      "order": 1.2,
+      "parent": "BEFORE_PEWTER",
+      "requiredCount": 16
+    },
+
+    {
+      "id": "BEFORE_CERULEAN",
+      "titleKey": "beforeCerulean",
+      "order": 2,
+      "children": ["CERULEAN_POKEMON"]
+    },
+    {
+      "id": "CERULEAN_POKEMON",
+      "titleKey": "ceruleanPokemon",
+      "order": 2.1,
+      "parent": "BEFORE_CERULEAN",
+      "requiredCount": 32
+    },
+
+    {
+      "id": "BEFORE_FUCHSIA",
+      "titleKey": "beforeFuchsia",
+      "order": 3,
+      "children": [
+        "FUCHSIA_POKEMON",
+        "EEVEE_EVOLUTIONS",
+        "HITMON_PRIZE"
+      ]
+    },
+    {
+      "id": "FUCHSIA_POKEMON",
+      "titleKey": "fuchsiaPokemon",
+      "order": 3.1,
+      "parent": "BEFORE_FUCHSIA",
+      "requiredCount": 50
+    },
+    {
+      "id": "EEVEE_EVOLUTIONS",
+      "titleKey": "eeveeEvolutions",
+      "order": 3.3,
+      "parent": "BEFORE_FUCHSIA",
+      "requiredCount": 1
+    },
+    {
+      "id": "HITMON_PRIZE",
+      "titleKey": "hitmonPrize",
+      "order": 3.4,
+      "parent": "BEFORE_FUCHSIA",
+      "requiredCount": 1
+    },
+    {
+      "id": "BEFORE_CINNABAR",
+      "titleKey": "beforeCinnabar",
+      "order": 4,
+      "children": ["CINNABAR_POKEMON", "REVIVE_FOSSIL"]
+    },
+    {
+      "id": "CINNABAR_POKEMON",
+      "titleKey": "cinnabarPokemon",
+      "order": 4.1,
+      "parent": "BEFORE_CINNABAR",
+      "requiredCount": 11
+    },
+    {
+      "id": "REVIVE_FOSSIL",
+      "titleKey": "reviveFossil",
+      "order": 4.2,
+      "parent": "BEFORE_CINNABAR",
+      "requiredCount": 2
+    },
+    {
+      "id": "BEFORE_CELADON",
+      "titleKey": "beforeCeladon",
+      "order": 5,
+      "children": ["CELADON_POKEMON"]
+    },
+    {
+      "id": "CELADON_POKEMON",
+      "titleKey": "celadonPokemon",
+      "order": 5.1,
+      "parent": "BEFORE_CELADON",
+      "requiredCount": 2
+    },
+
+    {
+      "id": "BEFORE_6TH_BADGE",
+      "titleKey": "beforeSixth",
+      "order": 6,
+      "children": ["ARTICUNO_MOLTRES"]
+    },
+    {
+      "id": "ARTICUNO_MOLTRES",
+      "titleKey": "articunoMoltres",
+      "order": 6.1,
+      "parent": "BEFORE_6TH_BADGE",
+      "requiredCount": 3
+    },
+    
+    {
+      "id": "POST_GAME",
+      "titleKey": "postGame",
+      "order": 7,
+      "children": ["POST_GAME_POKEMON", "EEVEE_EVOLUTIONS"]
+    },
+    {
+      "id": "POST_GAME_POKEMON",
+      "titleKey": "postGamePokemon",
+      "order": 7.1,
+      "parent": "POST_GAME",
+      "requiredCount": 48
+    },
+    {
+      "id": "EEVEE_EVOLUTIONS",
+      "titleKey": "eeveeEvolutions",
+      "order": 7.2,
+      "parent": "POST_GAME",
+      "requiredCount": 2
+    },
+  ]
+}
