@@ -1,8 +1,8 @@
 {
   "id": "firered",
   "displayName": "Pokémon Firered",
-  "generation": 1,
-  "totalPokemon": 124,
+  "generation": 3,
+  "totalPokemon": 170,
   },
 
   "sections": [
@@ -24,28 +24,21 @@
       "titleKey": "pewterPokemon",
       "order": 1.2,
       "parent": "BEFORE_PEWTER",
-      "requiredCount": 18
+      "requiredCount": 16
     },
 
     {
       "id": "BEFORE_CERULEAN",
       "titleKey": "beforeCerulean",
       "order": 2,
-      "children": ["CERULEAN_POKEMON", "MOON_STONE_1"]
+      "children": ["CERULEAN_POKEMON"]
     },
     {
       "id": "CERULEAN_POKEMON",
       "titleKey": "ceruleanPokemon",
       "order": 2.1,
       "parent": "BEFORE_CERULEAN",
-      "requiredCount": 24
-    },
-    {
-      "id": "MOON_STONE_1",
-      "titleKey": "moonStoneOne",
-      "order": 2.2,
-      "parent": "BEFORE_CERULEAN",
-      "requiredCount": 2
+      "requiredCount": 32
     },
 
     {
@@ -54,7 +47,6 @@
       "order": 3,
       "children": [
         "FUCHSIA_POKEMON",
-        "MOON_STONE_2",
         "EEVEE_EVOLUTIONS",
         "HITMON_PRIZE"
       ]
@@ -64,14 +56,7 @@
       "titleKey": "fuchsiaPokemon",
       "order": 3.1,
       "parent": "BEFORE_FUCHSIA",
-      "requiredCount": 54
-    },
-    {
-      "id": "MOON_STONE_2",
-      "titleKey": "moonStoneTwo",
-      "order": 3.2,
-      "parent": "BEFORE_FUCHSIA",
-      "requiredCount": 2
+      "requiredCount": 50
     },
     {
       "id": "EEVEE_EVOLUTIONS",
@@ -87,68 +72,73 @@
       "parent": "BEFORE_FUCHSIA",
       "requiredCount": 1
     },
-
     {
-      "id": "BEFORE_CELADON",
-      "titleKey": "beforeCeladon",
+      "id": "BEFORE_CINNABAR",
+      "titleKey": "beforeCinnabar",
       "order": 4,
-      "children": ["CELADON_POKEMON", "REVIVE_FOSSIL"]
+      "children": ["CINNABAR_POKEMON", "REVIVE_FOSSIL"]
     },
     {
-      "id": "CELADON_POKEMON",
-      "titleKey": "celadonPokemon",
+      "id": "CINNABAR_POKEMON",
+      "titleKey": "cinnabarPokemon",
       "order": 4.1,
-      "parent": "BEFORE_CELADON",
+      "parent": "BEFORE_CINNABAR",
       "requiredCount": 14
     },
     {
       "id": "REVIVE_FOSSIL",
       "titleKey": "reviveFossil",
       "order": 4.2,
+      "parent": "BEFORE_CINNABAR",
+      "requiredCount": 2
+    },
+    {
+      "id": "BEFORE_CELADON",
+      "titleKey": "beforeCeladon",
+      "order": 5,
+      "children": ["CELADON_POKEMON"]
+    },
+    {
+      "id": "CELADON_POKEMON",
+      "titleKey": "celadonPokemon",
+      "order": 5.1,
       "parent": "BEFORE_CELADON",
       "requiredCount": 2
     },
 
     {
-      "id": "BEFORE_5TH_BADGE",
-      "titleKey": "beforeFifth",
-      "order": 5,
-      "children": ["ARTICUNO"]
-    },
-    {
-      "id": "ARTICUNO",
-      "titleKey": "articuno",
-      "order": 5.1,
-      "parent": "BEFORE_5TH_BADGE",
-      "requiredCount": 1
-    },
-
-    {
-      "id": "BEFORE_ELITE_FOUR",
-      "titleKey": "beforeEliteFour",
+      "id": "BEFORE_6TH_BADGE",
+      "titleKey": "beforeSixth",
       "order": 6,
-      "children": ["MOLTRES"]
+      "children": ["ARTICUNO_MOLTRES"]
     },
     {
-      "id": "MOLTRES",
-      "titleKey": "moltres",
+      "id": "ARTICUNO_MOLTRES",
+      "titleKey": "articunoMoltres",
       "order": 6.1,
-      "parent": "BEFORE_ELITE_FOUR",
-      "requiredCount": 1
+      "parent": "BEFORE_6TH_BADGE",
+      "requiredCount": 2
     },
-
+    
     {
-      "id": "CERULEAN_CAVE",
-      "titleKey": "ceruleanCave",
+      "id": "POST_GAME",
+      "titleKey": "postGame",
       "order": 7,
-      "children": ["MEWTWO"]
+      "children": ["POST_GAME_POKEMON", "EEVEE_EVOLUTIONS"]
     },
     {
-      "id": "MEWTWO",
-      "titleKey": "mewtwo",
+      "id": "POST_GAME_POKEMON",
+      "titleKey": "postGamePokemon",
       "order": 7.1,
-      "parent": "CERULEAN_CAVE",
+      "parent": "POST_GAME",
+      "requiredCount": 47
+    },
+    {
+      "id": "EEVEE_EVOLUTIONS",
+      "titleKey": "eeveeEvolutions",
+      "order": 7.2,
+      "parent": "POST_GAME",
       "requiredCount": 1
-    }
+    },
   ]
 }
