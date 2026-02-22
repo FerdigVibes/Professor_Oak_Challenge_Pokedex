@@ -138,6 +138,6 @@
       "order": 7.2,
       "parent": "POST_GAME",
       "requiredCount": 1
-    },
+    }
   ]
 }
