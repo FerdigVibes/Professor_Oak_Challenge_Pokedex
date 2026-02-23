@@ -19,6 +19,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Wooper at level 20.",
+            "ja": "ウパーからレベル20で進化。",
+            "fr": "Évolue de Axoloto au niveau 20.",
+            "de": "Entwickelt sich aus Felino auf Level 20.",
+            "es": "Evoluciona de Wooper al nivel 20."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Wooper at level 20.",
+            "ja": "ウパーからレベル20で進化。",
+            "fr": "Évolue de Axoloto au niveau 20.",
+            "de": "Entwickelt sich aus Felino auf Level 20.",
+            "es": "Evoluciona de Wooper al nivel 20."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["AZALEA_POKEMON"],
       "obtain": [
