@@ -67,6 +67,60 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Poliwag at level 25.",
+            "ja": "ニョロモからレベル25で進化。",
+            "fr": "Évolue de Ptitard au niveau 25.",
+            "de": "Entwickelt sich aus Quapsel auf Level 25.",
+            "es": "Evoluciona de Poliwag al nivel 25."
+          }
+        },
+        {
+          "method": "fish",
+          "locations": ["Route 6", "Route 22", "Route 25", "Viridian City"],
+          "notes": {
+            "en": "Fish with the Super Rod.",
+            "ja": "すごいつりざおでつり上げる。",
+            "fr": "Pêchez avec la Super Canne.",
+            "de": "Mit der Superangel fangbar.",
+            "es": "Se puede pescar con la Supercaña."
+          }
+        }
+      ]
+    },
+
+    "leafgreen": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Poliwag at level 25.",
+            "ja": "ニョロモからレベル25で進化。",
+            "fr": "Évolue de Ptitard au niveau 25.",
+            "de": "Entwickelt sich aus Quapsel auf Level 25.",
+            "es": "Evoluciona de Poliwag al nivel 25."
+          }
+        },
+        {
+          "method": "fish",
+          "locations": ["Route 6", "Route 22", "Route 25", "Viridian City"],
+          "notes": {
+            "en": "Fish with the Super Rod.",
+            "ja": "すごいつりざおでつり上げる。",
+            "fr": "Pêchez avec la Super Canne.",
+            "de": "Mit der Superangel fangbar.",
+            "es": "Se puede pescar con la Supercaña."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["AZALEA_POKEMON"],
       "obtain": [
