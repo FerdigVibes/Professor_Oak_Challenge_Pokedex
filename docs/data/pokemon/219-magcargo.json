@@ -33,7 +33,7 @@
           }
         },
         {
-          "method": "rock-smash",
+          "method": "rock_smash",
           "locations": ["Mt. Ember"],
           "notes": {
             "en": "Also found on Mt. Ember (Ruby Path B2F) using Rock Smash.",
@@ -60,7 +60,7 @@
           }
         },
         {
-          "method": "rock-smash",
+          "method": "rock_smash",
           "locations": ["Mt. Ember"],
           "notes": {
             "en": "Also found on Mt. Ember (Ruby Path B2F) using Rock Smash.",
