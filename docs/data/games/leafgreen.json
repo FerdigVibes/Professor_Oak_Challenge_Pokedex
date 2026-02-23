@@ -2,7 +2,7 @@
   "id": "leafgreen",
   "displayName": "Pokémon LeafGreen",
   "generation": 3,
-  "excludedPokemon": ["psyduck", "golduck"],
+  "excludedPokemon": ["psyduck", "golduck", "shellder", "cloyster"],
   "totalPokemon": 171,
 
   "sections": [
