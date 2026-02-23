@@ -19,6 +19,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Hoppip at level 18.",
+            "ja": "ハネッコからレベル18で進化。",
+            "fr": "Évolue de Granivol au niveau 18.",
+            "de": "Entwickelt sich aus Hoppspross auf Level 18.",
+            "es": "Evoluciona de Hoppip al nivel 18."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Hoppip at level 18.",
+            "ja": "ハネッコからレベル18で進化。",
+            "fr": "Évolue de Granivol au niveau 18.",
+            "de": "Entwickelt sich aus Hoppspross auf Level 18.",
+            "es": "Evoluciona de Hoppip al nivel 18."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["AZALEA_POKEMON"],
       "obtain": [
