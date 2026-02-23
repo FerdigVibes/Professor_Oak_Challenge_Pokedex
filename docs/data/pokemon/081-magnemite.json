@@ -69,6 +69,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Power Plant"],
+          "notes": {
+            "en": "Found in the Power Plant. The Power Plant is located on Route 10 and requires Surf to reach.",
+            "ja": "むじんはつでんしょで出現。10ばんどうろにあり、なみのりが必要。",
+            "fr": "Disponible à la Centrale. La Centrale se trouve sur la Route 10 et nécessite Surf.",
+            "de": "Im Kraftwerk fangbar. Das Kraftwerk befindet sich auf Route 10 und erfordert Surfer.",
+            "es": "Se encuentra en la Central Energía. Está ubicada en la Ruta 10 y requiere Surf."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Power Plant"],
+          "notes": {
+            "en": "Found in the Power Plant. The Power Plant is located on Route 10 and requires Surf to reach.",
+            "ja": "むじんはつでんしょで出現。10ばんどうろにあり、なみのりが必要。",
+            "fr": "Disponible à la Centrale. La Centrale se trouve sur la Route 10 et nécessite Surf.",
+            "de": "Im Kraftwerk fangbar. Das Kraftwerk befindet sich auf Route 10 und erfordert Surfer.",
+            "es": "Se encuentra en la Central Energía. Está ubicada en la Ruta 10 y requiere Surf."
+          }
+        }
+      ]
+    }
+
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
