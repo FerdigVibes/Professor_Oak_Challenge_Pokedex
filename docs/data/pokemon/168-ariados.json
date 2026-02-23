@@ -19,6 +19,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Spinarak.",
+            "ja": "イトマルから進化。",
+            "fr": "Évolue de Mimigal.",
+            "de": "Entwickelt sich aus Webarak.",
+            "es": "Evoluciona de Spinarak."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Spinarak.",
+            "ja": "イトマルから進化。",
+            "fr": "Évolue de Mimigal.",
+            "de": "Entwickelt sich aus Webarak.",
+            "es": "Evoluciona de Spinarak."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["VIOLET_POKEMON"],
       "obtain": [
