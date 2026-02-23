@@ -2,7 +2,7 @@
   "id": "firered",
   "displayName": "Pokémon Firered",
   "generation": 3,
-  "excludedPokemon": ["slowpoke", "slowbro"],
+  "excludedPokemon": ["slowpoke", "slowbro", "staryu", "starmie"],
   "totalPokemon": 170,
 
   "sections": [
