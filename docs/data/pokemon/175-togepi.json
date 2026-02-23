@@ -18,6 +18,39 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "gift",
+          "locations": ["Labyrinth"],
+          "notes": {
+            "en": "Received as a gift in the Labyrinth.",
+            "ja": "ラビリンスでギフトとして入手。",
+            "fr": "Reçu en cadeau dans le Labyrinthe.",
+            "de": "Als Geschenk im Labyrinth erhalten.",
+            "es": "Se recibe como regalo en el Laberinto."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "gift",
+          "locations": ["Labyrinth"],
+          "notes": {
+            "en": "Received as a gift in the Labyrinth.",
+            "ja": "ラビリンスでギフトとして入手。",
+            "fr": "Reçu en cadeau dans le Labyrinthe.",
+            "de": "Als Geschenk im Labyrinth erhalten.",
+            "es": "Se recibe como regalo en el Laberinto."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["AZALEA_POKEMON"],
       "obtain": [
