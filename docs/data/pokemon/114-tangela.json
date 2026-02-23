@@ -93,6 +93,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 21"],
+          "notes": {
+            "en": "Found on Route 21.",
+            "ja": "21ばんどうろで出現。",
+            "fr": "Disponible sur la Route 21.",
+            "de": "Auf Route 21 fangbar.",
+            "es": "Se encuentra en la Ruta 21."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 21"],
+          "notes": {
+            "en": "Found on Route 21.",
+            "ja": "21ばんどうろで出現。",
+            "fr": "Disponible sur la Route 21.",
+            "de": "Auf Route 21 fangbar.",
+            "es": "Se encuentra en la Ruta 21."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["BLACKTHORN_POKEMON"],
       "obtain": [
