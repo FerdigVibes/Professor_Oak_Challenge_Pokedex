@@ -35,6 +35,38 @@
       ]
     },
 
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed Hitmonlee, Hitmonchan, or Hitmontop.",
+            "ja": "サワムラー・エビワラー・カポエラーを預けてタマゴを作る。",
+            "fr": "Faites se reproduire Kicklee, Tygnon ou Kapoera.",
+            "de": "Züchte Kicklee, Nockchan oder Kapoera.",
+            "es": "Cría Hitmonlee, Hitmonchan o Hitmontop."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed Hitmonlee, Hitmonchan, or Hitmontop.",
+            "ja": "サワムラー・エビワラー・カポエラーを預けてタマゴを作る。",
+            "fr": "Faites se reproduire Kicklee, Tygnon ou Kapoera.",
+            "de": "Züchte Kicklee, Nockchan oder Kapoera.",
+            "es": "Cría Hitmonlee, Hitmonchan o Hitmontop."
+          }
+        }
+      ]
+    },
+
     "silver": {
       "sections": ["ELITE_FOUR_POKEMON"],
       "obtain": [
