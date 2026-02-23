@@ -126,7 +126,10 @@
     "mewtwo": "Mewtwo",
     "pikachu": "I Choose You, Pikachu!",
     "squirtleSquad": "Squirtle Squad",
-    "chooseYourStarter": "Choose Your Starter"
+    "chooseYourStarter": "Choose Your Starter",
+    "cinnabarPokemon": "Cinnabar Pokémon",
+    "articunoMoltres": "Before Sixth Gym",
+    "postGamePokemon": "Post Game pokemon"
   },
 
   "types": {
