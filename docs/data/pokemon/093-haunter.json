@@ -78,6 +78,60 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Gastly at level 25.",
+            "ja": "ゴースからレベル25で進化。",
+            "fr": "Évolue de Fantominus au niveau 25.",
+            "de": "Entwickelt sich aus Nebulak auf Level 25.",
+            "es": "Evoluciona de Gastly al nivel 25."
+          }
+        },
+        {
+          "method": "wild",
+          "locations": ["Pokémon Tower"],
+          "notes": {
+            "en": "Very low encounter rate in Pokémon Tower.",
+            "ja": "ポケモンタワーで ごくまれに出現。",
+            "fr": "Très rare dans la Tour Pokémon.",
+            "de": "Sehr selten im Pokémon-Turm anzutreffen.",
+            "es": "Aparece con una probabilidad muy baja en la Torre Pokémon."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Gastly at level 25.",
+            "ja": "ゴースからレベル25で進化。",
+            "fr": "Évolue de Fantominus au niveau 25.",
+            "de": "Entwickelt sich aus Nebulak auf Level 25.",
+            "es": "Evoluciona de Gastly al nivel 25."
+          }
+        },
+        {
+          "method": "wild",
+          "locations": ["Pokémon Tower"],
+          "notes": {
+            "en": "Very low encounter rate in Pokémon Tower.",
+            "ja": "ポケモンタワーで ごくまれに出現。",
+            "fr": "Très rare dans la Tour Pokémon.",
+            "de": "Sehr selten im Pokémon-Turm anzutreffen.",
+            "es": "Aparece con una probabilidad muy baja en la Torre Pokémon."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["VIOLET_POKEMON"],
       "obtain": [
