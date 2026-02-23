@@ -18,6 +18,21 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed Magmar.",
+            "ja": "ブーバーを預けてタマゴを作る。",
+            "fr": "Faites se reproduire Magmar.",
+            "de": "Züchte Magmar.",
+            "es": "Cría Magmar."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
