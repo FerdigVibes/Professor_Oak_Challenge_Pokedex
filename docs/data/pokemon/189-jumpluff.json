@@ -19,6 +19,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Skiploom at level 27.",
+            "ja": "ポポッコからレベル27で進化。",
+            "fr": "Évolue de Floravol au niveau 27.",
+            "de": "Entwickelt sich aus Hubelupf auf Level 27.",
+            "es": "Evoluciona de Skiploom al nivel 27."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Skiploom at level 27.",
+            "ja": "ポポッコからレベル27で進化。",
+            "fr": "Évolue de Floravol au niveau 27.",
+            "de": "Entwickelt sich aus Hubelupf auf Level 27.",
+            "es": "Evoluciona de Skiploom al nivel 27."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["AZALEA_POKEMON"],
       "obtain": [
