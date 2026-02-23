@@ -72,6 +72,23 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "fish",
+          "locations": ["Pallet Town", "Vermilion City"],
+          "notes": {
+            "en": "Fish with the Super Rod in Pallet Town and Vermilion City.",
+            "ja": "マサラタウンとクチバシティで すごいつりざおを使う。",
+            "fr": "Pêchez avec la Super Canne à Bourg Palette et Carmin sur Mer.",
+            "de": "Mit der Superangel in Alabastia und Orania City fangbar.",
+            "es": "Se puede pescar con la Supercaña en Pueblo Paleta y Ciudad Carmín."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
