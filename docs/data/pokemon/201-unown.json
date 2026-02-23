@@ -18,6 +18,39 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Tanoby Ruins"],
+          "notes": {
+            "en": "Found in the Tanoby Ruins.",
+            "ja": "ナナシマのアノノクスいせきで出現。",
+            "fr": "Disponible dans les Ruines Tanoby.",
+            "de": "In den Tanoby-Ruinen fangbar.",
+            "es": "Se encuentra en las Ruinas Tanoby."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Tanoby Ruins"],
+          "notes": {
+            "en": "Found in the Tanoby Ruins.",
+            "ja": "ナナシマのアノノクスいせきで出現。",
+            "fr": "Disponible dans les Ruines Tanoby.",
+            "de": "In den Tanoby-Ruinen fangbar.",
+            "es": "Se encuentra en las Ruinas Tanoby."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["VIOLET_POKEMON"],
       "obtain": [
