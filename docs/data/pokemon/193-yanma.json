@@ -18,6 +18,39 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Ruin Valley"],
+          "notes": {
+            "en": "Found in Ruin Valley.",
+            "ja": "いせきのたにで出現。",
+            "fr": "Disponible dans la Vallée des Ruines.",
+            "de": "Im Ruinental fangbar.",
+            "es": "Se encuentra en Valle Ruina."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Ruin Valley"],
+          "notes": {
+            "en": "Found in Ruin Valley.",
+            "ja": "いせきのたにで出現。",
+            "fr": "Disponible dans la Vallée des Ruines.",
+            "de": "Im Ruinental fangbar.",
+            "es": "Se encuentra en Valle Ruina."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["GOLDENROD_POKEMON"],
       "obtain": [
