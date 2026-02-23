@@ -19,6 +19,21 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolve Gloom with a Sun Stone.",
+            "ja": "クサイハナにたいようのいしを使って進化。",
+            "fr": "Faites évoluer Ortide avec une Pierre Soleil.",
+            "de": "Entwickle Duflor mit einem Sonnenstein.",
+            "es": "Evoluciona a Gloom usando una Piedra Solar."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["GOLDENROD_POKEMON"],
       "obtain": [
