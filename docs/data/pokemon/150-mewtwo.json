@@ -52,6 +52,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "static",
+          "locations": ["Cerulean Cave"],
+          "notes": {
+            "en": "Static encounter in Cerulean Cave. Save before interacting.",
+            "ja": "ハナダのどうくつで固定シンボル。話しかける前にセーブ推奨。",
+            "fr": "Rencontre statique dans la Grotte Azurée. Sauvegardez avant d’interagir.",
+            "de": "Statische Begegnung in der Azuria-Höhle. Vor dem Ansprechen speichern.",
+            "es": "Encuentro estático en la Cueva Celeste. Guarda antes de interactuar."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "static",
+          "locations": ["Cerulean Cave"],
+          "notes": {
+            "en": "Static encounter in Cerulean Cave. Save before interacting.",
+            "ja": "ハナダのどうくつで固定シンボル。話しかける前にセーブ推奨。",
+            "fr": "Rencontre statique dans la Grotte Azurée. Sauvegardez avant d’interagir.",
+            "de": "Statische Begegnung in der Azuria-Höhle. Vor dem Ansprechen speichern.",
+            "es": "Encuentro estático en la Cueva Celeste. Guarda antes de interactuar."
+          }
+        }
+      ]
+    },
+
     "yellow": {
       "sections": ["CERULEAN_CAVE_POKEMON"],
       "obtain": [
