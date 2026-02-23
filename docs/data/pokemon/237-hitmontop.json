@@ -24,7 +24,6 @@
       "obtain": [
         {
           "method": "evolution",
-          "conditions": ["equal-attack-defense"],
           "notes": {
             "en": "Evolves from Tyrogue at level 20 when Attack and Defense are equal.",
             "ja": "こうげき と ぼうぎょ が同じ時にレベル20でバルキーから進化。",
@@ -41,7 +40,6 @@
       "obtain": [
         {
           "method": "evolution",
-          "conditions": ["equal-attack-defense"],
           "notes": {
             "en": "Evolves from Tyrogue at level 20 when Attack and Defense are equal.",
             "ja": "こうげき と ぼうぎょ が同じ時にレベル20でバルキーから進化。",
