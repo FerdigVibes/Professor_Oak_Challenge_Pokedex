@@ -19,6 +19,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Natu at level 25.",
+            "ja": "ネイティからレベル25で進化。",
+            "fr": "Évolue de Natu au niveau 25.",
+            "de": "Entwickelt sich aus Natu auf Level 25.",
+            "es": "Evoluciona de Natu al nivel 25."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Natu at level 25.",
+            "ja": "ネイティからレベル25で進化。",
+            "fr": "Évolue de Natu au niveau 25.",
+            "de": "Entwickelt sich aus Natu auf Level 25.",
+            "es": "Evoluciona de Natu al nivel 25."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["MAHOGANY_POKEMON"],
       "obtain": [
