@@ -19,6 +19,21 @@
   },
 
   "games": {
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Marill at level 18.",
+            "ja": "マリルからレベル18で進化。",
+            "fr": "Évolue de Marill au niveau 18.",
+            "de": "Entwickelt sich aus Marill auf Level 18.",
+            "es": "Evoluciona de Marill al nivel 18."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
