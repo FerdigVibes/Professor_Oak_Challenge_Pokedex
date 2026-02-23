@@ -69,6 +69,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Safari Zone"],
+          "notes": {
+            "en": "Found in Safari Zone Areas 3 and 4.",
+            "ja": "サファリゾーンのエリア3・エリア4で出現。",
+            "fr": "Disponible dans la Zone Safari, Zones 3 et 4.",
+            "de": "In der Safari-Zone in Bereich 3 und 4 fangbar.",
+            "es": "Se encuentra en la Zona Safari, Áreas 3 y 4."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Safari Zone"],
+          "notes": {
+            "en": "Found in Safari Zone Areas 3 and 4.",
+            "ja": "サファリゾーンのエリア3・エリア4で出現。",
+            "fr": "Disponible dans la Zone Safari, Zones 3 et 4.",
+            "de": "In der Safari-Zone in Bereich 3 und 4 fangbar.",
+            "es": "Se encuentra en la Zona Safari, Áreas 3 y 4."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
