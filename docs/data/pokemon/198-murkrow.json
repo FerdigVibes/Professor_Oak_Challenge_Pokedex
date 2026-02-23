@@ -18,6 +18,22 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Lost Cave"],
+          "notes": {
+            "en": "Found in Lost Cave.",
+            "ja": "ロストケーブで出現。",
+            "fr": "Disponible dans la Grotte Perdue.",
+            "de": "In der Irrhöhle fangbar.",
+            "es": "Se encuentra en la Cueva Perdida."
+          }
+        }
+      ]
+    }, 
     "gold": {
       "sections": ["KANTO_POKEMON"],
       "obtain": [
