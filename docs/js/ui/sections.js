@@ -356,6 +356,13 @@ export function renderSections({ game, pokemon }) {
     sectionRows.className = 'section-rows';
 
     const matches = pokemon.filter(p => {
+
+      // ⭐ NEW: version exclusion check
+      if (Array.isArray(game.excludedPokemon) &&
+          game.excludedPokemon.includes(p.slug)) {
+        return false;
+      }
+      
       const entries = getGameEntries(p, game.id); // ✅ uses alias fallback
       if (!entries.length) return false;
     
