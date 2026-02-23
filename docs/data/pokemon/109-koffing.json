@@ -52,6 +52,62 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Pokémon Mansion"],
+          "notes": {
+            "en": "Found in the Pokémon Mansion on Cinnabar Island.",
+            "ja": "グレンじまのポケモンやしきで出現。",
+            "fr": "Disponible au Manoir Pokémon sur Cramois’Île.",
+            "de": "Im Pokémon-Haus auf Zinnoberinsel fangbar.",
+            "es": "Se encuentra en la Mansión Pokémon en Isla Canela."
+          }
+        },
+        {
+          "method": "surf",
+          "locations": ["Celadon City"],
+          "notes": {
+            "en": "Can also be encountered while Surfing in Celadon City.",
+            "ja": "タマムシシティでなみのり中にも出現。",
+            "fr": "Peut aussi être rencontré en utilisant Surf à Céladopole.",
+            "de": "Kann auch beim Surfen in Prismania City erscheinen.",
+            "es": "También aparece al usar Surf en Ciudad Azulona."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Pokémon Mansion"],
+          "notes": {
+            "en": "Found in the Pokémon Mansion on Cinnabar Island.",
+            "ja": "グレンじまのポケモンやしきで出現。",
+            "fr": "Disponible au Manoir Pokémon sur Cramois’Île.",
+            "de": "Im Pokémon-Haus auf Zinnoberinsel fangbar.",
+            "es": "Se encuentra en la Mansión Pokémon en Isla Canela."
+          }
+        },
+        {
+          "method": "surf",
+          "locations": ["Celadon City"],
+          "notes": {
+            "en": "Can also be encountered while Surfing in Celadon City.",
+            "ja": "タマムシシティでなみのり中にも出現。",
+            "fr": "Peut aussi être rencontré en utilisant Surf à Céladopole.",
+            "de": "Kann auch beim Surfen in Prismania City erscheinen.",
+            "es": "También aparece al usar Surf en Ciudad Azulona."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
