@@ -18,6 +18,39 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Three Isle Port"],
+          "notes": {
+            "en": "Found at Three Isle Port.",
+            "ja": "3のしまのみなとで出現。",
+            "fr": "Disponible au Port de l’Île 3.",
+            "de": "Am Hafen von Eiland 3 fangbar.",
+            "es": "Se encuentra en el Puerto Isla Tres."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Three Isle Port"],
+          "notes": {
+            "en": "Found at Three Isle Port.",
+            "ja": "3のしまのみなとで出現。",
+            "fr": "Disponible au Port de l’Île 3.",
+            "de": "Am Hafen von Eiland 3 fangbar.",
+            "es": "Se encuentra en el Puerto Isla Tres."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["VIOLET_POKEMON"],
       "obtain": [
