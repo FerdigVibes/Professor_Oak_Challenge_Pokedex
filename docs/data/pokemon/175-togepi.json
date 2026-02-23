@@ -40,7 +40,7 @@
       "obtain": [
         {
           "method": "gift",
-          "locations": ["Labyrinth"],
+          "locations": ["Water Labyrinth"],
           "notes": {
             "en": "Received as a gift in the Labyrinth.",
             "ja": "ラビリンスでギフトとして入手。",
