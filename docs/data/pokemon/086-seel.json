@@ -91,6 +91,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Seafoam Islands"],
+          "notes": {
+            "en": "Found in the Seafoam Islands.",
+            "ja": "ふたごじまで出現。",
+            "fr": "Disponible aux Îles Écume.",
+            "de": "Auf den Seeschauminseln zu finden.",
+            "es": "Se encuentra en las Islas Espuma."
+          }
+        }
+      ]
+    },
+
+    "leafgreen": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Seafoam Islands"],
+          "notes": {
+            "en": "Found in the Seafoam Islands.",
+            "ja": "ふたごじまで出現。",
+            "fr": "Disponible aux Îles Écume.",
+            "de": "Auf den Seeschauminseln zu finden.",
+            "es": "Se encuentra en las Islas Espuma."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["CIANWOOD_OLIVINE_POKEMON"],
       "obtain": [
