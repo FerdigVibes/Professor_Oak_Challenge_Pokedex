@@ -26,6 +26,75 @@
   },
 
   "games": {
+    "games": {
+      "firered": [
+        {
+          "sections": ["EEVEE_EVOLUTIONS"],
+          "obtain": [
+            {
+              "method": "evolution",
+              "notes": {
+                "en": "Evolve Eevee with a Water Stone.",
+                "ja": "みずのいしでイーブイをシャワーズに進化。",
+                "fr": "Faites évoluer Évoli avec une Pierre Eau.",
+                "de": "Entwickle Evoli mit einem Wasserstein.",
+                "es": "Evoluciona a Eevee con una Piedra Agua."
+              }
+            }
+          ]
+        },
+    
+        {
+          "sections": ["POST_GAME_POKEMON"],
+          "obtain": [
+            {
+              "method": "evolution",
+              "notes": {
+                "en": "Evolve a bred Eevee with a Water Stone.",
+                "ja": "育て屋で生まれたイーブイをみずのいしで進化。",
+                "fr": "Faites évoluer un Évoli reproduit avec une Pierre Eau.",
+                "de": "Entwickle ein gezüchtetes Evoli mit einem Wasserstein.",
+                "es": "Evoluciona un Eevee criado con una Piedra Agua."
+              }
+            }
+          ]
+        }
+      ],
+    
+      "leafgreen": [
+        {
+          "sections": ["EEVEE_EVOLUTIONS"],
+          "obtain": [
+            {
+              "method": "evolution",
+              "notes": {
+                "en": "Evolve Eevee with a Water Stone.",
+                "ja": "みずのいしでイーブイをシャワーズに進化。",
+                "fr": "Faites évoluer Évoli avec une Pierre Eau.",
+                "de": "Entwickle Evoli mit einem Wasserstein.",
+                "es": "Evoluciona a Eevee con una Piedra Agua."
+              }
+            }
+          ]
+        },
+    
+        {
+          "sections": ["POST_GAME_POKEMON"],
+          "obtain": [
+            {
+              "method": "evolution",
+              "notes": {
+                "en": "Evolve a bred Eevee with a Water Stone.",
+                "ja": "育て屋で生まれたイーブイをみずのいしで進化。",
+                "fr": "Faites évoluer un Évoli reproduit avec une Pierre Eau.",
+                "de": "Entwickle ein gezüchtetes Evoli mit einem Wasserstein.",
+                "es": "Evoluciona un Eevee criado con una Piedra Agua."
+              }
+            }
+          ]
+        }
+      ]
+    },
     "red": {
       "sections": ["EEVEE_EVOLUTIONS"],
       "obtain": [
