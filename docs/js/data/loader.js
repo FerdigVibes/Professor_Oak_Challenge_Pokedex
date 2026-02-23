@@ -11,15 +11,15 @@ export const GAME_ALIASES = {
 
 export function getGameData(pokemon, gameId) {
   const baseId = GAME_ALIASES[gameId];
-
   const baseData = pokemon.games?.[baseId] || {};
   const override = pokemon.games?.[gameId] || {};
 
   return {
     ...baseData,
     ...override,
+    sections: override.sections ?? baseData.sections,
     obtain: override.obtain ?? baseData.obtain,
-    sections: override.sections ?? baseData.sections
+    availability: override.availability ?? baseData.availability
   };
 }
 
