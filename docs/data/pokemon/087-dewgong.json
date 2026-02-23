@@ -78,6 +78,60 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Seel at level 34.",
+            "ja": "パウワウからレベル34で進化。",
+            "fr": "Évolue de Otaria au niveau 34.",
+            "de": "Entwickelt sich aus Seejong auf Level 34.",
+            "es": "Evoluciona de Seel al nivel 34."
+          }
+        },
+        {
+          "method": "wild",
+          "locations": ["Seafoam Islands"],
+          "notes": {
+            "en": "Found on B3F of the Seafoam Islands at a low encounter rate.",
+            "ja": "ふたごじまB3Fで低確率で出現。",
+            "fr": "Disponible au niveau B3F des Îles Écume avec un faible taux d’apparition.",
+            "de": "Auf Ebene B3F der Seeschauminseln mit niedriger Begegnungsrate fangbar.",
+            "es": "Se encuentra en B3F de las Islas Espuma con baja probabilidad."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Seel at level 34.",
+            "ja": "パウワウからレベル34で進化。",
+            "fr": "Évolue de Otaria au niveau 34.",
+            "de": "Entwickelt sich aus Seejong auf Level 34.",
+            "es": "Evoluciona de Seel al nivel 34."
+          }
+        },
+        {
+          "method": "wild",
+          "locations": ["Seafoam Islands"],
+          "notes": {
+            "en": "Found on B3F of the Seafoam Islands at a low encounter rate.",
+            "ja": "ふたごじまB3Fで低確率で出現。",
+            "fr": "Disponible au niveau B3F des Îles Écume avec un faible taux d’apparition.",
+            "de": "Auf Ebene B3F der Seeschauminseln mit niedriger Begegnungsrate fangbar.",
+            "es": "Se encuentra en B3F de las Islas Espuma con baja probabilidad."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["CIANWOOD_OLIVINE_POKEMON"],
       "obtain": [
