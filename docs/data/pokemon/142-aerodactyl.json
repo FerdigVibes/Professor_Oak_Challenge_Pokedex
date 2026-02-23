@@ -69,6 +69,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "revive",
+          "locations": ["Cinnabar Island"],
+          "notes": {
+            "en": "Revive the Old Amber on Cinnabar Island.",
+            "ja": "グレンじまでひみつのコハクを復元する。",
+            "fr": "Faites revivre le Vieil Ambre sur Cramois’Île.",
+            "de": "Belebe den Altbernstein auf Zinnoberinsel wieder.",
+            "es": "Revive el Ámbar Viejo en Isla Canela."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "revive",
+          "locations": ["Cinnabar Island"],
+          "notes": {
+            "en": "Revive the Old Amber on Cinnabar Island.",
+            "ja": "グレンじまでひみつのコハクを復元する。",
+            "fr": "Faites revivre le Vieil Ambre sur Cramois’Île.",
+            "de": "Belebe den Altbernstein auf Zinnoberinsel wieder.",
+            "es": "Revive el Ámbar Viejo en Isla Canela."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["KANTO_POKEMON"],
       "obtain": [
