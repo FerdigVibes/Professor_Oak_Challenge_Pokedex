@@ -69,6 +69,51 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 3"],
+          "notes": {
+            "en": "Found on Route 3.",
+            "ja": "3ばんどうろで出現。",
+            "fr": "Disponible sur la Route 3.",
+            "de": "Auf Route 3 fangbar.",
+            "es": "Se encuentra en la Ruta 3."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 3"],
+          "notes": {
+            "en": "Found on Route 3 (1% encounter rate).",
+            "ja": "3ばんどうろで出現（出現率1%）。",
+            "fr": "Disponible sur la Route 3 (taux de rencontre de 1 %).",
+            "de": "Auf Route 3 fangbar (1 % Begegnungsrate).",
+            "es": "Se encuentra en la Ruta 3 (probabilidad del 1%)."
+          }
+        },
+        {
+          "method": "trade",
+          "locations": ["Route 5"],
+          "notes": {
+            "en": "Trade a Nidoran♀ on Route 5.",
+            "ja": "5ばんどうろでニドラン♀と交換。",
+            "fr": "Échangez un Nidoran♀ sur la Route 5.",
+            "de": "Tausche ein Nidoran♀ auf Route 5.",
+            "es": "Intercambia un Nidoran♀ en la Ruta 5."
+          }
+        }
+      ]
+    }
+
     "gold": {
       "sections": ["GOLDENROD_POKEMON"],
       "obtain": [
