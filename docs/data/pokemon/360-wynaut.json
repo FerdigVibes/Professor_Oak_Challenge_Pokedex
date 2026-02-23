@@ -1,0 +1,53 @@
+{
+  "dex": 360,
+  "slug": "wynaut",
+
+  "names": {
+    "en": "Wynaut",
+    "ja": "ソーナノ",
+    "fr": "Okéoké",
+    "de": "Isso",
+    "es": "Wynaut"
+  },
+
+  "types": ["psychic"],
+
+  "evolution": {
+    "family": ["wynaut", "wobbuffet"],
+    "stage": 1
+  },
+
+  "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed Wobbuffet while holding a Lax Incense.",
+            "ja": "ソーナンスに のんきのおこう を持たせて育て屋に預ける。",
+            "fr": "Faites se reproduire Qulbutoké en tenant un Encens Doux.",
+            "de": "Züchte Woingenau, während es Laxrauch trägt.",
+            "es": "Cría Wobbuffet mientras sostiene un Incienso Suave."
+          }
+        }
+      ]
+    },
+
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed Wobbuffet while holding a Lax Incense.",
+            "ja": "ソーナンスに のんきのおこう を持たせて育て屋に預ける。",
+            "fr": "Faites se reproduire Qulbutoké en tenant un Encens Doux.",
+            "de": "Züchte Woingenau, während es Laxrauch trägt.",
+            "es": "Cría Wobbuffet mientras sostiene un Incienso Suave."
+          }
+        }
+      ]
+    }
+  }
+}
