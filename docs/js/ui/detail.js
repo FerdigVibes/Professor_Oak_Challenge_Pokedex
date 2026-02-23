@@ -7,7 +7,7 @@ import { normalizeGameId } from '../utils/normalizeGameId.js';
 import { openMap } from './mapModal.js';
 import { resolveLocationName } from '../../data/maps/locations.js';
 import { isShinyEnabled, toggleShiny } from '../state/shiny.js';
-import { getGameData } from '../data/loader.js';
+import { GAME_ALIASES, getGameData } from '../data/loader.js';
 
 let currentSelection = null; // { pokemon, game }
 
@@ -76,19 +76,30 @@ function buildObtainHTML(entry, generation) {
   `;
 }
 
-function getDetailEntry(pokemon, game, sectionId) {
-  const gameKey = normalizeGameId(game.id);
+export function getDetailEntry(pokemon, gameData, sectionId) {
+  const gameKey = normalizeGameId(gameData.id);
+
+  // ✅ Prefer explicit override if present; otherwise use inherited base
+  const merged = getGameData(pokemon, gameKey);
+
+  // If your schema supports arrays per game entry, handle both
   const raw = pokemon.games?.[gameKey];
-  if (!raw) return null;
+  const isArrayMode = Array.isArray(raw);
 
-  const entries = Array.isArray(raw) ? raw : [raw];
-
-  if (sectionId) {
-    const match = entries.find(e => e.sections?.includes(sectionId));
-    if (match) return match;
+  if (!isArrayMode) {
+    // Single entry mode: merged already contains sections/obtain/notes/etc
+    return merged;
   }
 
-  return entries[0] ?? null;
+  // Array mode: use alias fallback for base entries
+  const baseKey = GAME_ALIASES?.[gameKey];
+  const overrideEntries = Array.isArray(pokemon.games?.[gameKey]) ? pokemon.games[gameKey] : [];
+  const baseEntries = baseKey && Array.isArray(pokemon.games?.[baseKey]) ? pokemon.games[baseKey] : [];
+
+  const entries = overrideEntries.length ? overrideEntries : baseEntries;
+
+  // Prefer an entry matching the current section
+  return entries.find(e => e.sections?.includes(sectionId)) ?? entries[0] ?? null;
 }
 
 /* =========================================================
