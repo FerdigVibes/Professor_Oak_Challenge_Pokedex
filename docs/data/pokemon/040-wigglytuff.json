@@ -141,6 +141,38 @@
       }
     ],
 
+    "firered": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolve Jigglypuff with a Moon Stone. Two Moon Stones are in Mt. Moon: one is an item ball on 1F, the other is hidden in the alcove to the right of the fossils. The others must be found as a held item on Clefairy with a 5% chance.",
+            "ja": "プリンに つきのいしを つかって しんか。つきのいしは おつきみやまに2こあり（1Fの どうぐ、もう1こは かせきの みぎがわの くぼみに かくれている）。それいがいは ピッピが 5%で もちものとして もっている。",
+            "fr": "Faites évoluer Rondoudou avec une Pierre Lune. Il y a deux Pierres Lune au Mont Sélénite : l’une se trouve dans une Poké Ball au 1F, l’autre est cachée dans l’alcôve à droite des fossiles. Les autres doivent être obtenues comme objet tenu par Mélofée avec 5 % de chances.",
+            "de": "Entwickle Pummeluff mit einem Mondstein. Im Mondberg gibt es zwei Mondsteine: einer liegt als Itemball auf 1F, der andere ist in der Nische rechts neben den Fossilien versteckt. Weitere Mondsteine erhältst du nur als getragenes Item von Piepi mit 5% Chance.",
+            "es": "Evoluciona a Jigglypuff con una Piedra Lunar. Hay dos Piedras Lunares en el Mt. Moon: una está en una Poké Ball en la 1ª planta, y la otra está oculta en la alcoba a la derecha de los fósiles. Las demás deben obtenerse como objeto equipado de Clefairy con un 5% de probabilidad."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolve Jigglypuff with a Moon Stone. Two Moon Stones are in Mt. Moon: one is an item ball on 1F, the other is hidden in the alcove to the right of the fossils. The others must be found as a held item on Clefairy with a 5% chance.",
+            "ja": "プリンに つきのいしを つかって しんか。つきのいしは おつきみやまに2こあり（1Fの どうぐ、もう1こは かせきの みぎがわの くぼみに かくれている）。それいがいは ピッピが 5%で もちものとして もっている。",
+            "fr": "Faites évoluer Rondoudou avec une Pierre Lune. Il y a deux Pierres Lune au Mont Sélénite : l’une se trouve dans une Poké Ball au 1F, l’autre est cachée dans l’alcôve à droite des fossiles. Les autres doivent être obtenues comme objet tenu par Mélofée avec 5 % de chances.",
+            "de": "Entwickle Pummeluff mit einem Mondstein. Im Mondberg gibt es zwei Mondsteine: einer liegt als Itemball auf 1F, der andere ist in der Nische rechts neben den Fossilien versteckt. Weitere Mondsteine erhältst du nur als getragenes Item von Piepi mit 5% Chance.",
+            "es": "Evoluciona a Jigglypuff con una Piedra Lunar. Hay dos Piedras Lunares en el Mt. Moon: una está en una Poké Ball en la 1ª planta, y la otra está oculta en la alcoba a la derecha de los fósiles. Las demás deben obtenerse como objeto equipado de Clefairy con un 5% de probabilidad."
+          }
+        }
+      ]
+    }
+
     "gold": {
       "sections": ["AZALEA_POKEMON"],
       "obtain": [
