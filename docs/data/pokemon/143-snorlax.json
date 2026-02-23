@@ -23,7 +23,7 @@
       "obtain": [
         {
           "method": "static",
-          "location": ["Route 12", "Route 16"],
+          "locations": ["Route 12", "Route 16"],
           "notes": {
             "en": "Static encounter on Routes 12 and 16. Requires the Poké Flute from Mr. Fuji. SAVE BEFORE INTERACTING!",
             "ja": "12ばんどうろ・16ばんどうろに こていで しゅつげん。フジろうじんから ポケモンのふえが ひつよう。ぼうけんのまえに セーブ！",
@@ -40,7 +40,7 @@
       "obtain": [
         {
           "method": "static",
-          "location": ["Route 12", "Route 16"],
+          "locations": ["Route 12", "Route 16"],
           "notes": {
             "en": "Static encounter on Routes 12 and 16. Requires the Poké Flute from Mr. Fuji. SAVE BEFORE INTERACTING!",
             "ja": "12ばんどうろ・16ばんどうろに こていで しゅつげん。フジろうじんから ポケモンのふえが ひつよう。ぼうけんのまえに セーブ！",
@@ -57,7 +57,7 @@
       "obtain": [
         {
           "method": "static",
-          "location": ["Route 12", "Route 16"],
+          "locations": ["Route 12", "Route 16"],
           "notes": {
             "en": "Static encounter on Routes 12 and 16. Requires the Poké Flute from Mr. Fuji. SAVE BEFORE INTERACTING!",
             "ja": "12ばんどうろ・16ばんどうろに こていで しゅつげん。フジろうじんから ポケモンのふえが ひつよう。ぼうけんのまえに セーブ！",
@@ -74,7 +74,7 @@
       "obtain": [
         {
           "method": "static",
-          "location": ["Vermilion City"],
+          "locations": ["Vermilion City"],
           "notes": {
             "en": "Static encounter in Vermilion City. Set the Pokégear Radio to the Poké Flute station to wake Snorlax. SAVE BEFORE INTERACTING!",
             "ja": "クチバシティで こていで しゅつげん。ポケギアラジオを ポケモンのふえに あわせると おきる。ぼうけんのまえに セーブ！",
@@ -91,7 +91,7 @@
       "obtain": [
         {
           "method": "static",
-          "location": ["Vermilion City"],
+          "locations": ["Vermilion City"],
           "notes": {
             "en": "Static encounter in Vermilion City. Set the Pokégear Radio to the Poké Flute station to wake Snorlax. SAVE BEFORE INTERACTING!",
             "ja": "クチバシティで こていで しゅつげん。ポケギアラジオを ポケモンのふえに あわせると おきる。ぼうけんのまえに セーブ！",
@@ -108,7 +108,7 @@
       "obtain": [
         {
           "method": "static",
-          "location": ["Vermilion City"],
+          "locations": ["Vermilion City"],
           "notes": {
             "en": "Static encounter in Vermilion City. Set the Pokégear Radio to the Poké Flute station to wake Snorlax. SAVE BEFORE INTERACTING!",
             "ja": "クチバシティで こていで しゅつげん。ポケギアラジオを ポケモンのふえに あわせると おきる。ぼうけんのまえに セーブ！",
