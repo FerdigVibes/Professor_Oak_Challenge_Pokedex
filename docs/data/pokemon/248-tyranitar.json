@@ -19,6 +19,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Pupitar at level 55.",
+            "ja": "サナギラスからレベル55で進化。",
+            "fr": "Évolue de Ymphect au niveau 55.",
+            "de": "Entwickelt sich aus Pupitar auf Level 55.",
+            "es": "Evoluciona de Pupitar al nivel 55."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Pupitar at level 55.",
+            "ja": "サナギラスからレベル55で進化。",
+            "fr": "Évolue de Ymphect au niveau 55.",
+            "de": "Entwickelt sich aus Pupitar auf Level 55.",
+            "es": "Evoluciona de Pupitar al nivel 55."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["MT_SILVER_POKEMON"],
       "obtain": [
