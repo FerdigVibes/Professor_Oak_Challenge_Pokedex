@@ -51,6 +51,38 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Koffing at level 35.",
+            "ja": "ドガースからレベル35で進化。",
+            "fr": "Évolue de Smogo au niveau 35.",
+            "de": "Entwickelt sich aus Smogon auf Level 35.",
+            "es": "Evoluciona de Koffing al nivel 35."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Koffing at level 35.",
+            "ja": "ドガースからレベル35で進化。",
+            "fr": "Évolue de Smogo au niveau 35.",
+            "de": "Entwickelt sich aus Smogon auf Level 35.",
+            "es": "Evoluciona de Koffing al nivel 35."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
