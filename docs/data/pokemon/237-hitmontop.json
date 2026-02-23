@@ -19,6 +19,39 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "conditions": ["equal-attack-defense"],
+          "notes": {
+            "en": "Evolves from Tyrogue at level 20 when Attack and Defense are equal.",
+            "ja": "こうげき と ぼうぎょ が同じ時にレベル20でバルキーから進化。",
+            "fr": "Évolue de Debugant au niveau 20 lorsque l’Attaque et la Défense sont égales.",
+            "de": "Entwickelt sich aus Rabauz auf Level 20, wenn Angriff und Verteidigung gleich sind.",
+            "es": "Evoluciona de Tyrogue al nivel 20 cuando Ataque y Defensa son iguales."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "conditions": ["equal-attack-defense"],
+          "notes": {
+            "en": "Evolves from Tyrogue at level 20 when Attack and Defense are equal.",
+            "ja": "こうげき と ぼうぎょ が同じ時にレベル20でバルキーから進化。",
+            "fr": "Évolue de Debugant au niveau 20 lorsque l’Attaque et la Défense sont égales.",
+            "de": "Entwickelt sich aus Rabauz auf Level 20, wenn Angriff und Verteidigung gleich sind.",
+            "es": "Evoluciona de Tyrogue al nivel 20 cuando Ataque y Defensa son iguales."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["ELITE_FOUR_POKEMON"],
       "obtain": [
