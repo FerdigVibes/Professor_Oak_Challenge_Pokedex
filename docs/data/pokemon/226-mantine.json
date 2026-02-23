@@ -18,6 +18,22 @@
   },
 
   "games": {
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "surf",
+          "locations": ["Tanoby Ruins"],
+          "notes": {
+            "en": "Found while Surfing in the Tanoby Ruins.",
+            "ja": "アノノクスいせきでなみのり中に出現。",
+            "fr": "Disponible en utilisant Surf dans les Ruines Tanoby.",
+            "de": "Beim Surfen in den Tanoby-Ruinen fangbar.",
+            "es": "Se encuentra usando Surf en las Ruinas Tanoby."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["MAHOGANY_POKEMON"],
       "obtain": [
