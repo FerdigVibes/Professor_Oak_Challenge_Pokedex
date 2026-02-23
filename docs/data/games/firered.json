@@ -124,21 +124,14 @@
       "id": "POST_GAME",
       "titleKey": "postGame",
       "order": 7,
-      "children": ["POST_GAME_POKEMON", "EEVEE_EVOLUTIONS"]
+      "children": ["POST_GAME_POKEMON"]
     },
     {
       "id": "POST_GAME_POKEMON",
       "titleKey": "postGamePokemon",
       "order": 7.1,
       "parent": "POST_GAME",
-      "requiredCount": 47
-    },
-    {
-      "id": "EEVEE_EVOLUTIONS",
-      "titleKey": "eeveeEvolutions",
-      "order": 7.2,
-      "parent": "POST_GAME",
-      "requiredCount": 1
+      "requiredCount": 49
     }
   ]
 }
