@@ -78,6 +78,38 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Grimer at level 38.",
+            "ja": "ベトベターからレベル38で進化。",
+            "fr": "Évolue de Tadmorv au niveau 38.",
+            "de": "Entwickelt sich aus Sleima auf Level 38.",
+            "es": "Evoluciona de Grimer al nivel 38."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Grimer at level 38.",
+            "ja": "ベトベターからレベル38で進化。",
+            "fr": "Évolue de Tadmorv au niveau 38.",
+            "de": "Entwickelt sich aus Sleima auf Level 38.",
+            "es": "Evoluciona de Grimer al nivel 38."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["KANTO_POKEMON"],
       "obtain": [
