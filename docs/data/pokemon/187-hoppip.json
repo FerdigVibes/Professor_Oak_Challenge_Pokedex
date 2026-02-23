@@ -18,6 +18,61 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "surf",
+          "locations": ["Five Isle"],
+          "notes": {
+            "en": "Found while Surfing anywhere around Five Isle.",
+            "ja": "5のしま周辺でなみのり中に出現。",
+            "fr": "Disponible en Surf autour de l’Île 5.",
+            "de": "Beim Surfen rund um Eiland 5 fangbar.",
+            "es": "Se encuentra usando Surf alrededor de Isla Cinco."
+          }
+        },
+        {
+          "method": "wild",
+          "locations": ["Five Isle Meadow", "Memorial Pillar"],
+          "notes": {
+            "en": "Also found in Five Isle Meadow and Memorial Pillar.",
+            "ja": "5のしまそうげんときねんのはしらでも出現。",
+            "fr": "Disponible aussi au Pré de l’Île 5 et au Pilier Mémorial.",
+            "de": "Auch auf der Fünf-Eiland-Wiese und beim Gedenkpfeiler fangbar.",
+            "es": "También aparece en Pradera Isla Cinco y Pilar Memorial."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "surf",
+          "locations": ["Five Isle"],
+          "notes": {
+            "en": "Found while Surfing anywhere around Five Isle.",
+            "ja": "5のしま周辺でなみのり中に出現。",
+            "fr": "Disponible en Surf autour de l’Île 5.",
+            "de": "Beim Surfen rund um Eiland 5 fangbar.",
+            "es": "Se encuentra usando Surf alrededor de Isla Cinco."
+          }
+        },
+        {
+          "method": "wild",
+          "locations": ["Five Isle Meadow", "Memorial Pillar"],
+          "notes": {
+            "en": "Also found in Five Isle Meadow and Memorial Pillar.",
+            "ja": "5のしまそうげんときねんのはしらでも出現。",
+            "fr": "Disponible aussi au Pré de l’Île 5 et au Pilier Mémorial.",
+            "de": "Auch auf der Fünf-Eiland-Wiese und beim Gedenkpfeiler fangbar.",
+            "es": "También aparece en Pradera Isla Cinco y Pilar Memorial."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["AZALEA_POKEMON"],
       "obtain": [
