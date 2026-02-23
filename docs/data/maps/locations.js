@@ -258,7 +258,7 @@ export const LOCATION_REGISTRY = {
     names: { en: "Five Island", ja: "5のしま", de: "Eiland 5", es: "Isla Cinco", fr: "Île 5" }
   },
   
-  "kanto:Waterpath Labrinth": {
+  "kanto:Water Labrinth": {
     map: "seviiislands", x: 53.2, y: 69.2,
     names: { en: "Water Labyrinth", ja: "みずのめいろ", de: "Wasserlabyrinth", es: "Laberinto Marino", fr: "Labyrinthe Marin" }
   },
