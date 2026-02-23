@@ -18,6 +18,22 @@
   },
 
   "games": {
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "fish",
+          "locations": ["Five Isle", "Six Isle"],
+          "notes": {
+            "en": "Fish with the Super Rod around Five Isle and Six Isle.",
+            "ja": "5のしま と 6のしまで すごいつりざおを使うと出現。",
+            "fr": "Pêchez avec la Super Canne autour de l’Île 5 et de l’Île 6.",
+            "de": "Mit der Superangel rund um Eiland 5 und Eiland 6 fangbar.",
+            "es": "Se pesca con la Supercaña alrededor de Isla Cinco e Isla Seis."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["BLACKTHORN_POKEMON"],
       "obtain": [
