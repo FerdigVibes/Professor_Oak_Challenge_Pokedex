@@ -35,6 +35,38 @@
       ]
     },
 
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed Jynx.",
+            "ja": "ルージュラを預けてタマゴを作る。",
+            "fr": "Faites se reproduire Lippoutou.",
+            "de": "Züchte Rossana.",
+            "es": "Cría Jynx."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed Jynx.",
+            "ja": "ルージュラを預けてタマゴを作る。",
+            "fr": "Faites se reproduire Lippoutou.",
+            "de": "Züchte Rossana.",
+            "es": "Cría Jynx."
+          }
+        }
+      ]
+    },
+
     "silver": {
       "sections": ["BLACKTHORN_POKEMON"],
       "obtain": [
