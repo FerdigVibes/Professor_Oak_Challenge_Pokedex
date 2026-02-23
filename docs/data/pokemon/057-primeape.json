@@ -67,6 +67,38 @@
       ]
     },
 
+    "firered": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Mankey at level 28.",
+            "ja": "オコリザルはマンキーからレベル28で進化。",
+            "fr": "Évolue de Férosinge au niveau 28.",
+            "de": "Entwickelt sich aus Menki auf Level 28.",
+            "es": "Evoluciona de Mankey al nivel 28."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Mankey at level 28.",
+            "ja": "オコリザルはマンキーからレベル28で進化。",
+            "fr": "Évolue de Férosinge au niveau 28.",
+            "de": "Entwickelt sich aus Menki auf Level 28.",
+            "es": "Evoluciona de Mankey al nivel 28."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
