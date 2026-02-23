@@ -1,7 +1,8 @@
 {
   "id": "leafgreen",
-  "displayName": "Pokémon Leafgreen",
+  "displayName": "Pokémon LeafGreen",
   "generation": 3,
+  "excludedPokemon": ["psyduck", "golduck"],
   "totalPokemon": 171,
 
   "sections": [
