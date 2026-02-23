@@ -218,6 +218,111 @@ export const LOCATION_REGISTRY = {
     names: { en: "Cerulean Cave", ja: "ハナダのどうくつ", de: "Azuria-Höhle", es: "Cueva Celeste", fr: "Grotte Azurée" }
   },
 
+  "kanto:Mt. Ember": {
+    map: "seviiislands", x: 10.8, y: 59.7,
+    names: { en: "Mt. Ember", ja: "ねっぷうざん", de: "Glutberg", es: "Monte Ascuas", fr: "Mont Braise" }
+  },
+  
+  "kanto:One Island": {
+    map: "seviiislands", x: 9.3, y: 72.9,
+    names: { en: "One Island", ja: "1のしま", de: "Eiland 1", es: "Isla Uno", fr: "Île 1" }
+  },
+  
+  "kanto:Kindle Road": {
+    map: "seviiislands", x: 10.8, y: 67.9,
+    names: { en: "Kindle Road", ja: "ほてりのみち", de: "Glutstraße", es: "Ruta Ardiente", fr: "Route Ardent" }
+  },
+  
+  "kanto:Two Island": {
+    map: "seviiislands", x: 24.6, y: 78.9,
+    names: { en: "Two Island", ja: "2のしま", de: "Eiland 2", es: "Isla Dos", fr: "Île 2" }
+  },
+  
+  "kanto:Cape Brink": {
+    map: "seviiislands", x: 24.4, y: 73.9,
+    names: { en: "Cape Brink", ja: "きわみのみさき", de: "Kapspitze", es: "Cabo Extremo", fr: "Cap Extrême" }
+  },
+  
+  "kanto:Three Island": {
+    map: "seviiislands", x: 37.1, y: 86.4,
+    names: { en: "Three Island", ja: "3のしま", de: "Eiland 3", es: "Isla Tres", fr: "Île 3" }
+  },
+  
+  "kanto:Four Island": {
+    map: "seviiislands", x: 49.3, y: 17.4,
+    names: { en: "Four Island", ja: "4のしま", de: "Eiland 4", es: "Isla Cuatro", fr: "Île 4" }
+  },
+  
+  "kanto:Five Island": {
+    map: "seviiislands", x: 53.6, y: 71.8,
+    names: { en: "Five Island", ja: "5のしま", de: "Eiland 5", es: "Isla Cinco", fr: "Île 5" }
+  },
+  
+  "kanto:Waterpath Labrinth": {
+    map: "seviiislands", x: 53.2, y: 69.2,
+    names: { en: "Water Labyrinth", ja: "みずのめいろ", de: "Wasserlabyrinth", es: "Laberinto Marino", fr: "Labyrinthe Marin" }
+  },
+  
+  "kanto:Lost Cave": {
+    map: "seviiislands", x: 56.7, y: 66.9,
+    names: { en: "Lost Cave", ja: "へんげのどうくつ", de: "Verlorene Höhle", es: "Cueva Perdida", fr: "Grotte Perdue" }
+  },
+  
+  "kanto:Five Isle Meadow": {
+    map: "seviiislands", x: 55.1, y: 73.6,
+    names: { en: "Five Isle Meadow", ja: "5のしまそうげん", de: "Wiese von Eiland 5", es: "Pradera de Isla Cinco", fr: "Pré de l’Île 5" }
+  },
+  
+  "kanto:Green Path": {
+    map: "seviiislands", x: 85.2, y: 18.5,
+    names: { en: "Green Path", ja: "みどりのみち", de: "Grüner Pfad", es: "Sendero Verde", fr: "Chemin Vert" }
+  },
+  
+  "kanto:Pattern Bush": {
+    map: "seviiislands", x: 88.0, y: 25.4,
+    names: { en: "Pattern Bush", ja: "もようのもり", de: "Musterbusch", es: "Matorral Patrón", fr: "Bosquet Motif" }
+  },
+  
+  "kanto:Six Island": {
+    map: "seviiislands", x: 87.8, y: 30.9,
+    names: { en: "Six Island", ja: "6のしま", de: "Eiland 6", es: "Isla Seis", fr: "Île 6" }
+  },
+  
+  "kanto:Water Path": {
+    map: "seviiislands", x: 89.3, y: 35.9,
+    names: { en: "Water Path", ja: "みずのみち", de: "Wasserpfad", es: "Sendero Marino", fr: "Chemin Marin" }
+  },
+  
+  "kanto:Ruin Valley": {
+    map: "seviiislands", x: 87.6, y: 37.0,
+    names: { en: "Ruin Valley", ja: "いせきのたに", de: "Ruinental", es: "Valle Ruina", fr: "Vallée des Ruines" }
+  },
+  
+  "kanto:Dotted Hole": {
+    map: "seviiislands", x: 86.3, y: 39.0,
+    names: { en: "Dotted Hole", ja: "てんのあな", de: "Punktloch", es: "Agujero Punteado", fr: "Trou Pointillé" }
+  },
+  
+  "kanto:Seven Island": {
+    map: "seviiislands", x: 62.7, y: 37.5,
+    names: { en: "Seven Island", ja: "7のしま", de: "Eiland 7", es: "Isla Siete", fr: "Île 7" }
+  },
+  
+  "kanto:Seavault Canyon": {
+    map: "seviiislands", x: 64.1, y: 43.5,
+    names: { en: "Seavault Canyon", ja: "セキチクけいこく", de: "Sevault-Canyon", es: "Cañón Sevault", fr: "Canyon Sésault" }
+  },
+  
+  "kanto:Tanoby Ruins": {
+    map: "seviiislands", x: 68.1, y: 47.7,
+    names: { en: "Tanoby Ruins", ja: "アノノクスいせき", de: "Tanoby-Ruinen", es: "Ruinas Tanoby", fr: "Ruines Tanoby" }
+  },
+  
+  "kanto:Icefall Cave": {
+    map: "seviiislands", x: 49.5, y: 17.4,
+    names: { en: "Icefall Cave", ja: "こおりのどうくつ", de: "Eishöhle", es: "Cueva Glacial", fr: "Grotte Cascade" }
+  },
+
   "johto:Pallet Town": {
     map: "johto", x: 60.24, y: 63.80,
     names: { en:"Pallet Town", ja:"マサラタウン", fr:"Bourg Palette", de:"Alabastia", es:"Pueblo Paleta" }
