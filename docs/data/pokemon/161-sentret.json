@@ -18,6 +18,39 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Five Isle Meadow", "Water Path", "Canyon Entrance"],
+          "notes": {
+            "en": "Found in Five Isle Meadow, Water Path, and Canyon Entrance.",
+            "ja": "5のしまそうげん・みずのさんぽみち・たにのいりぐちで出現。",
+            "fr": "Disponible à Pré des Cinq Îles, Voie d’Eau et Entrée du Canyon.",
+            "de": "Auf der Fünf-Insel-Wiese, Wasserpfad und Canyon-Eingang fangbar.",
+            "es": "Se encuentra en Pradera Isla Cinco, Ruta del Agua y Entrada del Cañón."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Five Isle Meadow", "Water Path", "Canyon Entrance"],
+          "notes": {
+            "en": "Found in Five Isle Meadow, Water Path, and Canyon Entrance.",
+            "ja": "5のしまそうげん・みずのさんぽみち・たにのいりぐちで出現。",
+            "fr": "Disponible à Pré des Cinq Îles, Voie d’Eau et Entrée du Canyon.",
+            "de": "Auf der Fünf-Insel-Wiese, Wasserpfad und Canyon-Eingang fangbar.",
+            "es": "Se encuentra en Pradera Isla Cinco, Ruta del Agua y Entrada del Cañón."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["VIOLET_POKEMON"],
       "obtain": [
