@@ -26,6 +26,71 @@
   },
 
   "games": {
+    "firered": [
+      {
+        "sections": ["EEVEE_EVOLUTIONS"],
+        "obtain": [
+          {
+            "method": "evolution",
+            "notes": {
+              "en": "Evolve Eevee with a Fire Stone.",
+              "ja": "ほのおのいしでイーブイをブースターに進化。",
+              "fr": "Faites évoluer Évoli avec une Pierre Feu.",
+              "de": "Entwickle Evoli mit einem Feuerstein.",
+              "es": "Evoluciona a Eevee con una Piedra Fuego."
+            }
+          }
+        ]
+      },
+      {
+        "sections": ["POST_GAME_POKEMON"],
+        "obtain": [
+          {
+            "method": "evolution",
+            "notes": {
+              "en": "Evolve a bred Eevee with a Fire Stone.",
+              "ja": "育て屋で生まれたイーブイをほのおのいしで進化。",
+              "fr": "Faites évoluer un Évoli reproduit avec une Pierre Feu.",
+              "de": "Entwickle ein gezüchtetes Evoli mit einem Feuerstein.",
+              "es": "Evoluciona un Eevee criado con una Piedra Fuego."
+            }
+          }
+        ]
+      }
+    ],
+    
+    "leafgreen": [
+      {
+        "sections": ["EEVEE_EVOLUTIONS"],
+        "obtain": [
+          {
+            "method": "evolution",
+            "notes": {
+              "en": "Evolve Eevee with a Fire Stone.",
+              "ja": "ほのおのいしでイーブイをブースターに進化。",
+              "fr": "Faites évoluer Évoli avec une Pierre Feu.",
+              "de": "Entwickle Evoli mit einem Feuerstein.",
+              "es": "Evoluciona a Eevee con una Piedra Fuego."
+            }
+          }
+        ]
+      },
+      {
+        "sections": ["POST_GAME_POKEMON"],
+        "obtain": [
+          {
+            "method": "evolution",
+            "notes": {
+              "en": "Evolve a bred Eevee with a Fire Stone.",
+              "ja": "育て屋で生まれたイーブイをほのおのいしで進化。",
+              "fr": "Faites évoluer un Évoli reproduit avec une Pierre Feu.",
+              "de": "Entwickle ein gezüchtetes Evoli mit einem Feuerstein.",
+              "es": "Evoluciona un Eevee criado con una Piedra Fuego."
+            }
+          }
+        ]
+      }
+    ],
     "red": {
       "sections": ["EEVEE_EVOLUTIONS"],
       "obtain": [
