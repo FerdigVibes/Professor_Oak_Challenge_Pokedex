@@ -18,6 +18,39 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Pattern Bush"],
+          "notes": {
+            "en": "Found in Pattern Bush.",
+            "ja": "もようのもりで出現。",
+            "fr": "Disponible dans le Bosquet Motif.",
+            "de": "Im Musterbusch fangbar.",
+            "es": "Se encuentra en el Bosque Patrón."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Pattern Bush"],
+          "notes": {
+            "en": "Found in Pattern Bush.",
+            "ja": "もようのもりで出現。",
+            "fr": "Disponible dans le Bosquet Motif.",
+            "de": "Im Musterbusch fangbar.",
+            "es": "Se encuentra en el Bosque Patrón."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["VIOLET_POKEMON"],
       "obtain": [
