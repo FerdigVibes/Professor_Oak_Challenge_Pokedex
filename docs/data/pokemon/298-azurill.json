@@ -1,0 +1,53 @@
+{
+  "dex": 298,
+  "slug": "azurill",
+
+  "names": {
+    "en": "Azurill",
+    "ja": "ルリリ",
+    "fr": "Azurill",
+    "de": "Azurill",
+    "es": "Azurill"
+  },
+
+  "types": ["water"],
+
+  "evolution": {
+    "family": ["azurill", "marill", "azumarill"],
+    "stage": 1
+  },
+
+  "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed Marill or Azumarill while holding a Sea Incense.",
+            "ja": "マリル または マリルリに うしおのおこう を持たせて育て屋に預ける。",
+            "fr": "Faites se reproduire Marill ou Azumarill en tenant un Encens Mer.",
+            "de": "Züchte Marill oder Azumarill, während es Seerauch trägt.",
+            "es": "Cría Marill o Azumarill mientras sostiene un Incienso Marino."
+          }
+        }
+      ]
+    },
+
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed Marill or Azumarill while holding a Sea Incense.",
+            "ja": "マリル または マリルリに うしおのおこう を持たせて育て屋に預ける。",
+            "fr": "Faites se reproduire Marill ou Azumarill en tenant un Encens Mer.",
+            "de": "Züchte Marill oder Azumarill, während es Seerauch trägt.",
+            "es": "Cría Marill o Azumarill mientras sostiene un Incienso Marino."
+          }
+        }
+      ]
+    }
+  }
+}
