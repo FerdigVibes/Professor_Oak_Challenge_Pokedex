@@ -18,6 +18,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "roaming",
+          "notes": {
+            "en": "Roams Kanto after delivering the Sapphire to Celio. Appears only if Charmander was chosen as the starter.",
+            "ja": "サファイアをマサキに届けた後、カントー地方を徘徊。ヒトカゲを選んだ場合のみ出現。",
+            "fr": "Parcourt Kanto après avoir remis le Saphir à Léo. Apparaît seulement si Salamèche est choisi.",
+            "de": "Streift nach Übergabe des Saphirs an Celio durch Kanto. Erscheint nur bei Wahl von Glumanda.",
+            "es": "Deambula por Kanto tras entregar el Zafiro a Celio. Solo aparece si eliges a Charmander."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "roaming",
+          "notes": {
+            "en": "Roams Kanto after delivering the Sapphire to Celio. Appears only if Charmander was chosen as the starter.",
+            "ja": "サファイアをマサキに届けた後、カントー地方を徘徊。ヒトカゲを選んだ場合のみ出現。",
+            "fr": "Parcourt Kanto après avoir remis le Saphir à Léo. Apparaît seulement si Salamèche est choisi.",
+            "de": "Streift nach Übergabe des Saphirs an Celio durch Kanto. Erscheint nur bei Wahl von Glumanda.",
+            "es": "Deambula por Kanto tras entregar el Zafiro a Celio. Solo aparece si eliges a Charmander."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
