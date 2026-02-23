@@ -19,6 +19,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Larvitar at level 30.",
+            "ja": "ヨーギラスからレベル30で進化。",
+            "fr": "Évolue de Embrylex au niveau 30.",
+            "de": "Entwickelt sich aus Larvitar auf Level 30.",
+            "es": "Evoluciona de Larvitar al nivel 30."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Larvitar at level 30.",
+            "ja": "ヨーギラスからレベル30で進化。",
+            "fr": "Évolue de Embrylex au niveau 30.",
+            "de": "Entwickelt sich aus Larvitar auf Level 30.",
+            "es": "Evoluciona de Larvitar al nivel 30."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["MT_SILVER_POKEMON"],
       "obtain": [
