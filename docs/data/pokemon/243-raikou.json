@@ -23,7 +23,6 @@
       "obtain": [
         {
           "method": "roaming",
-          "conditions": ["starter-squirtle", "post-sapphire"],
           "notes": {
             "en": "Roams Kanto after delivering the Sapphire to Celio. Appears only if Squirtle was chosen as the starter.",
             "ja": "サファイアをマサキに届けた後、カントー地方を徘徊。ゼニガメを選んだ場合のみ出現。",
@@ -40,7 +39,6 @@
       "obtain": [
         {
           "method": "roaming",
-          "conditions": ["starter-squirtle", "post-sapphire"],
           "notes": {
             "en": "Roams Kanto after delivering the Sapphire to Celio. Appears only if Squirtle was chosen as the starter.",
             "ja": "サファイアをマサキに届けた後、カントー地方を徘徊。ゼニガメを選んだ場合のみ出現。",
