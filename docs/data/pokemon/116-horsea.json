@@ -72,6 +72,85 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "fish",
+          "locations": [
+            "Route 10",
+            "Route 11",
+            "Route 12",
+            "Route 13",
+            "Route 24",
+            "Pallet Town",
+            "Vermilion City"
+          ],
+          "notes": {
+            "en": "Fish with the Good Rod.",
+            "ja": "いいつりざおでつり上げる。",
+            "fr": "Pêchez avec la Super Canne.",
+            "de": "Mit der Profiangel fangbar.",
+            "es": "Se puede pescar con la Caña Buena."
+          }
+        },
+        {
+          "method": "fish",
+          "locations": [
+            "Route 10",
+            "Route 11",
+            "Route 12",
+            "Route 13",
+            "Route 24",
+            "Pallet Town",
+            "Vermilion City"
+          ],
+          "notes": {
+            "en": "Fish with the Super Rod (higher encounter rate).",
+            "ja": "すごいつりざおでつり上げる（出現率が高い）。",
+            "fr": "Pêchez avec la Super Canne (taux de rencontre plus élevé).",
+            "de": "Mit der Superangel fangbar (höhere Begegnungsrate).",
+            "es": "Se puede pescar con la Supercaña (mayor probabilidad)."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "fish",
+          "locations": [
+            "Route 10",
+            "Route 11",
+            "Route 12",
+            "Route 13",
+            "Pallet Town",
+            "Vermilion City"
+          ],
+          "notes": {
+            "en": "Fish with the Good Rod.",
+            "ja": "いいつりざおでつり上げる。",
+            "fr": "Pêchez avec la Super Canne.",
+            "de": "Mit der Profiangel fangbar.",
+            "es": "Se puede pescar con la Caña Buena."
+          }
+        },
+        {
+          "method": "fish",
+          "locations": ["Vermilion City"],
+          "notes": {
+            "en": "Fish with the Super Rod (very low encounter rate).",
+            "ja": "すごいつりざおでつり上げる（出現率がとても低い）。",
+            "fr": "Pêchez avec la Super Canne (taux de rencontre très faible).",
+            "de": "Mit der Superangel fangbar (sehr geringe Begegnungsrate).",
+            "es": "Se puede pescar con la Supercaña (probabilidad muy baja)."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["CIANWOOD_OLIVINE_POKEMON"],
       "obtain": [
