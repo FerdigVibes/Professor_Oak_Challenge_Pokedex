@@ -19,6 +19,75 @@
   },
 
   "games": {
+    "firered": [
+      {
+        "sections": ["HITMON_PRIZE"],
+        "obtain": [
+          {
+            "method": "gift",
+            "locations": ["Saffron City"],
+            "notes": {
+              "en": "Prize Pokémon for defeating the Fighting Dojo Master in Saffron City.",
+              "ja": "ヤマブキシティのかくとうどうじょうのマスターに勝利すると選べるポケモン。",
+              "fr": "Pokémon offert après avoir battu le Maître du Dojo de Combat à Safrania.",
+              "de": "Belohnungs-Pokémon nach dem Sieg über den Karate-Meister in Saffronia City.",
+              "es": "Pokémon premio por derrotar al Maestro del Dojo Lucha en Ciudad Azafrán."
+            }
+          }
+        ]
+      },
+      {
+        "sections": ["POST_GAME_POKEMON"],
+        "obtain": [
+          {
+            "method": "evolution",
+            "conditions": ["attack-greater-than-defense"],
+            "notes": {
+              "en": "Evolves from Tyrogue at level 20 when Attack is higher than Defense.",
+              "ja": "バルキーからレベル20でこうげきがぼうぎょより高いとサワムラーに進化。",
+              "fr": "Évolue de Debugant au niveau 20 si l’Attaque est supérieure à la Défense.",
+              "de": "Entwickelt sich aus Rabauz auf Level 20, wenn Angriff höher als Verteidigung ist.",
+              "es": "Evoluciona de Tyrogue al nivel 20 si el Ataque es mayor que la Defensa."
+            }
+          }
+        ]
+      }
+    ],
+    
+    "leafgreen": [
+      {
+        "sections": ["HITMON_PRIZE"],
+        "obtain": [
+          {
+            "method": "gift",
+            "locations": ["Saffron City"],
+            "notes": {
+              "en": "Prize Pokémon for defeating the Fighting Dojo Master in Saffron City.",
+              "ja": "ヤマブキシティのかくとうどうじょうのマスターに勝利すると選べるポケモン。",
+              "fr": "Pokémon offert après avoir battu le Maître du Dojo de Combat à Safrania.",
+              "de": "Belohnungs-Pokémon nach dem Sieg über den Karate-Meister in Saffronia City.",
+              "es": "Pokémon premio por derrotar al Maestro del Dojo Lucha en Ciudad Azafrán."
+            }
+          }
+        ]
+      },
+      {
+        "sections": ["POST_GAME_POKEMON"],
+        "obtain": [
+          {
+            "method": "evolution",
+            "conditions": ["attack-greater-than-defense"],
+            "notes": {
+              "en": "Evolves from Tyrogue at level 20 when Attack is higher than Defense.",
+              "ja": "バルキーからレベル20でこうげきがぼうぎょより高いとサワムラーに進化。",
+              "fr": "Évolue de Debugant au niveau 20 si l’Attaque est supérieure à la Défense.",
+              "de": "Entwickelt sich aus Rabauz auf Level 20, wenn Angriff höher als Verteidigung ist.",
+              "es": "Evoluciona de Tyrogue al nivel 20 si el Ataque es mayor que la Defensa."
+            }
+          }
+        ]
+      }
+    ],
     "red": {
       "sections": ["HITMON_PRIZE"],
       "obtain": [
