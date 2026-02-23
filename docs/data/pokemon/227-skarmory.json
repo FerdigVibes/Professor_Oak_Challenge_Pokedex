@@ -18,6 +18,22 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Sevault Canyon"],
+          "notes": {
+            "en": "Found in Sevault Canyon at a very low encounter rate.",
+            "ja": "セキエイのたにで極めて低確率で出現。",
+            "fr": "Disponible dans le Canyon Sépia avec un taux d’apparition très faible.",
+            "de": "Im Schluchtental mit sehr niedriger Begegnungsrate fangbar.",
+            "es": "Se encuentra en Cañón Sétano con una probabilidad muy baja."
+          }
+        }
+      ]
+    },
     "silver": {
       "sections": ["BLACKTHORN_POKEMON"],
       "obtain": [
