@@ -73,6 +73,38 @@
       ]
     },
 
+    "firered": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Kakuna at level 10.",
+            "ja": "コクーンがレベル10で進化する。",
+            "fr": "Évolue de Coconfort au niveau 10.",
+            "de": "Entwickelt sich aus Kokuna auf Level 10.",
+            "es": "Evoluciona de Kakuna al nivel 10."
+          }
+        }
+      ]
+    },
+
+    "leafgreen": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Kakuna at level 10.",
+            "ja": "コクーンがレベル10で進化する。",
+            "fr": "Évolue de Coconfort au niveau 10.",
+            "de": "Entwickelt sich aus Kokuna auf Level 10.",
+            "es": "Evoluciona de Kakuna al nivel 10."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["GOLDENROD_POKEMON"],
       "obtain": [
