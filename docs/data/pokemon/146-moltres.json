@@ -52,6 +52,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["ARTICUNO_MOLTRES"],
+      "obtain": [
+        {
+          "method": "static",
+          "locations": ["Mt. Ember"],
+          "notes": {
+            "en": "Static encounter at Mt. Ember. Save before interacting.",
+            "ja": "ねっこのやまで固定シンボル。話しかける前にセーブ推奨。",
+            "fr": "Rencontre statique au Mont Braise. Sauvegardez avant d’interagir.",
+            "de": "Statische Begegnung am Glutberg. Vor dem Ansprechen speichern.",
+            "es": "Encuentro estático en el Monte Ascuas. Guarda antes de interactuar."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["ARTICUNO_MOLTRES"],
+      "obtain": [
+        {
+          "method": "static",
+          "locations": ["Mt. Ember"],
+          "notes": {
+            "en": "Static encounter at Mt. Ember. Save before interacting.",
+            "ja": "ねっこのやまで固定シンボル。話しかける前にセーブ推奨。",
+            "fr": "Rencontre statique au Mont Braise. Sauvegardez avant d’interagir.",
+            "de": "Statische Begegnung am Glutberg. Vor dem Ansprechen speichern.",
+            "es": "Encuentro estático en el Monte Ascuas. Guarda antes de interactuar."
+          }
+        }
+      ]
+    },
+
     "yellow": {
       "sections": ["MOLTRES"],
       "obtain": [
