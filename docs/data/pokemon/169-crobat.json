@@ -19,6 +19,39 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "conditions": ["high-happiness"],
+          "notes": {
+            "en": "Evolves from Golbat with high friendship.",
+            "ja": "ゴルバットから なつき度を上げて進化。",
+            "fr": "Évolue de Nosferalto avec un haut niveau de bonheur.",
+            "de": "Entwickelt sich aus Golbat durch hohe Freundschaft.",
+            "es": "Evoluciona de Golbat con alta amistad."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "conditions": ["high-happiness"],
+          "notes": {
+            "en": "Evolves from Golbat with high friendship.",
+            "ja": "ゴルバットから なつき度を上げて進化。",
+            "fr": "Évolue de Nosferalto avec un haut niveau de bonheur.",
+            "de": "Entwickelt sich aus Golbat durch hohe Freundschaft.",
+            "es": "Evoluciona de Golbat con alta amistad."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["VIOLET_POKEMON"],
       "obtain": [
