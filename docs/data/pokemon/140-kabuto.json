@@ -23,7 +23,7 @@
       "obtain": [
         {
           "method": "fossil",
-          "locations": ["Cinnabar Island Lab"],
+          "locations": ["Cinnabar Island"],
           "notes": {
             "en": "Revive Dome Fossil at the Cinnabar Island Lab.",
             "ja": "グレンタウンのけんきゅうじょで「こうらのカセキ」をふっかつさせる。",
@@ -40,7 +40,7 @@
       "obtain": [
         {
           "method": "fossil",
-          "locations": ["Cinnabar Island Lab"],
+          "locations": ["Cinnabar Island"],
           "notes": {
             "en": "Revive Dome Fossil at the Cinnabar Island Lab.",
             "ja": "グレンタウンのけんきゅうじょで「こうらのカセキ」をふっかつさせる。",
@@ -57,7 +57,7 @@
       "obtain": [
         {
           "method": "fossil",
-          "locations": ["Cinnabar Island Lab"],
+          "locations": ["Cinnabar Island"],
           "notes": {
             "en": "Revive Dome Fossil at the Cinnabar Island Lab.",
             "ja": "グレンタウンのけんきゅうじょで「こうらのカセキ」をふっかつさせる。",
