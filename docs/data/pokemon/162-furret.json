@@ -19,6 +19,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Sentret at level 15.",
+            "ja": "オタチからレベル15で進化。",
+            "fr": "Évolue de Fouinette au niveau 15.",
+            "de": "Entwickelt sich aus Wiesor auf Level 15.",
+            "es": "Evoluciona de Sentret al nivel 15."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Sentret at level 15.",
+            "ja": "オタチからレベル15で進化。",
+            "fr": "Évolue de Fouinette au niveau 15.",
+            "de": "Entwickelt sich aus Wiesor auf Level 15.",
+            "es": "Evoluciona de Sentret al nivel 15."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["VIOLET_POKEMON"],
       "obtain": [
