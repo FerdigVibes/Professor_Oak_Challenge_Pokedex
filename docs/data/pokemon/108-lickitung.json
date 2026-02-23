@@ -69,6 +69,23 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "trade",
+          "locations": ["Route 18"],
+          "notes": {
+            "en": "Trade for a Golduck in the Route 18 Gatehouse.",
+            "ja": "18ばんどうろのゲートでゴルダックと交換。",
+            "fr": "Échangez contre un Akwakwak dans la porte de la Route 18.",
+            "de": "Tausche gegen ein Entoron im Torhaus von Route 18.",
+            "es": "Intercambia por un Golduck en la Garita de la Ruta 18."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["BLACKTHORN_POKEMON"],
       "obtain": [
