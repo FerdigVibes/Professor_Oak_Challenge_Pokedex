@@ -19,6 +19,59 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Slugma at level 38.",
+            "ja": "マグマッグからレベル38で進化。",
+            "fr": "Évolue de Limagma au niveau 38.",
+            "de": "Entwickelt sich aus Schneckmag auf Level 38.",
+            "es": "Evoluciona de Slugma al nivel 38."
+          }
+        },
+        {
+          "method": "rock-smash",
+          "locations": ["Mt. Ember"],
+          "notes": {
+            "en": "Also found on Mt. Ember (Ruby Path B2F) using Rock Smash.",
+            "ja": "ねっこのやま（ルビーパスB2F）でいわくだきでも出現。",
+            "fr": "Disponible aussi au Mont Braise (Chemin Rubis B2F) avec Éclate-Roc.",
+            "de": "Auch am Glutberg (Rubinpfad B2F) mit Zertrümmerer fangbar.",
+            "es": "También aparece en Monte Ascuas (Ruta Rubí B2F) usando Golpe Roca."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Slugma at level 38.",
+            "ja": "マグマッグからレベル38で進化。",
+            "fr": "Évolue de Limagma au niveau 38.",
+            "de": "Entwickelt sich aus Schneckmag auf Level 38.",
+            "es": "Evoluciona de Slugma al nivel 38."
+          }
+        },
+        {
+          "method": "rock-smash",
+          "locations": ["Mt. Ember"],
+          "notes": {
+            "en": "Also found on Mt. Ember (Ruby Path B2F) using Rock Smash.",
+            "ja": "ねっこのやま（ルビーパスB2F）でいわくだきでも出現。",
+            "fr": "Disponible aussi au Mont Braise (Chemin Rubis B2F) avec Éclate-Roc.",
+            "de": "Auch am Glutberg (Rubinpfad B2F) mit Zertrümmerer fangbar.",
+            "es": "También aparece en Monte Ascuas (Ruta Rubí B2F) usando Golpe Roca."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["KANTO_POKEMON"],
       "obtain": [
