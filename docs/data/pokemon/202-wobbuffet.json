@@ -18,6 +18,39 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Cerulean Cave", "Ruin Valley"],
+          "notes": {
+            "en": "Found in Cerulean Cave and Ruin Valley.",
+            "ja": "ハナダのどうくつといせきのたにで出現。",
+            "fr": "Disponible dans la Grotte Azurée et la Vallée des Ruines.",
+            "de": "In der Azuria-Höhle und im Ruinental fangbar.",
+            "es": "Se encuentra en la Cueva Celeste y Valle Ruina."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Cerulean Cave", "Ruin Valley"],
+          "notes": {
+            "en": "Found in Cerulean Cave and Ruin Valley.",
+            "ja": "ハナダのどうくつといせきのたにで出現。",
+            "fr": "Disponible dans la Grotte Azurée et la Vallée des Ruines.",
+            "de": "In der Azuria-Höhle und im Ruinental fangbar.",
+            "es": "Se encuentra en la Cueva Celeste y Valle Ruina."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["MAHOGANY_POKEMON"],
       "obtain": [
