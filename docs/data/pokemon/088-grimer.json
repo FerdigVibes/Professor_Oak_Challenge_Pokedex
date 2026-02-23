@@ -69,6 +69,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "fish",
+          "locations": ["Celadon City"],
+          "notes": {
+            "en": "Fish with the Super Rod in Celadon City (1% encounter rate).",
+            "ja": "タマムシシティで すごいつりざおを使う（出現率1%）。",
+            "fr": "Pêchez avec la Super Canne à Céladopole (taux de rencontre de 1 %).",
+            "de": "Mit der Superangel in Prismania City fangbar (1 % Begegnungsrate).",
+            "es": "Se puede pescar con la Supercaña en Ciudad Azulona (probabilidad del 1%)."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "fish",
+          "locations": ["Celadon City"],
+          "notes": {
+            "en": "Fish with the Super Rod in Celadon City (1% encounter rate).",
+            "ja": "タマムシシティで すごいつりざおを使う（出現率1%）。",
+            "fr": "Pêchez avec la Super Canne à Céladopole (taux de rencontre de 1 %).",
+            "de": "Mit der Superangel in Prismania City fangbar (1 % Begegnungsrate).",
+            "es": "Se puede pescar con la Supercaña en Ciudad Azulona (probabilidad del 1%)."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["KANTO_POKEMON"],
       "obtain": [
