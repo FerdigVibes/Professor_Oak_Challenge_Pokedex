@@ -18,6 +18,21 @@
   },
 
   "games": {
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed Electabuzz.",
+            "ja": "エレブーを預けてタマゴを作る。",
+            "fr": "Faites se reproduire Élektek.",
+            "de": "Züchte Elektek.",
+            "es": "Cría Electabuzz."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["KANTO_POKEMON"],
       "obtain": [
