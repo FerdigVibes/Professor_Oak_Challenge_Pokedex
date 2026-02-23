@@ -18,6 +18,39 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Icefall Cave"],
+          "notes": {
+            "en": "Found in Icefall Cave.",
+            "ja": "こおりのぬけみちで出現。",
+            "fr": "Disponible dans la Grotte Cascade.",
+            "de": "In der Eishöhle fangbar.",
+            "es": "Se encuentra en la Cueva Glacial."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Icefall Cave"],
+          "notes": {
+            "en": "Found in Icefall Cave.",
+            "ja": "こおりのぬけみちで出現。",
+            "fr": "Disponible dans la Grotte Cascade.",
+            "de": "In der Eishöhle fangbar.",
+            "es": "Se encuentra en la Cueva Glacial."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["BLACKTHORN_POKEMON"],
       "obtain": [
