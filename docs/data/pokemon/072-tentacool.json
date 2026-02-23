@@ -69,6 +69,60 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "surf",
+          "locations": [
+            "Route 4",
+            "Route 10",
+            "Route 11",
+            "Route 12",
+            "Route 13",
+            "Route 19",
+            "Route 20",
+            "Route 21",
+            "Route 24"
+          ],
+          "notes": {
+            "en": "Surf in various waters across Kanto.",
+            "ja": "カントーちほうの みずうみで なみのり中に出現。",
+            "fr": "Utilisez Surf dans différentes zones aquatiques de Kanto.",
+            "de": "Beim Surfen in vielen Gewässern in Kanto fangbar.",
+            "es": "Aparece al usar Surf en varias aguas de Kanto."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "surf",
+          "locations": [
+            "Route 4",
+            "Route 10",
+            "Route 11",
+            "Route 12",
+            "Route 13",
+            "Route 19",
+            "Route 20",
+            "Route 21",
+            "Route 24"
+          ],
+          "notes": {
+            "en": "Surf in various waters across Kanto.",
+            "ja": "カントーちほうの みずうみで なみのり中に出現。",
+            "fr": "Utilisez Surf dans différentes zones aquatiques de Kanto.",
+            "de": "Beim Surfen in vielen Gewässern in Kanto fangbar.",
+            "es": "Aparece al usar Surf en varias aguas de Kanto."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["AZALEA_POKEMON"],
       "obtain": [
