@@ -69,6 +69,23 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 8"],
+          "notes": {
+            "en": "Found on Route 8.",
+            "ja": "8ばんどうろで出現。",
+            "fr": "Disponible sur la Route 8.",
+            "de": "Auf Route 8 fangbar.",
+            "es": "Se encuentra en la Ruta 8."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["GOLDENROD_POKEMON"],
       "obtain": [
