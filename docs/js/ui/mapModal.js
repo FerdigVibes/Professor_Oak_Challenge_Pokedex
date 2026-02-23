@@ -4,7 +4,8 @@ import { LOCATION_REGISTRY } from '../../data/maps/locations.js';
 
 const MAP_IMAGES = {
   johto: './assets/maps/johto.png',
-  kanto: './assets/maps/kanto.png'
+  kanto: './assets/maps/kanto.png',
+  seviiislands: './assets/maps/seviiislands.png'
 };
 
 export function openMap({ gameId, locations }) {
@@ -15,7 +16,24 @@ export function openMap({ gameId, locations }) {
 
   pinsContainer.innerHTML = '';
 
-  const mapKey = getMapForGame(gameId);
+  // Determine map from first location instead of gameId
+  const firstLocation = locations[0];
+  
+  // We don't know mapKey yet — check all maps until we find a match
+  let mapKey = null;
+  
+  for (const key in LOCATION_REGISTRY) {
+    if (key.endsWith(`:${firstLocation}`)) {
+      mapKey = LOCATION_REGISTRY[key].map;
+      break;
+    }
+  }
+  
+  if (!mapKey) {
+    console.error('[MapModal] Could not determine map for location:', firstLocation);
+    return;
+  }
+  
   const mapSrc = MAP_IMAGES[mapKey];
 
   if (!mapSrc) {
@@ -33,7 +51,9 @@ export function openMap({ gameId, locations }) {
   img.src = mapSrc;
 
   locations.forEach(locationName => {
-    const key = `${mapKey}:${locationName}`;
+    const key = Object.keys(LOCATION_REGISTRY)
+      .find(k => k.endsWith(`:${locationName}`));
+  
     const data = LOCATION_REGISTRY[key];
 
     if (!data) {
