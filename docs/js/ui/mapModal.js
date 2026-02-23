@@ -41,11 +41,14 @@ export function openMap({ gameId, locations }) {
     return;
   }
 
+  const ASPECT_RATIOS = {
+    johto: '4248 / 1859',
+    kanto: '2458 / 2329',
+    seviiislands: '2008 / 1098'
+  };
+  
   img.onload = () => {
-    container.style.aspectRatio =
-      mapKey === 'johto'
-        ? '4248 / 1859'
-        : '2458 / 2329';
+    container.style.aspectRatio = ASPECT_RATIOS[mapKey] || '16 / 9';
   };
   
   img.src = mapSrc;
