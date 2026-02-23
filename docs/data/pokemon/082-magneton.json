@@ -67,6 +67,60 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Magnemite at level 30.",
+            "ja": "コイルからレベル30で進化。",
+            "fr": "Évolue de Magnéti au niveau 30.",
+            "de": "Entwickelt sich aus Magnetilo auf Level 30.",
+            "es": "Evoluciona de Magnemite al nivel 30."
+          }
+        },
+        {
+          "method": "wild",
+          "locations": ["Power Plant"],
+          "notes": {
+            "en": "Also found in the Power Plant on Route 10 (requires Surf).",
+            "ja": "10ばんどうろのむじんはつでんしょでも出現（なみのりが必要）。",
+            "fr": "Également disponible à la Centrale sur la Route 10 (Surf requis).",
+            "de": "Auch im Kraftwerk auf Route 10 fangbar (Surfer benötigt).",
+            "es": "También se encuentra en la Central Energía en la Ruta 10 (requiere Surf)."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "time": "Evolves from Magnemite at level 30.",
+            "ja": "コイルからレベル30で進化。",
+            "fr": "Évolue de Magnéti au niveau 30.",
+            "de": "Entwickelt sich aus Magnetilo auf Level 30.",
+            "es": "Evoluciona de Magnemite al nivel 30."
+          }
+        },
+        {
+          "method": "wild",
+          "locations": ["Power Plant"],
+          "notes": {
+            "en": "Also found in the Power Plant on Route 10 (requires Surf).",
+            "ja": "10ばんどうろのむじんはつでんしょでも出現（なみのりが必要）。",
+            "fr": "Également disponible à la Centrale sur la Route 10 (Surf requis).",
+            "de": "Auch im Kraftwerk auf Route 10 fangbar (Surfer benötigt).",
+            "es": "También se encuentra en la Central Energía en la Ruta 10 (requiere Surf)."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
