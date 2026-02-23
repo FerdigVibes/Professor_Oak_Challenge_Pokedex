@@ -70,6 +70,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 22"],
+          "notes": {
+            "en": "Found on Route 22.",
+            "ja": "22ばんどうろで出現。",
+            "fr": "Disponible sur la Route 22.",
+            "de": "Auf Route 22 fangbar.",
+            "es": "Se encuentra en la Ruta 22."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["PEWTER_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 22"],
+          "notes": {
+            "en": "Found on Route 22.",
+            "ja": "22ばんどうろで出現。",
+            "fr": "Disponible sur la Route 22.",
+            "de": "Auf Route 22 fangbar.",
+            "es": "Se encuentra en la Ruta 22."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
