@@ -52,6 +52,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["ARTICUNO_MOLTRES"],
+      "obtain": [
+        {
+          "method": "static",
+          "locations": ["Seafoam Islands"],
+          "notes": {
+            "en": "Static encounter in the Seafoam Islands. Save before interacting.",
+            "ja": "ふたごじまで固定シンボル。話しかける前にセーブ推奨。",
+            "fr": "Rencontre statique aux Îles Écume. Sauvegardez avant d’interagir.",
+            "de": "Statische Begegnung auf den Seeschauminseln. Vor dem Ansprechen speichern.",
+            "es": "Encuentro estático en las Islas Espuma. Guarda antes de interactuar."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["ARTICUNO_MOLTRES"],
+      "obtain": [
+        {
+          "method": "static",
+          "locations": ["Seafoam Islands"],
+          "notes": {
+            "en": "Static encounter in the Seafoam Islands. Save before interacting.",
+            "ja": "ふたごじまで固定シンボル。話しかける前にセーブ推奨。",
+            "fr": "Rencontre statique aux Îles Écume. Sauvegardez avant d’interagir.",
+            "de": "Statische Begegnung auf den Seeschauminseln. Vor dem Ansprechen speichern.",
+            "es": "Encuentro estático en las Islas Espuma. Guarda antes de interactuar."
+          }
+        }
+      ]
+    },
+
     "yellow": {
       "sections": ["ARTICUNO"],
       "obtain": [
