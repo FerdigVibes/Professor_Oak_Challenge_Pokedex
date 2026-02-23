@@ -23,7 +23,7 @@
       "obtain": [
         {
           "method": "revive",
-          "locations": ["Cinnabar Island Lab"],
+          "locations": ["Cinnabar Island"],
           "notes": {
             "en": "Revive the Old Amber at the Cinnabar Island Lab.",
             "ja": "グレンタウンの けんきゅうじょで ひみつのコハクを ふっかつさせる。",
@@ -40,7 +40,7 @@
       "obtain": [
         {
           "method": "revive",
-          "locations": ["Cinnabar Island Lab"],
+          "locations": ["Cinnabar Island"],
           "notes": {
             "en": "Revive the Old Amber at the Cinnabar Island Lab.",
             "ja": "グレンタウンの けんきゅうじょで ひみつのコハクを ふっかつさせる。",
@@ -57,7 +57,7 @@
       "obtain": [
         {
           "method": "revive",
-          "locations": ["Cinnabar Island Lab"],
+          "locations": ["Cinnabar Island"],
           "notes": {
             "en": "Revive the Old Amber at the Cinnabar Island Lab.",
             "ja": "グレンタウンの けんきゅうじょで ひみつのコハクを ふっかつさせる。",
