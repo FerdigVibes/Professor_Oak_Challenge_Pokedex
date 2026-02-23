@@ -34,34 +34,6 @@
         }
       ]
     },
-
-    "firered": {
-      "sections": ["POST_GAME_POKEMON"],
-      "obtain": [
-        {
-          "method": "surf",
-          "locations": ["Four Island", "Icefall Cave", "Ruin Valley"],
-          "notes": {
-            "en": "Found while Surfing in these areas.",
-            "ja": "これらの場所でなみのり中に出現。",
-            "fr": "Disponible en utilisant Surf dans ces zones.",
-            "de": "Beim Surfen in diesen Gebieten fangbar.",
-            "es": "Se encuentra al usar Surf en estas zonas."
-          }
-        },
-        {
-          "method": "wild",
-          "locations": ["Ruin Valley"],
-          "notes": {
-            "en": "Also found in tall grass in Ruin Valley at a low encounter rate.",
-            "ja": "いせきのたにのくさむらでも低確率で出現。",
-            "fr": "Aussi disponible dans les hautes herbes de la Vallée des Ruines avec un faible taux d’apparition.",
-            "de": "Auch im hohen Gras des Ruinentals mit niedriger Begegnungsrate fangbar.",
-            "es": "También aparece en la hierba alta del Valle Ruina con baja probabilidad."
-          }
-        }
-      ]
-    },
     
     "leafgreen": {
       "sections": ["POST_GAME_POKEMON"],
