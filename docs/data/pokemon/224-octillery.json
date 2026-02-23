@@ -19,6 +19,21 @@
   },
 
   "games": {
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Remoraid at level 25.",
+            "ja": "テッポウオからレベル25で進化。",
+            "fr": "Évolue de Rémoraid au niveau 25.",
+            "de": "Entwickelt sich aus Remoraid auf Level 25.",
+            "es": "Evoluciona de Remoraid al nivel 25."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["BLACKTHORN_POKEMON"],
       "obtain": [
