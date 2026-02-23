@@ -35,6 +35,38 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Meowth at level 28.",
+            "ja": "ニャースからレベル28で進化。",
+            "fr": "Évolue de Miaouss au niveau 28.",
+            "de": "Entwickelt sich aus Mauzi auf Level 28.",
+            "es": "Evoluciona de Meowth al nivel 28."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Meowth at level 28.",
+            "ja": "ニャースからレベル28で進化。",
+            "fr": "Évolue de Miaouss au niveau 28.",
+            "de": "Entwickelt sich aus Mauzi auf Level 28.",
+            "es": "Evoluciona de Meowth al nivel 28."
+          }
+        }
+      ]
+    },
+
     "silver": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
