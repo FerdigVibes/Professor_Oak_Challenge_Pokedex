@@ -35,6 +35,23 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Power Plant"],
+          "notes": {
+            "en": "Found in the Power Plant on Route 10 (requires Surf).",
+            "ja": "10ばんどうろのむじんはつでんしょで出現（なみのりが必要）。",
+            "fr": "Disponible à la Centrale sur la Route 10 (Surf requis).",
+            "de": "Im Kraftwerk auf Route 10 fangbar (Surfer benötigt).",
+            "es": "Se encuentra en la Central Energía en la Ruta 10 (requiere Surf)."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["KANTO_POKEMON"],
       "obtain": [
