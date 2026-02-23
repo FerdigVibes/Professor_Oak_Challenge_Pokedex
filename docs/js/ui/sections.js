@@ -8,6 +8,7 @@ import { t } from '../data/i18n.js';
 import { normalizeGameId } from '../utils/normalizeGameId.js';
 import { getGameTime } from '../state/gameTime.js';
 import { setCurrentDetailSelection } from './detail.js';
+import { GAME_ALIASES } from '../data/loader.js';
 
 const MOON_STONE_SECTIONS = new Set([
   'MOON_STONE_1',
@@ -19,7 +20,13 @@ const userExpandedSections = new Set();
 
 function getGameEntries(pokemon, gameId) {
   const normalized = normalizeGameId(gameId);
-  const raw = pokemon.games?.[normalized];
+
+  // ✅ If this game inherits from another (firered -> red), fallback when missing
+  const baseId = GAME_ALIASES?.[normalized];
+  const raw =
+    pokemon.games?.[normalized] ??
+    (baseId ? pokemon.games?.[baseId] : undefined);
+
   if (!raw) return [];
   return Array.isArray(raw) ? raw : [raw];
 }
@@ -349,14 +356,9 @@ export function renderSections({ game, pokemon }) {
     sectionRows.className = 'section-rows';
 
     const matches = pokemon.filter(p => {
-      const gameKey = normalizeGameId(game.id);
-      const entriesRaw = p.games?.[gameKey];
-      if (!entriesRaw) return false;
+      const entries = getGameEntries(p, game.id); // ✅ uses alias fallback
+      if (!entries.length) return false;
     
-      const entries = Array.isArray(entriesRaw)
-        ? entriesRaw
-        : [entriesRaw];
-      
       // Block VC-only Pokémon outside Crystal VC
       if (
         entries.some(e => e.availability?.vcOnly === true) &&
@@ -364,10 +366,8 @@ export function renderSections({ game, pokemon }) {
       ) {
         return false;
       }
-      
-      return entries.some(e =>
-        e.sections?.includes(section.id)
-      );
+    
+      return entries.some(e => e.sections?.includes(section.id));
     });
 
     matches.forEach(p => {
@@ -382,7 +382,7 @@ export function renderSections({ game, pokemon }) {
       const sectionId = sectionBlock.dataset.sectionId;
     
       // 3️⃣ FIND GAME ENTRY
-      const entries = getGameEntries(p, normalizeGameId(game.id));
+      const entries = getGameEntries(p, game.id);
       const entry =
         entries.find(e => e.sections?.includes(sectionId)) ??
         entries[0];
