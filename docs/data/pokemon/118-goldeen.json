@@ -89,6 +89,74 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "fish",
+          "locations": [
+            "Safari Zone",
+            "Fuchsia City",
+            "Viridian City",
+            "Route 6",
+            "Route 25"
+          ],
+          "notes": {
+            "en": "Fish with the Good Rod.",
+            "ja": "いいつりざおでつり上げる。",
+            "fr": "Pêchez avec la Super Canne.",
+            "de": "Mit der Profiangel fangbar.",
+            "es": "Se puede pescar con la Caña Buena."
+          }
+        },
+        {
+          "method": "fish",
+          "locations": ["Fuchsia City"],
+          "notes": {
+            "en": "Fish with the Super Rod.",
+            "ja": "すごいつりざおでつり上げる。",
+            "fr": "Pêchez avec la Super Canne.",
+            "de": "Mit der Superangel fangbar.",
+            "es": "Se puede pescar con la Supercaña."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "fish",
+          "locations": [
+            "Safari Zone",
+            "Fuchsia City",
+            "Viridian City",
+            "Route 6",
+            "Route 25"
+          ],
+          "notes": {
+            "en": "Fish with the Good Rod.",
+            "ja": "いいつりざおでつり上げる。",
+            "fr": "Pêchez avec la Super Canne.",
+            "de": "Mit der Profiangel fangbar.",
+            "es": "Se puede pescar con la Caña Buena."
+          }
+        },
+        {
+          "method": "fish",
+          "locations": ["Fuchsia City"],
+          "notes": {
+            "en": "Fish with the Super Rod.",
+            "ja": "すごいつりざおでつり上げる。",
+            "fr": "Pêchez avec la Super Canne.",
+            "de": "Mit der Superangel fangbar.",
+            "es": "Se puede pescar con la Supercaña."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["AZALEA_POKEMON"],
       "obtain": [
