@@ -78,6 +78,38 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Tentacool at level 30.",
+            "ja": "メノクラゲからレベル30で進化。",
+            "fr": "Évolue de Tentacool au niveau 30.",
+            "de": "Entwickelt sich aus Tentacha auf Level 30.",
+            "es": "Evoluciona de Tentacool al nivel 30."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Tentacool at level 30.",
+            "ja": "メノクラゲからレベル30で進化。",
+            "fr": "Évolue de Tentacool au niveau 30.",
+            "de": "Entwickelt sich aus Tentacha auf Level 30.",
+            "es": "Evoluciona de Tentacool al nivel 30."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["AZALEA_POKEMON"],
       "obtain": [
