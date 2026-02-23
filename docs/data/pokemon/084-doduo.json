@@ -69,6 +69,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Safari Zone", "Route 16", "Route 17", "Route 18"],
+          "notes": {
+            "en": "Found in Safari Zone Areas 2 and 4, and on Routes 16–18.",
+            "ja": "サファリゾーンのエリア2・エリア4、16ばんどうろ〜18ばんどうろで出現。",
+            "fr": "Disponible dans la Zone Safari (Zones 2 et 4) ainsi que sur les Routes 16 à 18.",
+            "de": "In der Safari-Zone (Bereich 2 und 4) sowie auf den Routen 16–18 fangbar.",
+            "es": "Se encuentra en la Zona Safari (Áreas 2 y 4) y en las Rutas 16–18."
+          }
+        }
+      ]
+    },
+
+    "leafgreen": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Safari Zone", "Route 16", "Route 17", "Route 18"],
+          "notes": {
+            "en": "Found in Safari Zone Areas 2 and 4, and on Routes 16–18.",
+            "ja": "サファリゾーンのエリア2・エリア4、16ばんどうろ〜18ばんどうろで出現。",
+            "fr": "Disponible dans la Zone Safari (Zones 2 et 4) ainsi que sur les Routes 16 à 18.",
+            "de": "In der Safari-Zone (Bereich 2 und 4) sowie auf den Routen 16–18 fangbar.",
+            "es": "Se encuentra en la Zona Safari (Áreas 2 y 4) y en las Rutas 16–18."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["ELITE_FOUR_POKEMON"],
       "obtain": [
