@@ -81,6 +81,36 @@
       ]
     },
 
+    "firered": {
+      "sections": ["FUCHSIA_POKEMON"],
+      "obtain": [
+        {
+          "method": "fish",
+          "locations": [
+            "Route 6",
+            "Route 10",
+            "Route 11",
+            "Route 12",
+            "Route 13",
+            "Route 22",
+            "Route 25",
+            "Viridian City",
+            "Fuchsia City",
+            "Pallet Town",
+            "Vermilion City",
+            "Safari Zone"
+          ],
+          "notes": {
+            "en": "Fish in multiple areas across Kanto.",
+            "ja": "カントーちほうのさまざまな ばしょで つりで出現。",
+            "fr": "Pêchez dans plusieurs zones de Kanto.",
+            "de": "In vielen Gewässern in Kanto angelbar.",
+            "es": "Se puede pescar en múltiples zonas de Kanto."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["MAHOGANY_POKEMON"],
       "obtain": [
