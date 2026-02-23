@@ -18,6 +18,39 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Mt. Ember"],
+          "notes": {
+            "en": "Found around Mt. Ember along the Ruby Path.",
+            "ja": "ねっこのやま（ルビーパス）周辺で出現。",
+            "fr": "Disponible au Mont Braise sur le Chemin Rubis.",
+            "de": "Am Glutberg auf dem Rubinpfad fangbar.",
+            "es": "Se encuentra en el Monte Ascuas en la Ruta Rubí."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Mt. Ember"],
+          "notes": {
+            "en": "Found around Mt. Ember along the Ruby Path.",
+            "ja": "ねっこのやま（ルビーパス）周辺で出現。",
+            "fr": "Disponible au Mont Braise sur le Chemin Rubis.",
+            "de": "Am Glutberg auf dem Rubinpfad fangbar.",
+            "es": "Se encuentra en el Monte Ascuas en la Ruta Rubí."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["KANTO_POKEMON"],
       "obtain": [
