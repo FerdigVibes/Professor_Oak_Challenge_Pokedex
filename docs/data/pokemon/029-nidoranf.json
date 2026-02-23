@@ -69,6 +69,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 3"],
+          "notes": {
+            "en": "Common early-route Pokémon.",
+            "ja": "序盤の道路によく出現するポケモン。",
+            "fr": "Pokémon commun des routes du début.",
+            "de": "Häufiges Pokémon auf frühen Routen.",
+            "es": "Pokémon común de las primeras rutas."
+          }
+        }
+      ]
+    },
+
+    "leafgreen": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 3"],
+          "notes": {
+            "en": "Common early-route Pokémon.",
+            "ja": "序盤の道路によく出現するポケモン。",
+            "fr": "Pokémon commun des routes du début.",
+            "de": "Häufiges Pokémon auf frühen Routen.",
+            "es": "Pokémon común de las primeras rutas."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["GOLDENROD_POKEMON"],
       "obtain": [
