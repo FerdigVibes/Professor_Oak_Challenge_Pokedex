@@ -18,6 +18,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed two Jigglypuff or Wigglytuff together.",
+            "ja": "プリン または プクリンを預けてタマゴを作る。",
+            "fr": "Faites se reproduire deux Rondoudou ou Grodoudou.",
+            "de": "Züchte zwei Pummeluff oder Knuddeluff.",
+            "es": "Cría dos Jigglypuff o Wigglytuff."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "breed",
+          "notes": {
+            "en": "Breed two Jigglypuff or Wigglytuff together.",
+            "ja": "プリン または プクリンを預けてタマゴを作る。",
+            "fr": "Faites se reproduire deux Rondoudou ou Grodoudou.",
+            "de": "Züchte zwei Pummeluff oder Knuddeluff.",
+            "es": "Cría dos Jigglypuff o Wigglytuff."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["GOLDENROD_POKEMON"],
       "obtain": [
