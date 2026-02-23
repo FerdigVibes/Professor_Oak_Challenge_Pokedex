@@ -35,6 +35,23 @@
       ]
     },
 
+    "leafgreen": {
+      "sections": ["ARTICUNO_MOLTRES"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Mt. Ember"],
+          "notes": {
+            "en": "Found around the base of Mt. Ember.",
+            "ja": "ねっこのやま（ふもと）で出現。",
+            "fr": "Disponible autour de la base du Mont Braise.",
+            "de": "Am Fuß des Glutbergs fangbar.",
+            "es": "Se encuentra alrededor de la base del Monte Ascuas."
+          }
+        }
+      ]
+    },
+
     "gold": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
