@@ -52,6 +52,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "static",
+          "locations": ["Power Plant"],
+          "notes": {
+            "en": "Static encounter in the Power Plant on Route 10 (requires Surf). Save before interacting.",
+            "ja": "10ばんどうろのむじんはつでんしょで固定シンボル。なみのりが必要。話しかける前にセーブ推奨。",
+            "fr": "Rencontre statique à la Centrale sur la Route 10 (Surf requis). Sauvegardez avant d’interagir.",
+            "de": "Statische Begegnung im Kraftwerk auf Route 10 (Surfer benötigt). Vor dem Ansprechen speichern.",
+            "es": "Encuentro estático en la Central Energía en la Ruta 10 (requiere Surf). Guarda antes de interactuar."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CINNABAR_POKEMON"],
+      "obtain": [
+        {
+          "method": "static",
+          "locations": ["Power Plant"],
+          "notes": {
+            "en": "Static encounter in the Power Plant on Route 10 (requires Surf). Save before interacting.",
+            "ja": "10ばんどうろのむじんはつでんしょで固定シンボル。なみのりが必要。話しかける前にセーブ推奨。",
+            "fr": "Rencontre statique à la Centrale sur la Route 10 (Surf requis). Sauvegardez avant d’interagir.",
+            "de": "Statische Begegnung im Kraftwerk auf Route 10 (Surfer benötigt). Vor dem Ansprechen speichern.",
+            "es": "Encuentro estático en la Central Energía en la Ruta 10 (requiere Surf). Guarda antes de interactuar."
+          }
+        }
+      ]
+    },
+
     "yellow": {
       "sections": ["CELADON_POKEMON"],
       "obtain": [
