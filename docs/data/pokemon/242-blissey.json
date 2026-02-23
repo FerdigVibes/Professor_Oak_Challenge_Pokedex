@@ -20,6 +20,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Chansey with high happiness.",
+            "ja": "ラッキーからなつき度を上げて進化。",
+            "fr": "Évolue de Leveinard avec un haut niveau de bonheur.",
+            "de": "Entwickelt sich aus Chaneira durch hohe Freundschaft.",
+            "es": "Evoluciona de Chansey con alta felicidad."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Chansey with high happiness.",
+            "ja": "ラッキーからなつき度を上げて進化。",
+            "fr": "Évolue de Leveinard avec un haut niveau de bonheur.",
+            "de": "Entwickelt sich aus Chaneira durch hohe Freundschaft.",
+            "es": "Evoluciona de Chansey con alta felicidad."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["KANTO_POKEMON"],
       "obtain": [
