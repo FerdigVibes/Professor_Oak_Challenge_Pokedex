@@ -35,6 +35,40 @@
       ]
     },
 
+    "firered": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 5", "Route 6"],
+          "notes": {
+            "en": "Found on Routes 5 and 6.",
+            "ja": "5ばんどうろ・6ばんどうろで出現。",
+            "fr": "Disponible sur les Routes 5 et 6.",
+            "de": "Auf den Routen 5 und 6 fangbar.",
+            "es": "Se encuentra en las Rutas 5 y 6."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["CERULEAN_POKEMON"],
+      "obtain": [
+        {
+          "method": "wild",
+          "locations": ["Route 5", "Route 6"],
+          "notes": {
+            "en": "Found on Routes 5 and 6.",
+            "ja": "5ばんどうろ・6ばんどうろで出現。",
+            "fr": "Disponible sur les Routes 5 et 6.",
+            "de": "Auf den Routen 5 und 6 fangbar.",
+            "es": "Se encuentra en las Rutas 5 y 6."
+          }
+        }
+      ]
+    },
+
     "silver": {
       "sections": ["ECRUTEAK_POKEMON"],
       "obtain": [
