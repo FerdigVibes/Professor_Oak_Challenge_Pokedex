@@ -19,6 +19,37 @@
   },
 
   "games": {
+    "firered": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Swinub at level 33.",
+            "ja": "ウリムーからレベル33で進化。",
+            "fr": "Évolue de Marcacrin au niveau 33.",
+            "de": "Entwickelt sich aus Quiekel auf Level 33.",
+            "es": "Evoluciona de Swinub al nivel 33."
+          }
+        }
+      ]
+    },
+    
+    "leafgreen": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "evolution",
+          "notes": {
+            "en": "Evolves from Swinub at level 33.",
+            "ja": "ウリムーからレベル33で進化。",
+            "fr": "Évolue de Marcacrin au niveau 33.",
+            "de": "Entwickelt sich aus Quiekel auf Level 33.",
+            "es": "Evoluciona de Swinub al nivel 33."
+          }
+        }
+      ]
+    },
     "gold": {
       "sections": ["BLACKTHORN_POKEMON"],
       "obtain": [
