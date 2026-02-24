@@ -332,9 +332,14 @@ const resolvedSlugs = enableCounterpartLock
         }
       }
 
-      // Section capacity reached
       if (caughtHere.length >= capacity) {
-        row.classList.add('is-capacity-locked');
+        const dex = Number(row.dataset.dex);
+        const primary = localStorage.getItem(`oak:${gameId}:primary:${dex}`);
+      
+        // ⭐ ONLY lock if this Pokémon belongs to THIS section's resolved choices
+        if (!primary || primary === sectionId) {
+          row.classList.add('is-capacity-locked');
+        }
       }
     });
   });
