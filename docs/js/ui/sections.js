@@ -144,39 +144,56 @@ function updateSectionCounter(sectionBlock) {
 function applyStarterExclusivityGlobal(gameId) {
   const rows = document.querySelectorAll('.pokemon-row');
 
+  // ⭐ ONLY THESE families participate
+  const STARTER_FAMILIES = new Set([
+    // Gen 1 / FRLG starters
+    'bulbasaur|ivysaur|venusaur',
+    'charmander|charmeleon|charizard',
+    'squirtle|wartortle|blastoise',
+
+    // Gen 2 starters
+    'chikorita|bayleef|meganium',
+    'cyndaquil|quilava|typhlosion',
+    'totodile|croconaw|feraligatr'
+  ]);
+
   const families = {};
 
   rows.forEach(row => {
     const family = row.dataset.family;
-    if (!family) return;
+
+    // ❌ Ignore non-starter Pokémon
+    if (!STARTER_FAMILIES.has(family)) return;
 
     families[family] ??= [];
     families[family].push(row);
   });
 
-  // Reset first
+  // If no starter rows exist → do nothing
+  if (!Object.keys(families).length) return;
+
+  // Reset collapse state FIRST
   rows.forEach(row => row.classList.remove('starter-collapsed'));
 
-  const caughtFamilies = [];
+  const caughtFamilies = Object.entries(families)
+    .filter(([_, familyRows]) =>
+      familyRows.some(row =>
+        isCaught(gameId, Number(row.dataset.dex))
+      )
+    )
+    .map(([family]) => family);
 
-  Object.entries(families).forEach(([family, familyRows]) => {
-    const caught = familyRows.some(row =>
-      isCaught(gameId, Number(row.dataset.dex))
-    );
-
-    if (caught) caughtFamilies.push(family);
-  });
-
+  // Only collapse when EXACTLY ONE starter line is chosen
   if (caughtFamilies.length !== 1) return;
 
   const chosen = caughtFamilies[0];
 
   Object.entries(families).forEach(([family, familyRows]) => {
-    if (family !== chosen) {
-      familyRows.forEach(row => {
-        row.classList.add('starter-collapsed');
-      });
-    }
+    if (family === chosen) return;
+
+    familyRows.forEach(row => {
+      row.classList.add('starter-collapsed');
+    });
   });
 }
 
