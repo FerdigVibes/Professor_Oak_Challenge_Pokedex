@@ -42,6 +42,16 @@ function getPokemonTimeAvailability(gameData) {
   );
 }
 
+function ensurePrimary(gameId, dex, sectionId) {
+  const key = `oak:${gameId}:primary:${dex}`;
+  const existing = localStorage.getItem(key);
+  if (!existing) {
+    localStorage.setItem(key, sectionId);
+    return sectionId;
+  }
+  return existing;
+}
+
 function isAvailableToday(entry) {
   if (!entry?.obtain) return true;
 
@@ -333,13 +343,7 @@ const resolvedSlugs = enableCounterpartLock
       }
 
       if (caughtHere.length >= capacity) {
-        const dex = Number(row.dataset.dex);
-        const primary = localStorage.getItem(`oak:${gameId}:primary:${dex}`);
-      
-        // ⭐ ONLY lock if this Pokémon belongs to THIS section's resolved choices
-        if (!primary || primary === sectionId) {
-          row.classList.add('is-capacity-locked');
-        }
+        row.classList.add('is-capacity-locked');
       }
     });
   });
@@ -360,10 +364,6 @@ window.addEventListener('caught-changed', () => {
   applyMoonStoneLogic(game);
   applyDuplicateLocking(gameId);
   applyStarterExclusivityGlobal(gameId);
-
-  // 🔥 Special rule engines
-  applyMoonStoneLogic(game);
-  applyDuplicateLocking(gameId);
 });
 
 /* =========================================================
@@ -455,12 +455,16 @@ export function renderSections({ game, pokemon }) {
     });
 
     matches.forEach(p => {
-      const primary =
-        localStorage.getItem(`oak:${game.id}:primary:${p.dex}`);
+      let primary = localStorage.getItem(`oak:${game.id}:primary:${p.dex}`);
+
+      // ✅ Backfill primary for old saves (caught exists but primary missing)
+      if (isCaught(game.id, p.dex) && !primary) {
+        primary = ensurePrimary(game.id, p.dex, section.id);
+      }
       
       const caught =
         isCaught(game.id, p.dex) &&
-        (!primary || primary === section.id);
+        primary === section.id;
 
       // 1️⃣ CREATE ROW FIRST
       const row = document.createElement('div');
