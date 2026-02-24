@@ -323,6 +323,17 @@ export const LOCATION_REGISTRY = {
     names: { en: "Icefall Cave", ja: "こおりのどうくつ", de: "Eishöhle", es: "Cueva Glacial", fr: "Grotte Cascade" }
   },
 
+  "kanto:Memorial Pillar": {
+    map: "seviiislands", x: 56.7, y: 74.1,
+    names: {
+      en: "Memorial Pillar",
+      ja: "きねんのとう",
+      de: "Gedenksäule",
+      es: "Pilar Conmemorativo",
+      fr: "Pilier Commémoratif"
+    }
+  },
+
   "johto:Pallet Town": {
     map: "johto", x: 60.24, y: 63.80,
     names: { en:"Pallet Town", ja:"マサラタウン", fr:"Bourg Palette", de:"Alabastia", es:"Pueblo Paleta" }
