@@ -197,46 +197,55 @@ function isPokemonAvailable(gameEntry) {
 function applyStarterExclusivity(sectionBlock, gameId) {
   const rows = sectionBlock.querySelectorAll('.pokemon-row');
 
-  // Group rows by family
+  // ⭐ Only these families participate in exclusivity
+  const STARTER_FAMILIES = new Set([
+    'bulbasaur|ivysaur|venusaur',
+    'charmander|charmeleon|charizard',
+    'squirtle|wartortle|blastoise'
+  ]);
+
+  // Group ONLY starter-linked rows
   const families = {};
+
   rows.forEach(row => {
     const family = row.dataset.family;
-    if (!family) return;
-    if (!families[family]) families[family] = [];
+
+    // ❌ Ignore anything that isn't a starter family
+    if (!STARTER_FAMILIES.has(family)) return;
+
+    families[family] ??= [];
     families[family].push(row);
   });
 
-  // Reset visibility and remove animations
+  // If no starter rows exist in this section, do nothing
+  if (!Object.keys(families).length) return;
+
+  // Reset collapse state
   rows.forEach(row => {
-    row.style.display = '';
     row.classList.remove('starter-collapsed');
   });
 
-  // Determine if exactly one family has any caught Pokémon
-  let caughtFamilies = [];
+  // Detect which starter family was chosen
+  const caughtFamilies = Object.entries(families)
+    .filter(([_, familyRows]) =>
+      familyRows.some(row =>
+        isCaught(gameId, Number(row.dataset.dex))
+      )
+    )
+    .map(([family]) => family);
+
+  // Only collapse when ONE starter line is chosen
+  if (caughtFamilies.length !== 1) return;
+
+  const chosenFamily = caughtFamilies[0];
 
   Object.entries(families).forEach(([family, familyRows]) => {
-    const isFamilyCaught = familyRows.some(row =>
-      isCaught(gameId, Number(row.dataset.dex))
-    );
-    if (isFamilyCaught) {
-      caughtFamilies.push(family);
-    }
-  });
+    if (family === chosenFamily) return;
 
-  const onlyOneCaught = caughtFamilies.length === 1;
-
-  // Collapse other families if exactly one is caught
-  if (onlyOneCaught) {
-    const chosenFamily = caughtFamilies[0];
-    Object.entries(families).forEach(([family, familyRows]) => {
-      if (family !== chosenFamily) {
-        familyRows.forEach(row => {
-          row.classList.add('starter-collapsed'); // Collapse with animation
-        });
-      }
+    familyRows.forEach(row => {
+      row.classList.add('starter-collapsed');
     });
-  }
+  });
 }
 
 function applyPokemonAvailabilityState(row, caught, availableNow, timeGated = false) {
