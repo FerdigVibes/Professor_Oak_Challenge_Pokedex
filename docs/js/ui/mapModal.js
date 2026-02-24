@@ -56,6 +56,10 @@ export function openMap({ gameId, locations }) {
   });
 
   modal.classList.remove('hidden');
+  // Prevent map clicks from closing modal
+  container.addEventListener('click', e => {
+    e.stopPropagation();
+  });
 }
 
 function getMapForGame(gameId) {
@@ -75,10 +79,18 @@ function closeMap() {
 }
 
 document.addEventListener('click', e => {
-  if (
-    e.target.classList.contains('map-backdrop') ||
-    e.target.classList.contains('map-close')
-  ) {
+  const modal = document.getElementById('map-modal');
+  const container = modal?.querySelector('.map-container');
+
+  if (!modal || modal.classList.contains('hidden')) return;
+
+  // ✅ Close if clicking outside the map container
+  if (!container.contains(e.target)) {
+    closeMap();
+  }
+
+  // ✅ Close button still works
+  if (e.target.classList.contains('map-close')) {
     closeMap();
   }
 });
