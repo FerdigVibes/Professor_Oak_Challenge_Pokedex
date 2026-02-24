@@ -187,6 +187,12 @@ html, body {
   z-index: -1;
 }
 
+.pokemon-row.is-duplicate-locked {
+  opacity: 0.35;
+  filter: grayscale(80%);
+  pointer-events: none;
+}
+
 /* Ensure content sits above background layers */
 .section-block,
 .section-header,
