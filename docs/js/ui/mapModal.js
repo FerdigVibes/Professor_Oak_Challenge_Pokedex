@@ -78,15 +78,16 @@ document.addEventListener('click', e => {
   const modal = document.getElementById('map-modal');
   if (!modal || modal.classList.contains('hidden')) return;
 
+  // 🧠 NEW — ignore clicks that originated from a map button
+  if (e.target.closest('.map-button')) return;
+
   const container = modal.querySelector('.map-container');
 
-  // Close button
   if (e.target.closest('.map-close')) {
     closeMap();
     return;
   }
 
-  // Clicked outside map container
   if (container && !container.contains(e.target)) {
     closeMap();
   }
