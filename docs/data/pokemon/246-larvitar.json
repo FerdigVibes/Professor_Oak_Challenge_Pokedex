@@ -23,7 +23,7 @@
       "obtain": [
         {
           "method": "wild",
-          "locations": ["Sevault Canyon"],
+          "locations": ["Seavault Canyon"],
           "notes": {
             "en": "Found in Sevault Canyon at a very low encounter rate.",
             "ja": "セキエイのたにで極めて低確率で出現。",
@@ -40,7 +40,7 @@
       "obtain": [
         {
           "method": "wild",
-          "locations": ["Sevault Canyon"],
+          "locations": ["Seavault Canyon"],
           "notes": {
             "en": "Found in Sevault Canyon at a very low encounter rate.",
             "ja": "セキエイのたにで極めて低確率で出現。",
