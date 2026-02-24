@@ -303,9 +303,14 @@ function applyMoonStoneLogic(game) {
   Object.entries(rowsBySection).forEach(([sectionId, sectionRows]) => {
     const capacity = sections[sectionId].capacity;
 
-    const caughtHere = sectionRows.filter(row =>
-      isCaught(gameId, Number(row.dataset.dex))
-    );
+    const caughtHere = sectionRows.filter(row => {
+      const dex = Number(row.dataset.dex);
+      if (!isCaught(gameId, dex)) return false;
+    
+      // ✅ Only count if this section is the PRIMARY catch location
+      const primary = localStorage.getItem(`oak:${gameId}:primary:${dex}`);
+      return primary === sectionId;
+    });
 
     sectionRows.forEach(row => {
       row.classList.remove('is-capacity-locked', 'is-counterpart-locked');
