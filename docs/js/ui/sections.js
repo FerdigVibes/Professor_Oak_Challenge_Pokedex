@@ -72,25 +72,22 @@ function getStarterLinkedFamily(gameId, slug, baseFamily) {
 function applyDuplicateLocking(gameId) {
   const rows = document.querySelectorAll('.pokemon-row');
 
-  // Group rows by dex
-  const byDex = {};
   rows.forEach(row => {
+    row.classList.remove('is-duplicate-locked');
+
     const dex = row.dataset.dex;
-    byDex[dex] ??= [];
-    byDex[dex].push(row);
-  });
+    const sectionId = row.dataset.sectionId;
 
-  Object.entries(byDex).forEach(([dex, group]) => {
-    const isCaughtAnywhere = isCaught(gameId, Number(dex));
+    const primary =
+      localStorage.getItem(`oak:${gameId}:primary:${dex}`);
 
-    group.forEach(row => {
-      row.classList.remove('is-duplicate-locked');
+    // No primary chosen yet → nothing locked
+    if (!primary) return;
 
-      // If caught and this row itself is NOT the caught one
-      if (isCaughtAnywhere && !row.classList.contains('is-caught')) {
-        row.classList.add('is-duplicate-locked');
-      }
-    });
+    // Lock ALL other instances
+    if (primary !== sectionId) {
+      row.classList.add('is-duplicate-locked');
+    }
   });
 }
 
@@ -316,18 +313,21 @@ function applyMoonStoneLogic(game) {
    ========================================================= */
 
 window.addEventListener('caught-changed', () => {
+  if (!window.__CURRENT_GAME__) return;
+
+  const game = window.__CURRENT_GAME__.data;
+  const gameId = window.__CURRENT_GAME__.id;
+
   document.querySelectorAll('.section-block').forEach(section => {
     updateSectionCounter(section);
 
-    if (section.dataset.sectionId === 'STARTER') {
-      applyStarterExclusivity(section, section.dataset.gameId);
-    }
+    // 🔥 Apply starter exclusivity globally
+    applyStarterExclusivity(section, gameId);
   });
 
-  if (window.__CURRENT_GAME__) {
-    applyMoonStoneLogic(window.__CURRENT_GAME__.data);
-    document.querySelectorAll('.section-block').forEach(updateSectionCounter);
-  }
+  // 🔥 Special rule engines
+  applyMoonStoneLogic(game);
+  applyDuplicateLocking(gameId);
 });
 
 /* =========================================================
@@ -419,7 +419,12 @@ export function renderSections({ game, pokemon }) {
     });
 
     matches.forEach(p => {
-      const caught = isCaught(game.id, p.dex);
+      const primary =
+        localStorage.getItem(`oak:${game.id}:primary:${p.dex}`);
+      
+      const caught =
+        isCaught(game.id, p.dex) &&
+        (!primary || primary === section.id);
 
       // 1️⃣ CREATE ROW FIRST
       const row = document.createElement('div');
@@ -539,9 +544,7 @@ export function renderSections({ game, pokemon }) {
       sectionRows.appendChild(row);
     });
 
-    if (section.id === 'STARTER') {
-      applyStarterExclusivity(sectionBlock, game.id);
-    }
+    applyStarterExclusivity(sectionBlock, game.id);
 
     sectionBlock.append(header, sectionRows);
     container.appendChild(sectionBlock);
