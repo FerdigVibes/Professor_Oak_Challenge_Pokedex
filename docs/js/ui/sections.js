@@ -9,6 +9,7 @@ import { normalizeGameId } from '../utils/normalizeGameId.js';
 import { getGameTime } from '../state/gameTime.js';
 import { setCurrentDetailSelection } from './detail.js';
 import { GAME_ALIASES } from '../data/loader.js';
+import { isShinyEnabled } from '../state/shiny.js';
 
 const MOON_STONE_SECTIONS = new Set([
   'MOON_STONE_1',
@@ -547,7 +548,19 @@ export function renderSections({ game, pokemon }) {
 
       const icon = document.createElement('img');
       icon.className = 'pokemon-icon';
-      icon.src = `./assets/icons/pokemon/${String(p.dex).padStart(3, '0')}-${p.slug}-icon.png`;
+      
+      const dexKey = String(p.dex);
+      const iconFile = `${dexKey.padStart(3,'0')}-${p.slug}-icon.png`;
+      
+      const shiny = isShinyEnabled(dexKey);
+      
+      icon.src = shiny
+        ? `./assets/icons/pokemon/shiny/${iconFile}`
+        : `./assets/icons/pokemon/${iconFile}`;
+      
+      if (shiny) {
+        row.classList.add('is-shiny');
+      }
       icon.alt = displayName;
 
       row.append(
