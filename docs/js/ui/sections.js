@@ -289,11 +289,17 @@ function applyMoonStoneLogic(game) {
   });
 
   // Slugs already resolved anywhere
-  const resolvedSlugs = new Set(
-    rows
-      .filter(row => isCaught(gameId, Number(row.dataset.dex)))
-      .map(row => row.dataset.slug)
-  );
+  // ⭐ Only apply cross-section locking to games that define it
+const enableCounterpartLock =
+  game.moonStone?.sharedPool === true;
+
+const resolvedSlugs = enableCounterpartLock
+  ? new Set(
+      rows
+        .filter(row => isCaught(gameId, Number(row.dataset.dex)))
+        .map(row => row.dataset.slug)
+    )
+  : new Set(); // Gen 2 = no global locking
 
   Object.entries(rowsBySection).forEach(([sectionId, sectionRows]) => {
     const capacity = sections[sectionId].capacity;
