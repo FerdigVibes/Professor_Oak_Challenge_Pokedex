@@ -122,12 +122,18 @@ function updateSectionCounter(sectionBlock) {
       isCaught(gameId, Number(row.dataset.dex))
     ).length;
   } else {
-    caughtCount = Array.from(rows).filter(row => {
-      const dex = Number(row.dataset.dex);
-      if (row.classList.contains('is-locked')) return false;
-      return isCaught(gameId, dex);
-    }).length;
-  }
+      caughtCount = Array.from(rows).filter(row => {
+        const dex = Number(row.dataset.dex);
+    
+        if (!isCaught(gameId, dex)) return false;
+    
+        // ⭐ NEW — only count primary catch location
+        const primary = localStorage.getItem(`oak:${gameId}:primary:${dex}`);
+        if (primary && primary !== row.dataset.sectionId) return false;
+    
+        return true;
+      }).length;
+    }
 
   sectionBlock._counterEl.textContent = t('sectionCaughtCount', {
     caught: caughtCount,
