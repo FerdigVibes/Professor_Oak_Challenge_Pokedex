@@ -1397,7 +1397,7 @@ html, body {
 .map-wrapper {
   position: relative;
   width: 100%;
-  max-width: 520px;   /* 🔥 controls map size */
+  max-width: 560px;   /* 🔥 controls map size */
   background: #111;
   border-radius: 12px;
   overflow: hidden;
