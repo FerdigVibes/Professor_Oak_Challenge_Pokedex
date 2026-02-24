@@ -334,6 +334,17 @@ export const LOCATION_REGISTRY = {
     }
   },
 
+  "kanto:Three Isle Port": {
+    map: "seviiislands", x: 38.4, y: 88.8,
+    names: {
+      en: "Three Isle Port",
+      ja: "3のしまの みなと",
+      de: "Hafen von Eiland 3",
+      es: "Puerto de Isla Tres",
+      fr: "Port de l’Île 3"
+    }
+  },
+
   "johto:Pallet Town": {
     map: "johto", x: 60.24, y: 63.80,
     names: { en:"Pallet Town", ja:"マサラタウン", fr:"Bourg Palette", de:"Alabastia", es:"Pueblo Paleta" }
