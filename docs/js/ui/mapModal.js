@@ -10,65 +10,49 @@ const MAP_IMAGES = {
 
 export function openMap({ gameId, locations }) {
   const modal = document.getElementById('map-modal');
-  const img = document.getElementById('map-image');
-  const pinsContainer = document.getElementById('map-pins');
   const container = document.querySelector('.map-container');
 
-  pinsContainer.innerHTML = '';
+  container.innerHTML = '';
 
-  // Determine map from first location instead of gameId
-  const firstLocation = locations[0];
-  
-  // We don't know mapKey yet — check all maps until we find a match
-  let mapKey = null;
-  
-  for (const key in LOCATION_REGISTRY) {
-    if (key.endsWith(`:${firstLocation}`)) {
-      mapKey = LOCATION_REGISTRY[key].map;
-      break;
-    }
-  }
-  
-  if (!mapKey) {
-    console.error('[MapModal] Could not determine map for location:', firstLocation);
-    return;
-  }
-  
-  const mapSrc = MAP_IMAGES[mapKey];
-
-  if (!mapSrc) {
-    console.error('[MapModal] Unknown map for game:', gameId);
-    return;
-  }
-
-  const ASPECT_RATIOS = {
-    johto: '4248 / 1859',
-    kanto: '2458 / 2329',
-    seviiislands: '2008 / 1098'
-  };
-  
-  img.onload = () => {
-    container.style.aspectRatio = ASPECT_RATIOS[mapKey] || '16 / 9';
-  };
-  
-  img.src = mapSrc;
+  // 🔥 GROUP LOCATIONS BY MAP
+  const maps = {};
 
   locations.forEach(locationName => {
-    const key = Object.keys(LOCATION_REGISTRY)
+    const entryKey = Object.keys(LOCATION_REGISTRY)
       .find(k => k.endsWith(`:${locationName}`));
-  
-    const data = LOCATION_REGISTRY[key];
 
-    if (!data) {
-      console.warn('[MapModal] Unknown location:', key);
-      return;
-    }
+    const data = LOCATION_REGISTRY[entryKey];
+    if (!data) return;
 
-    const pin = document.createElement('div');
-    pin.className = 'map-pin glow';
-    pin.style.left = `${data.x}%`;
-    pin.style.top = `${data.y}%`;
-    pinsContainer.appendChild(pin);
+    const mapKey = data.map || 'kanto';
+
+    if (!maps[mapKey]) maps[mapKey] = [];
+    maps[mapKey].push({ locationName, data });
+  });
+
+  // 🔥 RENDER EACH MAP
+  Object.entries(maps).forEach(([mapKey, entries]) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'map-wrapper';
+
+    const img = document.createElement('img');
+    img.className = 'map-image';
+    img.src = MAP_IMAGES[mapKey];
+
+    const pinsContainer = document.createElement('div');
+    pinsContainer.className = 'map-pins';
+
+    entries.forEach(({ data }) => {
+      const pin = document.createElement('div');
+      pin.className = 'map-pin glow';
+      pin.style.left = `${data.x}%`;
+      pin.style.top = `${data.y}%`;
+      pinsContainer.appendChild(pin);
+    });
+
+    wrapper.appendChild(img);
+    wrapper.appendChild(pinsContainer);
+    container.appendChild(wrapper);
   });
 
   modal.classList.remove('hidden');
