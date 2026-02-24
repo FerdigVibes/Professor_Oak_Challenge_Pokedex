@@ -205,9 +205,15 @@ function applyStarterExclusivity(sectionBlock, gameId) {
 
   // ⭐ Only these families participate in exclusivity
   const STARTER_FAMILIES = new Set([
+    // Gen 1 / FRLG starter lines
     'bulbasaur|ivysaur|venusaur',
     'charmander|charmeleon|charizard',
-    'squirtle|wartortle|blastoise'
+    'squirtle|wartortle|blastoise',
+  
+    // Gen 2 starter lines
+    'chikorita|bayleef|meganium',
+    'cyndaquil|quilava|typhlosion',
+    'totodile|croconaw|feraligatr'
   ]);
 
   // Group ONLY starter-linked rows
