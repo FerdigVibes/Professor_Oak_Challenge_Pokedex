@@ -238,66 +238,6 @@ function isPokemonAvailable(gameEntry) {
   });
 }
 
-function applyStarterExclusivity(sectionBlock, gameId) {
-  const rows = sectionBlock.querySelectorAll('.pokemon-row');
-
-  // ⭐ Only these families participate in exclusivity
-  const STARTER_FAMILIES = new Set([
-    // Gen 1 / FRLG starter lines
-    'bulbasaur|ivysaur|venusaur',
-    'charmander|charmeleon|charizard',
-    'squirtle|wartortle|blastoise',
-  
-    // Gen 2 starter lines
-    'chikorita|bayleef|meganium',
-    'cyndaquil|quilava|typhlosion',
-    'totodile|croconaw|feraligatr'
-  ]);
-
-  // Group ONLY starter-linked rows
-  const families = {};
-
-  rows.forEach(row => {
-    const family = row.dataset.family;
-
-    // ❌ Ignore anything that isn't a starter family
-    if (!STARTER_FAMILIES.has(family)) return;
-
-    families[family] ??= [];
-    families[family].push(row);
-  });
-
-  // If no starter rows exist in this section, do nothing
-  if (!Object.keys(families).length) return;
-
-  // Reset collapse state
-  rows.forEach(row => {
-    row.classList.remove('starter-collapsed');
-  });
-
-  // Detect which starter family was chosen
-  const caughtFamilies = Object.entries(families)
-    .filter(([_, familyRows]) =>
-      familyRows.some(row =>
-        isCaught(gameId, Number(row.dataset.dex))
-      )
-    )
-    .map(([family]) => family);
-
-  // Only collapse when ONE starter line is chosen
-  if (caughtFamilies.length !== 1) return;
-
-  const chosenFamily = caughtFamilies[0];
-
-  Object.entries(families).forEach(([family, familyRows]) => {
-    if (family === chosenFamily) return;
-
-    familyRows.forEach(row => {
-      row.classList.add('starter-collapsed');
-    });
-  });
-}
-
 function applyPokemonAvailabilityState(row, caught, availableNow, timeGated = false) {
   row.classList.remove('is-caught', 'is-available', 'is-unavailable', 'is-time-gated');
 
@@ -382,12 +322,11 @@ window.addEventListener('caught-changed', () => {
   const game = window.__CURRENT_GAME__.data;
   const gameId = window.__CURRENT_GAME__.id;
 
-  document.querySelectorAll('.section-block').forEach(section => {
-    updateSectionCounter(section);
+  document.querySelectorAll('.section-block').forEach(updateSectionCounter);
 
-    // 🔥 Apply starter exclusivity globally
-    applyStarterExclusivityGlobal(window.__CURRENT_GAME__.id);
-  });
+  applyMoonStoneLogic(game);
+  applyDuplicateLocking(gameId);
+  applyStarterExclusivityGlobal(gameId);
 
   // 🔥 Special rule engines
   applyMoonStoneLogic(game);
@@ -607,8 +546,6 @@ export function renderSections({ game, pokemon }) {
 
       sectionRows.appendChild(row);
     });
-
-    applyStarterExclusivity(sectionBlock, game.id);
 
     sectionBlock.append(header, sectionRows);
     container.appendChild(sectionBlock);
