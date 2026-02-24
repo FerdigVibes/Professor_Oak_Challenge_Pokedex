@@ -321,10 +321,15 @@ const resolvedSlugs = enableCounterpartLock
       // Already caught → never lock
       if (isCaught(gameId, Number(row.dataset.dex))) return;
 
-      // Same Pokémon chosen elsewhere
-      if (resolvedSlugs.has(slug)) {
-        row.classList.add('is-counterpart-locked');
-        return;
+      // ⭐ Only lock counterpart if resolved in ANOTHER section
+      if (enableCounterpartLock) {
+        const dex = Number(row.dataset.dex);
+        const primary = localStorage.getItem(`oak:${gameId}:primary:${dex}`);
+      
+        if (resolvedSlugs.has(slug) && primary && primary !== sectionId) {
+          row.classList.add('is-counterpart-locked');
+          return;
+        }
       }
 
       // Section capacity reached
