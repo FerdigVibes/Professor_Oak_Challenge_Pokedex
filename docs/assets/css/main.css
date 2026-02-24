@@ -1378,6 +1378,16 @@ html, body {
   inset: 0;
 }
 
+.map-wrapper {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.map-wrapper img {
+  width: 100%;
+  display: block;
+}
+
 .map-close {
   position: absolute;
   top: 8px;
