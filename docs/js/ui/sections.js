@@ -53,6 +53,31 @@ function isAvailableToday(entry) {
   });
 }
 
+function applyDuplicateLocking(gameId) {
+  const rows = document.querySelectorAll('.pokemon-row');
+
+  // Group rows by dex
+  const byDex = {};
+  rows.forEach(row => {
+    const dex = row.dataset.dex;
+    byDex[dex] ??= [];
+    byDex[dex].push(row);
+  });
+
+  Object.entries(byDex).forEach(([dex, group]) => {
+    const isCaughtAnywhere = isCaught(gameId, Number(dex));
+
+    group.forEach(row => {
+      row.classList.remove('is-duplicate-locked');
+
+      // If caught and this row itself is NOT the caught one
+      if (isCaughtAnywhere && !row.classList.contains('is-caught')) {
+        row.classList.add('is-duplicate-locked');
+      }
+    });
+  });
+}
+
 function hasTimeOrDayRestriction(entry) {
   if (!entry?.obtain) return false;
   return entry.obtain.some(o =>
@@ -425,7 +450,8 @@ export function renderSections({ game, pokemon }) {
 
         if (
           row.classList.contains('is-capacity-locked') ||
-          row.classList.contains('is-counterpart-locked')
+          row.classList.contains('is-counterpart-locked') ||
+          row.classList.contains('is-duplicate-locked')
         ) return;
 
         const newState = toggleCaught(game.id, p.dex);
@@ -456,6 +482,7 @@ export function renderSections({ game, pokemon }) {
       );
 
       row.addEventListener('click', () => {
+        if (row.classList.contains('is-duplicate-locked')) return;
         const app = document.getElementById('app');
         const isActive = row.classList.contains('is-active');
       
@@ -492,6 +519,7 @@ export function renderSections({ game, pokemon }) {
   });
   // After all sections rendered
     applyMoonStoneLogic(game);
+    applyDuplicateLocking(game.id);
 }
 
 window.__isPokemonAvailable = isPokemonAvailable;
@@ -520,6 +548,7 @@ window.addEventListener('game-time-changed', () => {
     const availableNow = !caught && isPokemonAvailable(entry);
 
     applyPokemonAvailabilityState(row, caught, availableNow, hasTimeOrDayRestriction(entry));
+    applyDuplicateLocking(window.__CURRENT_GAME__.id);
   });
 });
 
