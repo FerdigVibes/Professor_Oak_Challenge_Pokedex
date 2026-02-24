@@ -141,6 +141,44 @@ function updateSectionCounter(sectionBlock) {
   });
 }
 
+function applyStarterExclusivityGlobal(gameId) {
+  const rows = document.querySelectorAll('.pokemon-row');
+
+  const families = {};
+
+  rows.forEach(row => {
+    const family = row.dataset.family;
+    if (!family) return;
+
+    families[family] ??= [];
+    families[family].push(row);
+  });
+
+  // Reset first
+  rows.forEach(row => row.classList.remove('starter-collapsed'));
+
+  const caughtFamilies = [];
+
+  Object.entries(families).forEach(([family, familyRows]) => {
+    const caught = familyRows.some(row =>
+      isCaught(gameId, Number(row.dataset.dex))
+    );
+
+    if (caught) caughtFamilies.push(family);
+  });
+
+  if (caughtFamilies.length !== 1) return;
+
+  const chosen = caughtFamilies[0];
+
+  Object.entries(families).forEach(([family, familyRows]) => {
+    if (family !== chosen) {
+      familyRows.forEach(row => {
+        row.classList.add('starter-collapsed');
+      });
+    }
+  });
+}
 
 function isSectionCompleted(game, sectionId, pokemon, excludeDex = []) {
   const section = game.sections.find(s => s.id === sectionId);
@@ -348,7 +386,7 @@ window.addEventListener('caught-changed', () => {
     updateSectionCounter(section);
 
     // 🔥 Apply starter exclusivity globally
-    applyStarterExclusivity(section, gameId);
+    applyStarterExclusivityGlobal(window.__CURRENT_GAME__.id);
   });
 
   // 🔥 Special rule engines
@@ -580,6 +618,7 @@ export function renderSections({ game, pokemon }) {
   // After all sections rendered
     applyMoonStoneLogic(game);
     applyDuplicateLocking(game.id);
+    applyStarterExclusivityGlobal(game.id);
 }
 
 window.__isPokemonAvailable = isPokemonAvailable;
