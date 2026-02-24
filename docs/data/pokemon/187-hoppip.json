@@ -23,7 +23,7 @@
       "obtain": [
         {
           "method": "surf",
-          "locations": ["Five Isle"],
+          "locations": ["Five Island"],
           "notes": {
             "en": "Found while Surfing anywhere around Five Isle.",
             "ja": "5のしま周辺でなみのり中に出現。",
