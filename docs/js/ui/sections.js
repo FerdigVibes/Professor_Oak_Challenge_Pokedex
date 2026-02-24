@@ -53,6 +53,22 @@ function isAvailableToday(entry) {
   });
 }
 
+function getStarterLinkedFamily(gameId, slug, baseFamily) {
+  const id = normalizeGameId(gameId);
+
+  // Only apply to FR/LG
+  if (id !== 'firered' && id !== 'leafgreen') {
+    return baseFamily;
+  }
+
+  // 🔥 Legendary dogs mapped to starter families
+  if (slug === 'raikou') return 'squirtle|wartortle|blastoise';
+  if (slug === 'entei') return 'bulbasaur|ivysaur|venusaur';
+  if (slug === 'suicune') return 'charmander|charmeleon|charizard';
+
+  return baseFamily;
+}
+
 function applyDuplicateLocking(gameId) {
   const rows = document.querySelectorAll('.pokemon-row');
 
@@ -437,7 +453,12 @@ export function renderSections({ game, pokemon }) {
       const lang = getLanguage();
       const displayName = p.names?.[lang] || p.names?.en || p.slug;
       row.dataset.name = displayName.toLowerCase();
-      row.dataset.family = p.evolution?.family?.join('|') ?? '';
+      const baseFamily = p.evolution?.family?.join('|') ?? '';
+      row.dataset.family = getStarterLinkedFamily(
+        game.id,
+        p.slug,
+        baseFamily
+      );
 
       const ball = document.createElement('button');
       ball.className = 'caught-toggle';
