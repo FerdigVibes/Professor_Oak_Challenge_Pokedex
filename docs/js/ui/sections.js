@@ -425,6 +425,8 @@ export function renderSections({ game, pokemon }) {
       const row = document.createElement('div');
       row.className = 'pokemon-row';
       row.dataset.dex = String(p.dex);
+      row.dataset.slug = p.slug;
+      row.dataset.sectionId = section.id; // ← CRITICAL
     
       // 2️⃣ SECTION ID — USE sectionBlock, NOT row
       const sectionId = sectionBlock.dataset.sectionId;
@@ -476,6 +478,14 @@ export function renderSections({ game, pokemon }) {
         ) return;
 
         const newState = toggleCaught(game.id, p.dex);
+
+        const key = `oak:${game.id}:primary:${p.dex}`;
+        
+        if (newState) {
+          localStorage.setItem(key, section.id);
+        } else {
+          localStorage.removeItem(key);
+        }
         ball.style.backgroundImage = `url(./assets/icons/${
           newState ? 'pokeball-full.png' : 'pokeball-empty.png'
         })`;
