@@ -23,7 +23,7 @@
       "obtain": [
         {
           "method": "fish",
-          "locations": ["Five Isle", "Six Isle"],
+          "locations": ["Five Island, Six Island"],
           "notes": {
             "en": "Fish with the Super Rod around Five Isle and Six Isle.",
             "ja": "5のしま と 6のしまで すごいつりざおを使うと出現。",
