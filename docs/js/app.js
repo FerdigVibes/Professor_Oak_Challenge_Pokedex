@@ -12,6 +12,7 @@ import { loadLanguage, t } from './data/i18n.js';
 import { closePokemonDetail, renderPokemonDetail, getCurrentDetailSelection } from './ui/detail.js';
 import { getGameTime, setGameTime, startGameClock } from './state/gameTime.js';
 import { openGameTimeModal } from './ui/gameTimeModal.js';
+import { getGameData } from './data/loader.js';
 
 const STORAGE_KEY = 'oakChallenge.gameTime';
 const btn = document.getElementById('game-time-btn');
@@ -593,10 +594,10 @@ function getCurrentObjective(game, pokemon) {
       const child = game.sections.find(s => s.id === childId);
       if (!child || typeof child.requiredCount !== 'number') continue;
 
-      // 3️⃣ Pokémon that belong to this child section for THIS game
-      const matches = pokemon.filter(p =>
-        p.games?.[gameKey]?.sections?.includes(child.id)
-      );
+      const matches = pokemon.filter(p => {
+        const entry = getGameData(p, gameKey);
+        return entry?.sections?.includes(child.id);
+      });
 
       const caughtCount = matches.filter(p =>
         isCaught(game.id, p.dex)
@@ -661,9 +662,8 @@ function getCurrentObjectiveSectionId(game, pokemon) {
       if (!child || typeof child.requiredCount !== 'number') continue;
 
       const matches = pokemon.filter(p => {
-        const entries = p.games?.[gameKey];
-        const entryArray = Array.isArray(entries) ? entries : entries ? [entries] : [];
-        return entryArray.some(e => e.sections?.includes(childId));
+        const entry = getGameData(p, gameKey);
+        return entry?.sections?.includes(childId);
       });
 
       const caughtCount = matches.filter(p =>
