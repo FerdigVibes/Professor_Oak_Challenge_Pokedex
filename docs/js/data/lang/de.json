@@ -135,7 +135,10 @@
     "chooseYourStarter": "Wähle deinen Starter",
     "cinnabarPokemon": "Zinnoberinsel-Pokémon",
     "articunoMoltres": "Vor dem sechsten Orden",
-    "postGamePokemon": "Pokémon nach dem Spiel"
+    "postGamePokemon": "Pokémon nach dem Spiel",
+    "beforeCinnabar": "Vor der Zinnoberinsel-Arena",
+    "beforeSixth": "Vor dem 6. Orden",
+    "postGame": "Post-Game-Pokémon"
   },
 
   "time": {
