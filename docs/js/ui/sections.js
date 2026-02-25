@@ -563,10 +563,20 @@ export function renderSections({ game, pokemon }) {
       }
       icon.alt = displayName;
 
+      const iconFrame = document.createElement('div');
+      iconFrame.className = 'pokemon-icon-frame';
+      
+      const icon = document.createElement('img');
+      icon.className = 'pokemon-icon';
+      icon.src = `./assets/icons/pokemon/${String(p.dex).padStart(3,'0')}-${p.slug}-icon.png`;
+      icon.alt = displayName;
+      
+      iconFrame.appendChild(icon);
+      
       row.append(
         ball,
-        icon,
-        document.createTextNode(` #${String(p.dex).padStart(3, '0')} `),
+        iconFrame,
+        document.createTextNode(` #${String(p.dex).padStart(3,'0')} `),
         document.createTextNode(displayName)
       );
 
