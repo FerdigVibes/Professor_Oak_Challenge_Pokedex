@@ -354,10 +354,10 @@ function closeGameMenu(container) {
 }
 
   // Close menu on outside click
-  document.addEventListener('click', () => {
-    container.classList.remove('open');
-    container.querySelectorAll('.game-menu-gen')
-      .forEach(g => g.classList.remove('open'));
+  document.addEventListener('click', (e) => {
+    if (!container.contains(e.target) && e.target !== btn) {
+      closeGameMenu(container);
+    }
   });
 }
 
