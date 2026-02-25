@@ -354,6 +354,21 @@ const resolvedSlugs = enableCounterpartLock
   });
 }
 
+function openInlineDetail(row, pokemon, game, sectionId){
+
+  // Remove any existing inline detail
+  document.querySelectorAll('.pokemon-detail-inline')
+    .forEach(el => el.remove());
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'pokemon-detail-inline';
+
+  // ⭐ reuse your existing detail renderer
+  renderPokemonDetail(pokemon, game, sectionId, wrapper);
+
+  row.after(wrapper);
+}
+
 /* =========================================================
    React to caught changes
    ========================================================= */
