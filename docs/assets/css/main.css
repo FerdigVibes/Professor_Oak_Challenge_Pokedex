@@ -229,10 +229,9 @@ html, body {
    ========================================================= */
 
 .pokemon-icon {
-  height: 80%;
-  width: auto;
+  height: 44px;     /* control size by height */
+  width: auto;      /* keep natural aspect ratio */
   image-rendering: pixelated;
-  margin-right: 8px;
 }
 
 .detail-sprite-img {
