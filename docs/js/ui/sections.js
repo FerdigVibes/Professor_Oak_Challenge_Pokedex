@@ -583,27 +583,40 @@ export function renderSections({ game, pokemon }) {
       );
 
       row.addEventListener('click', () => {
+
         if (row.classList.contains('is-duplicate-locked')) return;
+      
+        const isDesktop = !isMobile();
         const app = document.getElementById('app');
         const isActive = row.classList.contains('is-active');
       
         document.querySelectorAll('.pokemon-row.is-active')
           .forEach(r => r.classList.remove('is-active'));
       
-        if (isActive) {
+        if (isActive){
+          document.querySelectorAll('.pokemon-detail-inline')
+            .forEach(el => el.remove());
+      
           app?.classList.remove('has-detail');
           return;
         }
       
         row.classList.add('is-active');
+      
         setCurrentDetailSelection({
           pokemon: p,
           game: game,
           sectionId: sectionId
         });
-        renderPokemonDetail(p, game, sectionId);
+      
+        if(isDesktop){
+          renderPokemonDetail(p, game, sectionId);
+          app?.classList.add('has-detail');
+        }else{
+          openInlineDetail(row, p, game, sectionId);
+        }
+      
         playPokemonCry(p);
-        app?.classList.add('has-detail');
       });
 
       sectionRows.appendChild(row);
