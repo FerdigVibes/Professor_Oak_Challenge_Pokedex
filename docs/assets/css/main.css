@@ -72,6 +72,10 @@ html, body {
   letter-spacing: 0.08em;
 }
 
+.section-header {
+  backdrop-filter: blur(6px);
+}
+
 .section-counter {
   font-family: "Trebuchet MS", sans-serif;
   font-size: 0.75rem;
