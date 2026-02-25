@@ -1676,7 +1676,11 @@ html, body {
    ========================================================= */
 
 .game-selector-dropdown {
-  position: relative; /* 🔑 THIS IS THE FIX */
+  position: fixed;   /* ⭐ critical */
+  top: 70px;         /* adjust to your header height */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
 }
 
 
