@@ -549,55 +549,38 @@ function buildResetSectionMenu() {
 
 function resetSection(sectionId) {
   const current = window.__CURRENT_GAME__;
-  if (!current?.data || !window.__POKEMON_CACHE__) return;
+  if (!current?.data) return;
 
   const gameId = current.id;
   const game = current.data;
   const pokemon = window.__POKEMON_CACHE__;
-  const gameKey = normalizeGameId(game.id);
 
-  // ⭐ Load caught storage ONCE
   const caughtKey = `oak:${gameId}:caught`;
   const caughtData = JSON.parse(localStorage.getItem(caughtKey) || '{}');
 
-  // ⭐ Find Pokémon belonging to this section (alias-aware)
-  const targets = pokemon.filter(p => {
-    const entry = getGameData(p, gameKey);
-    if (!entry) return false;
+  // ⭐ ONLY scan rows belonging to this section
+  const rows = document.querySelectorAll(
+    `.section-block[data-section-id="${sectionId}"] .pokemon-row`
+  );
 
-    const entries = Array.isArray(entry) ? entry : [entry];
-    return entries.some(e => e.sections?.includes(sectionId));
-  });
+  rows.forEach(row => {
+    const dex = row.dataset.dex;
 
-  targets.forEach(p => {
-    const primaryKey = `oak:${gameId}:primary:${p.dex}`;
+    const primaryKey = `oak:${gameId}:primary:${dex}`;
     const primary = localStorage.getItem(primaryKey);
 
-    // ONLY reset if this section owns the primary catch
+    // ✅ Only reset if THIS section owns the primary
     if (primary === sectionId) {
       localStorage.removeItem(primaryKey);
-      delete caughtData[p.dex];
+      delete caughtData[dex];
     }
   });
 
-  // ⭐ Save caught state ONCE
+  // Save caught state once
   localStorage.setItem(caughtKey, JSON.stringify(caughtData));
 
-  // ⭐ Rebuild UI + counters
+  // 🔥 Rebuild UI + counters
   renderSections({ game, pokemon });
-  updateGlobalProgress(game, pokemon);
-  updateCurrentObjective(game, pokemon);
-}
-
-  // Save updated caught data
-  localStorage.setItem(caughtKey, JSON.stringify(caughtData));
-
-  // 🔥 rebuild UI + engines
-  renderSections({
-    game,
-    pokemon
-  });
-
   updateGlobalProgress(game, pokemon);
   updateCurrentObjective(game, pokemon);
 }
