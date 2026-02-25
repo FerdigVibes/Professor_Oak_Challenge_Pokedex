@@ -557,7 +557,10 @@ function resetSection(sectionId) {
 
   const gameKey = normalizeGameId(game.id);
 
-  // Find Pokémon belonging to THIS section
+  // Get current caught storage
+  const caughtKey = `oak:${gameId}:caught`;
+  const caughtData = JSON.parse(localStorage.getItem(caughtKey) || '{}');
+
   const targets = pokemon.filter(p => {
     const entry = p.games?.[gameKey];
     if (!entry) return false;
@@ -570,16 +573,19 @@ function resetSection(sectionId) {
     const primaryKey = `oak:${gameId}:primary:${p.dex}`;
     const primary = localStorage.getItem(primaryKey);
 
-    // ⭐ ONLY remove if this section is the primary catch location
+    // ⭐ ONLY reset if this section owns the primary
     if (primary === sectionId) {
       localStorage.removeItem(primaryKey);
 
-      // also clear caught state
-      toggleCaught(gameId, p.dex, false); // force false if your toggle supports it
+      // ⭐ remove caught flag directly
+      delete caughtData[p.dex];
     }
   });
 
-  // 🔥 rebuild UI
+  // Save updated caught data
+  localStorage.setItem(caughtKey, JSON.stringify(caughtData));
+
+  // 🔥 rebuild UI + engines
   renderSections({
     game,
     pokemon
