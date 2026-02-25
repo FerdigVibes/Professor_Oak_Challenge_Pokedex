@@ -243,8 +243,9 @@ html, body {
   animation: sparkle 1.2s infinite;
 }
 
-.pokemon-icon-frame {
-  position: relative;
+.pokemon-icon-frame.shiny img {
+  transform: scale(1.4);
+  transform-origin: center;
 }
 
 /* ⭐ Shiny icons fill entire frame */
