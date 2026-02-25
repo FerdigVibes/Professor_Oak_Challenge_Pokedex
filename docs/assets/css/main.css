@@ -229,8 +229,8 @@ html, body {
    ========================================================= */
 
 .pokemon-icon {
-  width: 42px;
-  height: 42px;
+  height: 80%;
+  width: auto;
   image-rendering: pixelated;
   margin-right: 8px;
 }
