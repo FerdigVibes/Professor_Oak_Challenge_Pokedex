@@ -547,6 +547,48 @@ function buildResetSectionMenu() {
   menu.appendChild(resetAllBtn);
 }
 
+function resetSection(sectionId) {
+  const current = window.__CURRENT_GAME__;
+  if (!current?.data || !window.__POKEMON_CACHE__) return;
+
+  const gameId = current.id;
+  const game = current.data;
+  const pokemon = window.__POKEMON_CACHE__;
+
+  const gameKey = normalizeGameId(game.id);
+
+  // Find Pokémon belonging to THIS section
+  const targets = pokemon.filter(p => {
+    const entry = p.games?.[gameKey];
+    if (!entry) return false;
+
+    const entries = Array.isArray(entry) ? entry : [entry];
+    return entries.some(e => e.sections?.includes(sectionId));
+  });
+
+  targets.forEach(p => {
+    const primaryKey = `oak:${gameId}:primary:${p.dex}`;
+    const primary = localStorage.getItem(primaryKey);
+
+    // ⭐ ONLY remove if this section is the primary catch location
+    if (primary === sectionId) {
+      localStorage.removeItem(primaryKey);
+
+      // also clear caught state
+      toggleCaught(gameId, p.dex, false); // force false if your toggle supports it
+    }
+  });
+
+  // 🔥 rebuild UI
+  renderSections({
+    game,
+    pokemon
+  });
+
+  updateGlobalProgress(game, pokemon);
+  updateCurrentObjective(game, pokemon);
+}
+
 function resetAllSections() {
   const game = window.__CURRENT_GAME__?.data;
   if (!game) return;
