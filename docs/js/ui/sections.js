@@ -545,7 +545,9 @@ export function renderSections({ game, pokemon }) {
           })
         );
       });
-
+      const iconFrame = document.createElement('div');
+      iconFrame.className = 'pokemon-icon-frame';
+      
       const icon = document.createElement('img');
       icon.className = 'pokemon-icon';
       
@@ -558,15 +560,16 @@ export function renderSections({ game, pokemon }) {
         ? `./assets/icons/pokemon/shiny/${iconFile}`
         : `./assets/icons/pokemon/${iconFile}`;
       
-      if (shiny) {
-        row.classList.add('is-shiny');
-      }
       icon.alt = displayName;
-
-      const iconFrame = document.createElement('div');
-      iconFrame.className = 'pokemon-icon-frame';
       
-      const icon = document.createElement('img');
+      iconFrame.appendChild(icon);
+      
+      row.append(
+        ball,
+        iconFrame,
+        document.createTextNode(` #${String(p.dex).padStart(3,'0')} `),
+        document.createTextNode(displayName)
+      );
       icon.className = 'pokemon-icon';
       icon.src = `./assets/icons/pokemon/${String(p.dex).padStart(3,'0')}-${p.slug}-icon.png`;
       icon.alt = displayName;
