@@ -228,10 +228,39 @@ html, body {
    SECTION 2 – POKEDEX WHEEL CONTAINER
    ========================================================= */
 
+/* ⭐ ICON FRAME — consistent sizing for all icons */
+.pokemon-icon-frame {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 52px;
+  margin-right: 6px;
+}
+
+/* actual image */
 .pokemon-icon {
-  height: 44px;     /* control size by height */
-  width: auto;      /* keep natural aspect ratio */
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+
   image-rendering: pixelated;
+}
+.pokemon-icon-frame.shiny::after {
+  content: "✨";
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 12px;
+  animation: sparkle 1.2s infinite;
+}
+
+.pokemon-icon-frame {
+  position: relative;
 }
 
 .detail-sprite-img {
