@@ -577,8 +577,12 @@ function resetSection(sectionId) {
     if (primary === sectionId) {
       localStorage.removeItem(primaryKey);
 
-      // ⭐ remove caught flag directly
+      const caughtKey = `oak:${gameId}:caught`;
+      const caughtData = JSON.parse(localStorage.getItem(caughtKey) || '{}');
+
       delete caughtData[p.dex];
+
+      localStorage.setItem(caughtKey, JSON.stringify(caughtData));
     }
   });
 
