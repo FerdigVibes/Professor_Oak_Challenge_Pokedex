@@ -215,6 +215,12 @@ export function renderPokemonDetail(pokemon, gameData, sectionId) {
        // ✅ Toggle + persist per Pokémon
        shinyToggle.onclick = () => {
          const enabled = toggleShiny(dexKey);
+         
+         window.dispatchEvent(
+           new CustomEvent('shiny-changed', {
+             detail: { dex: dexKey, enabled }
+           })
+         );
    
          sprite.src = enabled ? spriteShiny : spriteNormal;
          shinyToggle.classList.toggle('active', enabled);
