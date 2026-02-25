@@ -144,7 +144,10 @@
     "chooseYourStarter": "はじめのポケモンをえらぶ",
     "cinnabarPokemon": "グレンじまのポケモン",
     "articunoMoltres": "6つ目のバッジ前",
-    "postGamePokemon": "クリア後のポケモン"
+    "postGamePokemon": "クリア後のポケモン",
+    "beforeCinnabar": "グレンジム前",
+    "beforeSixth": "6つ目のバッジ前",
+    "postGame": "殿堂入り後のポケモン"
   },
 
   "time": {
