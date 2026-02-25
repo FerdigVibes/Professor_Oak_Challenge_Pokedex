@@ -72,12 +72,6 @@ html, body {
   letter-spacing: 0.08em;
 }
 
-
-.section-header:is(:sticky) {
-  box-shadow:
-    0 6px 14px rgba(0,0,0,0.35);
-}
-
 .section-counter {
   font-family: "Trebuchet MS", sans-serif;
   font-size: 0.75rem;
