@@ -246,6 +246,13 @@ html, body {
   position: relative;
 }
 
+/* ⭐ Shiny icons fill entire frame */
+.pokemon-icon-frame.shiny .pokemon-icon {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 .detail-sprite-img {
   width: 100%;
   height: 100%;
