@@ -595,6 +595,8 @@ function resetSection(sectionId) {
   updateCurrentObjective(game, pokemon);
 }
 
+window.resetSection = resetSection;
+
 function resetAllSections() {
   const game = window.__CURRENT_GAME__?.data;
   if (!game) return;
