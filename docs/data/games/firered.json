@@ -83,7 +83,7 @@
       "titleKey": "cinnabarPokemon",
       "order": 4.1,
       "parent": "BEFORE_CINNABAR",
-      "requiredCount": 14
+      "requiredCount": 12
     },
     {
       "id": "REVIVE_FOSSIL",
