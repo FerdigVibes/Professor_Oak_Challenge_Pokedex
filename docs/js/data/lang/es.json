@@ -144,7 +144,10 @@
     "chooseYourStarter": "Elige tu Pokémon inicial",
     "cinnabarPokemon": "Pokémon de Isla Canela",
     "articunoMoltres": "Antes de la sexta medalla",
-    "postGamePokemon": "Pokémon postgame"
+    "postGamePokemon": "Pokémon postgame",
+    "beforeCinnabar": "Antes del Gimnasio Isla Canela",
+    "beforeSixth": "Antes de la 6ª Medalla",
+    "postGame": "Pokémon del Post-Game"
   },
 
   "time": {
