@@ -564,23 +564,14 @@ export function renderSections({ game, pokemon }) {
       
       iconFrame.appendChild(icon);
       
-      row.append(
-        ball,
-        iconFrame,
-        document.createTextNode(` #${String(p.dex).padStart(3,'0')} `),
-        document.createTextNode(displayName)
-      );
-      icon.className = 'pokemon-icon';
-      icon.src = `./assets/icons/pokemon/${String(p.dex).padStart(3,'0')}-${p.slug}-icon.png`;
-      icon.alt = displayName;
-      
-      iconFrame.appendChild(icon);
+      const label = document.createElement('span');
+      label.className = 'pokemon-label';
+      label.textContent = ` #${String(p.dex).padStart(3,'0')} ${displayName}`;
       
       row.append(
         ball,
         iconFrame,
-        document.createTextNode(` #${String(p.dex).padStart(3,'0')} `),
-        document.createTextNode(displayName)
+        label
       );
 
       row.addEventListener('click', () => {
