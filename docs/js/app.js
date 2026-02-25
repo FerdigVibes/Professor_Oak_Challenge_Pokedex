@@ -321,21 +321,37 @@ function buildGameSelector() {
   }
 
   // Toggle main dropdown
-  btn.addEventListener('click', (e) => {
+  /* =========================================================
+   MAIN DROPDOWN TOGGLE (FIXED)
+   ========================================================= */
+
+   btn.addEventListener('click', (e) => {
     e.stopPropagation();
 
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-    
-      if (IS_MOBILE) {
-        positionGameMenuUnderButton(btn, container);
-      }
-    
-      container.classList.toggle('open');
-    });
+    const isOpen = container.classList.contains('open');
 
-    container.classList.toggle('open');
-  });
+    // ⭐ POSITION BEFORE OPENING (mobile only)
+    if (!isOpen && IS_MOBILE) {
+      positionGameMenuUnderButton(btn, container);
+    }
+
+    if (isOpen) {
+      closeGameMenu(container);
+    } else {
+      openGameMenu(container);
+    }
+});
+
+function openGameMenu(container) {
+  container.classList.add('open');
+}
+
+function closeGameMenu(container) {
+  container.classList.remove('open');
+  container
+    .querySelectorAll('.game-menu-gen.open')
+    .forEach(el => el.classList.remove('open'));
+}
 
   // Close menu on outside click
   document.addEventListener('click', () => {
