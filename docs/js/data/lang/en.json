@@ -132,7 +132,10 @@
     "chooseYourStarter": "Choose Your Starter",
     "cinnabarPokemon": "Cinnabar Pokémon",
     "articunoMoltres": "Before Sixth Gym",
-    "postGamePokemon": "Post Game pokemon"
+    "postGamePokemon": "Post Game pokemon",
+    "beforeCinnabar": "Before Cinnabar Gym",
+    "beforeSixth": "Before 6th Badge",
+    "postGame": "Post Game Pokémon"
   },
 
   "types": {
