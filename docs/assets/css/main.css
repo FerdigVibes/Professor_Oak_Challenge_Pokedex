@@ -1,16 +1,25 @@
-.body {
+/* =========================================================
+   GLOBAL APP LAYOUT
+   ========================================================= */
+
+html,
+body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+
+  overflow: hidden;        /* ⭐ LOCK MAIN PAGE SCROLL */
   font-family: Trebuchet MS;
-  height: 100vh;
-  overflow: hidden;
 }
 
 #app {
-  position: relative; /* ⬅️ CRITICAL */
+  position: relative;
   display: flex;
   height: calc(100vh - 120px);
-  overflow: hidden;
+
+  overflow: hidden;        /* ⭐ Prevent scroll bleed */
 }
 
 /* Default: no Pokémon selected */
@@ -28,12 +37,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
 }
 
 .intro-panel {
