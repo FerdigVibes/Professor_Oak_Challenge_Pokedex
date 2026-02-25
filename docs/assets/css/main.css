@@ -254,6 +254,10 @@ html, body {
   height: 100%;
 }
 
+.pokemon-row.is-shiny .pokemon-icon-frame {
+  transform: scale(1.25);
+}
+
 .detail-sprite-img {
   width: 100%;
   height: 100%;
