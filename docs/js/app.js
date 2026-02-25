@@ -561,13 +561,13 @@ function resetSection(sectionId) {
   const caughtKey = `oak:${gameId}:caught`;
   const caughtData = JSON.parse(localStorage.getItem(caughtKey) || '{}');
 
-  const targets = pokemon.filter(p => {
-    const entry = p.games?.[gameKey];
-    if (!entry) return false;
+    const targets = pokemon.filter(p => {
+      const entry = getGameData(p, gameKey);
+      if (!entry) return false;
 
-    const entries = Array.isArray(entry) ? entry : [entry];
-    return entries.some(e => e.sections?.includes(sectionId));
-  });
+      const entries = Array.isArray(entry) ? entry : [entry];
+      return entries.some(e => e.sections?.includes(sectionId));
+    });
 
   targets.forEach(p => {
     const primaryKey = `oak:${gameId}:primary:${p.dex}`;
