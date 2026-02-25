@@ -43,6 +43,10 @@ function getPokemonTimeAvailability(gameData) {
   );
 }
 
+function isMobile(){
+  return window.matchMedia('(max-width:768px)').matches;
+}
+
 function ensurePrimary(gameId, dex, sectionId) {
   const key = `oak:${gameId}:primary:${dex}`;
   const existing = localStorage.getItem(key);
