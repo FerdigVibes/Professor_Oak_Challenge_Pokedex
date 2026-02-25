@@ -142,7 +142,10 @@
     "chooseYourStarter": "Choisissez votre Pokémon de départ",
     "cinnabarPokemon": "Pokémon de Cramois’Île",
     "articunoMoltres": "Avant le sixième badge",
-    "postGamePokemon": "Pokémon après la Ligue"
+    "postGamePokemon": "Pokémon après la Ligue",
+    "beforeCinnabar": "Avant l’Arène de Cramois’Île",
+    "beforeSixth": "Avant le 6e Badge",
+    "postGame": "Pokémon Post-Game"
   },
 
   "time": {
