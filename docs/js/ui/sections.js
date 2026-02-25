@@ -559,6 +559,10 @@ export function renderSections({ game, pokemon }) {
       icon.src = shiny
         ? `./assets/icons/pokemon/shiny/${iconFile}`
         : `./assets/icons/pokemon/${iconFile}`;
+        
+      if (shiny) {
+        iconFrame.classList.add('shiny');
+      }
       
       icon.alt = displayName;
       
