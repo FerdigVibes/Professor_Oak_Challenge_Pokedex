@@ -254,9 +254,13 @@ html, body {
   height: 100%;
 }
 
-/* scale shiny icons inside same frame */
+/* =========================================================
+   SHINY ICON UPSCALE
+   ========================================================= */
+
 .pokemon-row.is-shiny .pokemon-icon {
-  transform: scale(1.35);
+  transform: scale(1.60);   /* ⭐ increase until it feels right */
+  transform-origin: center;
 }
 
 .detail-sprite-img {
