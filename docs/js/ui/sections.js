@@ -354,18 +354,28 @@ const resolvedSlugs = enableCounterpartLock
   });
 }
 
-function openInlineDetail(row, pokemon, game, sectionId){
+function openInlineDetail(row, pokemon, game, sectionId) {
 
-  // Remove any existing inline detail
+  // ⭐ If this row already has an open detail, close it
+  const existing = row.nextElementSibling;
+  if (existing?.classList?.contains('pokemon-detail-inline')) {
+    existing.remove();
+    return;
+  }
+
+  // ⭐ Remove any other open inline detail
   document.querySelectorAll('.pokemon-detail-inline')
     .forEach(el => el.remove());
 
+  // Create inline container
   const wrapper = document.createElement('div');
   wrapper.className = 'pokemon-detail-inline';
 
-  // ⭐ reuse your existing detail renderer
+  // ⭐ IMPORTANT:
+  // renderPokemonDetail now accepts a target panel
   renderPokemonDetail(pokemon, game, sectionId, wrapper);
 
+  // Insert directly under the row
   row.after(wrapper);
 }
 
