@@ -106,8 +106,8 @@ export function getDetailEntry(pokemon, gameData, sectionId) {
    SECTION 3 — Pokémon Detail Panel
    ========================================================= */
 
-export function renderPokemonDetail(pokemon, gameData, sectionId) {
-  const panel = document.getElementById('detail-panel');
+export function renderPokemonDetail(pokemon, gameData, sectionId, targetPanel = null) {
+  const panel = targetPanel || document.getElementById('detail-panel');
   if (!panel || !pokemon || !gameData) return;
 
   const gameKey = normalizeGameId(gameData.id);
