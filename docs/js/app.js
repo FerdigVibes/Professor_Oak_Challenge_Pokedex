@@ -554,37 +554,40 @@ function resetSection(sectionId) {
   const gameId = current.id;
   const game = current.data;
   const pokemon = window.__POKEMON_CACHE__;
-
   const gameKey = normalizeGameId(game.id);
 
-  // Get current caught storage
+  // ⭐ Load caught storage ONCE
   const caughtKey = `oak:${gameId}:caught`;
   const caughtData = JSON.parse(localStorage.getItem(caughtKey) || '{}');
 
-    const targets = pokemon.filter(p => {
-      const entry = getGameData(p, gameKey);
-      if (!entry) return false;
+  // ⭐ Find Pokémon belonging to this section (alias-aware)
+  const targets = pokemon.filter(p => {
+    const entry = getGameData(p, gameKey);
+    if (!entry) return false;
 
-      const entries = Array.isArray(entry) ? entry : [entry];
-      return entries.some(e => e.sections?.includes(sectionId));
-    });
+    const entries = Array.isArray(entry) ? entry : [entry];
+    return entries.some(e => e.sections?.includes(sectionId));
+  });
 
   targets.forEach(p => {
     const primaryKey = `oak:${gameId}:primary:${p.dex}`;
     const primary = localStorage.getItem(primaryKey);
 
-    // ⭐ ONLY reset if this section owns the primary
+    // ONLY reset if this section owns the primary catch
     if (primary === sectionId) {
       localStorage.removeItem(primaryKey);
-
-      const caughtKey = `oak:${gameId}:caught`;
-      const caughtData = JSON.parse(localStorage.getItem(caughtKey) || '{}');
-
       delete caughtData[p.dex];
-
-      localStorage.setItem(caughtKey, JSON.stringify(caughtData));
     }
   });
+
+  // ⭐ Save caught state ONCE
+  localStorage.setItem(caughtKey, JSON.stringify(caughtData));
+
+  // ⭐ Rebuild UI + counters
+  renderSections({ game, pokemon });
+  updateGlobalProgress(game, pokemon);
+  updateCurrentObjective(game, pokemon);
+}
 
   // Save updated caught data
   localStorage.setItem(caughtKey, JSON.stringify(caughtData));
