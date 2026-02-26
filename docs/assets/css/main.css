@@ -53,9 +53,8 @@ body {
 
 .section-header {
   position: sticky;
-  top: 0;
+  top: var(--section2-top);   /* ⭐ single source of truth */
   z-index: 50;
-  top: var(--section2-top);
 
   display: flex;
   align-items: center;
@@ -166,6 +165,7 @@ body {
 
 .pokemon-row {
   position: relative;
+  z-index: 1;
 }
 
 .pokemon-row::before {
