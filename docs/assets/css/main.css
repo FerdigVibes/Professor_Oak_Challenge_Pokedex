@@ -275,10 +275,9 @@ body {
   object-fit: contain;
 
   transition: transform 0.25s ease, opacity 0.2s ease;
-}
 
-.detail-sprite-img.shiny-toggle-out {
-  opacity: 0;
+  position: relative;   /* ⭐ ADD */
+  z-index: 3;           /* ⭐ ADD */
 }
 
 .caught-toggle {
@@ -1057,12 +1056,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  background:
-    radial-gradient(
-      circle at center,
-      #ffffff 55%,
-      #e0e0e0 100%
-    );
+  background: none;
 
   border: 3px solid #999;
   border-radius: 16px;
@@ -1073,6 +1067,27 @@ body {
 
   position: relative;
   overflow: hidden;
+}
+
+.detail-sprite-window::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #ffffff 55%,
+      #e0e0e0 100%
+    );
+
+  z-index: 1;            /* ⭐ sits BELOW sprite */
+}
+
+.detail-sprite-window.shiny-active .detail-sprite-img {
+  filter:
+    drop-shadow(0 0 8px rgba(255,255,160,0.9))
+    brightness(1.15);
 }
 
 .detail-dex {
