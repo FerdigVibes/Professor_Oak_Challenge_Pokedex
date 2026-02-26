@@ -265,15 +265,20 @@
 @media (max-width:768px){
 
   .pokemon-detail-inline {
+    position: relative;        /* ⭐ REQUIRED for z-index to work */
+    z-index: 40;               /* ⭐ sit ABOVE sticky headers */
+
     background:
       linear-gradient(
         rgba(255,255,255,0.95),
         rgba(235,245,245,0.95)
       );
-  
+
     border-radius: 12px;
     margin: 6px 0 10px;
     padding: 10px;
+
+    animation: detailSlide 0.25s ease;   /* you already defined keyframe 👍 */
   }
 
   @keyframes detailSlide{
