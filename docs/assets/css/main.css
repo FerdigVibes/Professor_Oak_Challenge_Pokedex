@@ -116,6 +116,8 @@ body {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
+
+  padding-top: var(--section2-top);   /* ⭐ ADD THIS */
 }
 
 /* BACKGROUND LAYER */
