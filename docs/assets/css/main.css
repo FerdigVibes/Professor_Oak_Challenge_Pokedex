@@ -54,7 +54,7 @@ body {
 
 .section-header {
   position: sticky;
-  top: var(--section2-top);
+  top: 120px;
   z-index: 30;
 
   display: flex;
