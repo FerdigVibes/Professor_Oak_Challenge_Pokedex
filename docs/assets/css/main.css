@@ -166,7 +166,6 @@ body {
 
 .pokemon-row {
   position: relative;
-  isolation: auto; /* ⬅️ VERY IMPORTANT */
 }
 
 .pokemon-row::before {
