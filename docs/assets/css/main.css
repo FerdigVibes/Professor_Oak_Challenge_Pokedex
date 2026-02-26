@@ -195,11 +195,17 @@ body {
 
 /* Ensure content sits above background layers */
 .section-block,
-.section-header,
 .section-rows,
 .pokemon-row {
   position: relative;
-  z-index: 1;
+  z-index: 3;
+}
+
+/* Headers must be above the scanline overlay */
+.section-header{
+  position: sticky;
+  top: var(--section2-top);
+  z-index: 10;          /* > #section-list::after (2) */
 }
 
 @keyframes shinyPulse {
