@@ -115,6 +115,8 @@ body {
   overflow-x: hidden;
   padding: 8px 12px;
   box-sizing: border-box;
+  overscroll-behavior: contain;   /* ⭐ stops rubber-band chaining */
+  -webkit-overflow-scrolling: touch;
 }
 
 /* BACKGROUND LAYER */
