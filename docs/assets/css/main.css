@@ -1160,14 +1160,15 @@ body {
     inset 0 0 10px rgba(255,215,0,0.6);
 }
 
-/* Sprite itself */
 .detail-sprite-window img {
   width: 140px;
   height: 140px;
   object-fit: contain;
 
   image-rendering: pixelated;
-  z-index: 1;
+
+  position: relative;   /* ⭐ REQUIRED or z-index does nothing */
+  z-index: 3;           /* ⭐ ABOVE ::before and ::after */
 }
 
 /* ===============================
@@ -1225,6 +1226,8 @@ body {
 
   opacity: 0.08;
   pointer-events: none;
+
+  z-index: 0;   /* ⭐ ADD THIS */
 }
 
 .obtain-section {
