@@ -265,8 +265,9 @@
 @media (max-width:768px){
 
   .pokemon-detail-inline {
-    position: relative;        /* ⭐ REQUIRED for z-index to work */
-    z-index: 40;               /* ⭐ sit ABOVE sticky headers */
+
+    position: relative;
+    z-index: 5;                 /* ⭐ LOWER than header (header is 30) */
 
     background:
       linear-gradient(
@@ -275,21 +276,11 @@
       );
 
     border-radius: 12px;
-    margin: 6px 0 10px;
+    margin: 4px 0 10px;
     padding: 10px;
 
-    animation: detailSlide 0.25s ease;   /* you already defined keyframe 👍 */
-  }
-
-  @keyframes detailSlide{
-    from{
-      opacity:0;
-      transform:translateY(-6px);
-    }
-    to{
-      opacity:1;
-      transform:translateY(0);
-    }
+    overflow: hidden;           /* ⭐ prevents sticky collision */
+    animation: detailSlide 0.25s ease;
   }
 
 }
