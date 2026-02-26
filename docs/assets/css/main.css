@@ -1081,7 +1081,9 @@ body {
       #e0e0e0 100%
     );
 
-  z-index: 1;            /* ⭐ sits BELOW sprite */
+  z-index: 1;
+
+  pointer-events: none;   /* ⭐ ADD THIS */
 }
 
 .detail-sprite-window.shiny-active .detail-sprite-img {
