@@ -168,7 +168,7 @@ body {
 
 .pokemon-row {
   position: relative;
-  isolation: isolate; /* ⬅️ VERY IMPORTANT */
+  isolation: auto; /* ⬅️ VERY IMPORTANT */
 }
 
 .pokemon-row::before {
@@ -189,6 +189,11 @@ body {
   opacity: 0.35;
   filter: grayscale(80%);
   pointer-events: none;
+}
+
+.section-block {
+  position: relative;
+  isolation: isolate;
 }
 
 /* Ensure content sits above background layers */
