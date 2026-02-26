@@ -39,7 +39,7 @@
       "obtain": [
         {
           "method": "wild",
-          "locations": ["Route 28", "Mt. Silver Exterior"],
+          "locations": ["Route 28", "Mt. Silver"],
           "time": ["night"],
           "notes": {
             "en": "Rare nighttime encounter on Route 28 and outside Mt. Silver.",
