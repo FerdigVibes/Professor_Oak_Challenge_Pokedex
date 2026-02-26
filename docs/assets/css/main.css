@@ -60,7 +60,7 @@ body {
 
 .section-header {
   position: sticky;
-  top: var(--section2-top);   /* ⭐ single source of truth */
+  top: 0;
   z-index: 50;
 
   display: flex;
