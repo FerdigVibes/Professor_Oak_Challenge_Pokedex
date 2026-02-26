@@ -1069,7 +1069,7 @@ body {
   overflow: hidden;
 }
 
-.detail-sprite-window::before {
+/*.detail-sprite-window::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1083,8 +1083,8 @@ body {
 
   z-index: 1;
 
-  pointer-events: none;   /* ⭐ ADD THIS */
-}
+  pointer-events: none;
+}*/
 
 .detail-sprite-window.shiny-active .detail-sprite-img {
   filter:
