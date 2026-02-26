@@ -56,6 +56,16 @@ function formatGameTime() {
   return `${dayLabel} ${hour}:${String(minute).padStart(2,'0')} ${meridiem}`;
 }
 
+function syncTopBarHeight(){
+  const topBar = document.getElementById('top-bar');
+  if (!topBar) return;
+
+  const h = topBar.offsetHeight;
+  document.documentElement.style.setProperty('--section2-top', `${h}px`);
+  document.documentElement.style.setProperty('--topbar-height', `${h}px`);
+}
+
+window.addEventListener('resize', syncTopBarHeight);
 
 /* =========================================================
    INIT
@@ -73,6 +83,9 @@ async function init() {
     resetAppToBlankState();
     buildGameSelector();
     applyTranslations();
+    
+    await loadLanguage(getLanguage());
+    syncTopBarHeight();
 
     // 🔹 Section 2 background scroll sync
     const sectionList = document.getElementById('section-list');
