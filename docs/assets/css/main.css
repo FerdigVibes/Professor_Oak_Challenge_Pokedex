@@ -117,7 +117,7 @@ body {
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 
-  padding-top: var(--section2-top);   /* ⭐ ADD THIS */
+  padding-top: 0;  /* ⭐ ADD THIS */
 }
 
 /* BACKGROUND LAYER */
