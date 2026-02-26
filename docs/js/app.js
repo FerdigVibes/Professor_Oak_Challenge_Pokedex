@@ -745,8 +745,8 @@ function applySearchFilter(query) {
     let anyVisible = false;
 
     section.querySelectorAll('.pokemon-row').forEach(row => {
-      const name = row.dataset.name;
-      const dex = row.dataset.dex;
+      const name = (row.dataset.name || '').toLowerCase();
+      const dex  = (row.dataset.dex  || '');
 
       const match =
         !q ||
@@ -757,11 +757,8 @@ function applySearchFilter(query) {
       if (match) anyVisible = true;
     });
 
-    // Hide entire section if nothing matches
-    const rowsContainer = section.querySelector('.section-rows');
-    if (rowsContainer) {
-      rowsContainer.style.display = anyVisible ? '' : 'none';
-    }
+    // ✅ hide the WHOLE section if nothing matches
+    section.style.display = anyVisible ? '' : 'none';
   });
 }
 
