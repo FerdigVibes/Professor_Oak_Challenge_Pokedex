@@ -15,9 +15,15 @@ body {
 }
 
 #app {
-  flex: 1 1 auto;
-  min-height: 0;            /* ⭐ critical */
+  position: relative;
+
   display: flex;
+  flex: 1 1 auto;
+
+  /* ⭐ THIS is what fixes the bottom cutoff */
+  height: calc(100dvh - var(--topbar-height));
+
+  min-height: 0;        /* prevents flex overflow bugs */
   overflow: hidden;
 }
 
@@ -48,6 +54,7 @@ body {
 }
 
 :root {
+  --topbar-height: 120px;
   --section2-top: 120px;
 }
 
