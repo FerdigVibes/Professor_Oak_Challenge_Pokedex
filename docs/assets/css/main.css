@@ -1155,6 +1155,10 @@ body {
   font-size: 1.2rem;
   opacity: 0.35;
   transition: opacity 0.2s ease, transform 0.2s ease;
+
+  position: relative;   /* ⭐ REQUIRED — enables z-index */
+  z-index: 5;           /* ⭐ above sprite-window overlay */
+  pointer-events: auto; /* ⭐ ensures taps register on mobile */
 }
 
 .shiny-icon.active {
