@@ -17,9 +17,7 @@ body {
 #app {
   position: relative;
   display: flex;
-  height: calc(100vh - 120px);
-
-  overflow: hidden;        /* ⭐ Prevent scroll bleed */
+  height: 100vh;
 }
 
 /* Default: no Pokémon selected */
@@ -56,6 +54,7 @@ body {
   position: sticky;
   top: 120px;
   z-index: 30;
+  top: var(--section2-top);
 
   display: flex;
   align-items: center;
