@@ -123,8 +123,8 @@ body {
 /* BACKGROUND LAYER */
 #section-list::before {
   content: "";
-  position: fixed;
-  inset: 0;                 /* 🔑 simpler + safer than top/left/right/bottom */
+  position: absolute;
+  inset: 0;
 
   background:
     radial-gradient(
@@ -134,7 +134,7 @@ body {
       rgba(0,0,0,0.18) 70%,
       rgba(0,0,0,0.35) 100%
     ),
-    url("../images/pokedex-landing-bg.png")
+    url("../images/pokedex-landing-bg.png");  /* ⭐ ADD THIS ; */
 
   background-repeat: no-repeat;
   background-position: center center;
