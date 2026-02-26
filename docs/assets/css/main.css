@@ -20,9 +20,6 @@ body {
   display: flex;
   flex: 1 1 auto;
 
-  /* ⭐ THIS is what fixes the bottom cutoff */
-  height: calc(100dvh - var(--topbar-height));
-
   min-height: 0;        /* prevents flex overflow bugs */
   overflow: hidden;
 }
