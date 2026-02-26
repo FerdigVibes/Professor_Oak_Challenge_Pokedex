@@ -60,7 +60,7 @@ body {
 
 .section-header {
   position: sticky;
-  top: 0;
+  top: var(--topbar-height);
   z-index: 50;
 
   display: flex;
