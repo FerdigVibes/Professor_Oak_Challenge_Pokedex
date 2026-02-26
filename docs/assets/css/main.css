@@ -211,13 +211,6 @@ body {
   z-index: 3;
 }
 
-/* Headers must be above the scanline overlay */
-.section-header{
-  position: sticky;
-  top: var(--section2-top);
-  z-index: 10;          /* > #section-list::after (2) */
-}
-
 @keyframes shinyPulse {
   0%   { transform: scale(0.8); opacity: .6; }
   50%  { transform: scale(1.1); opacity: 1; }
