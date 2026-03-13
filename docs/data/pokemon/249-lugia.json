@@ -52,6 +52,41 @@
       ]
     },
 
+    "firered_switch": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "static",
+          "location": ["Navel Rock"],
+          "notes": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
+          "notesI18n": {
+            "en": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
+            "ja": "へそのいわ。しんぴのチケットを使う。話しかける前にレポートを書いておこう。",
+            "fr": "Roc Nombri. Utilisez le Passe Mystère. Sauvegardez avant d'interagir.",
+            "de": "Nabel-Felsen. Verwende das GeheimTicket. Speichere vor der Interaktion.",
+            "es": "Roca Ombligo. Usa el Ticket Místico. Guarda antes de interactuar."
+          }
+        }
+      ]
+    },
+    "leafgreen_switch": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "static",
+          "location": ["Navel Rock"],
+          "notes": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
+          "notesI18n": {
+            "en": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
+            "ja": "へそのいわ。しんぴのチケットを使う。話しかける前にレポートを書いておこう。",
+            "fr": "Roc Nombri. Utilisez le Passe Mystère. Sauvegardez avant d'interagir.",
+            "de": "Nabel-Felsen. Verwende das GeheimTicket. Speichere vor der Interaktion.",
+            "es": "Roca Ombligo. Usa el Ticket Místico. Guarda antes de interactuar."
+          }
+        }
+      ]
+    },
+
     "crystal": {
       "sections": ["KANTO_POKEMON"],
       "obtain": [
