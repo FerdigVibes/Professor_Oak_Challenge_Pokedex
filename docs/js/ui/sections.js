@@ -72,7 +72,12 @@ function getStarterLinkedFamily(gameId, slug, baseFamily) {
   const id = normalizeGameId(gameId);
 
   // Only apply to FR/LG
-  if (id !== 'firered' && id !== 'leafgreen') {
+  if (
+    id !== 'firered' &&
+    id !== 'leafgreen' &&
+    id !== 'firered_switch' &&
+    id !== 'leafgreen_switch'
+  ) {
     return baseFamily;
   }
 
