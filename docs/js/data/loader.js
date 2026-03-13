@@ -6,7 +6,9 @@
 
 export const GAME_ALIASES = {
   firered: "red",
-  leafgreen: "blue"
+  leafgreen: "blue",
+  firered_switch: "firered",
+  leafgreen_switch: "leafgreen"
 };
 
 export function getGameData(pokemon, gameId) {
