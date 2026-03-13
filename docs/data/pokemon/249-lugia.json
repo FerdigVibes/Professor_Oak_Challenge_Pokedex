@@ -57,7 +57,7 @@
       "obtain": [
         {
           "method": "static",
-          "location": ["Navel Rock"],
+          "locations": ["Navel Rock"],
           "notes": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
           "notesI18n": {
             "en": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
@@ -74,7 +74,7 @@
       "obtain": [
         {
           "method": "static",
-          "location": ["Navel Rock"],
+          "locations": ["Navel Rock"],
           "notes": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
           "notesI18n": {
             "en": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
