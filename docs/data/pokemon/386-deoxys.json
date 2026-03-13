@@ -23,7 +23,7 @@
       "obtain": [
         {
           "method": "static",
-          "location": ["Birth Island"],
+          "locations": ["Birth Island"],
           "notes": "Birth Island. Use the Aurora Ticket. Save before interacting.",
           "notesI18n": {
             "en": "Birth Island. Use the Aurora Ticket. Save before interacting.",
@@ -41,7 +41,7 @@
       "obtain": [
         {
           "method": "static",
-          "location": ["Birth Island"],
+          "locations": ["Birth Island"],
           "notes": "Birth Island. Use the Aurora Ticket. Save before interacting.",
           "notesI18n": {
             "en": "Birth Island. Use the Aurora Ticket. Save before interacting.",
