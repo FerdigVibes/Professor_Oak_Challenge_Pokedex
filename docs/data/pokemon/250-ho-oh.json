@@ -52,8 +52,7 @@
         {
           "method": "static",
           "locations": ["Navel Rock"],
-          "notes": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
-          "notesI18n": {
+          "notes": {
             "en": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
             "ja": "へそのいわ。しんぴのチケットを使う。話しかける前にレポートを書いておこう。",
             "fr": "Roc Nombri. Utilisez le Passe Mystère. Sauvegardez avant d'interagir.",
@@ -69,8 +68,7 @@
         {
           "method": "static",
           "locations": ["Navel Rock"],
-          "notes": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
-          "notesI18n": {
+          "notes": {
             "en": "Navel Rock. Use the Mystic Ticket. Save before interacting.",
             "ja": "へそのいわ。しんぴのチケットを使う。話しかける前にレポートを書いておこう。",
             "fr": "Roc Nombri. Utilisez le Passe Mystère. Sauvegardez avant d'interagir.",
