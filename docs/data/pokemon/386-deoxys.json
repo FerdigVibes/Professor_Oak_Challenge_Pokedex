@@ -24,8 +24,7 @@
         {
           "method": "static",
           "locations": ["Birth Island"],
-          "notes": "Birth Island. Use the Aurora Ticket. Save before interacting.",
-          "notesI18n": {
+          "notes":{
             "en": "Birth Island. Use the Aurora Ticket. Save before interacting.",
             "ja": "たんじょうのしま。オーロラチケットを使う。話しかける前にレポートを書いておこう。",
             "fr": "Île Aurore. Utilisez le Passe Aurore. Sauvegardez avant d'interagir.",
@@ -42,8 +41,7 @@
         {
           "method": "static",
           "locations": ["Birth Island"],
-          "notes": "Birth Island. Use the Aurora Ticket. Save before interacting.",
-          "notesI18n": {
+          "notes":{
             "en": "Birth Island. Use the Aurora Ticket. Save before interacting.",
             "ja": "たんじょうのしま。オーロラチケットを使う。話しかける前にレポートを書いておこう。",
             "fr": "Île Aurore. Utilisez le Passe Aurore. Sauvegardez avant d'interagir.",
