@@ -1,0 +1,57 @@
+{
+  "dex": 386,
+  "slug": "deoxys",
+
+  "names": {
+    "en": "Deoxys",
+    "ja": "デオキシス",
+    "fr": "Deoxys",
+    "de": "Deoxys",
+    "es": "Deoxys"
+  },
+
+  "types": ["psychic"],
+
+  "evolution": {
+    "family": ["deoxys"],
+    "stage": 1
+  },
+
+  "games": {
+    "firered_switch": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "static",
+          "location": ["Birth Island"],
+          "notes": "Birth Island. Use the Aurora Ticket. Save before interacting.",
+          "notesI18n": {
+            "en": "Birth Island. Use the Aurora Ticket. Save before interacting.",
+            "ja": "たんじょうのしま。オーロラチケットを使う。話しかける前にレポートを書いておこう。",
+            "fr": "Île Aurore. Utilisez le Passe Aurore. Sauvegardez avant d'interagir.",
+            "de": "Geburtsinsel. Verwende das AuroraTicket. Speichere vor der Interaktion.",
+            "es": "Isla Origen. Usa el Ticket Aurora. Guarda antes de interactuar."
+          }
+        }
+      ]
+    },
+
+    "leafgreen_switch": {
+      "sections": ["POST_GAME_POKEMON"],
+      "obtain": [
+        {
+          "method": "static",
+          "location": ["Birth Island"],
+          "notes": "Birth Island. Use the Aurora Ticket. Save before interacting.",
+          "notesI18n": {
+            "en": "Birth Island. Use the Aurora Ticket. Save before interacting.",
+            "ja": "たんじょうのしま。オーロラチケットを使う。話しかける前にレポートを書いておこう。",
+            "fr": "Île Aurore. Utilisez le Passe Aurore. Sauvegardez avant d'interagir.",
+            "de": "Geburtsinsel. Verwende das AuroraTicket. Speichere vor der Interaktion.",
+            "es": "Isla Origen. Usa el Ticket Aurora. Guarda antes de interactuar."
+          }
+        }
+      ]
+    }
+  }
+}
