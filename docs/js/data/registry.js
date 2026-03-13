@@ -30,7 +30,9 @@ export const GAME_REGISTRY = [
     genKey: 'gen3',
     games: [
       { id: 'firered', labelKey: 'firered' },
-      { id: 'leafgreen', labelKey: 'leafgreen' }
+      { id: 'leafgreen', labelKey: 'leafgreen' },
+      { id: 'firered_switch', labelKey: 'firered_switch' },
+      { id: 'leagreen_switch', labelKey: 'leafgreen_switch' }
     ]
   }
 ];
