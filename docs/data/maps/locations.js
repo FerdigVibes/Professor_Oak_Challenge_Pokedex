@@ -272,6 +272,16 @@ export const LOCATION_REGISTRY = {
     map: "seviiislands", x: 55.1, y: 73.6,
     names: { en: "Five Isle Meadow", ja: "5のしまそうげん", de: "Wiese von Eiland 5", es: "Pradera de Isla Cinco", fr: "Pré de l’Île 5" }
   },
+
+  "kanto:Navel Rock": {
+    map: "seviiislands", x: 45.3, y: 63.8,
+    names: { en: "Navel Rock", ja: "へそのいわ", de: "Nabel-Felsen", es: "Roca Ombligo", fr: "Roc Nombri" }
+  },
+
+  "kanto:Birth Island": {
+    map: "seviiislands", x: 81.2, y: 72.1,
+    names: { en: "Birth Island", ja: "たんじょうのしま", de: "Geburtsinsel", es: "Isla Origen", fr: "Île Aurore" }
+  },
   
   "kanto:Green Path": {
     map: "seviiislands", x: 85.2, y: 18.5,
