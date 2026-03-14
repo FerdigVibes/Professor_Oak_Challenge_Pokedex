@@ -1,1 +1,142 @@
-placeholder
+{
+  "id": "sapphire",
+  "displayName": "Pokémon Sapphire",
+  "generation": 3,
+  "totalPokemon": 178,
+
+  "sections": [
+    {
+      "id": "BEFORE_RUSTBORO",
+      "titleKey": "beforeRustboro",
+      "order": 1,
+      "children": ["STARTER", "RUSTBORO_POKEMON"]
+    },
+    {
+      "id": "STARTER",
+      "titleKey": "chooseYourStarter",
+      "order": 1.1,
+      "parent": "BEFORE_RUSTBORO",
+      "requiredCount": 3
+    },
+    {
+      "id": "RUSTBORO_POKEMON",
+      "titleKey": "rustboroPokemon",
+      "order": 1.2,
+      "parent": "BEFORE_RUSTBORO",
+      "requiredCount": 34
+    },
+
+    {
+      "id": "BEFORE_MAUVILLE",
+      "titleKey": "beforeMauville",
+      "order": 2,
+      "children": ["MAUVILLE_POKEMON"]
+    },
+    {
+      "id": "MAUVILLE_POKEMON",
+      "titleKey": "mauvillePokemon",
+      "order": 2.1,
+      "parent": "BEFORE_MAUVILLE",
+      "requiredCount": 30
+    },
+
+    {
+      "id": "BEFORE_LAVARIDGE",
+      "titleKey": "beforeLavaridge",
+      "order": 3,
+      "children": ["LAVARIDGE_POKEMON"]
+    },
+    {
+      "id": "LAVARIDGE_POKEMON",
+      "titleKey": "lavaridgePokemon",
+      "order": 3.1,
+      "parent": "BEFORE_LAVARIDGE",
+      "requiredCount": 25
+    },
+    {
+      "id": "BEFORE_DEWFORD_PETALBURG",
+      "titleKey": "beforeDewfordPetalburg",
+      "order": 4,
+      "children": ["BEFORE_DEWFORD_PETALBURG_POKEMON", "REVIVE_FOSSIL"]
+    },
+    {
+      "id": "BEFORE_DEWFORD_PETALBURG_POKEMON",
+      "titleKey": "beforeDewfordPetalburgPokemon",
+      "order": 4.1,
+      "parent": "BEFORE_DEWFORD_PETALBURG",
+      "requiredCount": 7
+    },
+    {
+      "id": "REVIVE_FOSSIL",
+      "titleKey": "reviveFossil",
+      "order": 4.2,
+      "parent": "BEFORE_DEWFORD_PETALBURG",
+      "requiredCount": 2
+    },
+    {
+      "id": "BEFORE_MOSSDEEP",
+      "titleKey": "beforeMossdeep",
+      "order": 5,
+      "children": ["MOSSDEEP_POKEMON"]
+    },
+    {
+      "id": "MOSSDEEP_POKEMON",
+      "titleKey": "MossdeepPokemon",
+      "order": 5.1,
+      "parent": "BEFORE_MOSSDEEP",
+      "requiredCount": 59
+    },
+    {
+      "id": "BEFORE_SOOTOPOLIS",
+      "titleKey": "beforeSootopolis",
+      "order": 6,
+      "children": ["SOOTOPOLIS_POKEMON"]
+    },
+    {
+      "id": "SOOTOPOLIS_POKEMON",
+      "titleKey": "SootopolisPokemon",
+      "order": 6.1,
+      "parent": "BEFORE_SOOTOPOLIS",
+      "requiredCount": 9
+    },
+    {
+      "id": "BEFORE_FORTREE",
+      "titleKey": "beforeFortree",
+      "order": 7,
+      "children": ["FORTREE_POKEMON"]
+    },
+    {
+      "id": "FORTREE_POKEMON",
+      "titleKey": "FortreePokemon",
+      "order": 7.1,
+      "parent": "BEFORE_FORTREE",
+      "requiredCount": 3
+    },
+    {
+      "id": "BEFORE_ELITE_FOUR",
+      "titleKey": "beforeEliteFour",
+      "order": 8,
+      "children": ["ELITE_FOUR_POKEMON"]
+    },
+    {
+      "id": "ELITE_FOUR_POKEMON",
+      "titleKey": "EliteFourPokemon",
+      "order": 8.1,
+      "parent": "BEFORE_ELITE_FOUR",
+      "requiredCount": 1
+    },
+    {
+      "id": "POST_GAME",
+      "titleKey": "postGame",
+      "order": 9,
+      "children": ["POST_GAME_POKEMON"]
+    },
+    {
+      "id": "POST_GAME_POKEMON",
+      "titleKey": "postGamePokemon",
+      "order": 9.1,
+      "parent": "POST_GAME",
+      "requiredCount": 5
+    }
+  ]
+}
