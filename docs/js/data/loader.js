@@ -3,6 +3,7 @@
 // ========================================================
 // GAME INHERITANCE (FRLG → RBY)
 // ========================================================
+import { normalizeGameId } from '../utils/normalizeGameId.js';
 
 export const GAME_ALIASES = {
   firered: "red",
