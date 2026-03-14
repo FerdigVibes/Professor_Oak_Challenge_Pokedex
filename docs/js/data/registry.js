@@ -32,7 +32,7 @@ export const GAME_REGISTRY = [
       { id: 'firered', labelKey: 'firered' },
       { id: 'leafgreen', labelKey: 'leafgreen' },
       { id: 'firered_switch', labelKey: 'firered_switch' },
-      { id: 'leagreen_switch', labelKey: 'leafgreen_switch' }
+      { id: 'leafgreen_switch', labelKey: 'leafgreen_switch' }
     ]
   }
 ];
