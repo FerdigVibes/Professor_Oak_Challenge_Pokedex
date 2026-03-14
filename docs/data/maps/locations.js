@@ -431,6 +431,366 @@ export const LOCATION_REGISTRY = {
     map: "johto", x: 51.74, y: 43.25,
     names: { en:"Victory Road", ja:"チャンピオンロード", fr:"Route Victoire", de:"Siegesstraße", es:"Calle Victoria" }
   },
+  "hoenn:Route 101": {
+    map:"hoenn", x:20.50, y:64.81,
+    names: { en:"Route 101", ja:"101ばんどうろ", de:"Route 101", es:"Ruta 101", fr:"Route 101" }
+  },
+  
+  "hoenn:Route 102": {
+    map:"hoenn", x:17.28, y:60.80,
+    names: { en:"Route 102", ja:"102ばんどうろ", de:"Route 102", es:"Ruta 102", fr:"Route 102" }
+  },
+  
+  "hoenn:Route 103": {
+    map:"hoenn", x:23.61, y:57.66,
+    names: { en:"Route 103", ja:"103ばんどうろ", de:"Route 103", es:"Ruta 103", fr:"Route 103" }
+  },
+  
+  "hoenn:Route 104": {
+    map:"hoenn", x:5.56, y:59.54,
+    names: { en:"Route 104", ja:"104ばんどうろ", de:"Route 104", es:"Ruta 104", fr:"Route 104" }
+  },
+  
+  "hoenn:Route 105": {
+    map:"hoenn", x:5.83, y:69.67,
+    names: { en:"Route 105", ja:"105ばんどうろ", de:"Route 105", es:"Ruta 105", fr:"Route 105" }
+  },
+  
+  "hoenn:Route 106": {
+    map:"hoenn", x:12.11, y:81.54,
+    names: { en:"Route 106", ja:"106ばんどうろ", de:"Route 106", es:"Ruta 106", fr:"Route 106" }
+  },
+  
+  "hoenn:Route 107": {
+    map:"hoenn", x:20.72, y:89.95,
+    names: { en:"Route 107", ja:"107ばんどうろ", de:"Route 107", es:"Ruta 107", fr:"Route 107" }
+  },
+  
+  "hoenn:Route 108": {
+    map:"hoenn", x:27.50, y:90.81,
+    names: { en:"Route 108", ja:"108ばんどうろ", de:"Route 108", es:"Ruta 108", fr:"Route 108" }
+  },
+  
+  "hoenn:Route 109": {
+    map:"hoenn", x:31.22, y:82.09,
+    names: { en:"Route 109", ja:"109ばんどうろ", de:"Route 109", es:"Ruta 109", fr:"Route 109" }
+  },
+  
+  "hoenn:Route 110": {
+    map:"hoenn", x:31.22, y:52.08,
+    names: { en:"Route 110", ja:"110ばんどうろ", de:"Route 110", es:"Ruta 110", fr:"Route 110" }
+  },
+  
+  "hoenn:Route 111": {
+    map:"hoenn", x:33.72, y:28.83,
+    names: { en:"Route 111", ja:"111ばんどうろ", de:"Route 111", es:"Ruta 111", fr:"Route 111" }
+  },
+  
+  "hoenn:Route 112": {
+    map:"hoenn", x:30.22, y:21.13,
+    names: { en:"Route 112", ja:"112ばんどうろ", de:"Route 112", es:"Ruta 112", fr:"Route 112" }
+  },
+  
+  "hoenn:Route 113": {
+    map:"hoenn", x:29.78, y:9.82,
+    names: { en:"Route 113", ja:"113ばんどうろ", de:"Route 113", es:"Ruta 113", fr:"Route 113" }
+  },
+  
+  "hoenn:Route 114": {
+    map:"hoenn", x:14.22, y:9.27,
+    names: { en:"Route 114", ja:"114ばんどうろ", de:"Route 114", es:"Ruta 114", fr:"Route 114" }
+  },
+  
+  "hoenn:Route 115": {
+    map:"hoenn", x:11.89, y:28.52,
+    names: { en:"Route 115", ja:"115ばんどうろ", de:"Route 115", es:"Ruta 115", fr:"Route 115" }
+  },
+  "hoenn:Route 116": {
+    map:"hoenn", x:16.94, y:37.55,
+    names: { en:"Route 116", ja:"116ばんどうろ", de:"Route 116", es:"Ruta 116", fr:"Route 116" }
+  },
+  
+  "hoenn:Route 117": {
+    map:"hoenn", x:25.17, y:38.41,
+    names: { en:"Route 117", ja:"117ばんどうろ", de:"Route 117", es:"Ruta 117", fr:"Route 117" }
+  },
+  
+  "hoenn:Route 118": {
+    map:"hoenn", x:38.00, y:37.23,
+    names: { en:"Route 118", ja:"118ばんどうろ", de:"Route 118", es:"Ruta 118", fr:"Route 118" }
+  },
+  
+  "hoenn:Route 119": {
+    map:"hoenn", x:40.33, y:22.70,
+    names: { en:"Route 119", ja:"119ばんどうろ", de:"Route 119", es:"Ruta 119", fr:"Route 119" }
+  },
+  
+  "hoenn:Route 120": {
+    map:"hoenn", x:51.44, y:12.80,
+    names: { en:"Route 120", ja:"120ばんどうろ", de:"Route 120", es:"Ruta 120", fr:"Route 120" }
+  },
+  
+  "hoenn:Route 121": {
+    map:"hoenn", x:53.78, y:21.37,
+    names: { en:"Route 121", ja:"121ばんどうろ", de:"Route 121", es:"Ruta 121", fr:"Route 121" }
+  },
+  
+  "hoenn:Route 122": {
+    map:"hoenn", x:59.50, y:26.79,
+    names: { en:"Route 122", ja:"122ばんどうろ", de:"Route 122", es:"Ruta 122", fr:"Route 122" }
+  },
+  
+  "hoenn:Route 123": {
+    map:"hoenn", x:49.22, y:37.00,
+    names: { en:"Route 123", ja:"123ばんどうろ", de:"Route 123", es:"Ruta 123", fr:"Route 123" }
+  },
+  
+  "hoenn:Route 124": {
+    map:"hoenn", x:73.50, y:25.14,
+    names: { en:"Route 124", ja:"124ばんどうろ", de:"Route 124", es:"Ruta 124", fr:"Route 124" }
+  },
+  
+  "hoenn:Route 125": {
+    map:"hoenn", x:86.44, y:18.38,
+    names: { en:"Route 125", ja:"125ばんどうろ", de:"Route 125", es:"Ruta 125", fr:"Route 125" }
+  },
+  
+  "hoenn:Route 126": {
+    map:"hoenn", x:80.44, y:33.23,
+    names: { en:"Route 126", ja:"126ばんどうろ", de:"Route 126", es:"Ruta 126", fr:"Route 126" }
+  },
+  
+  "hoenn:Route 127": {
+    map:"hoenn", x:85.50, y:49.80,
+    names: { en:"Route 127", ja:"127ばんどうろ", de:"Route 127", es:"Ruta 127", fr:"Route 127" }
+  },
+  
+  "hoenn:Route 128": {
+    map:"hoenn", x:89.56, y:58.84,
+    names: { en:"Route 128", ja:"128ばんどうろ", de:"Route 128", es:"Ruta 128", fr:"Route 128" }
+  },
+  
+  "hoenn:Route 129": {
+    map:"hoenn", x:82.78, y:63.26,
+    names: { en:"Route 129", ja:"129ばんどうろ", de:"Route 129", es:"Ruta 129", fr:"Route 129" }
+  },
+  
+  "hoenn:Route 130": {
+    map:"hoenn", x:76.72, y:64.42,
+    names: { en:"Route 130", ja:"130ばんどうろ", de:"Route 130", es:"Ruta 130", fr:"Route 130" }
+  },
+  "hoenn:Route 131": {
+    map:"hoenn", x:69.72, y:64.10,
+    names: { en:"Route 131", ja:"131ばんどうろ", de:"Route 131", es:"Ruta 131", fr:"Route 131" }
+  },
+  
+  "hoenn:Route 132": {
+    map:"hoenn", x:56.72, y:64.41,
+    names: { en:"Route 132", ja:"132ばんどうろ", de:"Route 132", es:"Ruta 132", fr:"Route 132" }
+  },
+  
+  "hoenn:Route 133": {
+    map:"hoenn", x:45.56, y:64.41,
+    names: { en:"Route 133", ja:"133ばんどうろ", de:"Route 133", es:"Ruta 133", fr:"Route 133" }
+  },
+  
+  "hoenn:Route 134": {
+    map:"hoenn", x:39.00, y:64.41,
+    names: { en:"Route 134", ja:"134ばんどうろ", de:"Route 134", es:"Ruta 134", fr:"Route 134" }
+  },
+  
+  "hoenn:Abandoned Ship": {
+    map:"hoenn", x:22.11, y:90.81,
+    names: { en:"Abandoned Ship", ja:"すてられぶね", de:"Verlassenes Schiff", es:"Barco Abandonado", fr:"Épave" }
+  },
+  
+  "hoenn:Battle Frontier": {
+    map:"hoenn", x:66.89, y:72.43,
+    names: { en:"Battle Frontier", ja:"バトルフロンティア", de:"Kampfzone", es:"Frente Batalla", fr:"Zone de Combat" }
+  },
+  
+  "hoenn:Cave of Origin": {
+    map:"hoenn", x:76.61, y:47.37,
+    names: { en:"Cave of Origin", ja:"めざめのほこら", de:"Ursprungshöhle", es:"Cueva Ancestral", fr:"Grotte Origine" }
+  },
+  
+  "hoenn:Desert Underpass": {
+    map:"hoenn", x:20.61, y:5.50,
+    names: { en:"Desert Underpass", ja:"さばくのちかどう", de:"Wüsten-Unterführung", es:"Vía Subterránea", fr:"Passage Souterrain" }
+  },
+  
+  "hoenn:Dewford Town": {
+    map:"hoenn", x:10.17, y:87.82,
+    names: { en:"Dewford Town", ja:"ムロタウン", de:"Graphitport City", es:"Pueblo Azuliza", fr:"Myokara" }
+  },
+  
+  "hoenn:Ever Grande City": {
+    map:"hoenn", x:94.22, y:39.12,
+    names: { en:"Ever Grande City", ja:"サイユウシティ", de:"Prachtpolis City", es:"Ciudad Colosalia", fr:"Éternara" }
+  },
+  
+  "hoenn:Fallarbor Town": {
+    map:"hoenn", x:21.00, y:7.38,
+    names: { en:"Fallarbor Town", ja:"ハジツゲタウン", de:"Laubwechselfeld", es:"Pueblo Pardal", fr:"Vergazon" }
+  },
+  
+  "hoenn:Fiery Path": {
+    map:"hoenn", x:29.11, y:18.54,
+    names: { en:"Fiery Path", ja:"ほのおのぬけみち", de:"Feuriger Pfad", es:"Senda Ígnea", fr:"Chemin Ardent" }
+  },
+  
+  "hoenn:Fortree City": {
+    map:"hoenn", x:46.50, y:10.13,
+    names: { en:"Fortree City", ja:"ヒワマキシティ", de:"Baumhausen City", es:"Ciudad Arborada", fr:"Cimetronelle" }
+  },
+  
+  "hoenn:Granite Cave": {
+    map:"hoenn", x:8.17, y:85.08,
+    names: { en:"Granite Cave", ja:"いしのどうくつ", de:"Granithöhle", es:"Cueva Granito", fr:"Grotte Granite" }
+  },
+  
+  "hoenn:Jagged Pass": {
+    map:"hoenn", x:28.00, y:19.09,
+    names: { en:"Jagged Pass", ja:"ギザギザみち", de:"Zerklüfteter Pass", es:"Paso Dentado", fr:"Passe Dentaire" }
+  },
+  "hoenn:Lavaridge Town": {
+    map:"hoenn", x:26.89, y:20.27,
+    names: { en:"Lavaridge Town", ja:"フエンタウン", de:"Bad Lavastadt", es:"Pueblo Lavacalda", fr:"Vermilava" }
+  },
+  
+  "hoenn:Lilycove City": {
+    map:"hoenn", x:68.00, y:22.39,
+    names: { en:"Lilycove City", ja:"ミナモシティ", de:"Seegrasulb City", es:"Ciudad Calagua", fr:"Nénucrique" }
+  },
+  
+  "hoenn:Littleroot Town": {
+    map:"hoenn", x:20.50, y:69.13,
+    names: { en:"Littleroot Town", ja:"ミシロタウン", de:"Wurzelheim", es:"Pueblo Raíz", fr:"Bourg-en-Vol" }
+  },
+  
+  "hoenn:Mauville City": {
+    map:"hoenn", x:31.50, y:38.97,
+    names: { en:"Mauville City", ja:"キンセツシティ", de:"Malvenfroh City", es:"Ciudad Malvalona", fr:"Lavandia" }
+  },
+  
+  "hoenn:Meteor Falls": {
+    map:"hoenn", x:12.50, y:18.54,
+    names: { en:"Meteor Falls", ja:"りゅうせいのたき", de:"Meteorfälle", es:"Cascada Meteoro", fr:"Chutes Météore" }
+  },
+  
+  "hoenn:Mirage Island": {
+    map:"hoenn", x:74.67, y:61.12,
+    names: { en:"Mirage Island", ja:"まぼろしじま", de:"Wunderinsel", es:"Isla Espejismo", fr:"Île Mirage" }
+  },
+  
+  "hoenn:Mossdeep City": {
+    map:"hoenn", x:88.22, y:25.93,
+    names: { en:"Mossdeep City", ja:"トクサネシティ", de:"Moosbach City", es:"Ciudad Algaria", fr:"Algatia" }
+  },
+  
+  "hoenn:Mt. Chimney": {
+    map:"hoenn", x:25.67, y:12.57,
+    names: { en:"Mt. Chimney", ja:"えんとつやま", de:"Schlotberg", es:"Monte Cenizo", fr:"Mont Chimnée" }
+  },
+  
+  "hoenn:Mt. Pyre": {
+    map:"hoenn", x:59.33, y:31.26,
+    names: { en:"Mt. Pyre", ja:"おくりびやま", de:"Pyroberg", es:"Monte Pírico", fr:"Mont Mémoria" }
+  },
+  
+  "hoenn:New Mauville": {
+    map:"hoenn", x:33.44, y:44.06,
+    names: { en:"New Mauville", ja:"ニューキンセツ", de:"Neu Malvenfroh", es:"Nueva Malvalona", fr:"New Lavandia" }
+  },
+  
+  "hoenn:Oldale Town": {
+    map:"hoenn", x:20.11, y:60.64,
+    names: { en:"Oldale Town", ja:"コトキタウン", de:"Rosaltstadt", es:"Pueblo Escaso", fr:"Rosyères" }
+  },
+  
+  "hoenn:Pacifidlog Town": {
+    map:"hoenn", x:63.17, y:63.79,
+    names: { en:"Pacifidlog Town", ja:"ルネシティ", de:"Flossbrunn", es:"Pueblo Oromar", fr:"Pacifiville" }
+  },
+  
+  "hoenn:Petalburg City": {
+    map:"hoenn", x:13.61, y:61.97,
+    names: { en:"Petalburg City", ja:"トウカシティ", de:"Blütenburg City", es:"Ciudad Petalia", fr:"Clémenti-Ville" }
+  },
+  
+  "hoenn:Petalburg Woods": {
+    map:"hoenn", x:8.06, y:53.82,
+    names: { en:"Petalburg Woods", ja:"トウカのもり", de:"Blütenburgwald", es:"Bosque Petalia", fr:"Bois Clémenti" }
+  },
+  
+  "hoenn:Rustboro City": {
+    map:"hoenn", x:8.94, y:45.24,
+    names: { en:"Rustboro City", ja:"カナズミシティ", de:"Metarost City", es:"Ciudad Férrica", fr:"Mérouville" }
+  },
+  "hoenn:Rusturf Tunnel": {
+    map:"hoenn", x:15.56, y:38.65,
+    names: { en:"Rusturf Tunnel", ja:"カナシダトンネル", de:"Metarost-Tunnel", es:"Túnel Fervergal", fr:"Tunnel Mérouville" }
+  },
+  
+  "hoenn:Safari Zone": {
+    map:"hoenn", x:58.72, y:18.22,
+    names: { en:"Safari Zone", ja:"サファリゾーン", de:"Safari-Zone", es:"Zona Safari", fr:"Parc Safari" }
+  },
+  
+  "hoenn:Scorched Slab": {
+    map:"hoenn", x:51.06, y:10.53,
+    names: { en:"Scorched Slab", ja:"やけたぬけがら", de:"Versengte Platte", es:"Losa Quemada", fr:"Plaque Calcinée" }
+  },
+  
+  "hoenn:Seafloor Cavern": {
+    map:"hoenn", x:82.17, y:43.12,
+    names: { en:"Seafloor Cavern", ja:"かいていどうくつ", de:"Tiefseehöhle", es:"Caverna Abisal", fr:"Grotte Fondmer" }
+  },
+  
+  "hoenn:Sealed Chamber": {
+    map:"hoenn", x:45.06, y:63.39,
+    names: { en:"Sealed Chamber", ja:"ふういんのいしつ", de:"Versiegelte Kammer", es:"Cámara Sellada", fr:"Salle Scellée" }
+  },
+  
+  "hoenn:Shoal Cave": {
+    map:"hoenn", x:87.44, y:15.08,
+    names: { en:"Shoal Cave", ja:"あさせのほらあな", de:"Gezeitenhöhle", es:"Cueva Cardumen", fr:"Grotte Tréfonds" }
+  },
+  
+  "hoenn:Sky Pillar": {
+    map:"hoenn", x:69.72, y:63.55,
+    names: { en:"Sky Pillar", ja:"そらのはしら", de:"Himmelturm", es:"Pilar Celeste", fr:"Pilier Céleste" }
+  },
+  
+  "hoenn:Slateport City": {
+    map:"hoenn", x:31.33, y:65.52,
+    names: { en:"Slateport City", ja:"カイナシティ", de:"Graphitport City", es:"Ciudad Portual", fr:"Poivressel" }
+  },
+  
+  "hoenn:Sootopolis City": {
+    map:"hoenn", x:76.72, y:48.00,
+    names: { en:"Sootopolis City", ja:"ルネシティ", de:"Xeneroville", es:"Ciudad Arrecípolis", fr:"Atalanopolis" }
+  },
+  
+  "hoenn:Southern Island": {
+    map:"hoenn", x:47.11, y:85.39,
+    names: { en:"Southern Island", ja:"みなみのことう", de:"Südinsel", es:"Isla del Sur", fr:"Île du Sud" }
+  },
+  
+  "hoenn:SS Tidal": {
+    map:"hoenn", x:68.50, y:23.09,
+    names: { en:"S.S. Tidal", ja:"タイドリップごう", de:"MS Tide", es:"M/N Tidal", fr:"Navire Tidal" }
+  },
+  
+  "hoenn:Verdanturf Town": {
+    map:"hoenn", x:21.22, y:35.12,
+    names: { en:"Verdanturf Town", ja:"シダケタウン", de:"Grünblattstadt", es:"Pueblo Verdegal", fr:"Vergazon" }
+  },
+  
+  "hoenn:Victory Road": {
+    map:"hoenn", x:94.22, y:39.12,
+    names: { en:"Victory Road", ja:"チャンピオンロード", de:"Siegesstraße", es:"Calle Victoria", fr:"Route Victoire" }
+  },
   
   /* =====================
      JOHTO REGION
