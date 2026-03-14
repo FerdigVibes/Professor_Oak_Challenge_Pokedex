@@ -26,17 +26,51 @@ export function resolveGameEntry(pokemon, gameId) {
 }
 
 export function getGameData(pokemon, gameId) {
-  const baseId = GAME_ALIASES[gameId];
-  const baseData = pokemon.games?.[baseId] || {};
-  const override = pokemon.games?.[gameId] || {};
+  const chain = [];
+  let current = normalizeGameId(gameId);
 
-  return {
-    ...baseData,
-    ...override,
-    sections: override.sections ?? baseData.sections,
-    obtain: override.obtain ?? baseData.obtain,
-    availability: override.availability ?? baseData.availability
-  };
+  while (current) {
+    chain.unshift(current); // base first, specific last
+    current = GAME_ALIASES?.[current];
+  }
+
+  return chain.reduce((acc, id) => {
+    const data = pokemon.games?.[id];
+    if (!data) return acc;
+
+    return {
+      ...acc,
+      ...data,
+
+      sections: data.sections ?? acc.sections,
+      availability: data.availability ?? acc.availability,
+
+      obtain: mergeObtainArrays(acc.obtain, data.obtain)
+    };
+  }, {});
+}
+
+function mergeObtainArrays(base = [], override = []) {
+  const max = Math.max(base.length, override.length);
+  const merged = [];
+
+  for (let i = 0; i < max; i++) {
+    const b = base[i] || {};
+    const o = override[i] || {};
+
+    merged.push({
+      ...b,
+      ...o,
+      location: o.location ?? b.location,
+      notes: o.notes ?? b.notes,
+      notesI18n: o.notesI18n ?? b.notesI18n,
+      method: o.method ?? b.method,
+      time: o.time ?? b.time,
+      days: o.days ?? b.days
+    });
+  }
+
+  return merged;
 }
 
 export async function loadGame(gameId) {
