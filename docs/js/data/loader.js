@@ -11,6 +11,19 @@ export const GAME_ALIASES = {
   leafgreen_switch: "leafgreen"
 };
 
+function resolveGameEntry(pokemon, gameId) {
+  let current = normalizeGameId(gameId);
+
+  while (current) {
+    const entry = pokemon.games?.[current];
+    if (entry) return entry;
+
+    current = GAME_ALIASES?.[current];
+  }
+
+  return undefined;
+}
+
 export function getGameData(pokemon, gameId) {
   const baseId = GAME_ALIASES[gameId];
   const baseData = pokemon.games?.[baseId] || {};
