@@ -10,6 +10,7 @@ import { getGameTime } from '../state/gameTime.js';
 import { setCurrentDetailSelection } from './detail.js';
 import { GAME_ALIASES } from '../data/loader.js';
 import { isShinyEnabled } from '../state/shiny.js';
+import { resolveGameEntry } from '../data/loader.js';
 
 const MOON_STONE_SECTIONS = new Set([
   'MOON_STONE_1',
