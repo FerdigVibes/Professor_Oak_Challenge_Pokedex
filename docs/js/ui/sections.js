@@ -23,11 +23,7 @@ const userExpandedSections = new Set();
 function getGameEntries(pokemon, gameId) {
   const normalized = normalizeGameId(gameId);
 
-  // ✅ If this game inherits from another (firered -> red), fallback when missing
-  const baseId = GAME_ALIASES?.[normalized];
-  const raw =
-    pokemon.games?.[normalized] ??
-    (baseId ? pokemon.games?.[baseId] : undefined);
+  const raw = resolveGameEntry(pokemon, normalized);
 
   if (!raw) return [];
   return Array.isArray(raw) ? raw : [raw];
