@@ -17,7 +17,6 @@ const MOON_STONE_SECTIONS = new Set([
   'MOON_STONE_2'
 ]);
 
-// Tracks sections manually expanded by the user
 const userExpandedSections = new Set();
 
 function getGameEntries(pokemon, gameId) {
@@ -28,10 +27,6 @@ function getGameEntries(pokemon, gameId) {
   if (!raw) return [];
   return Array.isArray(raw) ? raw : [raw];
 }
-
-/* =========================================================
-   Helpers
-   ========================================================= */
 
 function getPokemonTimeAvailability(gameData) {
   if (!gameData?.obtain) return [];
@@ -60,7 +55,7 @@ function isAvailableToday(entry) {
   const { day } = getGameTime();
 
   return entry.obtain.some(o => {
-    if (!o.days) return true; // If no restriction, it's always available
+    if (!o.days) return true;
     return o.days.includes(day);
   });
 }
@@ -68,7 +63,6 @@ function isAvailableToday(entry) {
 function getStarterLinkedFamily(gameId, slug, baseFamily) {
   const id = normalizeGameId(gameId);
 
-  // Only apply to FR/LG
   if (
     id !== 'firered' &&
     id !== 'leafgreen' &&
@@ -78,7 +72,6 @@ function getStarterLinkedFamily(gameId, slug, baseFamily) {
     return baseFamily;
   }
 
-  // 🔥 Legendary dogs mapped to starter families
   if (slug === 'raikou') return 'squirtle|wartortle|blastoise';
   if (slug === 'entei') return 'bulbasaur|ivysaur|venusaur';
   if (slug === 'suicune') return 'charmander|charmeleon|charizard';
@@ -98,10 +91,8 @@ function applyDuplicateLocking(gameId) {
     const primary =
       localStorage.getItem(`oak:${gameId}:primary:${dex}`);
 
-    // No primary chosen yet → nothing locked
     if (!primary) return;
 
-    // Lock ALL other instances
     if (primary !== sectionId) {
       row.classList.add('is-duplicate-locked');
     }
@@ -134,7 +125,6 @@ function updateSectionCounter(sectionBlock) {
   let caughtCount = 0;
 
   if (sectionId === 'STARTER') {
-    // ✅ Count Pokémon, NOT families
     caughtCount = Array.from(rows).filter(row =>
       isCaught(gameId, Number(row.dataset.dex))
     ).length;
@@ -161,14 +151,12 @@ function updateSectionCounter(sectionBlock) {
 function applyStarterExclusivityGlobal(gameId) {
   const rows = document.querySelectorAll('.pokemon-row');
 
-  // ⭐ ONLY THESE families participate
   const STARTER_FAMILIES = new Set([
-    // Gen 1 / FRLG starters
+
     'bulbasaur|ivysaur|venusaur',
     'charmander|charmeleon|charizard',
     'squirtle|wartortle|blastoise',
 
-    // Gen 2 starters
     'chikorita|bayleef|meganium',
     'cyndaquil|quilava|typhlosion',
     'totodile|croconaw|feraligatr'
@@ -179,17 +167,14 @@ function applyStarterExclusivityGlobal(gameId) {
   rows.forEach(row => {
     const family = row.dataset.family;
 
-    // ❌ Ignore non-starter Pokémon
     if (!STARTER_FAMILIES.has(family)) return;
 
     families[family] ??= [];
     families[family].push(row);
   });
 
-  // If no starter rows exist → do nothing
   if (!Object.keys(families).length) return;
 
-  // Reset collapse state FIRST
   rows.forEach(row => row.classList.remove('starter-collapsed'));
 
   const caughtFamilies = Object.entries(families)
@@ -200,7 +185,6 @@ function applyStarterExclusivityGlobal(gameId) {
     )
     .map(([family]) => family);
 
-  // Only collapse when EXACTLY ONE starter line is chosen
   if (caughtFamilies.length !== 1) return;
 
   const chosen = caughtFamilies[0];
@@ -249,12 +233,10 @@ function isPokemonAvailable(gameEntry) {
 
   const { day, hour, meridiem } = getGameTime();
 
-  // Convert current time to 24h
   let h = hour % 12;
   if (meridiem === 'PM') h += 12;
 
   return gameEntry.obtain.some(o => {
-    // Time check
     let timeOk = true;
     if (Array.isArray(o.time)) {
       if (o.time.includes('morning')) timeOk = h >= 6 && h < 10;
@@ -262,7 +244,6 @@ function isPokemonAvailable(gameEntry) {
       else if (o.time.includes('night')) timeOk = h >= 18 || h < 6;
     }
 
-    // Day check
     let dayOk = true;
     if (Array.isArray(o.days)) {
       dayOk = o.days.includes(day);
@@ -292,11 +273,9 @@ function applyMoonStoneLogic(game) {
   const { pool, sections } = config;
   const gameId = game.id;
 
-  // All Moon Stone rows (final evolutions only)
   const rows = [...document.querySelectorAll('.pokemon-row')]
     .filter(row => pool.includes(row.dataset.slug));
 
-  // Group rows by section
   const rowsBySection = {};
   rows.forEach(row => {
     const sectionId = row.closest('.section-block')?.dataset.sectionId;
@@ -305,8 +284,6 @@ function applyMoonStoneLogic(game) {
     rowsBySection[sectionId].push(row);
   });
 
-  // Slugs already resolved anywhere
-  // ⭐ Only apply cross-section locking to games that define it
 const enableCounterpartLock =
   game.moonStone?.sharedPool === true;
 
@@ -316,7 +293,7 @@ const resolvedSlugs = enableCounterpartLock
         .filter(row => isCaught(gameId, Number(row.dataset.dex)))
         .map(row => row.dataset.slug)
     )
-  : new Set(); // Gen 2 = no global locking
+  : new Set(); 
 
   Object.entries(rowsBySection).forEach(([sectionId, sectionRows]) => {
     const capacity = sections[sectionId].capacity;
@@ -325,7 +302,6 @@ const resolvedSlugs = enableCounterpartLock
       const dex = Number(row.dataset.dex);
       if (!isCaught(gameId, dex)) return false;
     
-      // ✅ Only count if this section is the PRIMARY catch location
       const primary = localStorage.getItem(`oak:${gameId}:primary:${dex}`);
       return primary === sectionId;
     });
@@ -335,10 +311,8 @@ const resolvedSlugs = enableCounterpartLock
 
       const slug = row.dataset.slug;
 
-      // Already caught → never lock
       if (isCaught(gameId, Number(row.dataset.dex))) return;
 
-      // ⭐ Only lock counterpart if resolved in ANOTHER section
       if (enableCounterpartLock) {
         const dex = Number(row.dataset.dex);
         const primary = localStorage.getItem(`oak:${gameId}:primary:${dex}`);
@@ -358,32 +332,22 @@ const resolvedSlugs = enableCounterpartLock
 
 function openInlineDetail(row, pokemon, game, sectionId) {
 
-  // ⭐ If this row already has an open detail, close it
   const existing = row.nextElementSibling;
   if (existing?.classList?.contains('pokemon-detail-inline')) {
     existing.remove();
     return;
   }
 
-  // ⭐ Remove any other open inline detail
   document.querySelectorAll('.pokemon-detail-inline')
     .forEach(el => el.remove());
 
-  // Create inline container
   const wrapper = document.createElement('div');
   wrapper.className = 'pokemon-detail-inline';
 
-  // ⭐ IMPORTANT:
-  // renderPokemonDetail now accepts a target panel
   renderPokemonDetail(pokemon, game, sectionId, wrapper);
 
-  // Insert directly under the row
   row.after(wrapper);
 }
-
-/* =========================================================
-   React to caught changes
-   ========================================================= */
 
 window.addEventListener('caught-changed', () => {
   if (!window.__CURRENT_GAME__) return;
@@ -397,10 +361,6 @@ window.addEventListener('caught-changed', () => {
   applyDuplicateLocking(gameId);
   applyStarterExclusivityGlobal(gameId);
 });
-
-/* =========================================================
-   SECTION 2 RENDERER
-   ========================================================= */
 
 export function renderSections({ game, pokemon }) {
   window.__POKEMON_CACHE__ = pokemon;
@@ -466,16 +426,14 @@ export function renderSections({ game, pokemon }) {
 
     const matches = pokemon.filter(p => {
 
-      // ⭐ NEW: version exclusion check
       if (Array.isArray(game.excludedPokemon) &&
           game.excludedPokemon.includes(p.slug)) {
         return false;
       }
       
-      const entries = getGameEntries(p, game.id); // ✅ uses alias fallback
+      const entries = getGameEntries(p, game.id);
       if (!entries.length) return false;
     
-      // Block VC-only Pokémon outside Crystal VC
       if (
         entries.some(e => e.availability?.vcOnly === true) &&
         game.id !== 'crystal_vc'
@@ -489,7 +447,6 @@ export function renderSections({ game, pokemon }) {
     matches.forEach(p => {
       let primary = localStorage.getItem(`oak:${game.id}:primary:${p.dex}`);
 
-      // ✅ Backfill primary for old saves (caught exists but primary missing)
       if (isCaught(game.id, p.dex) && !primary) {
         primary = ensurePrimary(game.id, p.dex, section.id);
       }
@@ -498,17 +455,14 @@ export function renderSections({ game, pokemon }) {
         isCaught(game.id, p.dex) &&
         primary === section.id;
 
-      // 1️⃣ CREATE ROW FIRST
       const row = document.createElement('div');
       row.className = 'pokemon-row';
       row.dataset.dex = String(p.dex);
       row.dataset.slug = p.slug;
-      row.dataset.sectionId = section.id; // ← CRITICAL
+      row.dataset.sectionId = section.id;
     
-      // 2️⃣ SECTION ID — USE sectionBlock, NOT row
       const sectionId = sectionBlock.dataset.sectionId;
     
-      // 3️⃣ FIND GAME ENTRY
       const entries = getGameEntries(p, game.id);
       const entry =
         entries.find(e => e.sections?.includes(sectionId)) ??
@@ -519,14 +473,12 @@ export function renderSections({ game, pokemon }) {
         row.classList.add('is-available-today');
       }
     
-      // 4️⃣ AVAILABILITY
       const availableNow = !caught && isPokemonAvailable(entry);
 
       if (!caught && availableNow && hasTimeOrDayRestriction(entry)) {
        row.classList.add('is-time-gated');
       }
     
-      // 5️⃣ APPLY STATE CLASSES
       applyPokemonAvailabilityState(row, caught, availableNow, hasTimeOrDayRestriction(entry));
 
       const lang = getLanguage();
@@ -646,7 +598,6 @@ export function renderSections({ game, pokemon }) {
 
     updateSectionCounter(sectionBlock);
   });
-  // After all sections rendered
     applyMoonStoneLogic(game);
     applyDuplicateLocking(game.id);
     applyStarterExclusivityGlobal(game.id);
