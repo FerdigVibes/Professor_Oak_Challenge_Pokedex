@@ -7,7 +7,6 @@ export function getGlobalProgress(game, pokemon) {
 
   const gameKey = normalizeGameId(game.id);
 
-  // Count caught Pokémon that exist in this game
   const caught = pokemon.filter(p => {
     const entry = getGameData(p, gameKey);
     return entry && isCaught(game.id, p.dex);
