@@ -48,7 +48,6 @@ function formatGameTime() {
     dayLabel = day;
   }
 
-  // Fallback if translations aren't loaded yet
   if (!dayLabel || dayLabel.startsWith('days.')) {
     dayLabel = day.charAt(0).toUpperCase() + day.slice(1, 3);
   }
@@ -67,10 +66,6 @@ function syncTopBarHeight(){
 
 window.addEventListener('resize', syncTopBarHeight);
 
-/* =========================================================
-   INIT
-   ========================================================= */
-
 async function init() {
   try {
     wireSearch();
@@ -78,7 +73,7 @@ async function init() {
     wireResetDropdown();
     wireLanguageSelector();
 
-    await loadLanguage(getLanguage()); // ✅ translations first
+    await loadLanguage(getLanguage());
 
     resetAppToBlankState();
     buildGameSelector();
@@ -87,7 +82,6 @@ async function init() {
     await loadLanguage(getLanguage());
     syncTopBarHeight();
 
-    // 🔹 Section 2 background scroll sync
     const sectionList = document.getElementById('section-list');
     if (sectionList) {
       sectionList.addEventListener('scroll', () => {
@@ -128,7 +122,6 @@ function wireLanguageSelector() {
     applyTranslations();
     rebuildGameSelector();
   
-    // 🔁 Rebuild derived UI that uses t()
     if (window.__CURRENT_GAME__) {
       const game = window.__CURRENT_GAME__.data;
       const pokemon = window.__POKEMON_CACHE__;
@@ -137,7 +130,6 @@ function wireLanguageSelector() {
       updateCurrentObjective(game, pokemon, true);
     }
   
-    // Notify UI modules (detail panel, time button, etc.)
     window.dispatchEvent(
       new CustomEvent('language-changed', {
         detail: { lang }
@@ -193,7 +185,7 @@ function resetAppToBlankState() {
   if (progressFill) progressFill.style.width = '0%';
 
   const obj = document.getElementById('current-objective');
-  if (obj) obj.textContent = t('pickVersionPrompt'); // ← fallback message
+  if (obj) obj.textContent = t('pickVersionPrompt');
 }
 
 function applyTranslations() {
@@ -205,8 +197,6 @@ function applyTranslations() {
     .forEach(el => {
       const key = el.dataset.i18n;
       const translated = t(key);
-  
-      // Fallback: keep existing text if translation is missing
       el.textContent = translated && translated !== key
         ? translated
         : el.textContent;
@@ -259,16 +249,9 @@ function resetGameMenuPosition(menu) {
   menu.style.width = '';
 }
 
-
-/* =========================================================
-   GAME SELECTOR
-   ========================================================= */
-
 function buildGameSelector() {
   const btn = document.getElementById('game-selector-btn');
   if (!btn) return;
-
-  // Remove old menu if it exists
   document.querySelectorAll('.game-menu').forEach(m => m.remove());
 
   const container = document.createElement('div');
@@ -295,14 +278,13 @@ function buildGameSelector() {
           label: t(game.labelKey)
         });
     
-        // ✅ CLOSE EVERYTHING
+    
         container.classList.remove('open');
         submenu.classList.remove('open');
         container
           .querySelectorAll('.game-menu-gen.open')
           .forEach(el => el.classList.remove('open'));
     
-        // ✅ RESET POSITION so next open is correct
         resetGameMenuPosition(container);
       });
     
@@ -310,8 +292,6 @@ function buildGameSelector() {
     });
 
     genItem.appendChild(submenu);
-
-    // ✅ MOBILE-SAFE submenu toggle
     genItem.addEventListener('click', (e) => {
       e.stopPropagation();
 
@@ -325,25 +305,16 @@ function buildGameSelector() {
 
     container.appendChild(genItem);
   });
-
-  // ✅ MOBILE: move menu OUT of top bar
   if (IS_MOBILE) {
     document.body.appendChild(container);
   } else {
     btn.closest('.game-selector')?.appendChild(container);
   }
 
-  // Toggle main dropdown
-  /* =========================================================
-   MAIN DROPDOWN TOGGLE (FIXED)
-   ========================================================= */
-
    btn.addEventListener('click', (e) => {
     e.stopPropagation();
 
     const isOpen = container.classList.contains('open');
-
-    // ⭐ POSITION BEFORE OPENING (mobile only)
     if (!isOpen && IS_MOBILE) {
       positionGameMenuUnderButton(btn, container);
     }
@@ -366,7 +337,6 @@ function closeGameMenu(container) {
     .forEach(el => el.classList.remove('open'));
 }
 
-  // Close menu on outside click
   document.addEventListener('click', (e) => {
     if (!container.contains(e.target) && e.target !== btn) {
       closeGameMenu(container);
@@ -404,22 +374,15 @@ function positionGameMenuUnderButton(btn, menu) {
   menu.style.zIndex = '9999';
 }
 
-/* =========================================================
-   GAME SWITCH CORE
-   ========================================================= */
-
 async function selectGame(gameMeta) {
   try {
     console.log('selectGame → gameMeta.id:', gameMeta.id);
 
-    // 1️⃣ Load game data FIRST
     const gameData = await loadGame(gameMeta.id);
 
-    // 2️⃣ Determine Gen 2
     const isGen2 = ['gold', 'silver', 'crystal_gbc', 'crystal_vc']
       .includes(gameMeta.id);
 
-    // 3️⃣ Store global game state
     window.__CURRENT_GAME__ = {
       id: gameMeta.id,
       meta: gameMeta,
@@ -428,7 +391,6 @@ async function selectGame(gameMeta) {
 
     buildResetSectionMenu();
 
-    // 4️⃣ Wire game-time UI
     wireGameTimeButton(isGen2);
     if (isGen2) startGameClock();
 
@@ -436,7 +398,6 @@ async function selectGame(gameMeta) {
       .getElementById('game-time-btn')
       ?.classList.toggle('hidden', !isGen2);
 
-    // 5️⃣ Update top bar text
     document.getElementById('game-selector-btn').textContent =
       t(gameMeta.labelKey);
 
@@ -444,13 +405,11 @@ async function selectGame(gameMeta) {
       version: t(gameMeta.labelKey)
     });
 
-    // 6️⃣ Render Section 2
     renderSections({
       game: gameData,
       pokemon: gameData.pokemon
     });
 
-    // 7️⃣ Reconcile Section 3 (FIXED)
     const selection = getCurrentDetailSelection();
     if (selection) {
       const { pokemon } = selection;
@@ -458,12 +417,10 @@ async function selectGame(gameMeta) {
       const gameId = gameMeta.id;
       const baseId = gameMeta.base || normalizeGameId(gameId);
 
-      // Prefer exact game match, fall back to base game
       const entries =
         pokemon.games?.[gameId] ??
         pokemon.games?.[baseId];
 
-      // VC-only guard (prevents Celebi leaking into crystal_gbc)
       const blockedByVcOnly =
         entries?.availability?.vcOnly === true &&
         gameId !== 'crystal_vc';
@@ -475,13 +432,12 @@ async function selectGame(gameMeta) {
       }
     }
 
-    // 8️⃣ Update progress + objective
     updateGlobalProgress(gameData, gameData.pokemon);
     updateCurrentObjective(gameData, gameData.pokemon);
 
   } catch (err) {
     console.error('Failed to select game:', err);
-    alert(err.message); // TEMPORARY — remove later
+    alert(err.message);
   }
 }
 
@@ -491,7 +447,6 @@ function wireResetDropdown() {
 
   if (!trigger || !menu) return;
 
-  // Toggle menu
   trigger.addEventListener('click', e => {
     e.stopPropagation();
     const open = !menu.classList.contains('hidden');
@@ -499,7 +454,6 @@ function wireResetDropdown() {
     trigger.setAttribute('aria-expanded', String(!open));
   });
 
-  // Close on outside click
   document.addEventListener('click', () => {
     menu.classList.add('hidden');
     trigger.setAttribute('aria-expanded', 'false');
@@ -517,7 +471,6 @@ function buildResetSectionMenu() {
 
   const game = current.data;
 
-  // Leaf sections only (same rule as Section 2)
   const leafSections = game.sections.filter(
     s => typeof s.requiredCount === 'number'
   );
@@ -528,7 +481,6 @@ function buildResetSectionMenu() {
     btn.className = 'reset-menu-item';
     btn.dataset.sectionId = section.id;
 
-    // ✅ Translated section name
     btn.textContent = t(`objective.${section.titleKey}`);
 
     btn.addEventListener('click', () => {
@@ -539,12 +491,10 @@ function buildResetSectionMenu() {
     menu.appendChild(btn);
   });
 
-  // Divider
   const divider = document.createElement('div');
   divider.className = 'reset-divider';
   menu.appendChild(divider);
 
-  // Reset All
   const resetAllBtn = document.createElement('button');
   resetAllBtn.type = 'button';
   resetAllBtn.className = 'reset-menu-item reset-all';
@@ -571,7 +521,6 @@ function resetSection(sectionId) {
   const caughtKey = `oak:${gameId}:caught`;
   const caughtData = JSON.parse(localStorage.getItem(caughtKey) || '{}');
 
-  // ⭐ ONLY scan rows belonging to this section
   const rows = document.querySelectorAll(
     `.section-block[data-section-id="${sectionId}"] .pokemon-row`
   );
@@ -582,17 +531,14 @@ function resetSection(sectionId) {
     const primaryKey = `oak:${gameId}:primary:${dex}`;
     const primary = localStorage.getItem(primaryKey);
 
-    // ✅ Only reset if THIS section owns the primary
     if (primary === sectionId) {
       localStorage.removeItem(primaryKey);
       delete caughtData[dex];
     }
   });
 
-  // Save caught state once
   localStorage.setItem(caughtKey, JSON.stringify(caughtData));
 
-  // 🔥 Rebuild UI + counters
   renderSections({ game, pokemon });
   updateGlobalProgress(game, pokemon);
   updateCurrentObjective(game, pokemon);
@@ -612,9 +558,6 @@ function resetAllSections() {
   updateGlobalProgress(game, window.__POKEMON_CACHE__);
   updateCurrentObjective(game, window.__POKEMON_CACHE__);
 }
-/* =========================================================
-   GLOBAL PROGRESS
-   ========================================================= */
 
 function updateGlobalProgress(game, pokemon) {
   const { caught, total, percent } =
@@ -641,21 +584,15 @@ function updateGlobalProgress(game, pokemon) {
   }
 }
 
-/* =========================================================
-   CURRENT OBJECTIVE
-   ========================================================= */
-
 import { normalizeGameId } from './utils/normalizeGameId.js';
 
 function getCurrentObjective(game, pokemon) {
   const gameKey = normalizeGameId(game.id);
 
-  // 1️⃣ Parent sections (milestones)
   const parentSections = game.sections
     .filter(s => Array.isArray(s.children))
     .sort((a, b) => a.order - b.order);
 
-  // 2️⃣ Walk each milestone
   for (const parent of parentSections) {
     let allChildrenComplete = true;
 
@@ -678,13 +615,11 @@ function getCurrentObjective(game, pokemon) {
       }
     }
 
-    // 4️⃣ First incomplete milestone = objective
     if (!allChildrenComplete) {
       return t(parent.titleKey);
     }
   }
 
-  // 5️⃣ Everything complete
   return t('challengeComplete');
 }
 
@@ -748,7 +683,7 @@ function getCurrentObjectiveSectionId(game, pokemon) {
     if (!allComplete) return parent.id;
   }
 
-  return null; // All complete
+  return null;
 }
 
 function applySearchFilter(query) {
@@ -770,7 +705,6 @@ function applySearchFilter(query) {
       if (match) anyVisible = true;
     });
 
-    // ✅ hide the WHOLE section if nothing matches
     section.style.display = anyVisible ? '' : 'none';
   });
 }
