@@ -9,17 +9,12 @@
 </head>
 
 <body>
-
-  <!-- ======================================================
-       TOP BAR
-       ====================================================== -->
   <header id="top-bar">
-    <!-- Row 1: Title -->
     <div class="topbar-row topbar-title-row">
       <span id="app-title" class="topbar-title">Professor Oak Pokédex</span>
     </div>
   
-    <!-- Row 2: Controls -->
+
     <div class="topbar-row topbar-controls">
       <div class="game-selector">
         <button id="game-selector-btn" class="control">
@@ -38,7 +33,7 @@
         ></button>
       
         <div id="reset-section-menu" class="reset-menu hidden">
-          <!-- populated dynamically -->
+       
         </div>
       </div>
       
@@ -57,7 +52,7 @@
       </select>
     </div>
   
-    <!-- Row 3: Progress + Time -->
+    
     <div class="topbar-row topbar-progress">
       <div class="objective">
         <strong id="objective-label">${t('currentObjective')}:</strong>
@@ -77,25 +72,16 @@
       </button>
     </div>
   </header>
-
-  <!-- ======================================================
-       MAIN APP
-       ====================================================== -->
   <main id="app">
-
-    <!-- Section 2 -->
     <section id="section-list">
       <div class="section-bg"></div>
     </section>
-  
-    <!-- Section 3 -->
     <section id="detail-panel">
       <p>Select a Pokémon</p>
     </section>
   
   </main>
   
-  <!-- ================= MAP MODAL ================= -->
   <div id="map-modal" class="map-modal hidden">
     <div class="map-backdrop"></div>
   
@@ -108,11 +94,6 @@
       </div>
     </div>
   </div>
-
-  <!-- ======================================================
-       GEN 2 GAME TIME MODAL
-       (MUST EXIST BEFORE app.js LOADS)
-       ====================================================== -->
   <div id="game-time-modal" class="modal hidden" aria-hidden="true">
     <div class="modal-backdrop"></div>
 
@@ -145,11 +126,6 @@
       </div>
     </div>
   </div>
-
-  <!-- ======================================================
-       APP ENTRYPOINT (MUST BE LAST)
-       ====================================================== -->
   <script type="module" src="./js/app.js"></script>
-
 </body>
 </html>
