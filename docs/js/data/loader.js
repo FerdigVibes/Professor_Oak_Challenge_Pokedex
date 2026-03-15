@@ -1,8 +1,5 @@
 // docs/js/data/loader.js
 
-// ========================================================
-// GAME INHERITANCE (FRLG → RBY)
-// ========================================================
 import { normalizeGameId } from '../utils/normalizeGameId.js';
 
 export const GAME_ALIASES = {
@@ -30,7 +27,7 @@ export function getGameData(pokemon, gameId) {
   let current = normalizeGameId(gameId);
 
   while (current) {
-    chain.unshift(current); // base first, specific last
+    chain.unshift(current);
     current = GAME_ALIASES?.[current];
   }
 
@@ -74,7 +71,6 @@ function mergeObtainArrays(base = [], override = []) {
 }
 
 export async function loadGame(gameId) {
-  // ❗ DO NOT normalize here
   const gameUrl = `./data/games/${gameId}.json`;
 
   console.log('[LOAD GAME]', gameId, '→', gameUrl);
