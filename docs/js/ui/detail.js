@@ -9,12 +9,9 @@ import { resolveLocationName } from '../../data/maps/locations.js';
 import { isShinyEnabled, toggleShiny } from '../state/shiny.js';
 import { GAME_ALIASES, getGameData } from '../data/loader.js';
 
-let currentSelection = null; // { pokemon, game }
+let currentSelection = null;
 
 const GEN1_IDS = new Set(['red', 'blue', 'yellow']);
-/* =========================================================
-   React to language changes
-   ========================================================= */
 
 window.addEventListener('language-changed', () => {
   if (!currentSelection) return;
@@ -35,7 +32,6 @@ function buildObtainHTML(entry, generation) {
 
   const lang = getLanguage();
 
-  // 🧠 If notes is an object with translations, grab the right one
   let notes = '';
   if (typeof entry.notes === 'string') {
     notes = entry.notes;
@@ -79,32 +75,24 @@ function buildObtainHTML(entry, generation) {
 export function getDetailEntry(pokemon, gameData, sectionId) {
   const gameKey = normalizeGameId(gameData.id);
 
-  // ✅ Prefer explicit override if present; otherwise use inherited base
   const merged = getGameData(pokemon, gameKey);
 
-  // If your schema supports arrays per game entry, handle both
   const raw = pokemon.games?.[gameKey];
   const isArrayMode = Array.isArray(raw);
 
   if (!isArrayMode) {
-    // Single entry mode: merged already contains sections/obtain/notes/etc
+
     return merged;
   }
 
-  // Array mode: use alias fallback for base entries
   const baseKey = GAME_ALIASES?.[gameKey];
   const overrideEntries = Array.isArray(pokemon.games?.[gameKey]) ? pokemon.games[gameKey] : [];
   const baseEntries = baseKey && Array.isArray(pokemon.games?.[baseKey]) ? pokemon.games[baseKey] : [];
 
   const entries = overrideEntries.length ? overrideEntries : baseEntries;
 
-  // Prefer an entry matching the current section
   return entries.find(e => e.sections?.includes(sectionId)) ?? entries[0] ?? null;
 }
-
-/* =========================================================
-   SECTION 3 — Pokémon Detail Panel
-   ========================================================= */
 
 export function renderPokemonDetail(pokemon, gameData, sectionId, targetPanel = null) {
   const panel = targetPanel || document.getElementById('detail-panel');
@@ -131,14 +119,11 @@ export function renderPokemonDetail(pokemon, gameData, sectionId, targetPanel = 
   const dex = pokemon.dex;
   const regDex = gameData.regionalDex?.[String(dex)];
 
-  // Sprites
   const spriteFile = `${String(dex).padStart(3, '0')}-${pokemon.slug}.gif`;
   const spriteNormal = `./assets/sprites/normal/${spriteFile}`;
   const spriteShiny = `./assets/sprites/shiny/${spriteFile}`;
 
-  // Types
   const types = pokemon.types || [];
-  // Obtain info
   const detailEntry = getDetailEntry(pokemon, gameData, sectionId);
   const obtain = Array.isArray(detailEntry?.obtain) ? detailEntry.obtain : [];
 
@@ -178,7 +163,7 @@ export function renderPokemonDetail(pokemon, gameData, sectionId, targetPanel = 
        : '<p>—</p>'}
     </div>
   `;
-  // ================= MAP BUTTON WIRING =================
+ 
   const allLocations = obtain.flatMap(o => o.locations ?? []);
    
   if (allLocations.length) {
@@ -205,14 +190,14 @@ export function renderPokemonDetail(pokemon, gameData, sectionId, targetPanel = 
      if (gen >= 2) {
        const dexKey = String(dex);
    
-       // ✅ Apply cached shiny state PER Pokémon
+      
        const shinyOn = isShinyEnabled(dexKey);
    
        sprite.src = shinyOn ? spriteShiny : spriteNormal;
        shinyToggle.classList.toggle('active', shinyOn);
        spriteWindow.classList.toggle('shiny-active', shinyOn);
    
-       // ✅ Toggle + persist per Pokémon
+       
        shinyToggle.onclick = () => {
          const enabled = toggleShiny(dexKey);
          
@@ -232,9 +217,7 @@ export function renderPokemonDetail(pokemon, gameData, sectionId, targetPanel = 
    }
 }
 
-/* =========================================================
-   Game-specific info (translated fields)
-   ========================================================= */
+
 
 function renderObtainEntry(o, lang, region) {
   const method = o.method ? t(`methods.${o.method}`) : '';
