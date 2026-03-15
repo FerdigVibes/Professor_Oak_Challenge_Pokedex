@@ -585,15 +585,7 @@ export function renderSections({ game, pokemon }) {
       const dexKey = String(p.dex);
       const iconFile = `${dexKey.padStart(3,'0')}-${p.slug}-icon.png`;
       
-      const shiny = isShinyEnabled(dexKey);
-      
-      icon.src = shiny
-        ? `./assets/icons/pokemon/shiny/${iconFile}`
-        : `./assets/icons/pokemon/${iconFile}`;
-        
-      if (shiny) {
-        iconFrame.classList.add('shiny');
-      }
+      icon.src = `./assets/icons/pokemon/${iconFile}`;
       
       icon.alt = displayName;
       
@@ -661,27 +653,6 @@ export function renderSections({ game, pokemon }) {
 }
 
 window.__isPokemonAvailable = isPokemonAvailable;
-
-window.addEventListener('shiny-changed', e => {
-  const { dex, enabled } = e.detail;
-
-  document
-    .querySelectorAll(`.pokemon-row[data-dex="${dex}"]`)
-    .forEach(row => {
-
-      const slug = row.dataset.slug;
-      const icon = row.querySelector('.pokemon-icon');
-      if (!icon) return;
-
-      const file = `${dex.padStart(3,'0')}-${slug}-icon.png`;
-
-      icon.src = enabled
-        ? `./assets/icons/pokemon/shiny/${file}`
-        : `./assets/icons/pokemon/${file}`;
-
-      row.classList.toggle('is-shiny', enabled);
-    });
-});
 
 window.addEventListener('game-time-changed', () => {
   if (!window.__CURRENT_GAME__ || !window.__POKEMON_CACHE__) return;
