@@ -1,9 +1,5 @@
 export const LOCATION_REGISTRY = {
 
-  /* ======================================================
-   KANTO — ROUTES
-   ====================================================== */
-
   "kanto:Route 1": {
     map: "kanto", x: 20.2, y: 53.7,
     names: { en: "Route 1", ja: "ルート1", de: "Route 1", es: "Ruta 1", fr: "Route 1" }
@@ -117,11 +113,6 @@ export const LOCATION_REGISTRY = {
     names: { en: "Route 28", ja: "ルート28", de: "Route 28", es: "Ruta 28", fr: "Route 28" }
   },
 
-
-  /* ======================================================
-   KANTO — CITIES & LANDMARKS
-   ====================================================== */
-
   "kanto:Pallet Town": {
     map: "kanto", x: 20.18, y: 60.54,
     names: { en: "Pallet Town", ja: "パレットタウン", de: "Alabastia", es: "Pueblo Paleta", fr: "Ville des Palettes" }
@@ -187,8 +178,6 @@ export const LOCATION_REGISTRY = {
     names: { en: "Viridian Forest", ja: "トキワのもり", de: "Vertania-Wald", es: "Bosque Verde", fr: "Forêt de Jade" }
   },
 
-
-  // --- Dungeons ---
   "kanto:Mt. Moon": {
     map:"kanto", x:41.58, y:13.14,
     names: { en: "Mt. Moon", ja: "おつきみやま", de: "Mondberg", es: "Monte Luna", fr: "Mont Sélénite" }
@@ -792,10 +781,6 @@ export const LOCATION_REGISTRY = {
     names: { en:"Victory Road", ja:"チャンピオンロード", de:"Siegesstraße", es:"Calle Victoria", fr:"Route Victoire" }
   },
   
-  /* =====================
-     JOHTO REGION
-     ===================== */
-  
   "johto:New Bark Town": {
     map:"johto", x:37.62, y:67.94,
     names:{ en:"New Bark Town", ja:"ワカバタウン", fr:"Bourg Geon", de:"Neuborkia", es:"Pueblo Primavera" }
@@ -892,10 +877,6 @@ export const LOCATION_REGISTRY = {
       es: "Cueva Oscura"
     }
   },
-
-  /* =========================================================
-   JOHTO MAP — ROUTES (Translated)
-   ========================================================= */
 
   "johto:Route 1":  { map:"johto", x:60.45, y:56.05, names:{ en:"Route 1", ja:"１ばんどうろ", fr:"Route 1", de:"Route 1", es:"Ruta 1" } },
   "johto:Route 2":  { map:"johto", x:60.23, y:33.43, names:{ en:"Route 2", ja:"２ばんどうろ", fr:"Route 2", de:"Route 2", es:"Ruta 2" } },
