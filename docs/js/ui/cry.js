@@ -6,7 +6,6 @@ import { isMuted } from '../state/audio.js';
 let currentAudio = null;
 
 export function playPokemonCry(pokemon) {
-  // Safety guard
   if (!pokemon?.dex || !pokemon?.slug) return;
 
   if (isMuted()) return;
