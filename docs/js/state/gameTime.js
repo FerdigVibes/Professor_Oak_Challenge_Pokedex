@@ -12,7 +12,6 @@ let gameTime = {
   dst: false
 };
 
-// Load persisted state
 const saved = localStorage.getItem(STORAGE_KEY);
 if (saved) {
   try {
@@ -36,14 +35,12 @@ function advanceOneMinute() {
     gameTime.minute = 0;
     gameTime.hour++;
 
-    // Flip AM / PM at 12
     if (gameTime.hour === 12) {
       gameTime.meridiem = gameTime.meridiem === 'AM' ? 'PM' : 'AM';
     } else if (gameTime.hour > 12) {
       gameTime.hour = 1;
     }
 
-    // Advance day at midnight ONLY
     if (gameTime.hour === 12 && gameTime.meridiem === 'AM') {
       const idx = DAYS.indexOf(gameTime.day);
       gameTime.day = DAYS[(idx + 1) % 7];
