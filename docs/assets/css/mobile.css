@@ -1,12 +1,5 @@
-/* =========================================================
-   MOBILE OVERRIDES – POKÉDEX
-   ========================================================= */
 
 @media (max-width: 768px) {
-
-  /* ===============================
-     GLOBAL
-     =============================== */
 
   body {
     font-size: 16px;
@@ -16,10 +9,6 @@
     flex-direction: column;
     overflow-x: hidden;
   }
-
-  /* ===============================
-     TOP BAR
-     =============================== */
 
   #top-bar {
     font-size: 0.9rem;
@@ -31,12 +20,12 @@
 
   .topbar-controls {
     display: flex;
-    flex-wrap: wrap;              /* ✅ allow wrapping */
+    flex-wrap: wrap;
     align-items: center;
-    gap: 8px 10px;                /* vertical + horizontal spacing */
+    gap: 8px 10px;
 
     width: 100%;
-    overflow: visible;            /* ⛔ no horizontal scrolling */
+    overflow: visible;
   }
 
   .topbar-controls .control,
@@ -50,10 +39,6 @@
   #language-selector {
     max-width: 80px;
   }
-
-  /* ===============================
-     SECTION 2 – LIST
-     =============================== */
 
   #section-list {
     padding: 8px;
@@ -78,10 +63,6 @@
     height: 28px;
   }
 
-  /* ===============================
-     SECTION 3 – DETAIL PANEL
-     =============================== */
-
   #detail-panel {
     width: 100%;
     max-width: 100%;
@@ -100,10 +81,6 @@
     height: 120px;
   }
 
-  /* ===============================
-     GAME TIME MODAL
-     =============================== */
-
   #game-time-modal {
     width: 90vw;
     max-width: 360px;
@@ -116,10 +93,6 @@
   #game-time-modal button {
     padding: 6px 12px;
   }
-
-  /* ===============================
-     MAP MODAL
-     =============================== */
 
   @media (max-width:768px){
      .map-window{
@@ -136,10 +109,6 @@
      z-index: 1000;
    }
 }
-
-/* =========================================================
-   SMALL PHONES (iPhone SE / Mini)
-   ========================================================= */
 
 @media (max-width: 768px) and (min-width: 421px) {
 
@@ -169,13 +138,8 @@
   }
 }
 
-/* =========================================================
-   GAME SELECTOR – MOBILE DROPDOWN (ANCHOR TO BUTTON)
-   ========================================================= */
-
 @media (max-width: 768px) {
 
-  /* Anchor container (same idea as reset-dropdown) */
   #game-selector-btn {
     position: relative;
   }
@@ -196,14 +160,12 @@
     z-index: 1000;
   }
 
-  /* Generation headers */
   .game-menu-gen {
     padding: 10px 12px;
     font-weight: 800;
     letter-spacing: 0.06em;
   }
 
-  /* Submenu */
   .game-menu-sub {
     display: none;
     margin-top: 6px;
@@ -267,7 +229,7 @@
   .pokemon-detail-inline {
 
     position: relative;
-    z-index: 5;                 /* ⭐ LOWER than header (header is 30) */
+    z-index: 5;
 
     background:
       linear-gradient(
@@ -279,7 +241,7 @@
     margin: 4px 0 10px;
     padding: 10px;
 
-    overflow: hidden;           /* ⭐ prevents sticky collision */
+    overflow: hidden;
     animation: detailSlide 0.25s ease;
   }
 
