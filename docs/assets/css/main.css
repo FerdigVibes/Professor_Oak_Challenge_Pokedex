@@ -1,11 +1,7 @@
-/* =========================================================
-   GLOBAL APP LAYOUT
-   ========================================================= */
-
 html, body {
   height: 100%;
   margin: 0;
-  overflow: hidden;         /* lock page scroll */
+  overflow: hidden; 
 }
 
 body {
@@ -20,11 +16,10 @@ body {
   display: flex;
   flex: 1 1 auto;
 
-  min-height: 0;        /* prevents flex overflow bugs */
+  min-height: 0;
   overflow: hidden;
 }
 
-/* Default: no Pokémon selected */
 #app:not(.has-detail) #detail-panel {
   display: none;
 }
@@ -102,22 +97,18 @@ body {
     0 1px 1px rgba(0,0,0,0.35),
     0 0 6px rgba(255,255,255,0.15);
 }
-/* =========================================================
-   SECTION 2 – MAIN LIST CONTAINER (POKÉDEX SCREEN)
-   ========================================================= */
 
 #section-list {
   flex: 1 1 auto;
-  min-height: 0;            /* ⭐ critical */
+  min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 
-  padding-top: 0;  /* ⭐ ADD THIS */
+  padding-top: 0;
 }
 
-/* BACKGROUND LAYER */
 #section-list::before {
   content: "";
   position: absolute;
@@ -131,7 +122,7 @@ body {
       rgba(0,0,0,0.18) 70%,
       rgba(0,0,0,0.35) 100%
     ),
-    url("../images/pokedex-landing-bg.png");  /* ⭐ ADD THIS ; */
+    url("../images/pokedex-landing-bg.png");
 
   background-repeat: no-repeat;
   background-position: center center;
@@ -145,11 +136,10 @@ body {
 }
 
 #app.has-detail #section-list {
-  transform: translateX(-12px);   /* subtle mechanical slide */
-  opacity: 0.96;                  /* very light dim */
+  transform: translateX(-12px);
+  opacity: 0.96;
 }
 
-/* LCD / scanline overlay */
 #section-list::after {
   content: "";
   position: absolute;
@@ -200,7 +190,6 @@ body {
   isolation: isolate;
 }
 
-/* Ensure content sits above background layers */
 .section-block,
 .section-rows,
 .pokemon-row {
@@ -214,11 +203,6 @@ body {
   100% { transform: scale(0.8); opacity: .6; }
 }
 
-/* =========================================================
-   SECTION 2 – POKEDEX WHEEL CONTAINER
-   ========================================================= */
-
-/* ⭐ ICON FRAME — consistent sizing for all icons */
 .pokemon-icon-frame {
   width: 52px;
   height: 52px;
@@ -231,12 +215,11 @@ body {
   margin-right: 6px;
 }
 
-/* actual image */
 .pokemon-icon {
   width: 100%;
   height: 100%;
 
-  object-fit: contain;   /* keeps pixel art sharp without distortion */
+  object-fit: contain;
   image-rendering: pixelated;
 }
 
@@ -254,19 +237,14 @@ body {
   transform-origin: center;
 }
 
-/* ⭐ Shiny icons fill entire frame */
 .pokemon-icon-frame.shiny .pokemon-icon {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-/* =========================================================
-   SHINY ICON UPSCALE
-   ========================================================= */
-
 .pokemon-row.is-shiny .pokemon-icon {
-  transform: scale(1.60);   /* ⭐ increase until it feels right */
+  transform: scale(1.60);
   transform-origin: center;
 }
 
@@ -281,8 +259,8 @@ body {
 
   transition: transform 0.25s ease, opacity 0.2s ease;
 
-  position: relative;   /* ⭐ ADD */
-  z-index: 3;           /* ⭐ ADD */
+  position: relative;
+  z-index: 3;
 }
 
 .caught-toggle {
@@ -306,9 +284,9 @@ body {
 
   position: sticky;
   top: 0;
-  z-index: 100;        /* ⭐ raise above section headers */
+  z-index: 100;
 
-  flex: 0 0 auto;      /* ⭐ THIS is the missing piece */
+  flex: 0 0 auto;
 
   background: linear-gradient(180deg, #c62828, #a81f1f);
   color: #fff;
@@ -324,15 +302,11 @@ body {
   will-change: transform;
 }
 
-/* ===============================
-   Row 1 – App Title
-   =============================== */
-
 .topbar-title-row {
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0.06em;
-  text-transform: none; /* ⬅️ important */
+  text-transform: none;
   color: #fff;
 
   text-shadow:
@@ -340,7 +314,6 @@ body {
     0 0 6px rgba(0,0,0,0.25);
 }
 
-/* Increase space between rows */
 #top-bar .topbar-row {
   padding: 10px 14px !important;
 }
@@ -385,11 +358,11 @@ body {
 .topbar-controls {
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;        /* ⛔ prevent wrapping */
+  flex-wrap: nowrap;
   gap: 8px;
   width: 100%;
-  overflow-x: auto;         /* ✅ allow scroll on very small screens */
-  scrollbar-width: none;    /* Firefox */
+  overflow-x: auto;
+  scrollbar-width: none;
   overscroll-behavior-x: contain;
 }
 
@@ -398,13 +371,13 @@ body {
 }
 
 .topbar-controls::-webkit-scrollbar {
-  display: none;            /* Chrome / iOS */
+  display: none;
 }
 
 .topbar-controls .control,
 #reset-section-btn,
 #game-time-btn {
-  flex-shrink: 0;   /* ⛔ never squish buttons */
+  flex-shrink: 0;
   white-space: nowrap;
 }
 
@@ -442,8 +415,6 @@ body {
   font-weight: bold;
 }
 
-/* Row 2: Controls */
-
 .topbar-controls .control:active {
   box-shadow:
     inset 0 2px 4px rgba(0,0,0,0.6),
@@ -455,7 +426,6 @@ body {
   letter-spacing: 0.04em;
 }
 
-/* Row 3: Progress */
 .topbar-progress {
   justify-content: space-between;
   gap: 12px;
@@ -472,10 +442,6 @@ body {
   min-width: 160px;
   text-align: left;
 }
-
-/* ===============================
-   RESET SECTION DROPDOWN (Pokédex style)
-   =============================== */
 
 .reset-menu {
   position: absolute;
@@ -514,14 +480,12 @@ body {
   color: #ffd966;
 }
 
-/* Divider (matches game menu separation) */
 .reset-divider {
   height: 1px;
   background: #333;
   margin: 6px 0;
 }
 
-/* Reset all = danger, but still Pokédex-y */
 .reset-menu-item.reset-all {
   color: #ff6b6b;
   font-weight: 700;
@@ -585,10 +549,6 @@ body {
   gap: 3px;
   margin-left: 6px;
 }
-
-/* ===============================
-   GAME TIME MODAL – POKEDEX STYLE
-   =============================== */
 
 #game-time-modal {
   position: fixed;
@@ -716,13 +676,11 @@ body {
     0 3px 6px rgba(0,0,0,0.7);
 }
 
-/* Save = green accent */
 #gt-save {
   border-color: #1b5e20;
   color: #a5d6a7;
 }
 
-/* Cancel = danger accent */
 #gt-cancel {
   border-color: #7f0000;
   color: #ffb3b3;
@@ -733,10 +691,6 @@ body {
     inset 0 0 10px rgba(255,255,255,0.2),
     0 0 10px rgba(0,0,0,0.6);
 }
-
-/* ===============================
-   GAME TIME BUTTON (TOP BAR)
-   =============================== */
 
 #game-time-btn {
   display: flex;
@@ -765,29 +719,24 @@ body {
   cursor: pointer;
 }
 
-
-/* Clock icon / indicator */
 #game-time-btn::before {
   content: "🕒";
   font-size: 1rem;
   opacity: 0.85;
 }
 
-/* Hover = soft glow */
 #game-time-btn:hover {
   box-shadow:
     inset 0 0 10px rgba(255, 217, 102, 0.35),
     0 0 12px rgba(255, 217, 102, 0.35);
 }
 
-/* Active press */
 #game-time-btn:active {
   transform: translateY(1px);
   box-shadow:
     inset 0 2px 6px rgba(0,0,0,0.8);
 }
 
-/* The text inside (time + day) */
 #game-time-btn .game-time-label {
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -797,9 +746,8 @@ body {
   display: none;
 }
 
-/* Objective Section */
 .objective {
-  background: rgba(0, 0, 0, 0.15); /* Matches other top bar rows */
+  background: rgba(0, 0, 0, 0.15);
   padding: 6px 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom: 1px solid rgba(0, 0, 0, 0.35);
@@ -810,15 +758,13 @@ body {
   gap: 6px;
 }
 
-/* Label (e.g., "Current Objective:") */
 .objective strong {
   color: #fff;
   font-weight: bold;
 }
 
-/* Dynamic objective text (e.g., "Before Violet") */
 #current-objective {
-  color: #ffd966; /* Light gold for contrast */
+  color: #ffd966;
   letter-spacing: 0.06em;
   font-weight: 700;
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -826,7 +772,6 @@ body {
   transform: translateY(0);
 }
 
-/* When updating — apply this class briefly */
 #current-objective.updating {
   opacity: 0;
   transform: translateY(4px);
@@ -860,7 +805,6 @@ body {
   margin-top: 2px;
 }
 
-/* POKÉMON NAME */
 .pokemon-row > span:last-child {
   font-weight: 800;
   text-transform: uppercase;
@@ -876,9 +820,6 @@ body {
       #e8f4f4
     );
 }
-/* -----------------------------
-   AVAILABLE & UNCAUGHT
-   ----------------------------- */
 
 .pokemon-row.is-available {
   opacity: 1;
@@ -900,24 +841,15 @@ body {
   filter: grayscale(80%);
 }
 
-/* -----------------------------
-   UNAVAILABLE & UNCAUGHT
-   ----------------------------- */
-
 .pokemon-row.is-unavailable {
   opacity: 0.45;
   filter: grayscale(0.7);
 }
 
-/* Do not tease unavailable Pokémon */
 .pokemon-row.is-unavailable:hover {
   background-color: transparent;
   transform: none;
 }
-
-/* -----------------------------
-   ACTIVE (DETAIL OPEN)
-   ----------------------------- */
 
 .pokemon-row.is-active {
   background-color: rgba(255, 215, 100, 0.18);
@@ -928,10 +860,6 @@ body {
 .pokemon-row.is-caught {
   opacity: 0.55;
 }
-
-/* =========================================================
-   TIME / DAY AVAILABILITY PULSE
-   ========================================================= */
 
 @keyframes availabilityPulse {
   0% {
@@ -960,7 +888,6 @@ body {
   border-radius: 10px;
 }
 
-/* Do NOT pulse when caught */
 .pokemon-row.is-caught.is-time-gated {
   animation: none;
 }
@@ -979,14 +906,6 @@ body {
   margin: 0;
   transition: all 0.3s ease;
 }
-
-/* ===============================
-   SECTION 3 – POKÉDEX DISPLAY
-   =============================== */
-
-/* =========================================================
-   SECTION 3 – DETAIL PANEL (POKÉDEX STYLE)
-   ========================================================= */
 
 #detail-panel {
   font-family: "Trebuchet MS", system-ui, sans-serif;
@@ -1031,10 +950,6 @@ body {
     0 1px 2px rgba(0,0,0,0.25);
 }
 
-/* ===============================
-   HEADER (NAME + DEX)
-   =============================== */
-
 .detail-header {
   text-align: center;
   margin-bottom: 10px;
@@ -1048,10 +963,6 @@ body {
   color: #b71c1c;
   margin: 0;
 }
-
-/* ===============================
-   SPRITE WINDOW
-   =============================== */
 
 .detail-sprite-window {
   width: 180px;
@@ -1125,7 +1036,6 @@ body {
   box-shadow: 0 0 4px rgba(0,0,0,0.25);
 }
 
-/* Generation 1 & 2 Types */
 .type-normal    { background-color: #A8A878; }
 .type-fire      { background-color: #F08030; }
 .type-water     { background-color: #6890F0; }
@@ -1144,7 +1054,6 @@ body {
 .type-dark      { background-color: #705848; }
 .type-steel     { background-color: #B8B8D0; }
 
-/* Optional Hover Effect */
 .type-badge:hover {
   filter: brightness(1.1);
 }
@@ -1156,9 +1065,9 @@ body {
   opacity: 0.35;
   transition: opacity 0.2s ease, transform 0.2s ease;
 
-  position: relative;   /* ⭐ REQUIRED — enables z-index */
-  z-index: 5;           /* ⭐ above sprite-window overlay */
-  pointer-events: auto; /* ⭐ ensures taps register on mobile */
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
 }
 
 .shiny-icon.active {
@@ -1180,13 +1089,9 @@ body {
 
   image-rendering: pixelated;
 
-  position: relative;   /* ⭐ REQUIRED or z-index does nothing */
-  z-index: 3;           /* ⭐ ABOVE ::before and ::after */
+  position: relative;
+  z-index: 3;
 }
-
-/* ===============================
-   INFO BOX
-   =============================== */
 
 .detail-info {
   background: #fafafa;
@@ -1226,12 +1131,6 @@ body {
   font-weight: 800;
 }
 
-/* Optional Poké Ball watermark
-.detail-sprite-window::after {
-  content: "";
-  position: absolute;
-  inset: 0;*/
-
   background-image: url("./assets/ui/pokeball-bg.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -1240,7 +1139,7 @@ body {
   opacity: 0.08;
   pointer-events: none;
 
-  z-index: 0;   /* ⭐ ADD THIS */
+  z-index: 0;
 }
 
 .obtain-section {
@@ -1314,7 +1213,6 @@ body {
   background: #333;
 }
 
-/* Main dropdown */
 .game-menu {
   position: absolute;
   top: calc(100% + 6px);
@@ -1338,7 +1236,6 @@ body {
   display: flex;
 }
 
-/* Gen level (e.g., Generation I) */
 .game-menu-gen {
   padding: 8px 12px;
   cursor: pointer;
@@ -1352,7 +1249,6 @@ body {
   background: #333;
 }
 
-/* Nested submenu for games */
 .game-menu-sub {
   display: none;
   flex-direction: column;
@@ -1365,7 +1261,6 @@ body {
   display: flex;
 }
 
-/* Game item */
 .game-menu-item {
   padding: 6px 12px;
   cursor: pointer;
@@ -1396,12 +1291,12 @@ body {
 }
 
 #language-selector {
-  background-color: #222;     /* Dark dropdown background */
-  color: #fff;                /* White text */
-  border: 1px solid #555;     /* Subtle border */
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
   padding: 4px 8px;
   border-radius: 4px;
-  font-family: inherit;       /* Match your main font */
+  font-family: inherit;
   font-size: 0.9rem;
 }
 
@@ -1439,7 +1334,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  /* 🔥 smaller + more centered feel */
   width: min(82vw, 880px);
   max-height: 78vh;
 
@@ -1480,7 +1374,7 @@ body {
 .map-wrapper {
   position: relative;
   width: 100%;
-  max-width: 560px;   /* 🔥 controls map size */
+  max-width: 560px;
   background: #111;
   border-radius: 12px;
   overflow: hidden;
@@ -1533,10 +1427,6 @@ body {
   transform: translateY(1px);
 }
 
-/* ===============================
-   POKÉMON MAP PIN
-   =============================== */
-
 .map-pin {
   position: absolute;
   width: 34px;
@@ -1546,7 +1436,6 @@ body {
   z-index: 5;
 }
 
-/* Pin body */
 .map-pin::before {
   content: "";
   position: absolute;
@@ -1566,7 +1455,6 @@ body {
     0 6px 10px rgba(0, 0, 0, 0.35);
 }
 
-/* Poké Ball */
 .map-pin::after {
   content: "";
   position: absolute;
@@ -1592,12 +1480,10 @@ body {
     0 0 6px rgba(0, 0, 0, 0.35);
 }
 
-/* Optional glow ring (visibility boost) */
 .map-pin.glow {
   filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.75));
 }
 
-/* Optional pulse animation */
 @keyframes pin-pulse {
   0% {
     transform: translate(-50%, -100%) scale(1);
@@ -1624,10 +1510,6 @@ body {
     linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px);
   background-size: 10% 10%;
 }
-
-/* =========================================================
-   SECTION 3 – VIEW MAP BUTTON (POKÉDEX STYLE)
-   ========================================================= */
 
 .map-button {
   margin: 12px auto 0;
@@ -1679,14 +1561,13 @@ body {
     0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Optional map icon */
 .map-button::before {
   content: "🗺️";
   font-size: 1rem;
 }
 
 .game-selector {
-  position: relative;   /* 🔑 anchor point */
+  position: relative;
   z-index: 50;
 }
 
@@ -1714,13 +1595,9 @@ body {
   display: block;
 }
 
-/* =========================================================
-   GAME SELECTOR DROPDOWN ANCHOR
-   ========================================================= */
-
 .game-selector-dropdown {
-  position: fixed;   /* ⭐ critical */
-  top: 70px;         /* adjust to your header height */
+  position: fixed;
+  top: 70px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
