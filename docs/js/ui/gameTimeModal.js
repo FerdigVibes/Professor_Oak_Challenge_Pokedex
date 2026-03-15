@@ -5,7 +5,6 @@ import { t } from '../data/i18n.js';
 const DAYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 function buildSelectors(daySelect, hourSelect, minuteSelect, meridiemSelect) {
-  // DAYS (translated)
   daySelect.innerHTML = '';
   DAYS.forEach(d => {
     const opt = document.createElement('option');
@@ -13,14 +12,11 @@ function buildSelectors(daySelect, hourSelect, minuteSelect, meridiemSelect) {
     opt.textContent = t(`days.${d}`);
     daySelect.appendChild(opt);
   });
-
-  // HOURS (numeric, not translated)
   hourSelect.innerHTML = '';
   for (let h = 1; h <= 12; h++) {
     hourSelect.appendChild(new Option(h, h));
   }
 
-  // MINUTES
   minuteSelect.innerHTML = '';
   for (let m = 0; m < 60; m++) {
     minuteSelect.appendChild(
@@ -28,7 +24,6 @@ function buildSelectors(daySelect, hourSelect, minuteSelect, meridiemSelect) {
     );
   }
 
-  // AM / PM (translated with fallback)
   meridiemSelect.innerHTML = '';
   ['AM', 'PM'].forEach(val => {
     const key = `time.${val.toLowerCase()}`;
@@ -57,7 +52,7 @@ function buildMeridiemSelector(select) {
     opt.textContent =
       translated && translated !== key
         ? translated
-        : value; // fallback to AM / PM
+        : value;
 
     select.appendChild(opt);
   });
@@ -106,12 +101,10 @@ export function openGameTimeModal() {
 
   cancelBtn.onclick = closeModal;
 
-  // Escape key to close
   const keyHandler = (e) => {
     if (e.key === 'Escape') closeModal();
   };
 
-  // Backdrop click to close
   const backdrop = modal.querySelector('.modal-backdrop');
   if (backdrop) backdrop.onclick = closeModal;
 
@@ -138,7 +131,6 @@ window.addEventListener('language-changed', () => {
 
   buildSelectors(daySelect, hourSelect, minuteSelect, meridiemSelect);
 
-  // Restore values after rebuild
   daySelect.value = state.day;
   hourSelect.value = state.hour;
   minuteSelect.value = state.minute;
