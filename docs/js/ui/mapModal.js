@@ -14,7 +14,6 @@ export function openMap({ gameId, locations }) {
 
   container.innerHTML = '';
 
-  // 🔥 GROUP LOCATIONS BY MAP
   const maps = {};
 
   locations.forEach(locationName => {
@@ -30,7 +29,6 @@ export function openMap({ gameId, locations }) {
     maps[mapKey].push({ locationName, data });
   });
 
-  // 🔥 RENDER EACH MAP
   Object.entries(maps).forEach(([mapKey, entries]) => {
     const wrapper = document.createElement('div');
     wrapper.className = 'map-wrapper';
@@ -67,9 +65,6 @@ function getMapForGame(gameId) {
   return 'kanto';
 }
 
-
-/* ================= CLOSE HANDLING ================= */
-
 function closeMap() {
   document.getElementById('map-modal')?.classList.add('hidden');
 }
@@ -78,7 +73,6 @@ document.addEventListener('click', e => {
   const modal = document.getElementById('map-modal');
   if (!modal || modal.classList.contains('hidden')) return;
 
-  // 🧠 NEW — ignore clicks that originated from a map button
   if (e.target.closest('.map-button')) return;
 
   const container = modal.querySelector('.map-container');
