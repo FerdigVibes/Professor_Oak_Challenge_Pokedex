@@ -134,7 +134,6 @@ function updateSectionCounter(sectionBlock) {
     
         if (!isCaught(gameId, dex)) return false;
     
-        // ⭐ NEW — only count primary catch location
         const primary = localStorage.getItem(`oak:${gameId}:primary:${dex}`);
         if (primary && primary !== row.dataset.sectionId) return false;
     
