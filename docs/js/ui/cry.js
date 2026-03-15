@@ -22,7 +22,7 @@ export function playPokemonCry(pokemon) {
   const audio = new Audio(src);
   currentAudio = audio;
 
-  audio.volume = 0.7;
+  audio.volume = 0.5;
   audio.play().catch(err => {
     console.warn('Cry playback blocked:', err);
   });
